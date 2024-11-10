@@ -1,4 +1,5 @@
 // src/components/Common/Navbar.js
+
 function Navbar() {
   const navlinks = [
     { href: "#about", label: "About" },
@@ -10,9 +11,8 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <a className="navbar-brand" href="/">
-          My Portfolio
+          Osee Mbiya
         </a>
-
         <button
           className="navbar-toggler"
           type="button"

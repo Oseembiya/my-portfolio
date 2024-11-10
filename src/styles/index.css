@@ -1,9 +1,7 @@
-/* index.css */
-
 /* Using :root for CSS Variables or Global Style Base */
 :root {
   --font-family-main: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --color-text: #ffffffde;
+  --color-text: #ffffff;
   --color-background: #ffffff;
 
   font-family: var(--font-family-main);
@@ -18,17 +16,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-/* Optional: Apply universal styles with * */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.navbar {
-  padding: 28px;
-}
-.nav-item {
-  margin-right: 18px;
+  /* Optional: Apply universal styles with * */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    background-color: var(--color-background);
+  }
 }
