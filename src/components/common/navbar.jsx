@@ -1,7 +1,7 @@
 // src/components/Common/Navbar.js
-
-function Navbar() {
+export default function Navbar() {
   const navlinks = [
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
@@ -28,7 +28,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             {navlinks.map((link, index) => (
-              <li className="nav-item" key={index}>
+              <li className="nav-item ps-lg-3" key={index}>
                 <a className="nav-link" href={link.href}>
                   {link.label}
                 </a>
@@ -40,5 +40,3 @@ function Navbar() {
     </nav>
   );
 }
-
-export default Navbar;

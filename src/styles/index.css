@@ -23,8 +23,13 @@
     padding: 0;
     box-sizing: border-box;
   }
-  body {
-    height: 100vh;
-    background-color: var(--color-background);
+
+  /* Center the container */
+  .center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(110, 124, 197);
+    height: 100vh; /* Full viewport height */
   }
 }
