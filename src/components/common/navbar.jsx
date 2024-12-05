@@ -1,20 +1,17 @@
 // src/components/Common/Navbar.js
 export default function Navbar() {
   const navlinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
+    { id: "1", href: "#home", label: "Home" },
+    { id: "2", href: "#about", label: "About" },
+    { id: "3", href: "#projects", label: "Projects" },
+    { id: "4", href: "#experience", label: "Experience" },
+    { id: "5", href: "#contact", label: "Contact" },
   ];
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <a className="navbar-brand" href="/">
-          Osee Mbiya
-        </a>
+      <div className="container ">
         <button
-          className="navbar-toggler"
+          className="navbar-toggler custom-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -24,11 +21,39 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <a className="navbar-brand" href="#Home">
+          Osee Mbiya
+        </a>
+        <div
+          className="social-link d-flex flex-direction: row;  text-while {
+          
+        }"
+        >
+          <a
+            className="me-3 text-white"
+            href="https://github.com/Oseembiya/"
+            target="_blank"
+            rel="opener northerner"
+            aria-label="GitHub Profile"
+          >
+            <i className="fab fa-github fa-lg"></i>
+          </a>
+          <a
+            className="text-white"
+            href="https://www.linkedin.com/in/oseembiya/"
+            target="_blank"
+            rel="opener northerner"
+            aria-label="LinkedIn Profile"
+          >
+            <i className="fab fa-linkedin fa-lg"></i>
+          </a>
+        </div>
+
         {/* rendering each link in li */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            {navlinks.map((link, index) => (
-              <li className="nav-item ps-lg-3" key={index}>
+            {navlinks.map((link, id) => (
+              <li className="nav-item ps-lg-3" key={id}>
                 <a className="nav-link" href={link.href}>
                   {link.label}
                 </a>

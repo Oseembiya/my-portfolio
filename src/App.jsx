@@ -1,16 +1,6 @@
-import Navbar from "./components/common/navbar";
-import Home from "./components/home/home";
-import About from "./components/about/about";
+import Pages from "./components/pages/Pages";
 import "./styles/App.css";
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Home />
-      <About />
-    </>
-  );
+export default function App() {
+  return <Pages />;
 }
-
-export default App;
