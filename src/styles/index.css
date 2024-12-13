@@ -1,8 +1,12 @@
 /* Using :root for CSS Variables or Global Style Base */
 :root {
   --font-family-main: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --color-text: #ffffff;
-  --color-background: #ffffff;
+  --color-text-primary: #00262b;
+  --color-text-secondary: #ffffff;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #00262b;
+  --color-text-random: #ff6200;
+  --color-background-random: #f1f1f1;
 
   font-family: var(--font-family-main);
   line-height: 1.5;
@@ -23,54 +27,74 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  .home {
-    /*height: 100vh;*/
-    display: flex;
-    flex-direction: row;
+  .name {
+    font-family: sans-serif;
+    line-height: 40px;
+    font-size: 45px;
+    font-weight: 800;
+    padding: 7px 0px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-family: sans-serif;
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 7px 0px;
   }
-  .custom-toggler {
-    padding: 0;
+  .downArrow_2334 {
+    position: fixed; /* Fix to viewport */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensure it stays on top */
+  }
+
+  .downArrow_2334 i {
+    font-size: 2rem; /* Adjust size as needed */
+    color: var(--color-text-random); /* Icon color */
+    animation: bounce 2s infinite; /* Bounce animation */
+  }
+
+  /* Keyframes for Bounce Animation */
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px); /* Move up */
+    }
+    60% {
+      transform: translateY(-5px); /* Move slightly up */
+    }
+  }
+  /* global button style */
+  .btn_2334 {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    row-gap: 18px;
+  }
+
+  .btn_2334 > .btn {
+    padding: 8px;
+    border-radius: 28px;
+    background-color: var(--color-background-primary);
+    color: var(--color-text-primary);
+    font-weight: bold;
+    width: 100%;
     border: none;
-    background: none;
-    outline: none;
-    font-size: 1rem;
   }
-  .custom-toggler:focus,
-  .custom-toggler:active {
-    outline: none;
-    box-shadow: none;
+  .btn_2334 > .btn:active {
+    background-color: var(--color-text-random);
+    color: var(--color-text-secondary);
   }
-
-  @media (max-width: 425px) {
-    .home {
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 0 12px;
-      align-items: center;
-    }
-
-    h1 {
-      padding-top: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .navbar-brand {
-      margin: 0px;
-      font-size: 1.1rem;
-    }
-
-    .nav-link {
-      max-width: 26%;
-    }
-
-    .btn {
-      width: 100%;
-      font-weight: 600;
-    }
+  .btn_2334 > .btn-secondary {
+    background-color: #063237;
+    color: var(--color-text-secondary);
   }
 }

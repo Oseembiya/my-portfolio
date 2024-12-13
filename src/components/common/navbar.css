@@ -1,0 +1,23 @@
+.navbar {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+  font-weight: bold;
+  padding: 12px 0px;
+}
+
+.custom-toggler {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.custom-toggler:active,
+.custom-toggler:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
