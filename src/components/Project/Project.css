@@ -1,0 +1,12 @@
+.project_2336 {
+  height: 100vh;
+  margin-top: 2rem;
+  text-align: center;
+  background-color: #ff6347;
+  color: var(--color-text-secondary);
+}
+
+.showCase_2336 {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -5,8 +5,7 @@ export default function Navbar() {
     { id: "1", href: "#home", label: "Home" },
     { id: "2", href: "#about", label: "About" },
     { id: "3", href: "#projects", label: "Projects" },
-    { id: "4", href: "#experience", label: "Experience" },
-    { id: "5", href: "#contact", label: "Contact" },
+    { id: "4", href: "#contact", label: "Contact" },
   ];
   return (
     <nav className="navbar navbar-expand-lg">

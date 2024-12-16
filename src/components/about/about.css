@@ -4,10 +4,9 @@
   justify-content: center;
   align-items: center; /* Centers content vertically */
 }
+
 .content_2335 {
   margin-top: 1rem;
-  background-color: var(--color-background-random);
-  border-radius: 15px;
   padding-left: 8px;
 }
 

@@ -8,6 +8,9 @@
   background-size: cover; /* Ensures the background fills the container */
   background-repeat: no-repeat;
 }
+.ora {
+  color: var(--color-text-random);
+}
 
 @media (max-width: 768px) {
   .hero-section {

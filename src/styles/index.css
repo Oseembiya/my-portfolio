@@ -1,12 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 /* Using :root for CSS Variables or Global Style Base */
 :root {
-  --font-family-main: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-main: "Outfit", Sans-serif;
   --color-text-primary: #00262b;
   --color-text-secondary: #ffffff;
   --color-background-primary: #ffffff;
   --color-background-secondary: #00262b;
-  --color-text-random: #ff6200;
+  --color-text-random: #ff6347;
   --color-background-random: #f1f1f1;
+  --h1-font-size: 26px;
+  --h1-font-weight: 800;
+  --p-font-size: 14px;
+  --p-font-weight: 300;
 
   font-family: var(--font-family-main);
   line-height: 1.5;
@@ -27,20 +32,24 @@
     padding: 0;
     box-sizing: border-box;
   }
+  body {
+    font-family: var(--font-family-main) !important;
+  }
   .name {
-    font-family: sans-serif;
     line-height: 40px;
-    font-size: 45px;
-    font-weight: 800;
-    padding: 7px 0px;
+    font-size: 56px;
+    font-weight: 600;
   }
 
   h1 {
-    font-family: sans-serif;
     line-height: 40px;
-    font-size: 30px;
-    font-weight: 800;
-    padding: 7px 0px;
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+    padding: 1rem 0px;
+  }
+  p {
+    font-size: var(--p-font-size);
+    font-weight: var(--p-font-weight);
   }
   .downArrow_2334 {
     position: fixed; /* Fix to viewport */
@@ -83,8 +92,8 @@
   .btn_2334 > .btn {
     padding: 8px;
     border-radius: 28px;
-    background-color: var(--color-background-primary);
-    color: var(--color-text-primary);
+    background-color: var(--color-background-secondary);
+    color: var(--color-text-secondary);
     font-weight: bold;
     width: 100%;
     border: none;
@@ -94,7 +103,7 @@
     color: var(--color-text-secondary);
   }
   .btn_2334 > .btn-secondary {
-    background-color: #063237;
+    background-color: var(--color-text-random);
     color: var(--color-text-secondary);
   }
 }

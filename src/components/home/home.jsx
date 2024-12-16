@@ -8,8 +8,12 @@ export default function Home() {
         <img className="photo_2334" src={ProfilePhoto} alt="ImageProfile" />
       </div>
       <div className="profile_2334">
-        <h1 className="name">Osee Mbiya</h1>
-        <h2>Front-End Developer </h2>
+        <h1 className="name">
+          <span className="ora">Osee</span> Mbiya
+        </h1>
+        <h2>
+          Front-End <span className="ora">Developer </span>
+        </h2>
       </div>
       <div className="btn_2334">
         <button className="btn btn-primary">Contact Info</button>
