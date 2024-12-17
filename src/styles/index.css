@@ -8,6 +8,7 @@
   --color-background-secondary: #00262b;
   --color-text-random: #ff6347;
   --color-background-random: #f1f1f1;
+  --color-background-third: #fef4ea;
   --h1-font-size: 26px;
   --h1-font-weight: 800;
   --p-font-size: 14px;
@@ -34,6 +35,7 @@
   }
   body {
     font-family: var(--font-family-main) !important;
+    padding-top: 65px;
   }
   .name {
     line-height: 40px;
@@ -45,7 +47,6 @@
     line-height: 40px;
     font-size: var(--h1-font-size);
     font-weight: var(--h1-font-weight);
-    padding: 1rem 0px;
   }
   p {
     font-size: var(--p-font-size);
@@ -83,6 +84,7 @@
   /* global button style */
   .btn_2334 {
     padding-top: 5%;
+    padding-bottom: 5%;
     display: flex;
     flex-direction: row;
     column-gap: 10px;
@@ -105,5 +107,40 @@
   .btn_2334 > .btn-secondary {
     background-color: var(--color-text-random);
     color: var(--color-text-secondary);
+  }
+  /* Navbar styles */
+  .navbar {
+    width: 100%;
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    z-index: 1000; /* Ensures it's above other elements */
+    background-color: var(
+      --color-background-primary
+    ); /* Keeps your design consistent */
+    color: var(--color-text-primary);
+    font-weight: bold;
+    padding: 12px 0px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for separation */
+  }
+
+  .custom-toggler {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+  }
+
+  .custom-toggler:active,
+  .custom-toggler:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 5px;
   }
 }

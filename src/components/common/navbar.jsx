@@ -1,5 +1,5 @@
 // src/components/Common/Navbar.js
-import "./navbar.css";
+
 export default function Navbar() {
   const navlinks = [
     { id: "1", href: "#home", label: "Home" },

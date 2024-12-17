@@ -13,7 +13,7 @@ export default function About() {
           <br />
           Passionate and dedicated Front-End Developer, ready to tackle
           challenges and create innovative, user-friendly web experiences that
-          drive results. I am seeking a position as a Senior Developer
+          drive results.
         </p>
       </div>
     </div>

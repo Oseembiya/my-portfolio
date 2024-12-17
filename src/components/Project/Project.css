@@ -2,11 +2,47 @@
   height: 100vh;
   margin-top: 2rem;
   text-align: center;
-  background-color: #ff6347;
-  color: var(--color-text-secondary);
+  background-color: var(--color-background-third);
+  color: var(--color-text-primary);
+  overflow: hidden;
+}
+.project_2336 > h1 {
+  padding-bottom: 20px;
+}
+
+.showList_2336 {
+  width: 100%;
+  overflow: hidden;
+  border: solid var(--color-text-primary);
+  background-color: #f0f0f0;
+  border-radius: 10px;
 }
 
 .showCase_2336 {
   display: flex;
-  justify-content: space-evenly;
+  transition: transform 0.3s ease-in-out; /* Smooth sliding */
+}
+
+.showCase_2336 > div {
+  font-size: 18px;
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 12px;
+  border: 1px solid var(--color-text-primary);
+}
+.showList_2336 {
+  width: 100%;
+  overflow: hidden; /* Prevent items from spilling out */
+  position: relative;
+}
+
+.slideList_2336 {
+  min-width: 100%; /* Ensure each item takes full width */
+  text-align: center;
+}
+
+.projectList {
+  min-height: fit-content;
+  margin-top: 32px;
+  border-radius: 10px;
 }

@@ -3,10 +3,12 @@
   height: 100vh;
   display: flex;
   color: var(--color-text-secondary);
-
   background-image: url("/src/assets/Background.png");
   background-size: cover; /* Ensures the background fills the container */
   background-repeat: no-repeat;
+}
+.profile_2334 > h1 {
+  margin-bottom: 0.7rem;
 }
 .ora {
   color: var(--color-text-random);
@@ -14,24 +16,19 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    max-height: 78vh;
-    overflow: auto;
+    height: fit-content;
     text-align: center;
     flex-direction: column;
+    justify-content: center;
   }
-
   .image_2334 {
     display: flex;
     justify-content: center; /* Center the image horizontally */
     align-items: center; /* Center the image vertically if needed */
-    max-width: 100%; /* Prevent container overflow */
     overflow: hidden; /* Ensure no content spills outside */
   }
-
-  .social_link_2334 {
-    display: flex;
-    justify-content: center;
-    column-gap: 20px;
-    padding: 6%;
+  .photo_2334 {
+    width: 100%;
+    height: auto;
   }
 }
