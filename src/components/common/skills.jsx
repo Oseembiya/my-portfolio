@@ -1,28 +1,103 @@
+import { useState, useEffect } from "react";
 import "./skills.css";
 
-const skills = [
-  { id: 1, name: "HTML", icon: "fa-html5", className: "item-1" },
-  { id: 2, name: "CSS", icon: "fa-css3", className: "item-2" },
-  { id: 3, name: "JavaScript", icon: "fa-js", className: "item-3" },
-  { id: 4, name: "Node.js", icon: "fa-node", className: "item-4" },
-  { id: 5, name: "React", icon: "fa-react", className: "item-5" },
-  { id: 6, name: "Vue.js", icon: "fa-vuejs", className: "item-6" },
-  { id: 7, name: "AWS", icon: "fa-aws", className: "item-7" },
-  { id: 8, name: "Java", icon: "fa-java", className: "item-8" },
-  { id: 9, name: "C++", icon: null, className: "item-9" },
-  { id: 10, name: "Git", icon: "fa-git-alt", className: "item-10" },
+// Updated skills data with 2 additional skills
+const skillsData = [
+  {
+    id: 1,
+    names: ["HTML", "CSS", "JavaScript"],
+    icons: ["fa-html5", "fa-css3", "fa-js"],
+  },
+  {
+    id: 2,
+    names: ["CSS", "HTML", "JavaScript"],
+    icons: ["fa-css3", "fa-html5", "fa-js"],
+  },
+  {
+    id: 3,
+    names: ["JavaScript", "React", "Vue.js"],
+    icons: ["fa-js", "fa-react", "fa-vuejs"],
+  },
+  {
+    id: 4,
+    names: ["Node.js", "Java", "AWS"],
+    icons: ["fa-node", "fa-java", "fa-aws"],
+  },
+  {
+    id: 5,
+    names: ["React", "Vue.js", "Git"],
+    icons: ["fa-react", "fa-vuejs", "fa-git-alt"],
+  },
+  {
+    id: 6,
+    names: ["Python", "Django", "Flask"],
+    icons: ["fa-python", "fa-django", "fa-flask"],
+  }, // New Skill 1
+  {
+    id: 7,
+    names: ["Ruby", "Rails", "Sinatra"],
+    icons: ["fa-ruby", "fa-rails", "fa-sass"],
+  }, // New Skill 2
+  {
+    id: 8,
+    names: ["Swift", "Xcode", "CocoaPods"],
+    icons: ["fa-swift", "fa-xcode", "fa-cocoa"],
+  }, // New Skill 3
+  {
+    id: 9,
+    names: ["Go", "Golang", "Kubernetes"],
+    icons: ["fa-golang", "fa-kubernetes", "fa-docker"],
+  }, // New Skill 4
+  {
+    id: 10,
+    names: ["Scala", "Akka", "Play"],
+    icons: ["fa-scala", "fa-akka", "fa-play"],
+  }, // New Skill 5
 ];
 
 export default function Skills() {
+  const [currentSkills, setCurrentSkills] = useState(
+    skillsData.map((skill) => ({
+      icon: skill.icons[0],
+      name: skill.names[0],
+    }))
+  );
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true); // Start fading out
+      setTimeout(() => {
+        setCurrentSkills((prevSkills) =>
+          prevSkills.map((skill, index) => {
+            const skillIcons = skillsData[index].icons;
+            const skillNames = skillsData[index].names;
+            const nextIndex =
+              (skillIcons.indexOf(skill.icon) + 1) % skillIcons.length;
+            return { icon: skillIcons[nextIndex], name: skillNames[nextIndex] };
+          })
+        );
+        setIsTransitioning(false); // Fade back in
+      }, 1000); // Half the total duration (1 second for fade-out)
+    }, 10000); // Full interval for updates (10 seconds)
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="container-fluid skillsContent_2337">
       <div className="skillsName">
         <h1>Tools and Technologies</h1>
       </div>
       <div className="grid skills_2337">
-        {skills.map((skill) => (
-          <div key={skill.id} className={skill.className}>
-            {skill.icon && <i className={`fa-brands ${skill.icon}`}></i>}
+        {currentSkills.map((skill, index) => (
+          <div
+            key={skillsData[index].id}
+            className={`item-${skillsData[index].id} ${
+              isTransitioning ? "fade" : ""
+            }`}
+          >
+            <i className={`fa-brands ${skill.icon}`}></i>
             <p>{skill.name}</p>
           </div>
         ))}
