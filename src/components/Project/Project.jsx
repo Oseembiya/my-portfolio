@@ -33,6 +33,7 @@ export default function Project() {
   return (
     <div className="container-fluid project_2336">
       <h1>Project Showcase</h1>
+
       {/* Swappable Section Titles */}
       <div
         className="showList_2336"
