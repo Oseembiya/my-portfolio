@@ -35,7 +35,6 @@
   }
   body {
     font-family: var(--font-family-main) !important;
-    padding-top: 65px;
   }
   .name {
     line-height: 40px;

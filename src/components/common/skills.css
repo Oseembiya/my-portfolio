@@ -103,31 +103,6 @@
   font-size: 40px; /* Increase the size of the icon */
 }
 
-.animated-icon::before {
-  font-family: "Font Awesome 5 Brands";
-  content: "\f13b"; /* Starting icon */
-  display: inline-block;
-  animation: iconChange 10s infinite;
-}
-
-@keyframes iconChange {
-  0% {
-    content: "\f13b"; /* HTML */
-  }
-  25% {
-    content: "\f13c"; /* CSS */
-  }
-  50% {
-    content: "\f3b9"; /* JavaScript */
-  }
-  75% {
-    content: "\f42e"; /* React */
-  }
-  100% {
-    content: "\f13b"; /* HTML */
-  }
-}
-
 /* Fade-out class */
 .skills_2337 > div.fade {
   opacity: 0;

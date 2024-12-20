@@ -1,4 +1,4 @@
-import ProfilePhoto from "../../assets/Professional_photo.png";
+import ProfilePhoto from "/src/assets/bussiness.jpeg";
 import "./home.css";
 import Button from "../common/buttons";
 

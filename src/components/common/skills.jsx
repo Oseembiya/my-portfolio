@@ -8,25 +8,26 @@ const skillsData = [
     names: ["HTML", "CSS", "JavaScript"],
     icons: ["fa-html5", "fa-css3", "fa-js"],
   },
+
   {
     id: 2,
-    names: ["CSS", "HTML", "JavaScript"],
-    icons: ["fa-css3", "fa-html5", "fa-js"],
+    names: ["React", "Vue.js", "Node.js"],
+    icons: ["fa-react", "fa-vuejs", "fa-node"],
   },
   {
     id: 3,
-    names: ["JavaScript", "React", "Vue.js"],
-    icons: ["fa-js", "fa-react", "fa-vuejs"],
+    names: ["Java", "C++", "AWS"],
+    icons: ["fa-java", "", "fa-aws"],
   },
   {
     id: 4,
-    names: ["Node.js", "Java", "AWS"],
-    icons: ["fa-node", "fa-java", "fa-aws"],
+    names: ["MongoDb", "Git", "Docker"],
+    icons: ["fa-thin fa-database", "fa-git-alt", "fa-docker"],
   },
   {
     id: 5,
-    names: ["React", "Vue.js", "Git"],
-    icons: ["fa-react", "fa-vuejs", "fa-git-alt"],
+    names: ["Figma", "Vue.js", "SQL"],
+    icons: ["fa-figma", "fa-vuejs", ""],
   },
   {
     id: 6,
@@ -45,7 +46,7 @@ const skillsData = [
   }, // New Skill 3
   {
     id: 9,
-    names: ["Go", "Golang", "Kubernetes"],
+    names: ["Go", "Golang", "Docker"],
     icons: ["fa-golang", "fa-kubernetes", "fa-docker"],
   }, // New Skill 4
   {
@@ -78,8 +79,8 @@ export default function Skills() {
           })
         );
         setIsTransitioning(false); // Fade back in
-      }, 1000); // Half the total duration (1 second for fade-out)
-    }, 10000); // Full interval for updates (10 seconds)
+      }, 900);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);

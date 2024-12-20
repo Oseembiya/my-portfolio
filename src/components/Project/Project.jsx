@@ -31,7 +31,7 @@ export default function Project() {
   };
 
   return (
-    <div className="container-fluid project_2336">
+    <div className="container-fluid projectMain_2336">
       <h1>Project Showcase</h1>
 
       {/* Swappable Section Titles */}
@@ -59,15 +59,40 @@ export default function Project() {
       {/* Dynamic Projects for the Current Section */}
       <div className="projects_2336">
         {ProjectDetails[currentIndex].projects.map((project, index) => (
-          <div key={index} className=" projectItem_2336">
-            <a href={project.href} target="_blank" rel="websiteURL">
-              <img
-                src={project.image}
-                alt={project.projectName}
-                style={{ width: `${project.imageSize}px`, height: "auto" }}
-              />
-              <p>{project.projectName}</p>
-            </a>
+          <div key={index} className="projectItem_2336">
+            {/* Image Section */}
+            <div className="projectImage_2336">
+              <a href={project.href} target="_blank" rel="WebsiteLink">
+                <img src={project.image} alt={project.projectName} />
+              </a>
+            </div>
+
+            {/* Text Section */}
+            <div className="projectDetails_2336">
+              <h5 className="card-title">{project.projectName}</h5>
+              <p className="card-text">
+                Some quick example text to build on the card title and make up
+              </p>
+              {/* Tools Section */}
+              <p className="card-text">
+                {project.tools && Array.isArray(project.tools) // Ensure tools is an array
+                  ? project.tools
+                      .filter((tool) => tool.trim() !== "") // Exclude empty strings
+                      .map((tool, toolIndex) => (
+                        <span key={toolIndex} style={{ marginRight: "8px" }}>
+                          <i className="fa-duotone fa-solid fa-circle-check fa-lg"></i>
+                          {tool}
+                        </span>
+                      ))
+                  : null}
+              </p>
+              <a href="#" className="card-link">
+                Card link
+              </a>
+              <a href="#" className="card-link">
+                Another link
+              </a>
+            </div>
           </div>
         ))}
       </div>
