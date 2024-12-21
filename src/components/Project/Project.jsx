@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Project.css";
-import ProjectDetails from "./ProjectList"; // Import ProjectDetails
+import ProjectDetails from "./ProjectDetails"; // Import ProjectDetails
 
 export default function Project() {
   const sections = ProjectDetails.map((section) => section.section); // Section names
@@ -50,7 +50,7 @@ export default function Project() {
         >
           {ProjectDetails.map((section, index) => (
             <div key={index} className="slideList_2336">
-              <h5>{section.section}</h5>
+              <h6>{section.section}</h6>
             </div>
           ))}
         </div>
@@ -86,12 +86,14 @@ export default function Project() {
                       ))
                   : null}
               </p>
-              <a href="#" className="card-link">
-                Card link
-              </a>
-              <a href="#" className="card-link">
-                Another link
-              </a>
+              <div className="cart-body">
+                <a href="#" className="card-link">
+                  Card link
+                </a>
+                <a href="#" className="card-link">
+                  Another link
+                </a>
+              </div>
             </div>
           </div>
         ))}
