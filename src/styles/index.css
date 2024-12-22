@@ -99,14 +99,16 @@
     width: 100%;
     border: none;
   }
-  .btn_2334 > .btn:active {
-    background-color: none;
-    color: var(--color-text-secondary);
-  }
+
   .btn_2334 > .btn-Cv {
     background-color: #e22200;
     color: var(--color-text-secondary);
   }
+  .btn_2334 > .btn:active {
+    background-color: none;
+    color: var(--color-text-secondary);
+  }
+
   /* Navbar styles */
 
   .navbar {
@@ -118,8 +120,36 @@
 
     /*box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for separation */
   }
-  .navbar > div a {
-    color: var(--color-background-primary);
+
+  .navbar div a {
+    position: relative;
+
+    text-decoration: none;
+    color: var(--color-text-secondary); /* Use a primary text color */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar div .nav-link:hover {
+    text-decoration: none; /* Remove underline */
+    color: var(--color-text-random); /* Change color */
+    transform: scale(1.1); /* Slightly enlarge the text */
+  }
+
+  .navbar div .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text-random); /* Use your random color */
+    transform: scaleX(0); /* Start hidden */
+    transition: transform 0.3s ease; /* Smooth underline effect */
+    transform-origin: left;
+  }
+
+  .navbar div .nav-link:hover::after {
+    transform: scaleX(1); /* Animate underline on hover */
   }
 
   .custom-toggler {
