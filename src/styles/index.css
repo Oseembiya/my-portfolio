@@ -108,6 +108,7 @@
     color: var(--color-text-secondary);
   }
   /* Navbar styles */
+
   .navbar {
     width: 100%;
     top: 0; /* Aligns it to the top of the viewport */
