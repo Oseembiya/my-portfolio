@@ -1,14 +1,10 @@
 import "./about.css";
-
+import AboutMe from "/src/assets/osee.jpeg";
 export default function About() {
   return (
     <div className="container-fluid about_2335">
       <h1>Who I am</h1>
-      <img
-        className="aboutImg_2335"
-        src="/src/assets/osee.jpeg"
-        alt="About_Image"
-      />
+      <img className="aboutImg_2335" src={AboutMe} alt="AboutImage" />
       <div className="content_2335">
         <p>
           <strong>
