@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg">
       <div className="container">
         <a className="navbar-brand" href="#Home">
-          Osee Mbiya
+          <span className="ora">Osee</span> Mbiya
         </a>
         <button
           className="navbar-toggler custom-toggler "
