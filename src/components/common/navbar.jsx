@@ -1,4 +1,4 @@
-// src/components/Common/Navbar.js
+import { useState } from "react";
 
 export default function Navbar() {
   const navlinks = [
@@ -7,6 +7,12 @@ export default function Navbar() {
     { id: "3", href: "#projects", label: "Projects" },
     { id: "4", href: "#contact", label: "Contact" },
   ];
+
+  const [openBtn, setCloseBtn] = useState(false);
+  const closeBtn = () => {
+    setCloseBtn(!openBtn);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
@@ -14,18 +20,30 @@ export default function Navbar() {
           <span className="ora">Osee</span> Mbiya
         </a>
         <button
-          className="navbar-toggler custom-toggler "
+          className="navbar-toggler custom-toggler"
           type="button"
+          onClick={closeBtn}
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={openBtn ? "true" : "false"}
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {openBtn ? (
+            <span
+              type="button"
+              className="btn-close custom-close-btn"
+              aria-label="Close"
+            ></span>
+          ) : (
+            <span className="navbar-toggler-icon"></span>
+          )}
         </button>
         {/* rendering each link in li */}
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={`collapse navbar-collapse ${openBtn ? "show" : ""}`}
+          id="navbarNav"
+        >
           <ul className="navbar-nav ms-auto">
             {navlinks.map((link, id) => (
               <li className="nav-item ps-lg-3" key={id}>
