@@ -15,20 +15,3 @@
 .ora {
   color: var(--color-text-random);
 }
-
-@media (max-width: 768px) {
-  .hero-section {
-    height: fit-content;
-    text-align: center;
-    flex-direction: column;
-    justify-content: start;
-  }
-  .image_2334 {
-    justify-content: center; /* Center the image horizontally */
-    height: fit-content;
-  }
-  .image_2334 > .photo_2334 {
-    max-height: fit-content;
-    width: 100%;
-  }
-}
