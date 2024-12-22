@@ -1,12 +1,15 @@
-import ProfilePhoto from "/src/assets/bussiness.jpeg";
 import "./home.css";
 import Button from "../common/buttons";
+import Navbar from "../common/navbar"; // Import Navbar
 
 export default function Home() {
   return (
     <div className="container-fluid hero-section">
+      {/* Place Navbar here */}
+      <Navbar />
+
       <div className="image_2334">
-        <img className="photo_2334" src={ProfilePhoto} alt="Profile" />
+        <img className="photo_2334" alt="Profile" />
       </div>
       <div className="profile_2334">
         <h1 className="name">
