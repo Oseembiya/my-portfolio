@@ -83,16 +83,16 @@
   /* global button style */
   .btn_2334 {
     padding: 8px 0px;
-
     display: flex;
     flex-direction: row;
     column-gap: 10px;
     row-gap: 18px;
+    flex-wrap: wrap;
   }
 
   .btn_2334 > .btn {
     padding: 16px;
-    border-radius: 10px;
+    border-radius: 8px;
     background-color: var(--color-background-secondary);
     color: var(--color-text-secondary);
     font-weight: bold;
@@ -100,11 +100,11 @@
     border: none;
   }
   .btn_2334 > .btn:active {
-    background-color: var(--color-text-random);
+    background-color: none;
     color: var(--color-text-secondary);
   }
-  .btn_2334 > .btn-secondary {
-    background-color: var(--color-text-random);
+  .btn_2334 > .btn-Cv {
+    background-color: #e22200;
     color: var(--color-text-secondary);
   }
   /* Navbar styles */
