@@ -30,11 +30,7 @@ export default function Navbar() {
           aria-label="Toggle navigation"
         >
           {openBtn ? (
-            <span
-              type="button"
-              className="btn-close custom-close-btn"
-              aria-label="Close"
-            ></span>
+            <i className="bi bi-x-lg  icon-white"></i>
           ) : (
             <span className="navbar-toggler-icon"></span>
           )}
