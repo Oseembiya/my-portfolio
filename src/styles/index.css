@@ -175,5 +175,18 @@
       max-height: 220px;
       border-radius: 8px;
     }
+
+    .navbar-collapse {
+      position: absolute;
+      top: 100%; /* Place it below the navbar */
+      left: 0;
+      width: 100%; /* Full-width menu */
+      z-index: 1050; /* Ensure it's above other content */
+    }
+
+    /* button */
+    .icon-white {
+      color: var(--color-text-random);
+    }
   }
 }
