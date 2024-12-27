@@ -1,0 +1,47 @@
+// Variable
+$font-family-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$color-text-primary: #00262b;
+$color-text-secondary: #ffffff;
+$color-background-primary: #ffffff;
+$color-background-secondary: #00262b;
+$color-text-random: #ff6347;
+$color-background-random: #f1f1f1;
+$color-background-third: #fef4ea;
+$font-size: 26px;
+$font-weight: 400;
+$p-font-size: 14px;
+$p-font-weight: 300;
+$line-height: 1.5;
+
+// _media-queries.scss
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@mixin media-query($size) {
+  @if $size == "sm" {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $size == "md" {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $size == "lg" {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $size == "xl" {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

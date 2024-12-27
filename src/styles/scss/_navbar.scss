@@ -1,0 +1,93 @@
+.navbar {
+  width: 100%;
+  top: 0; // Align to the top of the viewport
+  z-index: 1000; // Ensure it stays above other elements
+  font-weight: bold;
+  text-align: end; // Align text to the end
+
+  .navbar-brand {
+    &:hover,
+    &:focus {
+      color: $color-text-secondary;
+    }
+  }
+
+  div {
+    a {
+      position: relative;
+      color: $color-text-secondary; // Use a secondary text color
+      transition: color 0.3s ease, transform 0.3s ease; // Smooth color and transform transitions
+    }
+
+    .nav-link {
+      &:hover,
+      &:focus {
+        color: $color-text-random;
+      }
+    }
+  }
+
+  .custom-toggler {
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+    // The icon will now be white
+    transition: transform 0.6s ease-in-out; // Add a transition for smooth rotation
+  }
+
+  .custom-toggler.clicked .navbar-toggler-icon {
+    transform: rotate(760deg); // Rotate the icon 760 degrees when clicked
+  }
+
+  /* button */
+  .icon-white {
+    color: $color-text-random;
+    font-size: 24px;
+  }
+}
+
+@include media-query("md") {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%; /* Place it below the navbar */
+    left: 0;
+    width: 100%; /* Full-width menu */
+    z-index: 1050; /* Ensure it's above other content */
+  }
+
+  .navbar-collapse {
+    height: 50vh;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    z-index: 1050;
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Slight transparency */
+    border-radius: 8px;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0); /* Slide into view when shown */
+  }
+
+  .navbar-nav {
+    height: 100%;
+
+    justify-content: center;
+  }
+}

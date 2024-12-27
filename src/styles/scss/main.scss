@@ -1,0 +1,22 @@
+@import "../scss/config"; // import config file
+
+body {
+  font-family: $font-family-main !important;
+  line-height: $line-height;
+  color: $color-background-secondary;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: $font-weight;
+}
+a {
+  color: $color-text-secondary;
+}
+p {
+  font-size: $p-font-size;
+  font-weight: $p-font-weight;
+}
+@import "../scss/navbar"; // navbar
+@import "../scss/home"; // home

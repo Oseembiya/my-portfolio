@@ -1,0 +1,110 @@
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: $color-text-secondary;
+  background-image: url("/src/assets/Background.png");
+  background-size: cover; /* Ensures the background fills the container */
+  background-repeat: no-repeat;
+
+  h1 {
+    line-height: 40px;
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  span {
+    color: $color-text-random;
+  }
+}
+
+/* Global button style */
+.btn_2334 {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px 18px; /* shorthand for column-gap and row-gap */
+  flex-wrap: wrap;
+
+  .btn {
+    padding: 16px;
+    border-radius: 8px;
+    color: $color-text-secondary;
+    font-weight: $font-weight;
+    width: 100%;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for hover, active, and focus states */
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.btn-Contact {
+      background-color: $color-background-secondary;
+
+      &:active,
+      &focus {
+        background-color: $color-background-secondary;
+        filter: brightness(1.3) !important;
+      }
+    }
+
+    &.btn-Cv {
+      background-color: #e22200;
+
+      &:active,
+      &focus {
+        background-color: #e22200;
+        filter: brightness(1.3) !important;
+      }
+    }
+  }
+}
+
+.downArrow_2334 {
+  position: fixed; /* Fix to viewport */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.downArrow_2334 i {
+  font-size: 2rem; /* Adjust size as needed */
+  color: $color-text-random; /* Icon color */
+  animation: bounce 2s infinite; /* Bounce animation */
+}
+
+/* Keyframes for Bounce Animation */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Move up */
+  }
+  60% {
+    transform: translateY(-5px); /* Move slightly up */
+  }
+}
+
+@include media-query("md") {
+  .hero-section {
+    height: fit-content;
+    text-align: center;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .image_2334 {
+    justify-content: center; /* Center the image horizontally */
+    height: fit-content;
+  }
+  .image_2334 > .photo_2334 {
+    max-height: fit-content;
+    width: 100%;
+  }
+}
