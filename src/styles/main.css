@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  line-height: 1.5;
+  color: #00262b;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #ffffff;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.navbar {
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-weight: bold;
+  text-align: end;
+  /* button */
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar div a {
+  position: relative;
+  color: #ffffff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar div .nav-link:hover, .navbar div .nav-link:focus {
+  color: #ff6347;
+}
+.navbar .custom-toggler {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.navbar .custom-toggler:active, .navbar .custom-toggler:focus {
+  box-shadow: none;
+}
+.navbar .navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  transition: transform 0.6s ease-in-out;
+}
+.navbar .custom-toggler.clicked .navbar-toggler-icon {
+  transform: rotate(760deg);
+}
+.navbar .icon-white {
+  color: #ff6347;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%; /* Place it below the navbar */
+    left: 0;
+    width: 100%; /* Full-width menu */
+    z-index: 1050; /* Ensure it's above other content */
+  }
+  .navbar-collapse {
+    height: 50vh;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    z-index: 1050;
+    transform: translateX(100%); /* Initially hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Slight transparency */
+    border-radius: 8px;
+  }
+  .navbar-collapse.show {
+    transform: translateX(0); /* Slide into view when shown */
+  }
+  .navbar-nav {
+    height: 100%;
+    justify-content: center;
+  }
+}
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  background-image: url("/src/assets/Background.png");
+  background-size: cover; /* Ensures the background fills the container */
+  background-repeat: no-repeat;
+}
+.hero-section h1 {
+  line-height: 40px;
+  font-size: 48px;
+  font-weight: 600;
+}
+.hero-section span {
+  color: #ff6347;
+}
+
+/* Global button style */
+.btn_2334 {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px 18px; /* shorthand for column-gap and row-gap */
+  flex-wrap: wrap;
+}
+.btn_2334 .btn {
+  padding: 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 400;
+  width: 100%;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for hover, active, and focus states */
+}
+.btn_2334 .btn:hover {
+  opacity: 0.8;
+}
+.btn_2334 .btn.btn-Contact {
+  background-color: #00262b;
+}
+.btn_2334 .btn.btn-Contact:active, .btn_2334 .btn.btn-Contactfocus {
+  background-color: #00262b;
+  filter: brightness(1.3) !important;
+}
+.btn_2334 .btn.btn-Cv {
+  background-color: #e22200;
+}
+.btn_2334 .btn.btn-Cv:active, .btn_2334 .btn.btn-Cvfocus {
+  background-color: #e22200;
+  filter: brightness(1.3) !important;
+}
+
+.downArrow_2334 {
+  position: fixed; /* Fix to viewport */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.downArrow_2334 i {
+  font-size: 2rem; /* Adjust size as needed */
+  color: #ff6347; /* Icon color */
+  animation: bounce 2s infinite; /* Bounce animation */
+}
+
+/* Keyframes for Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px); /* Move up */
+  }
+  60% {
+    transform: translateY(-5px); /* Move slightly up */
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    height: -moz-fit-content;
+    height: fit-content;
+    text-align: center;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .image_2334 {
+    justify-content: center; /* Center the image horizontally */
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .image_2334 > .photo_2334 {
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    width: 100%;
+  }
+}/*# sourceMappingURL=main.css.map */
