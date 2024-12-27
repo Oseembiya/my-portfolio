@@ -1,4 +1,3 @@
-import "./home.css";
 import Button from "../common/buttons";
 import Navbar from "../common/navbar"; //
 import Image from "/src/assets/Professional_photo.png";
@@ -12,11 +11,11 @@ export default function Home() {
           <img className="photo_2334" src={Image} alt="Profile" />
         </div>
         <div className="profile_2334">
-          <h1 className="name">
-            <span className="ora">Osee</span> Mbiya
+          <h1>
+            <span>Osee</span> Mbiya
           </h1>
           <h2>
-            Front-End <span className="ora">Developer</span>
+            Front-End <span>Developer</span>
           </h2>
         </div>
         <div className="btn_2334">
