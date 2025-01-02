@@ -37,26 +37,22 @@
     transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for hover, active, and focus states */
 
     &:hover {
-      opacity: 0.8;
+      filter: brightness(1.3) !important;
     }
 
     &.btn-Contact {
       background-color: $color-background-secondary;
 
-      &:active,
-      &focus {
+      &:active {
         background-color: $color-background-secondary;
-        filter: brightness(1.3) !important;
       }
     }
 
     &.btn-Cv {
       background-color: #e22200;
 
-      &:active,
-      &focus {
+      &:active {
         background-color: #e22200;
-        filter: brightness(1.3) !important;
       }
     }
   }
