@@ -1,14 +1,15 @@
+/* Navbar */
 .navbar {
   width: 100%;
   top: 0; // Align to the top of the viewport
   z-index: 1000; // Ensure it stays above other elements
   font-weight: bold;
-  text-align: end; // Align text to the end
+  text-align: end; // Align text to the end (right-align)
 
   .navbar-brand {
     &:hover,
     &:focus {
-      color: $color-text-secondary;
+      color: $color-text-secondary; // Change color on hover/focus
     }
   }
 
@@ -22,11 +23,12 @@
     .nav-link {
       &:hover,
       &:focus {
-        color: $color-text-random;
+        color: $color-text-random; // Color change on hover/focus
       }
     }
   }
 
+  /* Custom toggler button (hamburger) */
   .custom-toggler {
     padding: 0;
     border: none;
@@ -34,6 +36,7 @@
     outline: none;
     font-size: 1rem;
     cursor: pointer;
+    z-index: 1060; /* Ensure it is on top of collapsed menu */
 
     &:active,
     &:focus {
@@ -41,53 +44,69 @@
     }
   }
 
+  /* Navbar toggler icon */
   .navbar-toggler-icon {
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
     // The icon will now be white
     transition: transform 0.6s ease-in-out; // Add a transition for smooth rotation
   }
 
-  .custom-toggler.clicked .navbar-toggler-icon {
-    transform: rotate(760deg); // Rotate the icon 760 degrees when clicked
-  }
-
-  /* button */
+  /* Icon on close (X) */
   .icon-white {
     color: $color-text-random;
     font-size: 24px;
   }
 }
 
-@include media-query("md") {
-  .navbar-collapse {
-    position: absolute;
-    top: 100%; /* Place it below the navbar */
-    left: 0;
-    width: 100%; /* Full-width menu */
-    z-index: 1050; /* Ensure it's above other content */
-  }
+/* Navbar collapse */
+.navbar-collapse {
+  position: fixed; /* Fixed position to cover the full screen */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  z-index: 1050; /* Ensure it's above other content */
+  transform: translateY(-100%); /* Initially hidden above the viewport */
+  transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Slight transparency with dark background */
+}
 
-  .navbar-collapse {
-    height: 50vh;
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    width: 100%;
-    z-index: 1050;
-    transform: translateX(100%); /* Initially hidden */
-    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Slight transparency */
-    border-radius: 8px;
-  }
+/* When the navbar-collapse is shown, slide it into view */
+.navbar-collapse.show {
+  transform: translateY(0); /* Slide into view */
+}
 
-  .navbar-collapse.show {
-    transform: translateX(0); /* Slide into view when shown */
+/* Media Queries */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    position: static; /* Remove fixed positioning on larger screens */
+    background-color: transparent; /* Remove background color on large screens */
+    text-align: left; /* Align text to the left on larger screens */
+    display: block; /* Use block display for normal horizontal layout */
+    transform: none; /* No need to slide the menu on large screens */
   }
 
   .navbar-nav {
-    height: 100%;
-
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start; /* Ensure links are aligned to the left */
   }
+
+  .nav-link {
+    padding-left: 1rem; /* Add space between links */
+  }
+}
+
+/* Position the <ul> (navbar-nav) at top left */
+.navbar-nav {
+  position: absolute; /* Absolute positioning */
+  top: 0;
+  left: 0;
+  padding-left: 20px !important; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+  list-style: none; /* Remove default list styling */
 }
