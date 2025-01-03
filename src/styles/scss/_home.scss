@@ -8,12 +8,6 @@
   background-size: cover; /* Ensures the background fills the container */
   background-repeat: no-repeat;
 
-  h1 {
-    line-height: 40px;
-    font-size: 48px;
-    font-weight: 600;
-  }
-
   span {
     color: $color-text-random;
   }
@@ -88,6 +82,13 @@
   }
 }
 
+@include media-query("sm") {
+  .image_2334 > .photo_2334 {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
 @include media-query("md") {
   .hero-section {
     height: fit-content;
@@ -98,9 +99,5 @@
   .image_2334 {
     justify-content: center; /* Center the image horizontally */
     height: fit-content;
-  }
-  .image_2334 > .photo_2334 {
-    max-height: fit-content;
-    width: 100%;
   }
 }
