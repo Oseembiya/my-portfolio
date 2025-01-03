@@ -10,28 +10,55 @@ body {
   color: #00262b;
 }
 
-h1,
-h2,
-h3 {
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px !important; /* Base size for headings */
+  font-weight: 600 !important; /* Bold for emphasis */
+  color: #00262b;
+  line-height: 1 !important;
+}
+
+h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  margin-bottom: 0.8em !important;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
+  color: #00262b;
+  line-height: 1.3;
+  margin-bottom: 0.6em;
+}
+
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #00262b;
+  line-height: 1.5;
+  margin-bottom: 1em;
 }
 
 a {
   color: #ffffff;
 }
 
-p {
-  font-size: 14px;
-  font-weight: 300;
-}
-
+/* Navbar */
 .navbar {
   width: 100%;
   top: 0;
   z-index: 1000;
   font-weight: bold;
   text-align: end;
-  /* button */
+  /* Custom toggler button (hamburger) */
+  /* Navbar toggler icon */
+  /* Icon on close (X) */
 }
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: #ffffff;
@@ -51,6 +78,7 @@ p {
   outline: none;
   font-size: 1rem;
   cursor: pointer;
+  z-index: 1060; /* Ensure it is on top of collapsed menu */
 }
 .navbar .custom-toggler:active, .navbar .custom-toggler:focus {
   box-shadow: none;
@@ -64,33 +92,51 @@ p {
   font-size: 24px;
 }
 
-@media (max-width: 768px) {
+/* Navbar collapse */
+.navbar-collapse {
+  position: fixed; /* Fixed position to cover the full screen */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  z-index: 1050; /* Ensure it's above other content */
+  transform: translateY(-100%); /* Initially hidden above the viewport */
+  transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+  background-color: rgba(0, 0, 0, 0.8); /* Slight transparency with dark background */
+}
+
+/* When the navbar-collapse is shown, slide it into view */
+.navbar-collapse.show {
+  transform: translateY(0); /* Slide into view */
+}
+
+/* Media Queries */
+@media (min-width: 992px) {
   .navbar-collapse {
-    position: absolute;
-    top: 100%; /* Place it below the navbar */
-    left: 0;
-    width: 100%; /* Full-width menu */
-    z-index: 1050; /* Ensure it's above other content */
-  }
-  .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    z-index: 1050;
-    transform: translateY(-100%); /* Initially hidden */
-    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Slight transparency */
-    border-radius: 8px;
-  }
-  .navbar-collapse.show {
-    transform: translateY(0); /* Slide into view when shown */
+    position: static; /* Remove fixed positioning on larger screens */
+    background-color: transparent; /* Remove background color on large screens */
+    text-align: left; /* Align text to the left on larger screens */
+    display: block; /* Use block display for normal horizontal layout */
+    transform: none; /* No need to slide the menu on large screens */
   }
   .navbar-nav {
-    height: 100%;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start; /* Ensure links are aligned to the left */
+  }
+  .nav-link {
+    padding-left: 1rem; /* Add space between links */
   }
 }
+/* Position the <ul> (navbar-nav) at top left */
+.navbar-nav {
+  position: absolute; /* Absolute positioning */
+  top: 0;
+  left: 0;
+  padding-left: 20px !important; /* Remove any default padding */
+  margin: 0; /* Remove any default margin */
+  list-style: none; /* Remove default list styling */
+}
+
 .hero-section {
   width: 100%;
   height: 100vh;
@@ -100,11 +146,6 @@ p {
   background-image: url("/src/assets/Background.png");
   background-size: cover; /* Ensures the background fills the container */
   background-repeat: no-repeat;
-}
-.hero-section h1 {
-  line-height: 40px;
-  font-size: 48px;
-  font-weight: 600;
 }
 .hero-section span {
   color: #ff6347;
@@ -170,7 +211,7 @@ p {
 }
 @media (max-width: 425px) {
   .image_2334 > .photo_2334 {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
   }
 }
