@@ -1,6 +1,15 @@
-import Button from "../common/buttons";
 import Navbar from "../common/navbar"; //
 import Image from "/src/assets/Professional_photo.png";
+
+// passing props to parents Home component
+// eslint-disable-next-line react/prop-types
+function Button({ label, name, onClick }) {
+  return (
+    <button className={`btn btn-${name}`} onClick={onClick}>
+      {label}
+    </button>
+  );
+}
 
 export default function Home() {
   return (
