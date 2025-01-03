@@ -1,5 +1,5 @@
 import Navbar from "../common/navbar"; //
-import Image from "/src/assets/Professional_photo.png";
+import Image from "/src/assets/ProfileHero.png";
 
 // passing props to parents Home component
 // eslint-disable-next-line react/prop-types
