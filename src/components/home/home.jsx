@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navbar from "../common/navbar"; //
 import Image from "/src/assets/ProfileHero.png";
 
@@ -12,9 +13,19 @@ function Button({ label, name, onClick }) {
 }
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Disable or enable body scrolling based on menu state
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   return (
     <div className="container-fluid hero-section">
-      <Navbar />
+      <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <div className="sectionControl">
         <div className="image_2334">
           <img className="photo_2334" src={Image} alt="Profile" />
@@ -31,7 +42,7 @@ export default function Home() {
           <Button label="Contact Info" name="Contact" onClick={() => {}} />
           <Button label="Download CV" name="Cv" onClick={() => {}} />
         </div>
-        <div className="downArrow_2334">
+        <div className={`downArrow_2334 ${isMenuOpen ? "hidden" : ""}`}>
           <i className="fa-solid fa-arrow-down"></i>
         </div>
       </div>
