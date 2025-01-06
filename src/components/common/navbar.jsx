@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-
 // eslint-disable-next-line react/prop-types
 export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   // Toggle menu open state
@@ -10,6 +9,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
   // Navigation links
   const navLinks = useMemo(
     () => [
