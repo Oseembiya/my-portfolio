@@ -14,7 +14,6 @@ function Button({ label, name, onClick }) {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   // Disable or enable body scrolling based on menu state
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
