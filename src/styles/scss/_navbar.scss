@@ -60,53 +60,26 @@
 
 /* Navbar collapse */
 .navbar-collapse {
-  position: fixed; /* Fixed position to cover the full screen */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
-  width: 100%; /* Full width */
-  height: 100vh; /* Full height of the viewport */
-  z-index: 1050; /* Ensure it's above other content */
-  transform: translateY(-100%); /* Initially hidden above the viewport */
-  transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Slight transparency with dark background */
-}
-
-/* When the navbar-collapse is shown, slide it into view */
-.navbar-collapse.show {
-  transform: translateY(0); /* Slide into view */
-}
-
-/* Media Queries */
-@media (min-width: 992px) {
-  .navbar-collapse {
-    position: static; /* Remove fixed positioning on larger screens */
-    background-color: transparent; /* Remove background color on large screens */
-    text-align: left; /* Align text to the left on larger screens */
-    display: block; /* Use block display for normal horizontal layout */
-    transform: none; /* No need to slide the menu on large screens */
-  }
-
-  .navbar-nav {
-    display: flex;
-    justify-content: flex-start; /* Ensure links are aligned to the left */
-  }
-
-  .nav-link {
-    padding-left: 1rem; /* Add space between links */
-  }
-}
-
-/* Position the <ul> (navbar-nav) at top left */
-.navbar-nav {
-  position: absolute; /* Absolute positioning */
+  position: fixed;
   top: 0;
   left: 0;
-  padding-left: 20px !important; /* Remove any default padding */
-  margin: 0; /* Remove any default margin */
-  list-style: none; /* Remove default list styling */
+  width: 100%;
+  height: 100vh;
+  z-index: 1050; /* Ensure it's above other content */
+  transform: translateX(100%); /* Initially hidden above the viewport */
+  transition: transform 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.navbar-collapse.show {
+  transform: translateX(0);
+}
+
+.navbar-nav {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  text-align: start;
+  width: 30%;
+  font-size: 26px;
+  font-weight: 400;
 }
