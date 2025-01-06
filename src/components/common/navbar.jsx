@@ -1,26 +1,15 @@
-import { useState, useEffect, useMemo } from "react";
+import { useMemo } from "react";
 
-export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+// eslint-disable-next-line react/prop-types
+export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   // Toggle menu open state
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
-
   // Close the menu explicitly
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
-  // Disable or enable body scrolling based on menu state
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMenuOpen]);
-
   // Navigation links
   const navLinks = useMemo(
     () => [
