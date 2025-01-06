@@ -1,24 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function Navbar() {
-  const [openBtn, setOpenBtn] = useState(false); // Manage the state for the hamburger button
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Toggle function to open and close the hamburger button
-  const closeBtn = () => {
-    setOpenBtn(!openBtn);
+  // Toggle menu open state
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
-  // Function to close the navbar when a link is clicked
-  const closeNavbar = () => {
-    setOpenBtn(false); // Close the menu when a link is clicked
+  // Close the menu explicitly
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
-  const navlinks = [
-    { id: "1", href: "#home", label: "Home" },
-    { id: "2", href: "#about", label: "About" },
-    { id: "3", href: "#projects", label: "Projects" },
-    { id: "4", href: "#contact", label: "Contact" },
-  ];
+  // Disable or enable body scrolling based on menu state
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  // Navigation links
+  const navLinks = useMemo(
+    () => [
+      { id: "1", href: "#home", label: "Home" },
+      { id: "2", href: "#about", label: "About" },
+      { id: "3", href: "#projects", label: "Projects" },
+      { id: "4", href: "#contact", label: "Contact" },
+    ],
+    []
+  );
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -29,30 +41,25 @@ export default function Navbar() {
         <button
           className="navbar-toggler custom-toggler"
           type="button"
-          onClick={closeBtn} // Toggle the hamburger button
-          aria-expanded={openBtn ? "true" : "false"}
+          onClick={toggleMenu}
+          aria-expanded={isMenuOpen ? "true" : "false"}
           aria-label="Toggle navigation"
         >
-          {openBtn ? (
+          {isMenuOpen ? (
             <i className="bi bi-x-lg icon-white"></i>
           ) : (
             <span className="navbar-toggler-icon"></span>
           )}
         </button>
-        {/* Rendering the navbar links */}
         <div
-          className={`navbar-collapse ${openBtn ? "show" : ""}`} // Apply 'show' class when button is clicked
+          className={`navbar-collapse ${isMenuOpen ? "show" : ""}`}
           id="navbarNav"
         >
           <ul className="navbar-nav">
-            {navlinks.map((link, id) => (
+            {navLinks.map(({ id, href, label }) => (
               <li className="nav-item ps-lg-3" key={id}>
-                <a
-                  className="nav-link"
-                  href={link.href}
-                  onClick={closeNavbar} // Close the navbar when a link is clicked
-                >
-                  {link.label}
+                <a className="nav-link" href={href} onClick={closeMenu}>
+                  {label}
                 </a>
               </li>
             ))}
