@@ -102,7 +102,7 @@ a {
   z-index: 1050; /* Ensure it's above other content */
   transform: translateX(100%); /* Initially hidden above the viewport */
   transition: transform 0.3s ease-in-out;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #00262b;
 }
 
 .navbar-collapse.show {
@@ -167,15 +167,18 @@ a {
 }
 
 .downArrow_2334 {
-  position: fixed; /* Fix to viewport */
-  bottom: 20px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
-  z-index: 1000; /* Ensure it stays on top */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.downArrow_2334.hidden {
+  display: none !important;
 }
 
 .downArrow_2334 i {
-  font-size: 2rem; /* Adjust size as needed */
-  color: #ff6347; /* Icon color */
+  font-size: 2rem;
+  color: #ff6347;
   animation: bounce 2s infinite; /* Bounce animation */
 }
 
