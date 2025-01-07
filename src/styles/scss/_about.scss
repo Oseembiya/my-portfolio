@@ -1,4 +1,12 @@
 @include media-query("md") {
+  .about_2335 {
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Centers content vertically */
+  }
   .aboutImg_2335 {
     width: 100%;
     max-height: 220px;
