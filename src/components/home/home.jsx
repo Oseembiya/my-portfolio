@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import Navbar from "../common/navbar"; //
 import Image from "/src/assets/ProfileHero.png";
 
-// passing props to parents Home component
 // eslint-disable-next-line react/prop-types
 function Button({ label, name, onClick }) {
   return (
-    <button className={`btn btn-${name}`} onClick={onClick}>
+    <button className={`btn btn-${name}`} onClick={onClick} aria-label={label}>
       {label}
     </button>
   );
@@ -14,6 +13,7 @@ function Button({ label, name, onClick }) {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // Disable or enable body scrolling based on menu state
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
@@ -22,8 +22,16 @@ export default function Home() {
     };
   }, [isMenuOpen]);
 
+  const handleContactClick = () => {
+    alert("Contact Info functionality to be implemented!");
+  };
+
+  const handleDownloadCV = () => {
+    alert("Download CV functionality to be implemented!");
+  };
+
   return (
-    <div className="container-fluid hero-section">
+    <div className="container-fluid hero-section" id="home">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <div className="sectionControl">
         <div className="image_2334">
@@ -38,8 +46,12 @@ export default function Home() {
           </h2>
         </div>
         <div className="btn_2334">
-          <Button label="Contact Info" name="Contact" onClick={() => {}} />
-          <Button label="Download CV" name="Cv" onClick={() => {}} />
+          <Button
+            label="Contact Info"
+            name="Contact"
+            onClick={handleContactClick}
+          />
+          <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
         </div>
         <div className={`downArrow_2334 ${isMenuOpen ? "hidden" : ""}`}>
           <i className="fa-solid fa-arrow-down"></i>
