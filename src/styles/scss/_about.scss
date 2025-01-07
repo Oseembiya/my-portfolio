@@ -1,15 +1,28 @@
 @include media-query("md") {
-  .about_2335 {
+  .about-2335 {
     padding: 20px;
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center; /* Centers content vertically */
   }
-  .aboutImg_2335 {
+  .aboutMe-2335 {
+    display: flex;
     width: 100%;
-    max-height: 220px;
-    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .content-2335 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
+  .Img-2335 {
+    width: 100%;
+    height: auto;
   }
 }
