@@ -52,6 +52,9 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
                 </a>
               </li>
             ))}
+            <button className="navBtn " type="button" onClick={closeMenu}>
+              Download Cv
+            </button>
           </ul>
         </div>
       </div>
