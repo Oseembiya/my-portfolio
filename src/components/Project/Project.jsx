@@ -31,13 +31,12 @@ export default function Project() {
   };
 
   return (
-    <div className="container-fluid projectMain_2336">
+    <div className="container-fluid projectMain_2336 " id="projects">
       <h1>Project Showcase</h1>
 
       {/* Swappable Section Titles */}
       <div
         className="showList_2336"
-        id="#projects"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
