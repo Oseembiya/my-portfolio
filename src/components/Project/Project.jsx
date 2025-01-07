@@ -37,6 +37,7 @@ export default function Project() {
       {/* Swappable Section Titles */}
       <div
         className="showList_2336"
+        id="#projects"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
