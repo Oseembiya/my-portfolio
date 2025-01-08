@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   const handleDownloadCV = () => {
-    alert("Thanks for taking time viewing My CV");
+    alert("Thanks For Viewing My CV");
   };
 
   return (
