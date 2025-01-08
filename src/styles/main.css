@@ -238,8 +238,8 @@ a {
 }
 @media (max-width: 768px) {
   .about-2335 {
-    padding: 20px;
-    height: auto;
+    padding-top: 3rem;
+    height: 100vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -249,17 +249,44 @@ a {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 40px;
   }
   .aboutMe-2335 {
     display: flex;
     width: 100%;
     flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
+    justify-content: space-around;
+    -moz-column-gap: 100px;
+         column-gap: 100px;
   }
-  .Img-2335 {
+  .category-btn {
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--color-text-primary);
+    background-color: transparent;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease, -webkit-text-decoration 0.2s ease;
+    transition: text-decoration 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease;
+    transition: text-decoration 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease, -webkit-text-decoration 0.2s ease;
+    position: relative; /* To position the underline */
+  }
+  /* Underline when button is clicked */
+  .category-btn:focus,
+  .category-btn:active,
+  .category-btn:hover {
+    color: #e22200;
+  }
+  .category-btn:active::after,
+  .category-btn:focus::after {
+    content: ""; /* Required for creating a pseudo-element */
+    position: absolute;
+    bottom: -5px; /* Adjust space between button and underline */
+    left: 0;
     width: 100%;
-    height: auto;
+    height: 2px; /* Thickness of the underline */
+    background-color: #e22200; /* Customize the underline color */
+    transition: width 0.2s ease;
   }
 }/*# sourceMappingURL=main.css.map */
