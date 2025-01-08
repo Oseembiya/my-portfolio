@@ -1,25 +1,30 @@
-//import { useState } from "react";
 import AboutMeData from "./aboutMeData";
 
 export default function About() {
-  // const [next, setNext] = useState(false);
-
   return (
     <div className="container-fluid about-2335" id="about">
       <h4>Who I am</h4>
       <div className="content-2335">
+        {/* Render the main "aboutMe" headings */}
         <div className="aboutMe-2335">
           {AboutMeData.map((aboutMe, index) => (
-            <div key={index}>{aboutMe.aboutMe}</div>
+            <button className="button" key={index}>
+              {aboutMe.aboutMe}
+            </button>
           ))}
         </div>
-        <div className="aboutImg-2335">
-          {AboutMeData[0].aboutMeDetails.map((aboutMeDetails, index) => (
-            <div key={index}>
-              <p> {aboutMeDetails.aboutMeDetails}</p>
-            </div>
-          ))}
-        </div>
+
+        {/* Render the "aboutMeDetails" for each "aboutMe" */}
+        {/*    <div className="aboutImg-2335">
+          {AboutMeData.map((aboutMe, aboutIndex) =>
+            aboutMe.aboutMeDetails.map((detail, detailIndex) => (
+              <div key={`${aboutIndex}-${detailIndex}`}>
+                <p>{detail.intro}</p>
+                <p>Grade: {detail.grade}</p>
+              </div>
+            ))
+          )}
+        </div> */}
       </div>
     </div>
   );

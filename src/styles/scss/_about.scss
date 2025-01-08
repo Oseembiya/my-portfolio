@@ -7,20 +7,21 @@
     flex-direction: column;
     align-items: center; /* Centers content vertically */
   }
-  .aboutMe-2335 {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
-  }
-
   .content-2335 {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: nowrap;
   }
+
+  .aboutMe-2335 {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+
   .Img-2335 {
     width: 100%;
     height: auto;
