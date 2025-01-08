@@ -8,23 +8,23 @@ export default function About() {
         {/* Render the main "aboutMe" headings */}
         <div className="aboutMe-2335">
           {AboutMeData.map((aboutMe, index) => (
-            <button className="button" key={index}>
+            <button className="category-btn" key={index}>
               {aboutMe.aboutMe}
             </button>
           ))}
         </div>
 
         {/* Render the "aboutMeDetails" for each "aboutMe" */}
-        {/*    <div className="aboutImg-2335">
+        <div className="aboutImg-2335">
           {AboutMeData.map((aboutMe, aboutIndex) =>
             aboutMe.aboutMeDetails.map((detail, detailIndex) => (
               <div key={`${aboutIndex}-${detailIndex}`}>
                 <p>{detail.intro}</p>
-                <p>Grade: {detail.grade}</p>
+                <p>{detail.grade}</p>
               </div>
             ))
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );
