@@ -8,7 +8,7 @@ const AboutMeDetails = [
       },
       {
         year: "2020-2022",
-        course: "Btec in information Technology ",
+        course: "BTEC Level 3 In Information Technology ",
       },
       {
         year: "2022-2025",
@@ -21,7 +21,8 @@ const AboutMeDetails = [
     aboutMe: "Experience",
     aboutMeDetails: [
       {
-        intro: "",
+        year: "",
+        course: "",
       },
     ],
   },
