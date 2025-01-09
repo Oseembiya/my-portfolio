@@ -265,28 +265,37 @@ a {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    color: var(--color-text-primary);
+    font-weight: 600;
+    color: #00262b;
     background-color: transparent;
     transition: color 0.2s ease, text-decoration-color 0.2s ease, -webkit-text-decoration 0.2s ease;
     transition: text-decoration 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease;
     transition: text-decoration 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease, -webkit-text-decoration 0.2s ease;
     position: relative; /* To position the underline */
   }
-  /* Underline when button is clicked */
-  .category-btn:focus,
-  .category-btn:active,
   .category-btn:hover {
     color: #e22200;
   }
-  .category-btn:active::after,
-  .category-btn:focus::after {
-    content: ""; /* Required for creating a pseudo-element */
+  /* Underline for the active button */
+  .category-btn.active::after {
+    content: "";
     position: absolute;
     bottom: -5px; /* Adjust space between button and underline */
     left: 0;
     width: 100%;
     height: 2px; /* Thickness of the underline */
     background-color: #e22200; /* Customize the underline color */
-    transition: width 0.2s ease;
+  }
+  .category-btn.active,
+  .category-btn.active::after {
+    transition: width 0.2s ease, color #e22200, background-color 0.2s ease;
+  }
+  .aboutImg-2335 img {
+    max-width: 100%; /* Image will not exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+    -o-object-fit: cover;
+       object-fit: cover; /* Ensure the image covers the area neatly */
+    border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
+    margin-top: 10px; /* Optional: Spacing between content and image */
   }
 }/*# sourceMappingURL=main.css.map */
