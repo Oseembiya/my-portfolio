@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AboutMeData from "./aboutMeData";
+import image from "/src/assets/osee.jpeg";
 
 export default function About() {
   const [selectedCategory, setSelectedCategory] = useState(0);
@@ -7,25 +8,18 @@ export default function About() {
   return (
     <div className="container-fluid about-2335" id="about">
       <h4>Who I am</h4>
-      <div className="content-2335">
-        {/* Render the details for the selected category */}
+      <div className="aboutMeContent-2335">
         <div className="aboutImg-2335">
-          {AboutMeData[selectedCategory].aboutMeDetails.map(
-            (detail, detailIndex) => (
-              <div key={detailIndex}>
-                <p>{detail.intro}</p>
-                <p>{detail.grade}</p>
-                <img
-                  src={detail.image}
-                  alt={AboutMeData[selectedCategory].aboutMe}
-                />
-              </div>
-            )
-          )}
+          <p>
+            I am a passionate and dedicated Front-End Developer, ready to tackle
+            challenges and create innovative, user-friendly web experiences,
+            that drive results.
+          </p>
+          <img className="img" src={image} />
         </div>
 
         {/* Render the main "aboutMe" headings */}
-        <div className="aboutMe-2335">
+        <div className="contentList-2335 ">
           {AboutMeData.map((aboutMe, index) => (
             <button
               className={`category-btn ${
@@ -37,6 +31,17 @@ export default function About() {
               {aboutMe.aboutMe}
             </button>
           ))}
+        </div>
+        {/* Render the details for the selected category */}
+        <div className="content-2335">
+          {AboutMeData[selectedCategory].aboutMeDetails.map(
+            (detail, detailIndex) => (
+              <div key={detailIndex}>
+                <p className="year">{detail.year}</p>
+                <p>{detail.course}</p>
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>
