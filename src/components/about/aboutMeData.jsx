@@ -3,10 +3,16 @@ const AboutMeDetails = [
     aboutMe: "Eduction",
     aboutMeDetails: [
       {
-        intro:
-          "I am a passionate and dedicated Front-End Developer, ready to tackle challenges and create innovative, user-friendly web experiences, that drive results.",
-        grade: "First Class",
-        image: "/src/assets/osee.jpeg",
+        year: "2018-2020",
+        course: "Btec in information Technology ",
+      },
+      {
+        year: "2020-2022",
+        course: "Btec in information Technology ",
+      },
+      {
+        year: "2022-2025",
+        course: "Bachelor Degree In Computer Science",
       },
     ],
   },
@@ -16,7 +22,6 @@ const AboutMeDetails = [
     aboutMeDetails: [
       {
         intro: "",
-        image: "/src/assets/osee.jpeg",
       },
     ],
   },
