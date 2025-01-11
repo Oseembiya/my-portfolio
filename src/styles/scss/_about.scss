@@ -37,8 +37,7 @@
       font-weight: 400;
       color: $color-text-primary;
       background-color: transparent;
-      transition: text-decoration 0.2s ease, color 0.2s ease,
-        text-decoration-color 0.2s ease;
+      transition: all 0.2s ease, color 0.2s ease;
       position: relative; /* To position the underline */
     }
 
