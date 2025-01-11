@@ -32,10 +32,9 @@ h6 {
 
 p {
   font-family: $font-family-main;
-  font-size: $p-font-size;
-  font-weight: $p-font-weight;
+  font-size: 13px;
   color: $color-text-primary;
-  line-height: $line-height;
+  line-height: 1.6;
   margin-bottom: 1em;
 }
 a {
