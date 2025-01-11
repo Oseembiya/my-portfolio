@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Navbar from "../common/navbar"; //
+import Navbar from "../common/navbar";
 import Image from "/src/assets/ProfileHero.png";
 
 // eslint-disable-next-line react/prop-types
@@ -27,7 +27,16 @@ export default function Home() {
   };
 
   const handleDownloadCV = () => {
-    alert("Thanks For Viewing My CV");
+    const fileId = "1bfeEA8JVhijfKcpoZsr_oP9JZwNLvs4b"; // Extracted File ID
+    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+    // Create a link element and trigger the download
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = "Osee_Mbiya_CV.pdf"; // Suggested file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
