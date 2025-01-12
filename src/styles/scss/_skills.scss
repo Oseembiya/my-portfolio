@@ -1,0 +1,120 @@
+/* Center the entire Skills component */
+.skillsContent_2337 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skillsName {
+  text-align: center;
+  padding: 40px 0 20px;
+}
+
+.skills_2337 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8 columns for more items */
+  grid-template-rows: auto;
+  justify-content: center;
+  text-align: center;
+  gap: 50px 10px;
+  padding: 16px 0px;
+}
+
+/* Adjust the item positioning for new skills */
+.skills_2337 > div {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  border-radius: 10px;
+  color: $color-background-secondary;
+  background-color: $color-background-random;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Positioning of the items */
+.item-1 {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+}
+.item-2 {
+  grid-column: 4 / span 2;
+  grid-row: 1;
+}
+.item-3 {
+  grid-column: 6 / 8;
+  grid-row: 1;
+}
+.item-4 {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+.item-5 {
+  grid-column: 3 / 5;
+  grid-row: 2;
+}
+.item-6 {
+  grid-column: 5 / 7;
+  grid-row: 2;
+}
+.item-7 {
+  grid-column: 7 / 9;
+  grid-row: 2;
+}
+.item-8 {
+  grid-column: 2 / span 2;
+  grid-row: 3;
+}
+.item-9 {
+  grid-column: 4 / 6;
+  grid-row: 3;
+}
+.item-10 {
+  grid-column: 6 / 8;
+  grid-row: 3;
+}
+.item-11 {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+.item-12 {
+  grid-column: 3 / 5;
+  grid-row: 4;
+}
+.item-13 {
+  grid-column: 5 / 7;
+  grid-row: 4;
+}
+.item-14 {
+  grid-column: 7 / 9;
+  grid-row: 4;
+}
+.item-15 {
+  grid-column: 2 / 4;
+  grid-row: 5;
+}
+
+/* Font Awesome icon styling */
+.fa-brands {
+  font-size: 40px; /* Increase the size of the icon */
+}
+
+/* Fade-out class */
+.skills_2337 > div.fade {
+  opacity: 0;
+  transform: scale(0.8); /* Shrinks slightly during transition */
+}
+
+/* Icon styling */
+.skills_2337 > div i {
+  margin-bottom: 10px;
+}
+
+.skills_2337 > div p {
+  margin: 0;
+  font-size: 16px;
+}
