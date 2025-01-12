@@ -15,7 +15,7 @@ export default function About() {
             challenges and create innovative, user-friendly web experiences,
             that drive results.
           </p>
-          <img className="img" src={image} />
+          <img className="img" src={image} alt="Working on a laptop" />
         </div>
 
         {/* Render the main "aboutMe" headings */}
