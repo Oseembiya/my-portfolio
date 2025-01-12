@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./skills.css";
 
 // Updated skills data with 2 additional skills
 const skillsData = [
@@ -88,7 +87,7 @@ export default function Skills() {
   return (
     <div className="container-fluid skillsContent_2337">
       <div className="skillsName">
-        <h1>Tools and Technologies</h1>
+        <h4>Tools and Technologies</h4>
       </div>
       <div className="grid skills_2337">
         {currentSkills.map((skill, index) => (
