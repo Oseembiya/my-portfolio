@@ -44,7 +44,7 @@ export default function Home() {
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <div className="sectionControl">
         <div className="image_2334">
-          <img className="photo_2334" src={Image} alt="Profile" />
+          <img className="photo_2334" src={Image} alt="hero-Image" />
         </div>
         <div className="profile_2334">
           <h1>
