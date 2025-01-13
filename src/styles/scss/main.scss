@@ -32,7 +32,7 @@ h6 {
 
 p {
   font-family: $font-family-main;
-  font-size: 13px;
+  font-size: 13.5px;
   color: $color-text-primary;
   line-height: 1.6;
   margin-bottom: 1em;
@@ -45,3 +45,4 @@ a {
 @import "../scss/home"; // home
 @import "../scss/about"; //about
 @import "../scss/skills"; //skills set
+@import "../scss/project"; // project
