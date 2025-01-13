@@ -1,5 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import ProjectDetails from "./ProjectDetails"; // Import ProjectDetails
+
+function PaginationButton({ direction, onClick, disabled }) {
+  return (
+    <button
+      className={`pagination ${direction}`}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {direction === "left" ? "<<" : ">>"}
+    </button>
+  );
+}
 
 export default function Project() {
   const sections = ProjectDetails.map((section) => section.section); // Section names
@@ -29,8 +42,14 @@ export default function Project() {
     setIsSwiping(false);
   };
 
+  const handleNavigate = (newIndex) => {
+    if (newIndex >= 0 && newIndex < sections.length) {
+      setCurrentIndex(newIndex);
+    }
+  };
+
   return (
-    <div className="container-fluid projectMain_2336 " id="projects">
+    <div className="container-fluid projectMain-2336" id="projects">
       <h4>Project Showcase</h4>
 
       {/* Swappable Section Titles */}
@@ -48,8 +67,21 @@ export default function Project() {
           }}
         >
           {ProjectDetails.map((section, index) => (
-            <div key={index} className="slideList_2336">
+            <div key={index} className="slideList-2336">
+              <PaginationButton
+                direction="left"
+                onClick={() => handleNavigate(currentIndex - 1)}
+                disabled={currentIndex === 0}
+              />
+              {/* Section Title */}
               <h6>{section.section}</h6>
+
+              {/* Right Pagination */}
+              <PaginationButton
+                direction="right"
+                onClick={() => handleNavigate(currentIndex + 1)}
+                disabled={currentIndex === sections.length - 1}
+              />
             </div>
           ))}
         </div>
@@ -61,7 +93,7 @@ export default function Project() {
           <div key={index} className="projectItem_2336">
             {/* Image Section */}
             <div className="projectImage_2336">
-              <a href={project.href} target="_blank" rel="WebsiteLink">
+              <a href={project.href} target="_blank" rel="noopener noreferrer">
                 <img src={project.image} alt={project.projectName} />
               </a>
             </div>
@@ -99,17 +131,4 @@ export default function Project() {
       </div>
     </div>
   );
-}
-
-{
-  /* Pagination Dots 
-      <div className="pagination_2336">
-        {sections.map((_, index) => (
-          <span
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
-          ></span>
-        ))}
-      </div> */
 }
