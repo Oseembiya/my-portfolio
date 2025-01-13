@@ -26,7 +26,7 @@
     border-radius: 3px;
     color: $color-text-secondary;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 15px;
     width: 100%;
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease; /* Smooth transition for hover, active, and focus states */
@@ -90,7 +90,7 @@
 }
 
 @include media-query("sm") {
-  .image_2334 > .photo_2334 {
+  .photo_2334 {
     max-width: 90%;
     height: auto;
   }
@@ -104,7 +104,7 @@
     justify-content: start;
   }
   .image_2334 {
-    justify-content: center; /* Center the image horizontally */
+    justify-content: center;
     height: fit-content;
   }
 }
