@@ -1,38 +1,13 @@
 /* Center the entire Skills component */
-.skillsContent_2337 {
+.skillsContent-2337 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
 
-.skillsName {
-  text-align: center;
-  padding: 20px 0 20px;
-}
-
-.skills_2337 {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr); /* 8 columns for more items */
-  grid-template-rows: auto;
-  justify-content: center;
-  text-align: center;
-  gap: 50px 10px;
-  padding: 16px 0px;
-}
-
-/* Adjust the item positioning for new skills */
-.skills_2337 div {
-  font-size: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90px;
-  border-radius: 10px;
-  color: $color-text-primary;
-  transition: opacity 1s ease, transform 1s ease;
-  opacity: 1;
-  transform: scale(1);
+  .skills-title {
+    text-align: center;
+    padding: 20px 0 20px;
+  }
 }
 
 /* Positioning of the items */
@@ -103,17 +78,46 @@
 }
 
 /* Fade-out class */
-.skills_2337 > div.fade {
+.skills-2337 > div.fade {
   opacity: 0;
   transform: scale(0.8); /* Shrinks slightly during transition */
 }
 
 /* Icon styling */
-.skills_2337 > div i {
+.skills-2337 > div i {
   margin-bottom: 10px;
 }
 
-.skills_2337 > div p {
+.skills-2337 > div p {
   margin: 0;
   font-size: 16px;
+}
+
+@include media-query("md") {
+  .skillsContent-2337 {
+    max-height: 500px;
+  }
+
+  .skills-2337 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 columns for more items */
+    grid-template-rows: auto;
+    justify-content: center;
+    text-align: center;
+    gap: 50px 10px;
+    padding: 16px 0px;
+
+    /* Adjust the item positioning for new skills */
+    div {
+      font-size: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $color-text-primary;
+      transition: opacity 1s ease, transform 1s ease;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 }
