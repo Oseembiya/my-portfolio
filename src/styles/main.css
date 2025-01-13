@@ -448,10 +448,11 @@ a {
     transform: scale(1);
   }
 }
-.projectMain_2336 {
+.projectMain-2336 {
+  padding-top: 2rem;
   text-align: center;
-  background-color: var(--color-background-third);
-  color: var(--color-text-primary);
+  background-color: #fef4ea;
+  color: #00262b;
 }
 
 .projects_2336 {
@@ -471,16 +472,45 @@ a {
   transition: transform 0.3s ease-in-out; /* Smooth sliding */
 }
 
-.slideList_2336 {
+.slideList-2336 {
+  display: flex;
   flex: 0 0 100%; /* Each slide takes up full width */
   padding: 20px;
   text-align: center;
+  justify-content: space-evenly;
+}
+.slideList-2336 h6 {
+  margin-bottom: 0px;
+  align-content: center;
+}
+.slideList-2336 .pagination {
+  border: none;
+  background-color: transparent;
+  color: #ff6347;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.slideList-2336 .pagination:hover:not(:disabled), .slideList-2336 .pagination:focus:not(:disabled) {
+  color: #ffb9ad;
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+.slideList-2336 .pagination:active:not(:disabled) {
+  transform: scale(0.95);
+}
+.slideList-2336 .pagination:disabled {
+  color: gray;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .showList_2336 {
   width: 100%;
   overflow: hidden;
-  border: solid var(--color-text-primary);
+  border: solid #00262b;
   background-color: #f0f0f0;
   border-radius: 10px;
   margin-top: 20px;
@@ -505,7 +535,7 @@ a {
 }
 
 .fa-duotone::before {
-  color: var(--color-text-random);
+  color: #ff6347;
   margin-right: 5px;
 }
 
@@ -528,26 +558,4 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-/*
-  .pagination_2336 {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .pagination_2336 .dot {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .pagination_2336 .dot.active {
-    background-color: #333;
-  }
-  *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
