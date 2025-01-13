@@ -296,10 +296,18 @@ a {
   .contentList-2335 .category-btn.active::after {
     transition: width 0.2s ease, color #e22200, background-color 0.2s ease;
   }
-  .content-2335 .year {
-    color: #e22200;
-    font-weight: bold;
-    margin-bottom: 0px;
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-bottom: 1rem;
+  }
+  .card-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
   }
 }
 /* Center the entire Skills component */
@@ -311,7 +319,7 @@ a {
 
 .skillsName {
   text-align: center;
-  padding: 40px 0 20px;
+  padding: 20px 0 20px;
 }
 
 .skills_2337 {
@@ -325,7 +333,7 @@ a {
 }
 
 /* Adjust the item positioning for new skills */
-.skills_2337 > div {
+.skills_2337 div {
   font-size: 40px;
   display: flex;
   flex-direction: column;
@@ -334,7 +342,6 @@ a {
   height: 90px;
   border-radius: 10px;
   color: #00262b;
-  background-color: #f1f1f1;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 1;
   transform: scale(1);

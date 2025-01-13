@@ -36,9 +36,9 @@ export default function About() {
         <div className="content-2335">
           {AboutMeData[selectedCategory].aboutMeDetails.map(
             (detail, detailIndex) => (
-              <div key={detailIndex}>
-                <p className="year">{detail.year}</p>
-                <p>{detail.course}</p>
+              <div className="card" key={detailIndex}>
+                <h4>{detail.year}</h4>
+                <p className="card-subtitle">{detail.course}</p>
               </div>
             )
           )}
