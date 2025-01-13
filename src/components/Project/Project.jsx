@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Project.css";
 import ProjectDetails from "./ProjectDetails"; // Import ProjectDetails
 
 export default function Project() {
@@ -32,7 +31,7 @@ export default function Project() {
 
   return (
     <div className="container-fluid projectMain_2336 " id="projects">
-      <h1>Project Showcase</h1>
+      <h4>Project Showcase</h4>
 
       {/* Swappable Section Titles */}
       <div
