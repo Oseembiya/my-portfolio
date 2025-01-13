@@ -85,11 +85,11 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="container-fluid skillsContent_2337">
-      <div className="skillsName">
+    <div className="container-fluid skillsContent-2337">
+      <div className="skills-title">
         <h4>Tools and Technologies</h4>
       </div>
-      <div className="grid skills_2337">
+      <div className="grid skills-2337">
         {currentSkills.map((skill, index) => (
           <div
             key={skillsData[index].id}
