@@ -1,7 +1,8 @@
-.projectMain_2336 {
+.projectMain-2336 {
+  padding-top: 2rem;
   text-align: center;
-  background-color: var(--color-background-third);
-  color: var(--color-text-primary);
+  background-color: $color-background-third;
+  color: $color-text-primary;
 }
 
 .projects_2336 {
@@ -19,16 +20,50 @@
   display: flex;
   transition: transform 0.3s ease-in-out; /* Smooth sliding */
 }
-.slideList_2336 {
+.slideList-2336 {
+  display: flex;
   flex: 0 0 100%; /* Each slide takes up full width */
   padding: 20px;
   text-align: center;
+  justify-content: space-evenly;
+
+  h6 {
+    margin-bottom: 0px;
+    align-content: center;
+  }
+  .pagination {
+    border: none;
+    background-color: transparent;
+    color: $color-text-random;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      color: lighten($color-text-random, 20%);
+      background-color: rgba(0, 0, 0, 0.1);
+      outline: none;
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95); // Slight scale down for click feedback
+    }
+
+    &:disabled {
+      color: gray; // Disabled buttons should be gray or faded
+      cursor: not-allowed; // Show "not-allowed" cursor
+      opacity: 0.5; // Reduce visibility for disabled state
+    }
+  }
 }
 
 .showList_2336 {
   width: 100%;
   overflow: hidden;
-  border: solid var(--color-text-primary);
+  border: solid $color-text-primary;
   background-color: #f0f0f0;
   border-radius: 10px;
   margin-top: 20px;
@@ -52,7 +87,7 @@
 }
 
 .fa-duotone::before {
-  color: var(--color-text-random);
+  color: $color-text-random;
   margin-right: 5px;
 }
 
@@ -74,25 +109,3 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-/*
-  .pagination_2336 {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  
-  .pagination_2336 .dot {
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .pagination_2336 .dot.active {
-    background-color: #333;
-  }
-  */
