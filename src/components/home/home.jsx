@@ -62,9 +62,6 @@ export default function Home() {
           />
           <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
         </div>
-        <div className={`downArrow_2334 ${isMenuOpen ? "hidden" : ""}`}>
-          <i className="fa-solid fa-arrow-down"></i>
-        </div>
       </div>
     </div>
   );
