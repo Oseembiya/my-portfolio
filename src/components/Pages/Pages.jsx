@@ -2,6 +2,7 @@ import Home from "../home/home";
 import About from "../about/about";
 import Skills from "../common/SkillSet/skills";
 import Project from "../Project/Project";
+import Contact from "../contactMe/contact";
 
 export default function Pages() {
   return (
@@ -10,6 +11,7 @@ export default function Pages() {
       <About />
       <Skills />
       <Project />
+      <Contact />
     </>
   );
 }
