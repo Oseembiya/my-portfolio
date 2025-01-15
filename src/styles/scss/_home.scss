@@ -55,40 +55,6 @@
   }
 }
 
-.downArrow_2334 {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-
-  &.hidden {
-    display: none !important;
-  }
-}
-
-.downArrow_2334 i {
-  font-size: 2rem;
-  color: $color-text-random;
-  animation: bounce 2s infinite; /* Bounce animation */
-}
-
-/* Keyframes for Bounce Animation */
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px); /* Move up */
-  }
-  60% {
-    transform: translateY(-5px); /* Move slightly up */
-  }
-}
-
 @include media-query("sm") {
   .photo_2334 {
     max-width: 90%;
