@@ -1,6 +1,8 @@
 .contactMe-2338 {
+  position: relative;
+  height: 100vh;
   text-align: center;
-  padding: 40px;
+  padding: 20px 20px 0px;
   background-color: #f9f9f9;
   color: $color-text-primary;
 }
@@ -28,16 +30,18 @@
   margin-top: 20px;
   display: flex;
   gap: 15px;
-}
 
-.socialMedia-2338 a {
-  font-size: 20px;
-  color: #ff6347;
-  transition: color 0.3s ease;
-}
-
-.socialMedia-2338 a:hover {
-  color: #e33d20;
+  i {
+    font-size: 32px;
+  }
+  a {
+    font-size: 20px;
+    color: #ff6347;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #e33d20;
+  }
 }
 
 .contactContent-2338 {
@@ -60,32 +64,12 @@
   text-align: left;
 }
 
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: $color-text-random;
-  box-shadow: 0 0 5px rgb(227, 61, 32);
-}
-
 .submitButton-2338 {
+  width: 50%;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: $color-background-secondary;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -93,7 +77,7 @@ textarea:focus {
 }
 
 .submitButton-2338:hover {
-  background-color: #0056b3;
+  background-color: #e33d20;
 }
 
 .thankYouMessage {
@@ -101,19 +85,44 @@ textarea:focus {
   color: green;
   font-weight: bold;
 }
-
 .downArrow-2338 {
-  margin-top: 30px;
+  position: absolute;
+  right: 20px;
+  bottom: 105px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: $color-background-secondary;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .downArrow-2338 a {
   text-decoration: none;
-  font-size: 24px;
-  color: #007bff;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: white;
 }
 
-.downArrow-2338 a:hover {
-  color: #0056b3;
+.downArrow-2338:hover {
   transform: translateY(-5px);
+  background-color: $color-text-random;
+}
+
+.allRight-2338 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+
+.allRight-2338 p {
+  margin: 0;
 }
