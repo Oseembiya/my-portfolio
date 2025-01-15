@@ -316,6 +316,7 @@ a {
 }
 /* Center the entire Skills component */
 .skillsContent-2337 {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -477,7 +478,7 @@ a {
   flex: 0 0 100%; /* Each slide takes up full width */
   padding: 20px;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .slideList-2336 h6 {
   margin-bottom: 0px;
@@ -558,4 +559,18 @@ a {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.contactMe-2338 {
+  height: 100vh;
+  background-color: #00262b;
+}
+
+@media (max-width: 425px) {
+  .contactMe-2338 {
+    max-height: 100%;
+    padding-top: 2rem;
+    text-align: center;
+    color: white;
+  }
 }/*# sourceMappingURL=main.css.map */
