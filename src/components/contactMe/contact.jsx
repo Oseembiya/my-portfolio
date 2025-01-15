@@ -1,31 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [showArrow, setShowArrow] = useState(false);
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  useEffect(() => {
+    const contactSection = document.querySelector(".contactMe-2338");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowArrow(entry.isIntersecting); // Show arrow only when .contactMe-2338 is visible
+      },
+      {
+        root: null, // Observe in the viewport
+        threshold: 0.5, // Trigger when at least 50% of the section is visible
+      }
+    );
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Message Submitted:", formData); // Replace with actual submission logic
-    setIsSubmitted(true);
+    if (contactSection) observer.observe(contactSection);
 
-    // Reset the form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
-  };
+    return () => {
+      if (contactSection) observer.unobserve(contactSection);
+    };
+  }, []);
 
   return (
     <div className="contactMe-2338" id="contact">
@@ -37,23 +33,27 @@ export default function Contact() {
         <div className="contactItem-2338">
           <i className="fa-solid fa-envelope"></i>
           <span>
-            Email: <a href="mailto:example@example.com">example@example.com</a>
+            Email: <a href="mailto:example@example.com">ozeembiya@gmail.com</a>
           </span>
         </div>
         <div className="contactItem-2338">
           <i className="fa-solid fa-phone"></i>
           <span>
-            Phone: <a href="tel:+1234567890">+123 456 7890</a>
+            Phone: <a href="tel:07884103424">+44788 410 3424</a>
           </span>
         </div>
         <div className="socialMedia-2338">
-          <a href="https://www.linkedin.com" target="_blank" rel="linkedin">
+          <a
+            href="https://www.linkedin.com/in/osee-mbiya-a96529177"
+            target="_blank"
+            rel="Linkedin"
+          >
             <i className="fa-brands fa-linkedin"></i>
           </a>
-          <a href="https://github.com" target="_blank" rel="github">
+          <a href="https://github.com/Oseembiya/" target="_blank" rel="Github">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="twitter">
+          <a href="https://twitter.com" target="_blank" rel="Twitter">
             <i className="fa-brands fa-twitter"></i>
           </a>
         </div>
@@ -62,7 +62,7 @@ export default function Contact() {
       {/* Contact Form */}
       <div className="contactContent-2338">
         <p>If you’d like to get in touch, please fill out the form below:</p>
-        <form className="contactForm-2338" onSubmit={handleSubmit}>
+        <form className="contactForm-2338">
           {/* Name Field */}
           <div className="formGroup-2338">
             <label htmlFor="name">Name</label>
@@ -70,8 +70,6 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
               placeholder="Enter your name"
               required
             />
@@ -84,8 +82,6 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               placeholder="Enter your email"
               required
             />
@@ -97,31 +93,31 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
               placeholder="Enter your message"
               rows="5"
               required
             ></textarea>
           </div>
 
+          {/* Submit Button */}
           <button type="submit" className="submitButton-2338">
             Submit
           </button>
         </form>
-
-        {/* Submission Feedback */}
-        {isSubmitted && (
-          <p className="thankYouMessage">
-            Thank you! Your message has been sent.
-          </p>
-        )}
       </div>
 
-      <div className="downArrow-2338">
-        <a href="#top">
-          <i className="fa-solid fa-arrow-up"></i>
-        </a>
+      {/* Down Arrow */}
+      {showArrow && (
+        <div className="downArrow-2338">
+          <a href="#top">
+            <i className="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      )}
+
+      {/* Footer */}
+      <div className="allRight-2338">
+        <p>© 2024 Your Company, Inc. All rights reserved.</p>
       </div>
     </div>
   );
