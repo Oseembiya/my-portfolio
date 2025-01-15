@@ -1,0 +1,13 @@
+.contactMe-2338 {
+  height: 100vh;
+  background-color: $color-background-secondary;
+}
+
+@include media-query("sm") {
+  .contactMe-2338 {
+    max-height: 100%;
+    padding-top: 2rem;
+    text-align: center;
+    color: white;
+  }
+}
