@@ -40,6 +40,26 @@ p {
 a {
   color: $color-text-secondary;
 }
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: $color-text-random;
+  box-shadow: 0 0 5px rgb(227, 61, 32);
+}
 
 @import "../scss/navbar"; // navbar
 @import "../scss/home"; // home
