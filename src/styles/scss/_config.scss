@@ -19,22 +19,42 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
-@mixin media-query($size) {
-  @if $size == "sm" {
-    @media (max-width: $breakpoint-sm) {
-      @content;
+@mixin media-query($size, $type: "max") {
+  @if $type == "max" {
+    @if $size == "sm" {
+      @media (max-width: $breakpoint-sm) {
+        @content;
+      }
+    } @else if $size == "md" {
+      @media (max-width: $breakpoint-md) {
+        @content;
+      }
+    } @else if $size == "lg" {
+      @media (max-width: $breakpoint-lg) {
+        @content;
+      }
+    } @else if $size == "xl" {
+      @media (max-width: $breakpoint-xl) {
+        @content;
+      }
     }
-  } @else if $size == "md" {
-    @media (max-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $size == "lg" {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
-  } @else if $size == "xl" {
-    @media (max-width: $breakpoint-xl) {
-      @content;
+  } @else if $type == "min" {
+    @if $size == "sm" {
+      @media (min-width: $breakpoint-sm) {
+        @content;
+      }
+    } @else if $size == "md" {
+      @media (min-width: $breakpoint-md) {
+        @content;
+      }
+    } @else if $size == "lg" {
+      @media (min-width: $breakpoint-lg) {
+        @content;
+      }
+    } @else if $size == "xl" {
+      @media (min-width: $breakpoint-xl) {
+        @content;
+      }
     }
   }
 }
