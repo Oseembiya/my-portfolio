@@ -218,6 +218,7 @@ textarea:focus {
     height: auto;
   }
 }
+
 @media (max-width: 768px) {
   .hero-section {
     height: -moz-fit-content;
@@ -226,12 +227,8 @@ textarea:focus {
     flex-direction: column;
     justify-content: start;
   }
-  .image_2334 {
-    justify-content: center;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
 }
+
 @media (max-width: 768px) {
   .about-2335 {
     padding-top: 2rem;
@@ -443,7 +440,7 @@ textarea:focus {
   }
 }
 .projectMain-2336 {
-  padding-top: 2rem;
+  padding: 20px !important;
   text-align: center;
   background-color: #fef4ea;
   color: #00262b;
@@ -664,9 +661,9 @@ textarea:focus {
 }
 
 .downArrow-2338 {
-  position: absolute;
+  position: fixed;
   right: 20px;
-  bottom: 105px;
+  bottom: 86px;
   z-index: 1000;
   display: flex;
   align-items: center;

@@ -55,22 +55,18 @@
   }
 }
 
-@include media-query("sm") {
-  .photo_2334 {
+.photo_2334 {
+  @include media-query("sm", "max") {
     max-width: 90%;
     height: auto;
   }
 }
 
-@include media-query("md") {
-  .hero-section {
+.hero-section {
+  @include media-query("md", "max") {
     height: fit-content;
     text-align: center;
     flex-direction: column;
     justify-content: start;
-  }
-  .image_2334 {
-    justify-content: center;
-    height: fit-content;
   }
 }
