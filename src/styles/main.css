@@ -229,6 +229,10 @@ textarea:focus {
   }
 }
 
+.about-2335 {
+  padding: 20px !important;
+}
+
 @media (max-width: 768px) {
   .about-2335 {
     padding-top: 2rem;
