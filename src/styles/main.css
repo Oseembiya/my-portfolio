@@ -229,10 +229,6 @@ textarea:focus {
   }
 }
 
-.about-2335 {
-  padding: 20px !important;
-}
-
 @media (max-width: 768px) {
   .about-2335 {
     padding-top: 2rem;
@@ -444,7 +440,6 @@ textarea:focus {
   }
 }
 .projectMain-2336 {
-  padding: 20px !important;
   text-align: center;
   background-color: #fef4ea;
   color: #00262b;
@@ -581,7 +576,7 @@ textarea:focus {
   position: relative;
   height: 100vh;
   text-align: center;
-  padding: 20px 20px 0px;
+  padding: 20px 12px 0px;
   background-color: #f9f9f9;
   color: #00262b;
 }
