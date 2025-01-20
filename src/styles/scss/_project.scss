@@ -1,7 +1,55 @@
 .projectMain-2336 {
+  padding: 20px 12px 0px;
   text-align: center;
   background-color: $color-background-third;
   color: $color-text-primary;
+}
+
+.main-2336 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.showCase_2336 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+
+  .slideList-2336 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 20%;
+    overflow: hidden;
+
+    .slideButton-2336 {
+      width: 100%;
+      padding: 16px 0px;
+      border: 1px solid $color-background-secondary;
+      background-color: transparent;
+      color: $color-text-primary;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $color-background-secondary;
+        color: $color-text-secondary;
+      }
+
+      &.active {
+        background-color: $color-background-secondary;
+        color: $color-text-secondary;
+      }
+    }
+  }
 }
 
 .projects_2336 {
@@ -13,60 +61,6 @@
   overflow: hidden;
   padding: 30px 0px;
 }
-
-.showCase_2336 {
-  display: flex;
-  transition: transform 0.3s ease-in-out; /* Smooth sliding */
-}
-.slideList-2336 {
-  display: flex;
-  flex: 0 0 100%; /* Each slide takes up full width */
-  padding: 20px;
-  text-align: center;
-  justify-content: space-between;
-
-  h6 {
-    margin-bottom: 0px;
-    align-content: center;
-  }
-  .pagination {
-    border: none;
-    background-color: transparent;
-    color: $color-text-random;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 8px 12px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-
-    &:hover:not(:disabled),
-    &:focus:not(:disabled) {
-      color: lighten($color-text-random, 20%);
-      background-color: rgba(0, 0, 0, 0.1);
-      outline: none;
-    }
-
-    &:active:not(:disabled) {
-      transform: scale(0.95); // Slight scale down for click feedback
-    }
-
-    &:disabled {
-      color: gray; // Disabled buttons should be gray or faded
-      cursor: not-allowed; // Show "not-allowed" cursor
-      opacity: 0.5; // Reduce visibility for disabled state
-    }
-  }
-}
-
-.showList_2336 {
-  width: 100%;
-  overflow: hidden;
-  border: solid $color-text-primary;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-
 .projectImage_2336 {
   width: 100%;
   text-align: center;
@@ -75,7 +69,6 @@
   transition: transform 0.3s ease;
   border-radius: 18px;
 }
-
 .projectImage_2336:hover {
   transform: translateY(-5px);
 }
@@ -84,12 +77,10 @@
   max-height: auto;
   border-radius: 10px;
 }
-
 .fa-duotone::before {
   color: $color-text-random;
   margin-right: 5px;
 }
-
 .projectItem_2336 {
   display: flex;
   flex-direction: column;
@@ -111,9 +102,6 @@
 .main-2336 {
   @include media-query("md", "min") {
     flex-direction: column;
-    .showList_2336 {
-      max-height: fit-content;
-    }
     .projects_2336 {
       display: block;
       width: 100%;
