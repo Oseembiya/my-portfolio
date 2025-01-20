@@ -79,42 +79,47 @@ textarea:focus {
   font-weight: bold;
   text-align: end;
   padding-top: 1rem !important;
-  /* Custom toggler button (hamburger) */
-  /* Navbar toggler icon */
-  /* Icon on close (X) */
 }
 .navbar .navbar-brand {
   position: relative;
   z-index: 3;
-}
-.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: #ffffff;
 }
-.navbar div a {
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+  color: currentColor;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+.navbar-nav .nav-link {
   position: relative;
   color: #ffffff;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-.navbar div .nav-link:hover, .navbar div .nav-link:focus {
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
   color: #ff6347;
 }
-.navbar .custom-toggler {
-  padding: 0;
+.navbar-nav .hireMe-Btn {
+  padding: 9px 18px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #e22200;
   border: none;
-  background: none;
-  outline: none;
-  font-size: 1rem;
-  cursor: pointer;
-  z-index: 1060; /* Ensure it is on top of collapsed menu */
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 1rem;
 }
-.navbar .custom-toggler:active, .navbar .custom-toggler:focus {
-  box-shadow: none;
-}
-.navbar .navbar-toggler-icon {
+
+/* Navbar toggler icon */
+.navbar-toggler-icon {
   background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
   transition: transform 0.6s ease-in-out;
 }
-.navbar .icon-white {
+
+/* Icon on close (X) */
+.icon-white {
   color: #ff6347;
   font-size: 26.4px;
 }
@@ -142,28 +147,26 @@ textarea:focus {
     font-weight: 400;
     z-index: 1050;
   }
-  .navbar-collapse .navBtn {
-    margin-top: 2rem;
-    padding: 16px;
-    border-radius: 3px;
-    color: #ffffff;
-    background-color: #e22200;
-    border: none;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-  }
   .navbar-collapse.show {
     transform: translateX(0);
   }
-}
-@media (max-width: 992px) {
-  .navbar {
-    z-index: 1050;
+  /* Custom toggler button (hamburger) */
+  .hamburger_btn {
+    padding: 0;
+    border: none !important;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1060; /* Ensure it is on top of collapsed menu */
+  }
+  .hamburger_btn:active, .hamburger_btn:focus {
+    box-shadow: none;
+    border: none !important;
+    outline: none !important;
   }
 }
 .hero-section {
-  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -440,9 +443,53 @@ textarea:focus {
   }
 }
 .projectMain-2336 {
+  padding: 20px 12px 0px;
   text-align: center;
   background-color: #fef4ea;
   color: #00262b;
+}
+
+.main-2336 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.showCase_2336 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+.showCase_2336 .slideList-2336 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 20%;
+  overflow: hidden;
+}
+.showCase_2336 .slideList-2336 .slideButton-2336 {
+  width: 100%;
+  padding: 16px 0px;
+  border: 1px solid #00262b;
+  background-color: transparent;
+  color: #00262b;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+.showCase_2336 .slideList-2336 .slideButton-2336:hover {
+  background-color: #00262b;
+  color: #ffffff;
+}
+.showCase_2336 .slideList-2336 .slideButton-2336.active {
+  background-color: #00262b;
+  color: #ffffff;
 }
 
 .projects_2336 {
@@ -453,55 +500,6 @@ textarea:focus {
   justify-content: space-around;
   overflow: hidden;
   padding: 30px 0px;
-}
-
-.showCase_2336 {
-  display: flex;
-  transition: transform 0.3s ease-in-out; /* Smooth sliding */
-}
-
-.slideList-2336 {
-  display: flex;
-  flex: 0 0 100%; /* Each slide takes up full width */
-  padding: 20px;
-  text-align: center;
-  justify-content: space-between;
-}
-.slideList-2336 h6 {
-  margin-bottom: 0px;
-  align-content: center;
-}
-.slideList-2336 .pagination {
-  border: none;
-  background-color: transparent;
-  color: #ff6347;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 8px 12px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-.slideList-2336 .pagination:hover:not(:disabled), .slideList-2336 .pagination:focus:not(:disabled) {
-  color: #ffb9ad;
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-.slideList-2336 .pagination:active:not(:disabled) {
-  transform: scale(0.95);
-}
-.slideList-2336 .pagination:disabled {
-  color: gray;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.showList_2336 {
-  width: 100%;
-  overflow: hidden;
-  border: solid #00262b;
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  margin-top: 20px;
 }
 
 .projectImage_2336 {
@@ -552,10 +550,6 @@ textarea:focus {
 @media (min-width: 768px) {
   .main-2336 {
     flex-direction: column;
-  }
-  .main-2336 .showList_2336 {
-    max-height: -moz-fit-content;
-    max-height: fit-content;
   }
   .main-2336 .projects_2336 {
     display: block;
@@ -680,6 +674,7 @@ textarea:focus {
 .downArrow-2338 a {
   text-decoration: none;
   color: white;
+  width: 30px;
 }
 
 .downArrow-2338:hover {
