@@ -1,6 +1,6 @@
 const ProjectDetails = [
   {
-    section: "Front-End Developer",
+    section: "Front-End ",
     projects: [
       {
         projectName: "School Activities",
