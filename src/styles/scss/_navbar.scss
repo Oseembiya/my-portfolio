@@ -11,58 +11,53 @@
   .navbar-brand {
     position: relative;
     z-index: 3;
+    color: $color-text-secondary;
     &:hover,
     &:focus {
-      color: $color-text-secondary; // Change color on hover/focus
+      color: currentColor;
     }
-  }
-
-  div {
-    a {
-      position: relative;
-      color: $color-text-secondary; // Use a secondary text color
-      transition: color 0.3s ease, transform 0.3s ease; // Smooth color and transform transitions
-    }
-
-    .nav-link {
-      &:hover,
-      &:focus {
-        color: $color-text-random; // Color change on hover/focus
-      }
-    }
-  }
-
-  /* Custom toggler button (hamburger) */
-  .custom-toggler {
-    padding: 0;
-    border: none;
-    background: none;
-    outline: none;
-    font-size: 1rem;
-    cursor: pointer;
-    z-index: 1060; /* Ensure it is on top of collapsed menu */
-
-    &:active,
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
-  /* Navbar toggler icon */
-  .navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-    // The icon will now be white
-    transition: transform 0.6s ease-in-out; // Add a transition for smooth rotation
-  }
-
-  /* Icon on close (X) */
-  .icon-white {
-    color: $color-text-random;
-    font-size: 26.4px;
   }
 }
 
-@include media-query("md") {
+.navbar-nav {
+  margin-left: auto;
+
+  .nav-link {
+    position: relative;
+    color: $color-text-secondary;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: $color-text-random; // Color change on hover/focus
+    }
+  }
+  .hireMe-Btn {
+    padding: 9px 18px;
+    border-radius: 3px;
+    color: $color-text-secondary;
+    background-color: #e22200;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+}
+/* Navbar toggler icon */
+.navbar-toggler-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+  // The icon will now be white
+  transition: transform 0.6s ease-in-out; // Add a transition for smooth rotation
+}
+
+/* Icon on close (X) */
+.icon-white {
+  color: $color-text-random;
+  font-size: 26.4px;
+}
+
+@include media-query("md", "max") {
   /* Navbar collapse */
   .navbar-collapse {
     position: fixed;
@@ -85,26 +80,26 @@
       font-weight: 400;
       z-index: 1050;
     }
-
-    .navBtn {
-      margin-top: 2rem;
-      padding: 16px;
-      border-radius: 3px;
-      color: $color-text-secondary;
-      background-color: #e22200;
-      border: none;
-      text-align: center;
-      font-size: 14px;
-      font-weight: bold;
-    }
   }
   .navbar-collapse.show {
     transform: translateX(0);
   }
-}
 
-@include media-query("lg") {
-  .navbar {
-    z-index: 1050; // Ensure it stays above other elements
+  /* Custom toggler button (hamburger) */
+  .hamburger_btn {
+    padding: 0;
+    border: none !important;
+    background: none;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1060; /* Ensure it is on top of collapsed menu */
+
+    &:active,
+    &:focus {
+      box-shadow: none;
+      border: none !important;
+      outline: none !important;
+    }
   }
 }
