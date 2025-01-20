@@ -128,12 +128,13 @@ textarea:focus {
   .navbar-collapse .navbar-nav {
     position: absolute;
     top: 15%;
-    left: 6%;
+    left: 4.5%;
     text-align: start;
     width: 40%;
     font-size: 26px;
     font-weight: 400;
     z-index: 1050;
+    padding-left: 4.6rem;
   }
   .navbar-collapse.show {
     transform: translateX(0);
@@ -162,7 +163,7 @@ textarea:focus {
     outline: none !important;
   }
   .hireMe-Btn {
-    margin-left: 0px !important;
+    margin: 2rem 0px 0px !important;
     padding: 14px 25px !important;
     width: 60%;
   }
@@ -170,6 +171,14 @@ textarea:focus {
 @media (max-width: 425px) {
   .hireMe-Btn {
     width: 100%;
+  }
+  .navbar-nav {
+    padding-left: 7px !important;
+  }
+}
+@media (min-width: 425px) {
+  .navbar-nav {
+    padding-left: 0px !important;
   }
 }
 .hero-section {
