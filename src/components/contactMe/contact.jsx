@@ -115,7 +115,6 @@ export default function Contact() {
         </div>
       )}
 
-      {/* Footer */}
       <div className="allRight-2338">
         <p>© 2024 Your Company, Inc. All rights reserved.</p>
       </div>
