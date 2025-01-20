@@ -35,9 +35,9 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
           aria-label="Toggle navigation"
         >
           {isMenuOpen ? (
-            <i className="bi bi-x-lg icon-white"></i>
+            <i className="bi bi-x-lg"></i>
           ) : (
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon  "></span>
           )}
         </button>
         <div
