@@ -28,7 +28,7 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
           <span className="ora">Osee</span> Mbiya
         </a>
         <button
-          className="navbar-toggler custom-toggler"
+          className="navbar-toggler hamburger_btn"
           type="button"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen ? "true" : "false"}
@@ -52,9 +52,11 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
                 </a>
               </li>
             ))}
-            <button className="navBtn" type="button" onClick={closeMenu}>
-              Download Cv
-            </button>
+            <li>
+              <button className="hireMe-Btn" type="button" onClick={closeMenu}>
+                Hire Me
+              </button>
+            </li>
           </ul>
         </div>
       </div>
