@@ -42,25 +42,39 @@ export default function Home() {
   return (
     <div className="container-fluid hero-section" id="home">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <div className="sectionControl">
+      <div className="hero-content">
         <div className="image_2334">
           <img className="photo_2334" src={Image} alt="hero-Image" />
         </div>
-        <div className="profile_2334">
-          <h1>
-            <span>Osee</span> Mbiya
-          </h1>
-          <h2>
-            Front-End <span>Developer</span>
-          </h2>
-        </div>
-        <div className="btn_2334">
-          <Button
-            label="Contact Info"
-            name="Contact"
-            onClick={handleContactClick}
-          />
-          <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
+        <div className="content-2334">
+          <div className="profile_2334">
+            <h1>
+              <span>Osee</span> Mbiya
+            </h1>
+
+            <h2>
+              Full-Stack <span>Developer</span>
+            </h2>
+
+            <p className="hero-description">
+              I specialize in crafting interactive, user-focused web
+              applications that are both visually stunning and functionally
+              robust. With a keen eye for detail and expertise in modern
+              frameworks.
+            </p>
+            <p className="call-to-action">
+              Ready to take your project to the next level? Let’s work together
+              to create something extraordinary.
+            </p>
+          </div>
+          <div className="btn_2334">
+            <Button
+              label="Contact Info"
+              name="Contact"
+              onClick={handleContactClick}
+            />
+            <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
+          </div>
         </div>
       </div>
     </div>
