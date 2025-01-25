@@ -68,12 +68,12 @@ export default function Home() {
             </p>
           </div>
           <div className="btn_2334">
+            <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
             <Button
               label="Contact Info"
               name="Contact"
               onClick={handleContactClick}
             />
-            <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
           </div>
         </div>
       </div>
