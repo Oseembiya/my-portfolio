@@ -43,9 +43,6 @@ export default function Home() {
     <div className="container-fluid hero-section" id="home">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <div className="hero-content">
-        <div className="image_2334">
-          <img className="photo_2334" src={Image} alt="hero-Image" />
-        </div>
         <div className="content-2334">
           <div className="profile_2334">
             <h1>
@@ -63,7 +60,7 @@ export default function Home() {
               frameworks.
             </p>
             <p className="call-to-action">
-              Ready to take your project to the next level? Let’s work together
+              Ready to take your project to the next level? Lets work together
               to create something extraordinary.
             </p>
           </div>
@@ -75,6 +72,9 @@ export default function Home() {
               onClick={handleContactClick}
             />
           </div>
+        </div>
+        <div className="image_2334">
+          <img className="photo_2334" src={Image} alt="hero-Image" />
         </div>
       </div>
     </div>
