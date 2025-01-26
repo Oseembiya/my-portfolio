@@ -90,6 +90,11 @@ textarea:focus {
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: currentColor;
 }
+@media (min-width: 768px) {
+  .navbar {
+    margin-top: 0.9rem;
+  }
+}
 
 .navbar-nav {
   margin-left: auto;
@@ -201,6 +206,11 @@ textarea:focus {
 .hero-section p {
   color: #ffffff;
 }
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 2rem;
+  }
+}
 
 .hero-content {
   flex: 1;
@@ -248,20 +258,21 @@ textarea:focus {
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 425px) {
   .image_2334 .photo_2334 {
-    max-width: 60%;
+    max-width: 80%;
     height: auto;
   }
 }
 @media (max-width: 425px) {
   .image_2334 .photo_2334 {
     width: 100%;
+    height: auto;
   }
 }
 
 .profile_2334 h1 {
-  font-size: clamp(32px, 4vw, 48px) !important;
+  font-size: clamp(32px, 4vw, 50px) !important;
   margin-bottom: 0.5rem;
 }
 .profile_2334 h2 {

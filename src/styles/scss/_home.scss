@@ -17,6 +17,9 @@
   p {
     color: $color-text-secondary;
   }
+  @include media-query("md", "max") {
+    padding: 0 2rem;
+  }
 }
 
 .hero-content {
@@ -61,20 +64,21 @@
   justify-content: center;
   align-items: center;
   .photo_2334 {
-    @include media-query("md", "min") {
-      max-width: 60%;
+    @include media-query("sm", "min") {
+      max-width: 80%;
       height: auto;
     }
 
     @include media-query("sm", "max") {
       width: 100%;
+      height: auto;
     }
   }
 }
 
 .profile_2334 {
   h1 {
-    font-size: clamp(32px, 4vw, 48px) !important;
+    font-size: clamp(32px, 4vw, 50px) !important;
     margin-bottom: 0.5rem;
   }
 

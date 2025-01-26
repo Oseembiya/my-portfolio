@@ -20,6 +20,9 @@
       color: currentColor;
     }
   }
+  @include media-query("md", "min") {
+    margin-top: 0.9rem;
+  }
 }
 
 .navbar-nav {
