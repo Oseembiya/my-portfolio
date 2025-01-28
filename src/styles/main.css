@@ -13,18 +13,19 @@ body {
 
 h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 40px !important; /* Base size for headings */
   font-weight: 600 !important; /* Bold for emphasis */
   color: #00262b;
   line-height: 1 !important;
+  font-size: clamp(36px, 6vw, 68px) !important;
+  margin-bottom: 0.5rem !important;
 }
 
 h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 30px !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 1 !important;
-  margin-bottom: 0.8em !important;
+  font-size: clamp(30px, 4vw, 58px) !important;
+  margin-bottom: 1rem !important;
 }
 
 h4,
@@ -278,14 +279,6 @@ textarea:focus {
 
 .profile_2334 {
   padding-top: 2rem;
-}
-.profile_2334 h1 {
-  font-size: clamp(30px, 5vw, 68px) !important;
-  margin-bottom: 0.5rem;
-}
-.profile_2334 h2 {
-  font-size: clamp(30px, 4vw, 58px) !important;
-  margin-bottom: 1rem;
 }
 .profile_2334 .hero-description,
 .profile_2334 .call-to-action {

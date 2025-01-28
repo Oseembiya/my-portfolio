@@ -7,18 +7,19 @@ body {
 }
 h1 {
   font-family: $font-family-main;
-  font-size: 40px !important; /* Base size for headings */
   font-weight: 600 !important; /* Bold for emphasis */
   color: $color-text-primary;
   line-height: 1 !important;
+  font-size: clamp(36px, 6vw, 68px) !important;
+  margin-bottom: 0.5rem !important;
 }
 
 h2 {
   font-family: $font-family-main;
-  font-size: 30px !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 1 !important;
-  margin-bottom: 0.8em !important;
+  font-size: clamp(30px, 4vw, 58px) !important;
+  margin-bottom: 1rem !important;
 }
 h4,
 h5,
