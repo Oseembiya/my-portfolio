@@ -10,7 +10,7 @@ h1 {
   font-weight: 600 !important; /* Bold for emphasis */
   color: $color-text-primary;
   line-height: 1 !important;
-  font-size: clamp(36px, 6vw, 68px) !important;
+  font-size: clamp(36px, 7vw, 68px) !important;
   margin-bottom: 0.5rem !important;
 }
 
@@ -18,7 +18,7 @@ h2 {
   font-family: $font-family-main;
   font-weight: 400 !important;
   line-height: 1 !important;
-  font-size: clamp(30px, 4vw, 58px) !important;
+  font-size: clamp(30px, 6vw, 60px) !important;
   margin-bottom: 1rem !important;
 }
 h4,
