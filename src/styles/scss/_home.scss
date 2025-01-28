@@ -26,11 +26,15 @@
   flex: 1;
   width: 100%;
   display: flex;
+  align-content: center;
   margin-top: 0;
+  @include media-query("lg", "min") {
+    gap: 3rem;
+  }
 
   @include media-query("md", "min") {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   @include media-query("md", "max") {
@@ -41,6 +45,7 @@
 }
 
 .content-2334 {
+  max-height: 600px;
   display: flex;
   flex-direction: column;
 
@@ -61,10 +66,11 @@
   .photo_2334 {
     @include media-query("lg", "min") {
       max-width: 650px;
-      height: 100%;
+      max-height: 717px;
       object-fit: contain;
     }
-    @include media-query("md", "min") {
+    @include media-query("md", "max") {
+      width: 100%;
       max-width: 600px;
       height: auto;
       object-fit: contain;

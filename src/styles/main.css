@@ -95,6 +95,8 @@ textarea:focus {
   .navbar {
     margin-top: 0.9rem;
   }
+}
+@media (max-width: 768px) {
   .navbar .container {
     max-width: 700px;
   }
@@ -220,12 +222,18 @@ textarea:focus {
   flex: 1;
   width: 100%;
   display: flex;
+  align-content: center;
   margin-top: 0;
+}
+@media (min-width: 992px) {
+  .hero-content {
+    gap: 3rem;
+  }
 }
 @media (min-width: 768px) {
   .hero-content {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 @media (max-width: 768px) {
@@ -237,6 +245,7 @@ textarea:focus {
 }
 
 .content-2334 {
+  max-height: 600px;
   display: flex;
   flex-direction: column;
 }
@@ -260,13 +269,14 @@ textarea:focus {
 @media (min-width: 992px) {
   .image_2334 .photo_2334 {
     max-width: 650px;
-    height: 100%;
+    max-height: 717px;
     -o-object-fit: contain;
        object-fit: contain;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .image_2334 .photo_2334 {
+    width: 100%;
     max-width: 600px;
     height: auto;
     -o-object-fit: contain;
