@@ -196,6 +196,7 @@ textarea:focus {
 }
 .hero-section {
   height: 100vh;
+  width: 100%;
   max-height: -moz-fit-content;
   max-height: fit-content;
   position: relative;
@@ -238,12 +239,8 @@ textarea:focus {
 .hero-content {
   flex: 1;
   display: flex;
-  align-content: center;
-}
-@media (min-width: 992px) {
-  .hero-content {
-    gap: 3rem;
-  }
+  margin: 0 auto;
+  gap: 2rem;
 }
 @media (min-width: 768px) {
   .hero-content {

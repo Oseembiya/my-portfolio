@@ -1,5 +1,6 @@
 .hero-section {
   height: 100vh;
+  width: 100%;
   max-height: fit-content;
   position: relative;
   justify-content: space-between;
@@ -40,11 +41,8 @@
 .hero-content {
   flex: 1;
   display: flex;
-  align-content: center;
-
-  @include media-query("lg", "min") {
-    gap: 3rem;
-  }
+  margin: 0 auto;
+  gap: 2rem;
 
   @include media-query("md", "min") {
     flex-direction: row;
