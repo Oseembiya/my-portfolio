@@ -45,7 +45,6 @@
   flex: 1;
   display: flex;
   margin: 0 auto;
-  gap: 2rem;
 
   @include media-query("md", "min") {
     flex-direction: row;
@@ -95,6 +94,7 @@
 .profile_2334 {
   .hero-description,
   .call-to-action {
+    max-width: 500px;
     font-size: clamp(14px, 1.8vw, 16px);
     margin-bottom: 0.8rem;
     line-height: 1.5;

@@ -242,7 +242,6 @@ textarea:focus {
   flex: 1;
   display: flex;
   margin: 0 auto;
-  gap: 2rem;
 }
 @media (min-width: 768px) {
   .hero-content {
@@ -299,6 +298,7 @@ textarea:focus {
 
 .profile_2334 .hero-description,
 .profile_2334 .call-to-action {
+  max-width: 500px;
   font-size: clamp(14px, 1.8vw, 16px);
   margin-bottom: 0.8rem;
   line-height: 1.5;
