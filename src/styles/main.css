@@ -218,6 +218,7 @@ textarea:focus {
 @media (max-width: 768px) {
   .hero-section {
     padding: 0 2rem;
+    height: 100%;
   }
 }
 @media (max-width: 425px) {
@@ -237,6 +238,7 @@ textarea:focus {
 }
 
 .hero-content {
+  width: 100%;
   flex: 1;
   display: flex;
   margin: 0 auto;
@@ -246,6 +248,7 @@ textarea:focus {
   .hero-content {
     flex-direction: row;
     justify-content: center;
+    gap: 0;
   }
 }
 @media (max-width: 768px) {
@@ -256,9 +259,9 @@ textarea:focus {
 }
 
 .content-2334 {
-  max-height: 600px;
   display: flex;
   flex-direction: column;
+  max-height: auto;
 }
 @media (min-width: 768px) {
   .content-2334 {
