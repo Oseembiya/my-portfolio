@@ -219,6 +219,11 @@ textarea:focus {
     padding: 0 2rem;
   }
 }
+@media (max-width: 425px) {
+  .hero-section {
+    height: 100%;
+  }
+}
 .hero-section .hamburger-menu {
   position: relative;
   z-index: 1000;

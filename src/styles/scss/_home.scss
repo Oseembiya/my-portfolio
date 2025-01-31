@@ -21,7 +21,9 @@
   @include media-query("md", "max") {
     padding: 0 2rem;
   }
-
+  @include media-query("sm", "max") {
+    height: 100%;
+  }
   .hamburger-menu {
     position: relative;
     z-index: 1000; // Ensure the button stays on top
