@@ -71,9 +71,7 @@
     margin-top: 2rem;
   }
 
-  header {
-    margin-bottom: 2rem;
-  }
+
 
   .hero-description,
   .call-to-action {
@@ -99,30 +97,6 @@
 }
 
 .hero-actions {
-  display: flex;
-  gap: 3rem;
-  margin-top: 2rem;
-
-  @include media-query("md", "max") {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-
-.content-2334 {
-  margin-top: 2rem;
-  @include media-query("lg", "min") {
-    margin-top: 6.8rem;
-  }
-  @include media-query("md", "min") {
-    width: 600px;
-  }
-}
-
-
-
-.hero-actions {
   padding: 8px 0;
   display: flex;
   gap: 10px 18px;
@@ -135,25 +109,29 @@
     font-size: 15px;
     width: 100%;
     border: none;
-    transition: background-color 0.3s ease, color 0.3s ease, filter 0.3s ease;
+    transition: filter 0.3s ease;
+    cursor: pointer;
 
     &:hover {
-      filter: brightness(1.5);
+      filter: brightness(1.2);
+    }
+
+    &:active {
+      filter: brightness(0.9);
+      transform: scale(0.98);
     }
 
     &.btn-Contact {
       background-color: $color-background-secondary;
-
-      &:active {
-        filter: brightness(1.3);
+      &:hover, &:active, &:focus {
+        background-color: $color-background-secondary;
       }
     }
 
     &.btn-Cv {
       background-color: #e22200;
-
-      &:active {
-        filter: brightness(1.3);
+      &:hover, &:active, &:focus {
+        background-color: #e22200;
       }
     }
   }

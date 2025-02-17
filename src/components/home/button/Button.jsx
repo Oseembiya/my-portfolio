@@ -15,7 +15,7 @@ export default function Button({ label, name, onClick}) {
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
-  name: PropTypes.oneOf(['cv', 'Contact']).isRequired,
+  name: PropTypes.oneOf(['Cv', 'Contact']).isRequired,
   onClick: PropTypes.func.isRequired,
 
 };
