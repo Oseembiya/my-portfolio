@@ -60,10 +60,16 @@ export default function Home() {
             </p>
 
             <div className="hero-actions" role="group" aria-label="Profile actions">
-              <Button label="Download CV" name="cv" onClick={handleDownloadCV} />
+              <Button 
+                name="Cv"
+                className="btn"
+                label="Download CV"  
+                onClick={handleDownloadCV}
+              />
               <Button
+                name="Contact"
+                className="btn"
                 label="Contact Info"
-                name="contact"
                 onClick={handleContactClick}
               />
             </div>
