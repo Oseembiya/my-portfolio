@@ -1,16 +1,12 @@
 .hero-section {
-  height: 100vh;
   width: 100%;
-  max-height: fit-content;
+  min-height: 100vh;
+  height: 100vh;
   position: relative;
-  justify-content: space-between;
+  color: $color-text-secondary;
+  background: url("/src/assets/Background.png") no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  text-align: left;
-  color: $color-text-secondary;
-  background-image: url("/src/assets/Background.png");
-  background-size: cover; /* Ensures the background fills the container */
-  background-repeat: no-repeat;
 
   span {
     color: $color-text-random;
@@ -20,12 +16,14 @@
     color: $color-text-secondary;
   }
   @include media-query("md", "max") {
+    min-height: 100vh;
+    height: auto;
     padding: 0 2rem;
-    height: 100%;
   }
 
   @include media-query("sm", "max") {
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
   }
   .hamburger-menu {
     position: relative;
@@ -40,20 +38,103 @@
   }
 }
 
-.hero-content {
-  width: 100%;
+.hero-container {
   flex: 1;
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+}
+
+.hero-content {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-
-  @include media-query("md", "min") {
-    flex-direction: row;
-    justify-content: center;
-  }
-
+ 
+  
   @include media-query("md", "max") {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  margin-top: 0;
+  align-content: center;
+
+  @include media-query("md", "max") {
+    margin-top: 2rem;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  .hero-description,
+  .call-to-action {
+    font-size: clamp(14px, 1.8vw, 16px);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+ 
+
+  img {
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @include media-query("md", "max") {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.btn {
+  padding: 15px;
+  border-radius: 3px;
+  color: $color-text-secondary;
+  font-weight: bold;
+  font-size: 15px;
+  min-width: 200px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-secondary;
+    outline-offset: 2px;
+  }
+
+  &-contact {
+    background-color: $color-background-secondary;
+  }
+
+  &-cv {
+    background-color: #e22200;
   }
 }
 

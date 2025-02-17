@@ -34,11 +34,6 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
           aria-expanded={isMenuOpen ? "true" : "false"}
           aria-label="Toggle navigation"
         >
-          {isMenuOpen ? (
-            <i className="bi bi-x-lg"></i>
-          ) : (
-            <span className="navbar-toggler-icon  "></span>
-          )}
         </button>
         <div
           className={`navbar-collapse ${isMenuOpen ? "show" : ""}`}

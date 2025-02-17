@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
-import Navbar from "../common/navbar";
+import Navbar from "./navbar";
 import Image from "/src/assets/ProfileHero.png";
-
-// eslint-disable-next-line react/prop-types
-function Button({ label, name, onClick }) {
-  return (
-    <button className={`btn btn-${name}`} onClick={onClick} aria-label={label}>
-      {label}
-    </button>
-  );
-}
+import Button from "./button/Button";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,24 +26,27 @@ export default function Home() {
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.download = "Osee_Mbiya_CV.pdf"; // Suggested file name
+    link.setAttribute('aria-label', 'Download CV');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <div className="container-fluid hero-section" id="home">
+    <main className="hero-section" id="home">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <div className="hero-content">
-        <div className="content-2334">
-          <div className="profile_2334">
-            <h1>
-              <span>Osee</span> Mbiya
-            </h1>
-
-            <h2>
-              Full-Stack <span>Developer</span>
-            </h2>
+      
+      <div className="hero-container">
+        <section className="hero-content">
+          <article className="hero-text">
+            <header>
+              <h1>
+                <span>Osee</span> Mbiya
+              </h1>
+              <h2>
+                Full-Stack <span>Developer</span>
+              </h2>
+            </header>
 
             <p className="hero-description">
               I specialize in crafting interactive, user-focused web
@@ -60,23 +55,25 @@ export default function Home() {
               frameworks.
             </p>
             <p className="call-to-action">
-              Ready to take your project to the next level? Lets work together
+              Ready to take your project to the next level? Let is work together
               to create something extraordinary.
             </p>
-          </div>
-          <div className="btn_2334">
-            <Button label="Download CV" name="Cv" onClick={handleDownloadCV} />
-            <Button
-              label="Contact Info"
-              name="Contact"
-              onClick={handleContactClick}
-            />
-          </div>
-        </div>
-        <div className="image_2334">
-          <img className="photo_2334" src={Image} alt="hero-Image" />
-        </div>
+
+            <div className="hero-actions" role="group" aria-label="Profile actions">
+              <Button label="Download CV" name="cv" onClick={handleDownloadCV} />
+              <Button
+                label="Contact Info"
+                name="contact"
+                onClick={handleContactClick}
+              />
+            </div>
+          </article>
+
+          <figure className="hero-image">
+            <img src={Image} alt="Osee Mbiya - Full Stack Developer" />
+          </figure>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
