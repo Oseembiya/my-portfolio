@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
+
 // eslint-disable-next-line react/prop-types
 export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   // Toggle menu open state
@@ -9,6 +10,21 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Handle ESC key press to close menu
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    
+    window.addEventListener('keydown', handleEsc);
+    
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [isMenuOpen, setIsMenuOpen]);
 
   // Navigation links
   const navLinks = useMemo(
@@ -22,33 +38,54 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   );
 
   return (
-    <nav className="navbar navbar-expand-lg">
+    <nav className="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
       <div className="container">
         <a className="navbar-brand" href="#home">
           <span className="ora">Osee</span> Mbiya
         </a>
+
         <button
           className="navbar-toggler hamburger_btn"
           type="button"
           onClick={toggleMenu}
-          aria-expanded={isMenuOpen ? "true" : "false"}
-          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+          aria-label="Toggle navigation menu"
+          aria-controls="navbarNav"
         >
+          {isMenuOpen ? (
+            <i className="fas fa-times" aria-hidden="true"></i>
+          ) : (
+            <i className="fas fa-bars" aria-hidden="true"></i>
+          )}
         </button>
+
         <div
           className={`navbar-collapse ${isMenuOpen ? "show" : ""}`}
           id="navbarNav"
+          inert={!isMenuOpen ? "" : undefined}
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav" role="menubar">
             {navLinks.map(({ id, href, label }) => (
-              <li className="nav-item ps-lg-3" key={id}>
-                <a className="nav-link" href={href} onClick={closeMenu}>
+              <li className="nav-item ps-lg-3" key={id} role="none">
+                <a 
+                  className="nav-link" 
+                  href={href} 
+                  onClick={closeMenu}
+                  role="menuitem"
+                  tabIndex={isMenuOpen ? "0" : "-1"}
+                >
                   {label}
                 </a>
               </li>
             ))}
-            <li>
-              <button className="hireMe-Btn" type="button" onClick={closeMenu}>
+            <li className="nav-item" role="none">
+              <button 
+                className="hireMe-Btn" 
+                type="button" 
+                onClick={closeMenu}
+                aria-label="Hire Me"
+                tabIndex={isMenuOpen ? "0" : "-1"}
+              >
                 Hire Me
               </button>
             </li>

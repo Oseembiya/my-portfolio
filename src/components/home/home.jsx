@@ -26,17 +26,16 @@ export default function Home() {
     const link = document.createElement("a");
     link.href = downloadUrl;
     link.download = "Osee_Mbiya_CV.pdf"; // Suggested file name
-    link.setAttribute('aria-label', 'Download CV');
+    link.setAttribute("aria-label", "Download CV");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   return (
-    <main className="hero-section" id="home">
+    <main className="hero-section" id="home" aria-label="Home section">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      
-      <div className="hero-container">
+      <div className="container">
         <section className="hero-content">
           <article className="hero-text">
             <header>
@@ -48,35 +47,43 @@ export default function Home() {
               </h2>
             </header>
 
-            <p className="hero-description">
+            <p>
               I specialize in crafting interactive, user-focused web
               applications that are both visually stunning and functionally
               robust. With a keen eye for detail and expertise in modern
               frameworks.
             </p>
-            <p className="call-to-action">
-              Ready to take your project to the next level? Let is work together
+            <p>
+              Ready to take your project to the next level? Let's work together
               to create something extraordinary.
             </p>
-
-            <div className="hero-actions" role="group" aria-label="Profile actions">
-              <Button 
+            <div
+              className="hero-actions"
+              role="group"
+              aria-label="Profile actions"
+            >
+              <Button
                 name="Cv"
                 className="btn"
-                label="Download CV"  
+                label="Download CV"
                 onClick={handleDownloadCV}
+                aria-label="Download CV"
               />
               <Button
                 name="Contact"
                 className="btn"
                 label="Contact Info"
                 onClick={handleContactClick}
+                aria-label="Contact Information"
               />
             </div>
           </article>
-
           <figure className="hero-image">
-            <img src={Image} alt="Osee Mbiya - Full Stack Developer" />
+            <img
+              src={Image}
+              alt="Osee Mbiya - Full Stack Developer"
+              loading="eager"
+            />
           </figure>
         </section>
       </div>

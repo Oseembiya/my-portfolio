@@ -3,7 +3,8 @@
 body {
   font-family: $font-family-main !important;
   line-height: $line-height;
-  color: $color-background-secondary;
+  color: $color-text-primary;
+  background-color: $color-background-primary;
 }
 h1 {
   font-family: $font-family-main;
@@ -33,10 +34,10 @@ h6 {
 
 p {
   font-family: $font-family-main;
-  font-size: 14px;
   color: $color-text-primary;
-  line-height: 1.6;
-  margin-bottom: 1em;
+  font-size: clamp(14px, 1.8vw, 16px);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
 }
 a {
   color: $color-text-secondary;
