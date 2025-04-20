@@ -1,0 +1,202 @@
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  color: $color-text-secondary;
+  background: url("/src/assets/Background.png") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* Space for navbar */
+
+  span {
+    color: $color-text-random;
+  }
+
+  p {
+    color: $color-text-secondary;
+  }
+
+  .hamburger-menu {
+    position: relative;
+    z-index: 1000;
+
+    .close-icon {
+      color: $color-text-secondary;
+      position: fixed;
+      right: 2rem;
+      top: 2rem;
+    }
+  }
+
+  @include media-query("md") {
+    min-height: 100vh;
+    height: auto;
+    padding: 80px 12px 0;
+    text-align: start;
+  }
+
+  @include media-query("sm") {
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 2rem;
+  }
+}
+
+.hero-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1250px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  align-items: center;
+
+  @include media-query("lg", "max") {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+  }
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  margin-top: 0;
+
+  @include media-query("lg", "max") {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+
+  img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+
+    @include media-query("lg", "max") {
+      max-width: 80%;
+    }
+
+    @include media-query("sm", "max") {
+      max-width: 90%;
+    }
+  }
+}
+
+.hero-actions {
+  padding: 8px 0;
+  display: flex;
+  gap: 10px 18px;
+
+  .btn {
+    padding: 15px;
+    border-radius: 3px;
+    color: $color-text-secondary;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100%;
+    border: none;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+
+    &:active {
+      filter: brightness(0.9);
+      transform: scale(0.98);
+    }
+
+    &.btn-Contact {
+      background-color: $color-background-secondary;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $color-background-secondary;
+      }
+    }
+
+    &.btn-Cv {
+      background-color: #e22200;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #e22200;
+      }
+    }
+  }
+
+  @include media-query("md", "min") {
+    justify-content: flex-start;
+    gap: 2rem;
+
+    .btn {
+      width: auto;
+      min-width: 250px;
+    }
+  }
+
+  @include media-query("lg", "max") {
+    justify-content: center;
+  }
+
+  @include media-query("sm", "max") {
+    flex-wrap: wrap;
+
+    .btn {
+      min-width: 100%;
+    }
+  }
+}
+
+// Action buttons
+.action-button {
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin: 0 10px;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.primary-button {
+    background-color: #e22200;
+    color: $color-text-secondary;
+
+    &:hover {
+      background-color: darken(#e22200, 10%);
+    }
+  }
+
+  &.secondary-button {
+    background-color: $color-background-secondary;
+    color: $color-text-secondary;
+
+    &:hover {
+      background-color: lighten($color-background-secondary, 10%);
+    }
+  }
+}
