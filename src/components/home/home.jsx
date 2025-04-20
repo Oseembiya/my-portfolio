@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Navbar from "./navbar";
+import Navbar from "../common/navbar";
 import Image from "/src/assets/ProfileHero.png";
 import Button from "./button/Button";
 
@@ -18,24 +18,33 @@ export default function Home() {
     alert("Contact Info functionality to be implemented!");
   };
 
-  const handleDownloadCV = () => {
-    const fileId = "1bfeEA8JVhijfKcpoZsr_oP9JZwNLvs4b"; // Extracted File ID
-    const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+  const handleDownloadCV = async () => {
+    try {
+      // Google Drive file ID - replace with your actual file ID
+      const fileId = "1bfeEA8JVhijfKcpoZsr_oP9JZwNLvs4b";
 
-    // Create a link element and trigger the download
-    const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.download = "Osee_Mbiya_CV.pdf"; // Suggested file name
-    link.setAttribute("aria-label", "Download CV");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      // Create direct download link
+      const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+      // Create a temporary anchor element
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", "Osee_Mbiya_CV.pdf");
+
+      // Append to the document, trigger click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading CV:", error);
+      alert("Error downloading CV. Please try again later.");
+    }
   };
 
   return (
     <main className="hero-section" id="home" aria-label="Home section">
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      <div className="container">
+      <div className="content-wrapper">
         <section className="hero-content">
           <article className="hero-text">
             <header>
@@ -54,7 +63,7 @@ export default function Home() {
               frameworks.
             </p>
             <p>
-              Ready to take your project to the next level? Let's work together
+              Ready to take your project to the next level? Let is work together
               to create something extraordinary.
             </p>
             <div
@@ -64,14 +73,14 @@ export default function Home() {
             >
               <Button
                 name="Cv"
-                className="btn"
+                className="custom-btn"
                 label="Download CV"
                 onClick={handleDownloadCV}
                 aria-label="Download CV"
               />
               <Button
                 name="Contact"
-                className="btn"
+                className="custom-btn"
                 label="Contact Info"
                 onClick={handleContactClick}
                 aria-label="Contact Information"

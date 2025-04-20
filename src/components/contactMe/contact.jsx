@@ -43,7 +43,7 @@ export default function Contact() {
       aria-labelledby="contact-title"
     >
       {/* Section Heading */}
-      <div className="container">
+      <div className="contact-container">
         <h2 id="contact-title" className="section-title">
           Contact Me
         </h2>

@@ -6,7 +6,7 @@ export default function About() {
   const [selectedCategory, setSelectedCategory] = useState(0);
 
   return (
-    <div className="container-fluid about-2335" id="about">
+    <div className="about-wrapper about-2335" id="about">
       <h4>Who I am</h4>
       <div className="aboutMeContent-2335">
         <div className="aboutImg-2335">
@@ -36,9 +36,9 @@ export default function About() {
         <div className="content-2335">
           {AboutMeData[selectedCategory].aboutMeDetails.map(
             (detail, detailIndex) => (
-              <div className="card" key={detailIndex}>
+              <div className="about-card" key={detailIndex}>
                 <h4>{detail.year}</h4>
-                <p className="card-subtitle">{detail.course}</p>
+                <p className="about-card-subtitle">{detail.course}</p>
               </div>
             )
           )}

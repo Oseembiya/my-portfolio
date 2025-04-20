@@ -11,7 +11,7 @@ export default function Project() {
       id="projects"
       aria-labelledby="project-title"
     >
-      <div className="container">
+      <div className="project-container">
         <h2 id="project-title" className="section-title">
           Project Showcase
         </h2>
@@ -83,7 +83,7 @@ export default function Project() {
                   <div className="project-links">
                     <a
                       href={project.codeLink || "#"}
-                      className="btn btn-sm btn-outline-primary"
+                      className="project-link project-link-outline"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View code for ${project.projectName}`}
@@ -93,7 +93,7 @@ export default function Project() {
                     </a>
                     <a
                       href={project.demoLink || "#"}
-                      className="btn btn-sm btn-primary"
+                      className="project-link project-link-filled"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`View live demo of ${project.projectName}`}

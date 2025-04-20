@@ -4,13 +4,13 @@ export default function Button({
   label,
   name,
   onClick,
-  className,
-  disabled,
-  ariaLabel,
+  className = "",
+  disabled = false,
+  ariaLabel = "",
 }) {
   return (
     <button
-      className={`btn btn-${name} ${className || ""}`}
+      className={`custom-button custom-button-${name} ${className || ""}`}
       onClick={onClick}
       aria-label={ariaLabel || label}
       type="button"
@@ -28,10 +28,4 @@ Button.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   ariaLabel: PropTypes.string,
-};
-
-Button.defaultProps = {
-  className: "",
-  disabled: false,
-  ariaLabel: "",
 };

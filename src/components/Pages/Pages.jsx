@@ -1,6 +1,6 @@
 import Home from "../home/home";
 import About from "../about/about";
-import Skills from "../common/SkillSet/skills";
+import Skills from "../SkillSet/skills";
 import Project from "../Project/Project";
 import Contact from "../contactMe/contact";
 

@@ -14,15 +14,15 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   // Handle ESC key press to close menu
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.key === 'Escape' && isMenuOpen) {
+      if (event.key === "Escape" && isMenuOpen) {
         setIsMenuOpen(false);
       }
     };
-    
-    window.addEventListener('keydown', handleEsc);
-    
+
+    window.addEventListener("keydown", handleEsc);
+
     return () => {
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener("keydown", handleEsc);
     };
   }, [isMenuOpen, setIsMenuOpen]);
 
@@ -38,14 +38,14 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
   );
 
   return (
-    <nav className="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
-      <div className="container">
-        <a className="navbar-brand" href="#home">
+    <nav className="main-navbar" role="navigation" aria-label="Main navigation">
+      <div className="nav-container">
+        <a className="site-logo" href="#home">
           <span className="ora">Osee</span> Mbiya
         </a>
 
         <button
-          className="navbar-toggler hamburger_btn"
+          className="menu-toggle"
           type="button"
           onClick={toggleMenu}
           aria-expanded={isMenuOpen}
@@ -64,12 +64,12 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
           id="navbarNav"
           inert={!isMenuOpen ? "" : undefined}
         >
-          <ul className="navbar-nav" role="menubar">
+          <ul className="nav-menu" role="menubar">
             {navLinks.map(({ id, href, label }) => (
-              <li className="nav-item ps-lg-3" key={id} role="none">
-                <a 
-                  className="nav-link" 
-                  href={href} 
+              <li className="nav-list-item" key={id} role="none">
+                <a
+                  className="nav-link"
+                  href={href}
                   onClick={closeMenu}
                   role="menuitem"
                   tabIndex={isMenuOpen ? "0" : "-1"}
@@ -78,10 +78,10 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
                 </a>
               </li>
             ))}
-            <li className="nav-item" role="none">
-              <button 
-                className="hireMe-Btn" 
-                type="button" 
+            <li className="nav-list-item" role="none">
+              <button
+                className="hireMe-Btn"
+                type="button"
                 onClick={closeMenu}
                 aria-label="Hire Me"
                 tabIndex={isMenuOpen ? "0" : "-1"}

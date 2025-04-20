@@ -85,7 +85,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="container-fluid skillsContent-2337">
+    <div className="skills-wrapper skillsContent-2337">
       <div className="skills-title">
         <h4>Tools and Technologies</h4>
       </div>
