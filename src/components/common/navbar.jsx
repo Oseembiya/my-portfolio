@@ -1,97 +1,94 @@
-import { useMemo, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-// eslint-disable-next-line react/prop-types
-export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
-  // Toggle menu open state
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-  // Close the menu explicitly
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
-  // Handle ESC key press to close menu
+  const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === "Escape" && isMenuOpen) {
-        setIsMenuOpen(false);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      // Get all sections
+      const sections = document.querySelectorAll("section[id]");
+
+      // Default to home if at the very top of the page
+      if (scrollPosition < 300) {
+        setActiveSection("home");
+        return;
       }
+
+      // Check which section is currently in view
+      let currentSection = "home"; // Default to home
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener("keydown", handleEsc);
+    // Run the handler immediately to set initial active state
+    handleScroll();
 
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-    };
-  }, [isMenuOpen, setIsMenuOpen]);
-
-  // Navigation links
-  const navLinks = useMemo(
-    () => [
-      { id: "1", href: "#home", label: "Home" },
-      { id: "2", href: "#about", label: "About" },
-      { id: "3", href: "#projects", label: "Projects" },
-      { id: "4", href: "#contact", label: "Contact" },
-    ],
-    []
-  );
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="main-navbar" role="navigation" aria-label="Main navigation">
+    <nav className="navbar">
       <div className="nav-container">
-        <a className="site-logo" href="#home">
-          <span className="ora">Osee</span> Mbiya
+        <a href="#home" className="logo">
+          <span className="highlight">Osee</span> Mbiya
         </a>
 
         <button
           className="menu-toggle"
-          type="button"
-          onClick={toggleMenu}
-          aria-expanded={isMenuOpen}
-          aria-label="Toggle navigation menu"
-          aria-controls="navbarNav"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation"
         >
-          {isMenuOpen ? (
-            <i className="fas fa-times" aria-hidden="true"></i>
-          ) : (
-            <i className="fas fa-bars" aria-hidden="true"></i>
-          )}
+          <div className={`hamburger ${isMenuOpen ? "active" : ""}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </button>
 
-        <div
-          className={`navbar-collapse ${isMenuOpen ? "show" : ""}`}
-          id="navbarNav"
-          inert={!isMenuOpen ? "" : undefined}
-        >
-          <ul className="nav-menu" role="menubar">
-            {navLinks.map(({ id, href, label }) => (
-              <li className="nav-list-item" key={id} role="none">
-                <a
-                  className="nav-link"
-                  href={href}
-                  onClick={closeMenu}
-                  role="menuitem"
-                  tabIndex={isMenuOpen ? "0" : "-1"}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-            <li className="nav-list-item" role="none">
-              <button
-                className="hireMe-Btn"
-                type="button"
-                onClick={closeMenu}
-                aria-label="Hire Me"
-                tabIndex={isMenuOpen ? "0" : "-1"}
+        <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className={
+                  activeSection === link.href.substring(1) ? "active" : ""
+                }
+                onClick={() => setIsMenuOpen(false)}
               >
-                Hire Me
-              </button>
+                {link.label}
+              </a>
             </li>
-          </ul>
-        </div>
+          ))}
+          <li>
+            <button className="cta-button">Hire Me</button>
+          </li>
+        </ul>
       </div>
     </nav>
   );
 }
+
+export default Navbar;
