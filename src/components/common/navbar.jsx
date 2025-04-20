@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navLinks = [
     { href: "#home", label: "Home" },
@@ -14,6 +15,9 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
+
+      // Add scrolled class when scrolled down 50px
+      setIsScrolled(window.scrollY > 50);
 
       // Get all sections
       const sections = document.querySelectorAll("section[id]");
@@ -50,7 +54,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         <a href="#home" className="logo">
           <span className="highlight">Osee</span> Mbiya

@@ -2,7 +2,7 @@ import Image from "/src/assets/ProfileHero.png";
 
 function Home() {
   return (
-    <div className="hero-section">
+    <section className="hero-section" id="home">
       <div className="hero-content">
         <article className="hero-text">
           <header>
@@ -31,9 +31,24 @@ function Home() {
             <button className="action-button primary-button">
               Download CV
             </button>
-            <button className="action-button secondary-button">
-              Contact Me
-            </button>
+            <div className="social-links">
+              <a
+                href="https://github.com/Oseembiya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+              >
+                <i className="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/oseembiya"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+              >
+                <i className="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
           </div>
         </article>
         <figure className="hero-image">
@@ -44,7 +59,7 @@ function Home() {
           />
         </figure>
       </div>
-    </div>
+    </section>
   );
 }
 
