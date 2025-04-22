@@ -37,7 +37,7 @@ export default function Project() {
     >
       <div className="project-container">
         <h2 id="project-title" className="section-title">
-          Project
+          Projects
         </h2>
         <div className="main-2336">
           <div className="showCase_2336" role="tablist">

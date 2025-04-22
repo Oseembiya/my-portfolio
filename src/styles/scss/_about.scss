@@ -196,20 +196,109 @@
   }
 }
 
-// Image styling
-.img {
+// Image styling - Simple Square
+.img-square-container {
   width: 400px;
   height: 400px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border: 5px solid rgba(255, 255, 255, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0;
+  position: relative;
+  margin: 0 auto;
+  transition: transform 0.5s ease;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+  }
+
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(226, 34, 0, 0.2);
+    transition: all 0.3s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      box-shadow: 0 15px 35px rgba(226, 34, 0, 0.2);
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Scroll animations
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+// Apply individual animation delays to stagger the effect
+@for $i from 1 through 12 {
+  .animation-delay-#{$i} {
+    transition-delay: #{$i * 0.1}s;
   }
 }
 
@@ -251,9 +340,9 @@
 
 // Responsive adjustments
 @include media-query("lg", "max") {
-  .img {
-    width: 350px;
-    height: 350px;
+  .img-square-container {
+    width: 450px;
+    height: 450px;
   }
 }
 
@@ -291,9 +380,9 @@
       }
     }
 
-    .img {
-      width: 300px;
-      height: 300px;
+    .img-square-container {
+      width: 380px;
+      height: 380px;
     }
   }
 
@@ -349,9 +438,9 @@
     font-size: 1rem;
   }
 
-  .img {
-    width: 250px;
-    height: 250px;
+  .img-square-container {
+    width: 320px;
+    height: 320px;
   }
 }
 

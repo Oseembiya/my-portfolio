@@ -4,6 +4,7 @@
   color: $color-text-primary;
   position: relative;
   overflow: hidden;
+  text-align: left;
 
   &::before {
     content: "";
@@ -34,16 +35,18 @@
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
+  text-align: left;
+  padding-left: 0.5rem;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
     height: 3px;
     background-color: $color-text-random;
+    transform: none;
   }
 }
 
