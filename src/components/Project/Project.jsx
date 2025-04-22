@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProjectDetails from "./ProjectDetails"; // Import ProjectDetails
 
 // Main Project Component
@@ -6,6 +6,14 @@ export default function Project() {
   const sections = ProjectDetails.map((section) => section.section); // Section names
   const [currentIndex, setCurrentIndex] = useState(0); // track the state
   const [isAnimating, setIsAnimating] = useState(false);
+  const [visibleSections, setVisibleSections] = useState({});
+
+  // References for Intersection Observer
+  const sectionRefs = {
+    title: useRef(null),
+    tabs: useRef(null),
+    projects: useRef(null),
+  };
 
   // Handle tab change with animation
   const handleTabChange = (index) => {
@@ -19,6 +27,46 @@ export default function Project() {
       }, 500);
     }
   };
+
+  // Set up intersection observer for scroll animations
+  useEffect(() => {
+    const observerOptions = {
+      root: null, // use the viewport
+      rootMargin: "0px",
+      threshold: 0.15, // 15% of the element needs to be visible
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSections((prev) => ({
+            ...prev,
+            [entry.target.dataset.section]: true,
+          }));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+
+    // Observe all section refs
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
 
   // Animate projects on mount
   useEffect(() => {
@@ -36,11 +84,25 @@ export default function Project() {
       aria-labelledby="project-title"
     >
       <div className="project-container">
-        <h2 id="project-title" className="section-title">
+        <h2
+          id="project-title"
+          className={`section-title fade-in-section ${
+            visibleSections.title ? "is-visible" : ""
+          }`}
+          ref={sectionRefs.title}
+          data-section="title"
+        >
           Projects
         </h2>
         <div className="main-2336">
-          <div className="showCase_2336" role="tablist">
+          <div
+            className={`showCase_2336 slide-in-left ${
+              visibleSections.tabs ? "is-visible" : ""
+            }`}
+            role="tablist"
+            ref={sectionRefs.tabs}
+            data-section="tabs"
+          >
             {sections.map((section, index) => (
               <div key={index} className="slideList-2336">
                 <button
@@ -62,13 +124,20 @@ export default function Project() {
 
           {/* Dynamic Projects for the Current Section */}
           <div
-            className={`projects_2336 ${isAnimating ? "fade-transition" : ""}`}
+            className={`projects_2336 scale-in ${
+              visibleSections.projects ? "is-visible" : ""
+            } ${isAnimating ? "fade-transition" : ""}`}
             role="tabpanel"
             id={`panel-${currentIndex}`}
             aria-labelledby={`tab-${currentIndex}`}
+            ref={sectionRefs.projects}
+            data-section="projects"
           >
             {ProjectDetails[currentIndex].projects.map((project, index) => (
-              <article key={index} className="projectItem_2336">
+              <article
+                key={index}
+                className={`projectItem_2336 animation-delay-${index + 1}`}
+              >
                 <div className="projectImage_2336">
                   <a
                     href={project.href}

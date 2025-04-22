@@ -204,3 +204,71 @@
     justify-content: center;
   }
 }
+
+// Scroll animations
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+// Apply individual animation delays to stagger the effect
+@for $i from 1 through 12 {
+  .animation-delay-#{$i} {
+    transition-delay: #{$i * 0.1}s;
+  }
+}
