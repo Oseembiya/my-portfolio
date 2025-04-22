@@ -42,6 +42,7 @@ export default function About() {
     categories: useRef(null),
     details: useRef(null),
     skills: useRef(null),
+    image: useRef(null),
   };
 
   // Get current category data
@@ -131,7 +132,13 @@ export default function About() {
           </div>
 
           {/* Simple square image with rounded edges */}
-          <div className="img-square-container">
+          <div
+            className={`img-square-container slide-in-right ${
+              visibleSections.image ? "is-visible" : ""
+            }`}
+            ref={sectionRefs.image}
+            data-section="image"
+          >
             <div className="profile-image">
               <img src={image} alt="Osee Mbiya - Developer" />
             </div>

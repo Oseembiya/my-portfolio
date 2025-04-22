@@ -122,7 +122,7 @@
   > div:first-child {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center; /* Change from flex-start to center for vertical alignment */
     justify-content: space-between;
     gap: 2rem;
   }
@@ -198,14 +198,28 @@
 
 // Image styling - Simple Square
 .img-square-container {
-  width: 400px;
+  width: 500px;
   height: 300px;
   position: relative;
   margin: 0 auto;
-  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+
+  &.slide-in-right {
+    &:not(.is-visible) {
+      opacity: 0;
+      transform: translateX(50px);
+      visibility: hidden;
+    }
+  }
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) translateX(0);
   }
 
   .profile-image {

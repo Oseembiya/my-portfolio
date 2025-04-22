@@ -16,6 +16,14 @@
   }
 }
 
+// Body class to prevent scrolling when menu is open
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -97,6 +105,8 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 10px;
+  z-index: 1010;
 }
 
 .hamburger {
@@ -131,9 +141,25 @@
   }
 }
 
+/* Overlay for mobile menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 990;
+  display: none;
+}
+
 /* Responsive design */
-@include media-query("md") {
+@include media-query("md", "max") {
   .menu-toggle {
+    display: block;
+  }
+
+  .menu-overlay {
     display: block;
   }
 
@@ -142,15 +168,56 @@
     top: 66px;
     right: -100%;
     flex-direction: column;
-    background-color: rgba(18, 18, 18, 0.9);
-    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    max-width: 320px;
     padding: 20px;
     transition: right 0.3s ease;
-    height: calc(100vh - 70px);
-    align-items: left;
+    height: calc(100vh - 66px);
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 
     &.open {
       right: 0;
     }
+
+    li {
+      width: 100%;
+      padding: 10px 0;
+
+      a {
+        display: block;
+        font-size: 1.2rem;
+
+        &::after {
+          bottom: -8px;
+        }
+      }
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 15px;
+    }
+  }
+}
+
+@include media-query("sm", "max") {
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-menu {
+    width: 100%;
+    max-width: none;
   }
 }

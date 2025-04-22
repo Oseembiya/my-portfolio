@@ -12,6 +12,25 @@ function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
+  // Toggle menu and control body scroll
+  const toggleMenu = () => {
+    const newMenuState = !isMenuOpen;
+    setIsMenuOpen(newMenuState);
+
+    // Disable scrolling on body when menu is open
+    if (newMenuState) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+  };
+
+  // Close menu when clicking a link
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+    document.body.classList.remove("menu-open");
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
@@ -50,7 +69,12 @@ function Navbar() {
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Clean up on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.body.classList.remove("menu-open");
+    };
   }, []);
 
   return (
@@ -62,8 +86,9 @@ function Navbar() {
 
         <button
           className="menu-toggle"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={toggleMenu}
           aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
         >
           <div className={`hamburger ${isMenuOpen ? "active" : ""}`}>
             <span></span>
@@ -80,17 +105,24 @@ function Navbar() {
                 className={
                   activeSection === link.href.substring(1) ? "active" : ""
                 }
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleLinkClick}
               >
                 {link.label}
               </a>
             </li>
           ))}
           <li>
-            <button className="cta-button">Hire Me</button>
+            <button className="cta-button" onClick={handleLinkClick}>
+              Hire Me
+            </button>
           </li>
         </ul>
       </div>
+
+      {/* Overlay for mobile menu to capture taps outside the menu */}
+      {isMenuOpen && (
+        <div className="menu-overlay" onClick={handleLinkClick}></div>
+      )}
     </nav>
   );
 }
