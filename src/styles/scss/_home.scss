@@ -3,7 +3,7 @@
   height: 100vh;
   position: relative;
   color: $color-text-secondary;
-  background: url("/src/assets/Background.png") no-repeat center/cover;
+  background: url("/src/assets/Desktop.png") no-repeat center/cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,7 +79,7 @@
   margin: 0;
 
   img {
-    max-width: 600px;
+    max-width: 548px;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -179,15 +179,6 @@
       background-color: darken(#e22200, 10%);
     }
   }
-
-  &.secondary-button {
-    background-color: $color-background-secondary;
-    color: $color-text-secondary;
-
-    &:hover {
-      background-color: lighten($color-background-secondary, 10%);
-    }
-  }
 }
 
 .social-links {
@@ -196,12 +187,11 @@
   align-items: center;
 
   a {
-    color: $color-text-primary;
-    font-size: 1.8rem;
+    color: $color-text-secondary;
+    font-size: 1.5rem;
     transition: color 0.3s ease, transform 0.3s ease;
 
     &:hover {
-      color: #e22200;
       transform: translateY(-3px);
     }
 
