@@ -82,42 +82,113 @@ export default function About() {
           ))}
         </div>
 
-        {/* Companies trust us section */}
-        <div className="companies-section">
-          <div className="companies-heading">
-            <h3>100+ Companies</h3>
-            <p>trust us</p>
+        {/* Skills showcase section */}
+        <div className="skills-showcase">
+          <div className="skills-heading">
+            <h3>My Tech Stack</h3>
+            <p>Technologies I work with</p>
           </div>
-          <div className="companies-logos">
-            <div className="logo">
-              <img
-                src="https://via.placeholder.com/150x50?text=Sitemark"
-                alt="Sitemark"
-              />
-            </div>
-            <div className="logo">
-              <img
-                src="https://via.placeholder.com/150x50?text=Greenish"
-                alt="Greenish"
-              />
-            </div>
-            <div className="logo">
-              <img
-                src="https://via.placeholder.com/150x50?text=LOGOIPSUM"
-                alt="Logo Ipsum"
-              />
-            </div>
-            <div className="logo">
-              <img
-                src="https://via.placeholder.com/150x50?text=LOGOIPSUM"
-                alt="Logo Ipsum"
-              />
-            </div>
-            <div className="logo">
-              <img
-                src="https://via.placeholder.com/150x50?text=PinPoint"
-                alt="PinPoint"
-              />
+          <div className="skills-logos">
+            <div className="skills-logos-container">
+              {/* First set of icons */}
+              <div className="skill-logo">
+                <i className="fa-brands fa-html5"></i>
+                <span>HTML</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-react"></i>
+                <span>React</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-node-js"></i>
+                <span>Node.js</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-java"></i>
+                <span>Java</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-aws"></i>
+                <span>AWS</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-solid fa-database"></i>
+                <span>MongoDB</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-figma"></i>
+                <span>Figma</span>
+              </div>
+
+              {/* Duplicate set for continuous scrolling effect */}
+              <div className="skill-logo">
+                <i className="fa-brands fa-html5"></i>
+                <span>HTML</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-react"></i>
+                <span>React</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-node-js"></i>
+                <span>Node.js</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-java"></i>
+                <span>Java</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-aws"></i>
+                <span>AWS</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-solid fa-database"></i>
+                <span>MongoDB</span>
+              </div>
+              <div className="skill-logo">
+                <i className="fa-brands fa-figma"></i>
+                <span>Figma</span>
+              </div>
             </div>
           </div>
         </div>
