@@ -3,7 +3,6 @@ import Home from "./components/home/home";
 import About from "./components/about/about";
 import Projects from "./components/Project/Project";
 import Contact from "./components/contact/contactMe";
-import "./styles/main.css";
 
 function App() {
   return (

@@ -1,6 +1,5 @@
 @include media-query("md") {
   .about-2335 {
-    padding-top: 2rem;
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
@@ -94,17 +93,20 @@
     font-weight: 600;
     color: $color-text-primary;
     position: relative;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    max-width: 1000px;
+    padding-left: 0.5rem;
 
     &::after {
       content: "";
       position: absolute;
       bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0.5rem;
       width: 60px;
       height: 3px;
       background-color: #e22200;
+      transform: none;
     }
   }
 }
@@ -112,34 +114,104 @@
 .aboutMeContent-2335 {
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   gap: 3rem;
 }
 
+// Restructured layout for the about section
 .aboutImg-2335 {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  max-width: 50%;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: 3rem;
+    text-align: left;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #e22200;
+    }
+  }
 
   p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    max-width: 700px;
+    font-size: 0.9rem;
+    line-height: 1.8;
     color: $color-text-primary;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  .contentList-2335 {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+
+    .category-btn {
+      padding: 0.5rem 0.8rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $color-text-primary;
+      background-color: transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(226, 34, 0, 0.1);
+        color: #e22200;
+      }
+
+      &.active {
+        background-color: #e22200;
+        color: white;
+        border-color: #e22200;
+      }
+    }
+  }
+}
+
+// New row layout
+.aboutMeContent-2335 {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  > div:first-child {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
   .img {
-    width: 250px;
-    height: 250px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     border: 5px solid rgba(255, 255, 255, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
 
     &:hover {
       transform: translateY(-5px);
@@ -149,48 +221,7 @@
 }
 
 .contentList-2335 {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  margin: 1rem 0 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 1rem;
-
-  .category-btn {
-    padding: 0.6rem 0.5rem;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    color: $color-text-primary;
-    background-color: transparent;
-    transition: color 0.3s ease;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -1rem;
-      left: 0;
-      width: 0;
-      height: 3px;
-      background-color: #e22200;
-      transition: width 0.3s ease;
-    }
-
-    &:hover {
-      color: #e22200;
-    }
-
-    &.active {
-      color: #e22200;
-      font-weight: 600;
-
-      &::after {
-        width: 100%;
-      }
-    }
-  }
+  display: none;
 }
 
 .content-2335 {
@@ -230,17 +261,61 @@
 
 // Responsive adjustments
 @include media-query("lg", "max") {
-  .aboutImg-2335 {
-    .img {
-      width: 200px;
-      height: 200px;
-    }
+  .img {
+    width: 350px;
+    height: 350px;
   }
 }
 
 @include media-query("md", "max") {
   .about-wrapper {
     padding: 80px 16px 40px;
+
+    h2 {
+      text-align: center;
+      align-self: center;
+      padding-left: 0;
+
+      &::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .aboutMeContent-2335 > div:first-child {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .aboutImg-2335 {
+      max-width: 100%;
+      align-items: center;
+
+      h2 {
+        text-align: center;
+
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .contentList-2335 {
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .img {
+      width: 300px;
+      height: 300px;
+    }
   }
 
   .contentList-2335 {
@@ -270,14 +345,16 @@
     font-size: 1.8rem;
   }
 
-  .aboutImg-2335 {
-    p {
-      font-size: 1rem;
-    }
+  .aboutImg-2335 h2 {
+    font-size: 1.8rem;
+  }
 
-    .img {
-      width: 180px;
-      height: 180px;
-    }
+  .aboutImg-2335 p {
+    font-size: 1rem;
+  }
+
+  .img {
+    width: 250px;
+    height: 250px;
   }
 }

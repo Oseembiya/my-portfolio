@@ -40,27 +40,35 @@ export default function About() {
 
   return (
     <section className="about-wrapper about-2335" id="about">
-      <h2>Who I am</h2>
       <div className="aboutMeContent-2335">
-        <div className="aboutImg-2335">
-          <p>
-            I am a passionate and dedicated Front-End Developer, ready to tackle
-            challenges and create innovative, user-friendly web experiences that
-            drive results.
-          </p>
-          <img className="img" src={image} alt="Osee Mbiya - Developer" />
-        </div>
+        <div>
+          <div className="aboutImg-2335">
+            <h2>Who I am</h2>
+            <p>
+              I am a dedicated and enthusiastic Computer Science graduate from
+              Middlesex University with a strong passion for web development. My
+              academic and project experience has equipped me with a robust
+              skill set in front-end and full-stack development, focusing on
+              creating user-friendly, responsive, and efficient web solutions.
+              <br />I am eager to secure a front-end developer role where I can
+              contribute to innovative projects, collaborate with dynamic teams,
+              and further enhance my technical expertise while delivering
+              impactful digital experiences.
+            </p>
 
-        {/* Category selection */}
-        <div className="contentList-2335">
-          {AboutMeData.map((category, index) => (
-            <CategoryButton
-              key={`category-${index}`}
-              label={category.aboutMe}
-              isActive={selectedCategory === index}
-              onClick={() => setSelectedCategory(index)}
-            />
-          ))}
+            {/* Category selection */}
+            <div className="contentList-2335">
+              {AboutMeData.map((category, index) => (
+                <CategoryButton
+                  key={`category-${index}`}
+                  label={category.aboutMe}
+                  isActive={selectedCategory === index}
+                  onClick={() => setSelectedCategory(index)}
+                />
+              ))}
+            </div>
+          </div>
+          <img className="img" src={image} alt="Osee Mbiya - Developer" />
         </div>
 
         {/* Category details */}

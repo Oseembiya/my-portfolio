@@ -8,7 +8,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* Space for navbar */
 
   span {
     color: $color-text-random;
@@ -83,6 +82,7 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+    align-content: baseline;
 
     @include media-query("lg", "max") {
       max-width: 80%;
