@@ -689,7 +689,7 @@ body.menu-open {
   max-width: 50%;
 }
 .aboutImg-2335 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #00262b;
   margin-bottom: 3rem;
@@ -1018,7 +1018,7 @@ body.menu-open {
   order: 1;
 }
 .skills-heading h3 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #00262b;
   margin: 0;
@@ -1243,7 +1243,7 @@ body.menu-open {
 }
 .projectMain-2336 {
   padding: 100px 20px 80px;
-  background-color: #fef4ea;
+  background-color: #f7f9fb;
   color: #00262b;
   position: relative;
   overflow: hidden;
@@ -1268,7 +1268,7 @@ body.menu-open {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 3rem;
   position: relative;
@@ -1668,7 +1668,7 @@ body.menu-open {
   height: 100vh;
   text-align: center;
   padding: 20px 12px 0px;
-  background-color: #f9f9f9;
+  background-color: var(--color-background-primary);
   color: #00262b;
 }
 
@@ -1697,7 +1697,7 @@ body.menu-open {
   gap: 15px;
 }
 .socialMedia-2338 i {
-  font-size: 32px;
+  font-size: 24px;
 }
 .socialMedia-2338 a {
   font-size: 20px;

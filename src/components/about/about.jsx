@@ -131,7 +131,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Simple square image with rounded edges */}
           <div
             className={`img-square-container slide-in-right ${
               visibleSections.image ? "is-visible" : ""

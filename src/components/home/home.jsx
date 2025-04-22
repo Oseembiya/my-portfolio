@@ -42,12 +42,6 @@ function Home() {
             ...prev,
             [entry.target.dataset.section]: true,
           }));
-        } else {
-          // Uncomment below if you want elements to animate again when scrolling back up
-          // setVisibleSections(prev => ({
-          //   ...prev,
-          //   [entry.target.dataset.section]: false
-          // }));
         }
       });
     };
@@ -135,7 +129,7 @@ function Home() {
               <a
                 href="https://github.com/Oseembiya"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="github"
                 aria-label="GitHub Profile"
               >
                 <i className="fa-brands fa-github"></i>
@@ -143,7 +137,7 @@ function Home() {
               <a
                 href="https://www.linkedin.com/in/oseembiya"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="linkedin"
                 aria-label="LinkedIn Profile"
               >
                 <i className="fa-brands fa-linkedin"></i>
