@@ -81,6 +81,46 @@ export default function About() {
             />
           ))}
         </div>
+
+        {/* Companies trust us section */}
+        <div className="companies-section">
+          <div className="companies-heading">
+            <h3>100+ Companies</h3>
+            <p>trust us</p>
+          </div>
+          <div className="companies-logos">
+            <div className="logo">
+              <img
+                src="https://via.placeholder.com/150x50?text=Sitemark"
+                alt="Sitemark"
+              />
+            </div>
+            <div className="logo">
+              <img
+                src="https://via.placeholder.com/150x50?text=Greenish"
+                alt="Greenish"
+              />
+            </div>
+            <div className="logo">
+              <img
+                src="https://via.placeholder.com/150x50?text=LOGOIPSUM"
+                alt="Logo Ipsum"
+              />
+            </div>
+            <div className="logo">
+              <img
+                src="https://via.placeholder.com/150x50?text=LOGOIPSUM"
+                alt="Logo Ipsum"
+              />
+            </div>
+            <div className="logo">
+              <img
+                src="https://via.placeholder.com/150x50?text=PinPoint"
+                alt="PinPoint"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
