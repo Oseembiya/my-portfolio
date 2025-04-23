@@ -348,10 +348,10 @@ body.menu-open {
   transform: scale(0.98);
 }
 .hero-actions .btn.btn-Contact {
-  background-color: #00262b;
+  background-color: #010d0f;
 }
 .hero-actions .btn.btn-Contact:hover, .hero-actions .btn.btn-Contact:active, .hero-actions .btn.btn-Contact:focus {
-  background-color: #00262b;
+  background-color: #010d0f;
 }
 .hero-actions .btn.btn-Cv {
   background-color: #e22200;
@@ -517,7 +517,7 @@ body.menu-open {
 }
 
 .contactMe-2338 {
-  background-color: #00262b;
+  background-color: #010d0f;
   color: #ffffff;
   padding: 100px 20px 30px;
   position: relative;

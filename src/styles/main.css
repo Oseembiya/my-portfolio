@@ -415,10 +415,10 @@ body.menu-open {
   transform: scale(0.98);
 }
 .hero-actions .btn.btn-Contact {
-  background-color: #00262b;
+  background-color: #010d0f;
 }
 .hero-actions .btn.btn-Contact:hover, .hero-actions .btn.btn-Contact:active, .hero-actions .btn.btn-Contact:focus {
-  background-color: #00262b;
+  background-color: #010d0f;
 }
 .hero-actions .btn.btn-Cv {
   background-color: #e22200;
@@ -1214,21 +1214,21 @@ body.menu-open {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #00262b;
+  background-color: #010d0f;
   z-index: -1;
   transition: width 0.3s ease;
 }
 .showCase_2336 .slideList-2336 .slideButton-2336:hover {
   color: #ffffff;
-  border-color: #00262b;
+  border-color: #010d0f;
 }
 .showCase_2336 .slideList-2336 .slideButton-2336:hover::before {
   width: 100%;
 }
 .showCase_2336 .slideList-2336 .slideButton-2336.active {
-  background-color: #00262b;
+  background-color: #010d0f;
   color: #ffffff;
-  border-color: #00262b;
+  border-color: #010d0f;
   box-shadow: 0 4px 12px rgba(0, 38, 43, 0.2);
 }
 .showCase_2336 .slideList-2336 .slideButton-2336.active::before {
@@ -1367,14 +1367,14 @@ body.menu-open {
   margin-right: 0.5rem;
 }
 .projectDetails_2336 .project-links .project-link.project-link-outline {
-  border: 1px solid #00262b;
-  color: #00262b;
+  border: 1px solid #010d0f;
+  color: #010d0f;
 }
 .projectDetails_2336 .project-links .project-link.project-link-outline:hover {
   background-color: rgba(0, 38, 43, 0.05);
 }
 .projectDetails_2336 .project-links .project-link.project-link-filled {
-  background-color: #00262b;
+  background-color: #010d0f;
   color: #ffffff;
 }
 .projectDetails_2336 .project-links .project-link.project-link-filled:hover {
@@ -1550,7 +1550,7 @@ body.menu-open {
 }
 
 .contactMe-2338 {
-  background-color: #00262b;
+  background-color: #010d0f;
   color: #ffffff;
   padding: 100px 20px 30px;
   position: relative;
