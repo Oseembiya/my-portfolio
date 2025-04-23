@@ -519,9 +519,12 @@ body.menu-open {
 .contactMe-2338 {
   background-color: #00262b;
   color: #ffffff;
-  padding: 4rem 0;
+  padding: 100px 20px 30px;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 .contactMe-2338 .contact-container {
   max-width: 1200px;
@@ -529,30 +532,49 @@ body.menu-open {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
+  flex: 1;
 }
 .contactMe-2338 .section-title {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   text-align: left;
+  padding-left: 0.5rem;
 }
 .contactMe-2338 .section-title::after {
   content: "";
   position: absolute;
   bottom: -10px;
-  left: 0.5rem;
+  left: 0;
   width: 60px;
   height: 3px;
   background-color: #e22200;
   transform: none;
 }
+.contactMe-2338 .contact-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  flex: 1;
+}
+@media (max-width: 992px) {
+  .contactMe-2338 .contact-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 .contactMe-2338 .contactInfo-2338 {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 350px;
 }
 .contactMe-2338 .contactInfo-2338 .contactItem-2338 {
   display: flex;
@@ -575,7 +597,7 @@ body.menu-open {
 .contactMe-2338 .contactInfo-2338 .socialMedia-2338 {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .contactMe-2338 .contactInfo-2338 .socialMedia-2338 a {
   color: #ffffff;
@@ -586,28 +608,27 @@ body.menu-open {
   color: #ff6347;
   transform: translateY(-5px);
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .contactMe-2338 .contactInfo-2338 {
-    flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 100%;
   }
 }
 .contactMe-2338 .contactContent-2338 {
-  max-width: 700px;
-  margin: 0 auto;
-  width: 100%;
+  flex: 2;
+  max-width: 600px;
 }
 .contactMe-2338 .contactContent-2338 p {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ffffff;
 }
 .contactMe-2338 .contactContent-2338 .thankYouMessage {
   background-color: rgba(255, 99, 71, 0.2);
   border-left: 4px solid #ff6347;
-  padding: 1rem;
-  margin-bottom: 2rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
   border-radius: 4px;
   text-align: center;
   animation: fadeIn 0.5s ease-in-out;
@@ -622,15 +643,24 @@ body.menu-open {
     transform: translateY(0);
   }
 }
+@media (max-width: 992px) {
+  .contactMe-2338 .contactContent-2338 {
+    max-width: 100%;
+    width: 100%;
+  }
+  .contactMe-2338 .contactContent-2338 p {
+    text-align: center;
+  }
+}
 .contactMe-2338 .contactForm-2338 {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 label {
   font-weight: 500;
@@ -638,7 +668,7 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input,
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 8px;
   border: 1px solid transparent;
   background-color: rgba(255, 255, 255, 0.1);
@@ -662,19 +692,20 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338 {
   align-self: flex-start;
   background-color: #ff6347;
   color: #ffffff;
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 2rem;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
   background-color: #ff3814;
@@ -692,18 +723,18 @@ body.menu-open {
 .contactMe-2338 .downArrow-2338 {
   position: absolute;
   right: 2rem;
-  bottom: 5rem;
+  bottom: 3rem;
 }
 .contactMe-2338 .downArrow-2338 a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   background-color: #ff6347;
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -714,18 +745,19 @@ body.menu-open {
 @media (max-width: 768px) {
   .contactMe-2338 .downArrow-2338 {
     right: 1rem;
-    bottom: 5rem;
+    bottom: 3rem;
   }
 }
 @media (max-width: 425px) {
   .contactMe-2338 .downArrow-2338 {
     right: 1rem;
-    bottom: 4rem;
+    bottom: 2rem;
   }
 }
 .contactMe-2338 .allRight-2338 {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  padding-bottom: 1rem;
 }/*# sourceMappingURL=style.css.map */

@@ -48,116 +48,121 @@ export default function Contact() {
           Contact Me
         </h2>
 
-        {/* Contact Information */}
-        <div className="contactInfo-2338">
-          <div className="contactItem-2338">
-            <i className="fa-solid fa-envelope" aria-hidden="true"></i>
-            <span>
-              Email:{" "}
+        <div className="contact-content-wrapper">
+          {/* Contact Information */}
+          <div className="contactInfo-2338">
+            <div className="contactItem-2338">
+              <i className="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email:{" "}
+                <a
+                  href="mailto:ozeembiya@gmail.com"
+                  aria-label="Send email to ozeembiya@gmail.com"
+                >
+                  ozeembiya@gmail.com
+                </a>
+              </span>
+            </div>
+            <div className="contactItem-2338">
+              <i className="fa-solid fa-phone" aria-hidden="true"></i>
+              <span>
+                Phone:{" "}
+                <a href="tel:07884103424" aria-label="Call +44788 410 3424">
+                  +44788 410 3424
+                </a>
+              </span>
+            </div>
+            <div className="socialMedia-2338">
               <a
-                href="mailto:ozeembiya@gmail.com"
-                aria-label="Send email to ozeembiya@gmail.com"
+                href="https://www.linkedin.com/in/osee-mbiya-a96529177"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LinkedIn profile"
               >
-                ozeembiya@gmail.com
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
               </a>
-            </span>
-          </div>
-          <div className="contactItem-2338">
-            <i className="fa-solid fa-phone" aria-hidden="true"></i>
-            <span>
-              Phone:{" "}
-              <a href="tel:07884103424" aria-label="Call +44788 410 3424">
-                +44788 410 3424
+              <a
+                href="https://github.com/Oseembiya/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
+              >
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
               </a>
-            </span>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Twitter profile"
+              >
+                <i className="fa-brands fa-twitter" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
-          <div className="socialMedia-2338">
-            <a
-              href="https://www.linkedin.com/in/osee-mbiya-a96529177"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit LinkedIn profile"
+
+          {/* Contact Form */}
+          <div className="contactContent-2338">
+            <p>
+              If you&apos;d like to get in touch, please fill out the form
+              below:
+            </p>
+
+            {formSubmitted && (
+              <div className="thankYouMessage" aria-live="polite">
+                Thank you for your message! I&apos;ll get back to you soon.
+              </div>
+            )}
+
+            <form
+              className="contactForm-2338"
+              onSubmit={handleSubmit}
+              aria-label="Contact form"
             >
-              <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://github.com/Oseembiya/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit GitHub profile"
-            >
-              <i className="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Twitter profile"
-            >
-              <i className="fa-brands fa-twitter" aria-hidden="true"></i>
-            </a>
+              {/* Name Field */}
+              <div className="formGroup-2338">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              {/* Email Field */}
+              <div className="formGroup-2338">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                  aria-required="true"
+                />
+              </div>
+
+              {/* Message Field */}
+              <div className="formGroup-2338">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message"
+                  rows="4"
+                  required
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              {/* Submit Button */}
+              <button type="submit" className="submitButton-2338">
+                Send Message
+              </button>
+            </form>
           </div>
-        </div>
-
-        {/* Contact Form */}
-        <div className="contactContent-2338">
-          <p>If you'd like to get in touch, please fill out the form below:</p>
-
-          {formSubmitted && (
-            <div className="thankYouMessage" aria-live="polite">
-              Thank you for your message! I'll get back to you soon.
-            </div>
-          )}
-
-          <form
-            className="contactForm-2338"
-            onSubmit={handleSubmit}
-            aria-label="Contact form"
-          >
-            {/* Name Field */}
-            <div className="formGroup-2338">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
-                aria-required="true"
-              />
-            </div>
-
-            {/* Email Field */}
-            <div className="formGroup-2338">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-                aria-required="true"
-              />
-            </div>
-
-            {/* Message Field */}
-            <div className="formGroup-2338">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your message"
-                rows="5"
-                required
-                aria-required="true"
-              ></textarea>
-            </div>
-
-            {/* Submit Button */}
-            <button type="submit" className="submitButton-2338">
-              Send Message
-            </button>
-          </form>
         </div>
 
         {/* Down Arrow */}
