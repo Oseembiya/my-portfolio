@@ -7,8 +7,8 @@ import Contact from "./components/contact/contactMe";
 function App() {
   return (
     <>
-      <Navbar />
       <main>
+        <Navbar />
         <section id="home">
           <Home />
         </section>
