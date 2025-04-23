@@ -6,7 +6,7 @@
   background: url("/src/assets/Desktop.png") no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 70px;
 
@@ -50,10 +50,11 @@
   max-width: 1250px;
   width: 95%;
   margin: 0 auto;
-  padding: 0;
-  align-items: center;
+  padding: 0 0 0 0;
+  align-items: flex-end;
   justify-content: space-between;
   height: calc(100vh - 100px);
+  position: relative;
 
   @include media-query("lg", "max") {
     flex-direction: column;
@@ -61,7 +62,7 @@
     gap: 2rem;
     width: 90%;
     height: auto;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 }
 
@@ -69,38 +70,38 @@
   flex: 1;
   max-width: 600px;
   margin-top: 0;
+  margin-bottom: 50px;
   z-index: 2;
+  padding-bottom: 0;
 
   @include media-query("lg", "max") {
     margin-top: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
 .hero-image {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
   margin: 0;
+  margin-bottom: 0;
   align-self: flex-end;
-  height: 100%;
+  display: block;
+  position: relative;
+  bottom: 0;
 
-  img {
-    max-width: 548px;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+  @include media-query("lg", "max") {
+    max-width: 80%;
+    margin-top: 0;
     margin-bottom: 0;
+    align-self: center;
+  }
 
-    @include media-query("lg", "max") {
-      max-width: 80%;
-    }
-
-    @include media-query("sm", "max") {
-      max-width: 100%;
-    }
+  @include media-query("sm", "max") {
+    max-width: 90%;
   }
 }
 

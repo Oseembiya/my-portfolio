@@ -145,19 +145,16 @@ function Home() {
             </div>
           </div>
         </article>
-        <figure
+        <img
           className={`hero-image slide-in-right ${
             visibleSections.image ? "is-visible" : ""
           }`}
           ref={sectionRefs.image}
           data-section="image"
-        >
-          <img
-            src={Image}
-            alt="Osee Mbiya - Full Stack Developer"
-            loading="eager"
-          />
-        </figure>
+          src={Image}
+          alt="Osee Mbiya - Full Stack Developer"
+          loading="eager"
+        />
       </div>
     </section>
   );

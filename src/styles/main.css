@@ -277,7 +277,7 @@ body.menu-open {
   background: url("/src/assets/Desktop.png") no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 70px;
 }
@@ -319,10 +319,11 @@ body.menu-open {
   max-width: 1250px;
   width: 95%;
   margin: 0 auto;
-  padding: 0;
-  align-items: center;
+  padding: 0 0 0 0;
+  align-items: flex-end;
   justify-content: space-between;
   height: calc(100vh - 100px);
+  position: relative;
 }
 @media (max-width: 992px) {
   .hero-content {
@@ -331,7 +332,7 @@ body.menu-open {
     gap: 2rem;
     width: 90%;
     height: auto;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 }
 
@@ -339,41 +340,42 @@ body.menu-open {
   flex: 1;
   max-width: 600px;
   margin-top: 0;
+  margin-bottom: 50px;
   z-index: 2;
+  padding-bottom: 0;
 }
 @media (max-width: 992px) {
   .hero-text {
     margin-top: 1rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
 .hero-image {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 0;
-  align-self: flex-end;
-  height: 100%;
-}
-.hero-image img {
-  max-width: 548px;
-  width: 100%;
+  max-width: 500px;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
+  margin: 0;
   margin-bottom: 0;
+  align-self: flex-end;
+  display: block;
+  position: relative;
+  bottom: 0;
 }
 @media (max-width: 992px) {
-  .hero-image img {
+  .hero-image {
     max-width: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-self: center;
   }
 }
 @media (max-width: 425px) {
-  .hero-image img {
-    max-width: 100%;
+  .hero-image {
+    max-width: 90%;
   }
 }
 
