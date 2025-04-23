@@ -20,7 +20,14 @@
     background-color: transparent;
 
     &.scrolled {
-      background-color: rgba(18, 18, 18, 0.9);
+      background-color: rgba(
+        0,
+        38,
+        43,
+        0.95
+      ); /* Darker version of the hero section background */
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
   }
 

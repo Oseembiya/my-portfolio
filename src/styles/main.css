@@ -94,7 +94,10 @@ textarea:focus {
   background-color: transparent;
 }
 .navbar.section-home.scrolled {
-  background-color: rgba(18, 18, 18, 0.9);
+  background-color: rgba(0, 38, 43, 0.95); /* Darker version of the hero section background */
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .navbar.section-about {
   background-color: transparent;
