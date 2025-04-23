@@ -78,7 +78,11 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav
+      className={`navbar ${
+        isScrolled ? "scrolled" : ""
+      } section-${activeSection}`}
+    >
       <div className="nav-container">
         <a href="#home" className="logo">
           <span className="highlight">Osee</span> Mbiya
