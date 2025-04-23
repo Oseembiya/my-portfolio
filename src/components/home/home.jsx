@@ -129,7 +129,7 @@ function Home() {
               <a
                 href="https://github.com/Oseembiya"
                 target="_blank"
-                rel="github"
+                rel="noopener noreferrer"
                 aria-label="GitHub Profile"
               >
                 <i className="fa-brands fa-github"></i>
@@ -137,7 +137,7 @@ function Home() {
               <a
                 href="https://www.linkedin.com/in/oseembiya"
                 target="_blank"
-                rel="linkedin"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
               >
                 <i className="fa-brands fa-linkedin"></i>

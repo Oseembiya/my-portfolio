@@ -8,6 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 70px;
 
   span {
     color: $color-text-random;
@@ -32,14 +33,14 @@
   @include media-query("md") {
     min-height: 100vh;
     height: auto;
-    padding: 80px 12px 0;
+    padding: 100px 12px 20px;
     text-align: start;
   }
 
   @include media-query("sm") {
     min-height: 100vh;
     height: auto;
-    padding-bottom: 2rem;
+    padding: 90px 12px 20px;
   }
 }
 
@@ -49,14 +50,18 @@
   max-width: 1250px;
   width: 95%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 0;
   align-items: center;
+  justify-content: space-between;
+  height: calc(100vh - 100px);
 
   @include media-query("lg", "max") {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     width: 90%;
+    height: auto;
+    padding-bottom: 2rem;
   }
 }
 
@@ -64,10 +69,12 @@
   flex: 1;
   max-width: 600px;
   margin-top: 0;
+  z-index: 2;
 
   @include media-query("lg", "max") {
     margin-top: 1rem;
     text-align: center;
+    margin-bottom: 2rem;
   }
 }
 
@@ -75,15 +82,17 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-content: baseline;
+  align-items: flex-end;
   margin: 0;
+  align-self: flex-end;
+  height: 100%;
 
   img {
     max-width: 548px;
     width: 100%;
     height: auto;
     object-fit: contain;
-    align-content: baseline;
+    margin-bottom: 0;
 
     @include media-query("lg", "max") {
       max-width: 80%;
@@ -203,5 +212,73 @@
 
   @include media-query("lg", "max") {
     justify-content: center;
+  }
+}
+
+// Scroll animations
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  visibility: hidden;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out,
+    visibility 0.8s ease-out;
+  will-change: opacity, visibility, transform;
+
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+// Apply individual animation delays to stagger the effect
+@for $i from 1 through 12 {
+  .animation-delay-#{$i} {
+    transition-delay: #{$i * 0.1}s;
   }
 }
