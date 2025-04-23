@@ -81,7 +81,7 @@ textarea:focus {
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
-  padding: 12px 0;
+  padding: 14px 0;
 }
 .navbar.scrolled {
   background-color: rgba(18, 18, 18, 0.9);
@@ -277,9 +277,10 @@ body.menu-open {
   background: url("/src/assets/Desktop.png") no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 0;
+  overflow: hidden;
 }
 .hero-section span {
   color: #ff6347;
@@ -315,15 +316,14 @@ body.menu-open {
 
 .hero-content {
   display: flex;
-  gap: 2rem;
-  max-width: 1250px;
+  max-width: 1200px;
   width: 95%;
   margin: 0 auto;
-  padding: 0 0 0 0;
-  align-items: flex-end;
+  padding: 0;
+  align-items: center;
   justify-content: space-between;
-  height: calc(100vh - 100px);
   position: relative;
+  height: 100%;
 }
 @media (max-width: 992px) {
   .hero-content {
@@ -332,50 +332,59 @@ body.menu-open {
     gap: 2rem;
     width: 90%;
     height: auto;
-    padding-bottom: 0;
+    padding-bottom: 2rem;
   }
 }
 
 .hero-text {
   flex: 1;
-  max-width: 600px;
-  margin-top: 0;
-  margin-bottom: 50px;
+  max-width: 50%;
   z-index: 2;
-  padding-bottom: 0;
+  text-align: left;
+  padding-right: 2rem;
 }
 @media (max-width: 992px) {
   .hero-text {
-    margin-top: 1rem;
+    max-width: 100%;
+    margin-top: 5rem;
     text-align: center;
     margin-bottom: 1rem;
+    padding-right: 0;
   }
 }
 
 .hero-image {
   flex: 1;
-  max-width: 500px;
+  max-width: 80%;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0;
-  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   align-self: flex-end;
-  display: block;
-  position: relative;
-  bottom: 0;
+  margin-bottom: 0;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 85vh;
 }
 @media (max-width: 992px) {
   .hero-image {
     max-width: 80%;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 2rem;
     align-self: center;
+    justify-content: center;
+  }
+  .hero-image img {
+    max-height: 50vh;
   }
 }
 @media (max-width: 425px) {
   .hero-image {
     max-width: 90%;
+  }
+  .hero-image img {
+    max-height: 60vh;
   }
 }
 
@@ -430,7 +439,7 @@ body.menu-open {
 }
 
 .action-button {
-  padding: 15px 30px;
+  padding: 15px 50px;
   border-radius: 5px;
   font-weight: bold;
   font-size: 16px;
@@ -459,7 +468,7 @@ body.menu-open {
 }
 .social-links a {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-links a:hover {
@@ -1147,7 +1156,7 @@ body.menu-open {
 .section-title {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
   text-align: left;
@@ -1167,7 +1176,7 @@ body.menu-open {
 .main-2336 {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
 }
 

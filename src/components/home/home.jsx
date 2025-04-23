@@ -68,7 +68,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="hero-section" id="home" ref={homeRef}>
+    <section className="hero-section" ref={homeRef}>
       <div className="hero-content">
         <article className="hero-text">
           <header>
@@ -145,16 +145,19 @@ function Home() {
             </div>
           </div>
         </article>
-        <img
+        <div
           className={`hero-image slide-in-right ${
             visibleSections.image ? "is-visible" : ""
           }`}
-          ref={sectionRefs.image}
-          data-section="image"
-          src={Image}
-          alt="Osee Mbiya - Full Stack Developer"
-          loading="eager"
-        />
+        >
+          <img
+            ref={sectionRefs.image}
+            data-section="image"
+            src={Image}
+            alt="Osee Mbiya - Full Stack Developer"
+            loading="eager"
+          />
+        </div>
       </div>
     </section>
   );
