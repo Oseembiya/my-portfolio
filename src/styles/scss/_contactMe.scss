@@ -103,10 +103,83 @@
       }
     }
 
+    // Additional Links Section
+    .additionalLinks-2338 {
+      width: 100%;
+      margin-top: 0.5rem;
+
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        color: $color-text-secondary;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 40px;
+          height: 2px;
+          background-color: $color-text-random;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      li a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: $color-text-secondary;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 0.5rem 0;
+
+        i {
+          font-size: 1.25rem;
+          width: 1.5rem;
+          text-align: center;
+          color: $color-text-random;
+        }
+
+        span {
+          font-size: 1rem;
+        }
+
+        &:hover {
+          transform: translateX(5px);
+          color: $color-text-random;
+        }
+      }
+    }
+
     @include media-query("lg", "max") {
       align-items: center;
       text-align: center;
       max-width: 100%;
+
+      .additionalLinks-2338 {
+        h3::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        ul {
+          align-items: center;
+        }
+
+        li a:hover {
+          transform: translateY(-3px);
+        }
+      }
     }
   }
 
@@ -114,9 +187,9 @@
   .contactContent-2338 {
     flex: 2;
     max-width: 600px;
+    align-content: last baseline;
 
     p {
-      margin-bottom: 1rem;
       font-size: 1rem;
       color: $color-text-secondary;
     }

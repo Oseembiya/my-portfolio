@@ -98,6 +98,60 @@ export default function Contact() {
                 <i className="fa-brands fa-twitter" aria-hidden="true"></i>
               </a>
             </div>
+
+            {/* Additional Links */}
+            <div className="additionalLinks-2338">
+              <h3>More Links</h3>
+              <ul>
+                <li>
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download my resume"
+                  >
+                    <i className="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                    <span>Resume</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://instagram.com/username"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Instagram profile"
+                  >
+                    <i
+                      className="fa-brands fa-instagram"
+                      aria-hidden="true"
+                    ></i>
+                    <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://discord.com/users/userid"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect on Discord"
+                  >
+                    <i className="fa-brands fa-discord" aria-hidden="true"></i>
+                    <span>Discord</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/447884103424"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Connect on WhatsApp"
+                  >
+                    <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span>WhatsApp</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Form */}
