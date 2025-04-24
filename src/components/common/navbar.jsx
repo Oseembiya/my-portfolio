@@ -116,7 +116,15 @@ function Navbar() {
             </li>
           ))}
           <li>
-            <button className="cta-button" onClick={handleLinkClick}>
+            <button
+              className="cta-button"
+              onClick={() => {
+                handleLinkClick();
+                document
+                  .querySelector("#contact")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               Hire Me
             </button>
           </li>

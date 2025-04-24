@@ -3,6 +3,16 @@ const ProjectDetails = [
     section: "Front-End",
     projects: [
       {
+        projectName: "CodeColab (Front-End)",
+        description:
+          "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
+        href: "https://codekolab.netlify.app/",
+        image: "/src/assets/ProjectImage1.png",
+        tools: ["React", "CSS", "WebRTC", "Monaco Editor", "Responsive Design"],
+        codeLink: "https://github.com/oseembiya/CodeColab_New",
+        demoLink: "https://codekolab.netlify.app/",
+      },
+      {
         projectName: "School Activities Dashboard",
         description:
           "An interactive dashboard for tracking and managing school activities, built using Vue.js with responsive design.",
@@ -27,6 +37,16 @@ const ProjectDetails = [
   {
     section: "Back-End",
     projects: [
+      {
+        projectName: "CodeColab (Back-End)",
+        description:
+          "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
+        href: "https://codekolab.netlify.app/",
+        image: "/src/assets/ProjectImage1.png",
+        tools: ["Node.js", "WebSocket", "Cloud Firebase", "PeerJS", "Express"],
+        codeLink: "https://github.com/oseembiya/CodeColab_New",
+        demoLink: "https://codekolab.netlify.app/",
+      },
       {
         projectName: "RESTful API Server",
         description:

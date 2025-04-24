@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [showArrow, setShowArrow] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const form = useRef();
 
   useEffect(() => {
     const contactSection = document.querySelector(".contactMe-2338");
@@ -24,16 +27,37 @@ export default function Contact() {
     };
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would normally handle form submission
-    setFormSubmitted(true);
-    // Reset form after submission
-    e.target.reset();
-    // Reset the success message after 5 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+    setIsLoading(true);
+
+    try {
+      // Using EmailJS to send email and SMS notification
+      const result = await emailjs.sendForm(
+        "Oseembiya",
+        "template_mihal6k",
+        form.current,
+        "qt1jeLIpsn0gJmSAe"
+      );
+
+      if (result.text === "OK") {
+        // Show success message
+        setFormSubmitted(true);
+        // Reset form
+        e.target.reset();
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 5000);
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again later.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -168,6 +192,7 @@ export default function Contact() {
             )}
 
             <form
+              ref={form}
               className="contactForm-2338"
               onSubmit={handleSubmit}
               aria-label="Contact form"
@@ -211,9 +236,16 @@ export default function Contact() {
                 ></textarea>
               </div>
 
+              {/* Phone number - hidden for SMS notification */}
+              <input type="hidden" name="phone" value="07884103424" />
+
               {/* Submit Button */}
-              <button type="submit" className="submitButton-2338">
-                Send Message
+              <button
+                type="submit"
+                className="submitButton-2338"
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
