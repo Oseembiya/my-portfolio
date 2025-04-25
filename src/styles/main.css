@@ -338,9 +338,15 @@ body.menu-open {
     max-width: none;
   }
 }
+#home .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .hero-section {
   width: 100%;
-  height: 100vh;
   position: relative;
   color: #ffffff;
   background: url("/src/assets/Desktop.png") no-repeat center/cover;
@@ -348,7 +354,7 @@ body.menu-open {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 0;
+  padding: 100px 20px 0px;
   overflow: hidden;
 }
 .hero-section span {
@@ -369,7 +375,6 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100vh;
     height: auto;
     padding: 100px 12px 20px;
     text-align: start;
@@ -377,7 +382,6 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .hero-section {
-    min-height: 100vh;
     height: auto;
     padding: 90px 12px 20px;
   }
@@ -386,20 +390,19 @@ body.menu-open {
 .hero-content {
   display: flex;
   max-width: 1200px;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 100%;
 }
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 90%;
+    width: 100%;
     height: auto;
     padding-bottom: 2rem;
   }
@@ -728,7 +731,6 @@ body.menu-open {
 }
 .about-wrapper {
   width: 100%;
-  min-height: 100vh;
   padding: 100px 20px 60px;
   display: flex;
   flex-direction: column;
@@ -757,6 +759,7 @@ body.menu-open {
 }
 
 .aboutMeContent-2335 {
+  height: 100%;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
@@ -1624,17 +1627,16 @@ body.menu-open {
   padding: 100px 20px 30px;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 .contactMe-2338 .contact-container {
   max-width: 1200px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
   flex: 1;
 }
 .contactMe-2338 .section-title {
@@ -1874,6 +1876,12 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-1px);
+}
+.contactMe-2338 .contactForm-2338 .submitButton-2338:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
 }
 @media (max-width: 768px) {
   .contactMe-2338 .contactForm-2338 .submitButton-2338 {

@@ -68,7 +68,7 @@ function Home() {
   }, []);
 
   return (
-    <section className="hero-section" ref={homeRef}>
+    <div className="hero-section" ref={homeRef}>
       <div className="hero-content">
         <article className="hero-text">
           <header>
@@ -159,7 +159,7 @@ function Home() {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

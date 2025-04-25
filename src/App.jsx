@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <main>
-        <Navbar />
         <section id="home">
+          <Navbar />
           <Home />
         </section>
         <section id="about">
