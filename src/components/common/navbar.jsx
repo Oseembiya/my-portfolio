@@ -125,7 +125,7 @@ function Navbar() {
                   .scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Hire Me
+              <i className="fa-solid fa-briefcase"></i> Hire Me
             </button>
           </li>
         </ul>

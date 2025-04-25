@@ -143,9 +143,13 @@ function Home() {
             ref={sectionRefs.actions}
             data-section="actions"
           >
-            <button className="action-button primary-button">
-              Download CV
-            </button>
+            <a
+              href="/resume.pdf"
+              download
+              className="action-button primary-button"
+            >
+              <i className="fa-solid fa-download"></i> Download CV
+            </a>
             <div className="social-links">
               <a
                 href="https://github.com/Oseembiya"

@@ -149,86 +149,78 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 2rem;
+  margin-top: 2rem;
 
-  .btn {
-    padding: 15px;
-    border-radius: 3px;
-    color: $color-text-secondary;
-    font-weight: bold;
-    font-size: 15px;
-    width: 100%;
-    border: none;
-    transition: filter 0.3s ease;
-    cursor: pointer;
+  .action-button {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 
-    &:hover {
-      filter: brightness(1.2);
-    }
-
-    &:active {
-      filter: brightness(0.9);
-      transform: scale(0.98);
-    }
-
-    &.btn-Contact {
-      background-color: $color-background-secondary;
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: $color-background-secondary;
-      }
-    }
-
-    &.btn-Cv {
-      background-color: #e22200;
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: #e22200;
-      }
+    i {
+      font-size: 0.9rem;
     }
   }
 
   @include media-query("lg", "max") {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 1.5rem;
+    margin-top: 1.5rem;
   }
 
   @include media-query("sm", "max") {
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
 // Action buttons
 .action-button {
   padding: 15px 50px;
-  border-radius: 5px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-weight: 600;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: darken(#e22200, 15%);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      width: 100%;
+    }
   }
 
   &:active {
-    transform: translateY(0);
+    transform: translateY(-2px);
   }
 
   &.primary-button {
     background-color: #e22200;
     color: $color-text-secondary;
-
-    &:hover {
-      background-color: darken(#e22200, 10%);
-    }
   }
 
   @include media-query("sm") {
@@ -244,15 +236,33 @@
 
   a {
     color: $color-text-secondary;
-    font-size: 2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     &:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+      background-color: $color-text-random;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+      i {
+        transform: scale(1.1);
+      }
     }
 
     &:active {
-      transform: translateY(0);
+      transform: translateY(-2px);
+    }
+
+    i {
+      transition: transform 0.3s ease;
     }
   }
 
@@ -264,7 +274,9 @@
     gap: 1rem;
 
     a {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
+      width: 40px;
+      height: 40px;
     }
   }
 }

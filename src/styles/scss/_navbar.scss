@@ -149,13 +149,45 @@ body.menu-open {
   color: $color-text-secondary;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  i {
+    font-size: 0.9rem;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: darken(#e22200, 15%);
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
 
   &:hover {
-    background-color: #ff2600;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 }
 
@@ -263,6 +295,13 @@ body.menu-open {
       margin-top: 20px;
       width: 100%;
       padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: translateY(-3px);
+      }
     }
   }
 
