@@ -1712,7 +1712,7 @@ body.menu-open {
   position: relative;
   background-color: #010d0f;
   color: #ffffff;
-  padding: 100px 20px 40px;
+  padding: 100px 20px 0px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
@@ -1852,6 +1852,16 @@ body.menu-open {
   color: #ffffff;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.contactMe-2338 .contactInfo-2338 .socialMedia-2338 a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactInfo-2338 .socialMedia-2338 a {
@@ -1898,6 +1908,9 @@ body.menu-open {
   text-decoration: none;
   font-size: clamp(14px, 3vw, 16px);
   transition: all 0.3s ease;
+  padding: 5px 0;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactInfo-2338 .additionalLinks-2338 ul li a {
@@ -1907,6 +1920,11 @@ body.menu-open {
 .contactMe-2338 .contactInfo-2338 .additionalLinks-2338 ul li a i {
   font-size: 1.1rem;
   color: #ff6347;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  transition: all 0.3s ease;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactInfo-2338 .additionalLinks-2338 ul li a i {

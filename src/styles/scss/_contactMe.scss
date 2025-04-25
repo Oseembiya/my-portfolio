@@ -3,7 +3,7 @@
   position: relative;
   background-color: $color-background-secondary;
   color: $color-text-secondary;
-  padding: 100px 20px 40px;
+  padding: 100px 20px 0px;
   overflow: hidden;
 
   @include media-query("md", "max") {
@@ -144,6 +144,17 @@
         color: $color-text-secondary;
         font-size: 1.2rem;
         transition: all 0.3s ease;
+        padding: 0;
+        margin: 0;
+        position: relative;
+
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
 
         @include media-query("sm") {
           width: 36px;
@@ -192,6 +203,8 @@
           text-decoration: none;
           font-size: clamp(14px, 3vw, 16px);
           transition: all 0.3s ease;
+          padding: 5px 0;
+          width: fit-content;
 
           @include media-query("sm") {
             gap: 0.6rem;
@@ -200,6 +213,11 @@
           i {
             font-size: 1.1rem;
             color: $color-text-random;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            transition: all 0.3s ease;
 
             @include media-query("sm") {
               font-size: 1rem;
