@@ -35,6 +35,7 @@ DetailCard.propTypes = {
 export default function About() {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [visibleSections, setVisibleSections] = useState({});
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // References to sections for Intersection Observer
   const sectionRefs = {
@@ -48,8 +49,18 @@ export default function About() {
   // Get current category data
   const currentCategory = AboutMeData[selectedCategory];
 
-  // Set up intersection observer for scroll animations
+  // Check if mobile view
+  const isMobile = windowWidth <= 425;
+
+  // Set up intersection observer for scroll animations and window resize listener
   useEffect(() => {
+    // Track window resize for responsive adjustments
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     const observerOptions = {
       root: null, // use the viewport
       rootMargin: "0px",
@@ -80,6 +91,9 @@ export default function About() {
     });
 
     return () => {
+      // Cleanup resize listener
+      window.removeEventListener("resize", handleResize);
+
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
@@ -101,15 +115,17 @@ export default function About() {
           >
             <h2>Who I am</h2>
             <p>
-              I am a dedicated and enthusiastic Computer Science graduate from
-              Middlesex University with a strong passion for web development. My
-              academic and project experience has equipped me with a robust
-              skill set in front-end and full-stack development, focusing on
-              creating user-friendly, responsive, and efficient web solutions.
-              <br />I am eager to secure a front-end developer role where I can
-              contribute to innovative projects, collaborate with dynamic teams,
-              and further enhance my technical expertise while delivering
-              impactful digital experiences.
+              {isMobile
+                ? "I am a dedicated CS graduate from Middlesex University with a passion for web development and creating user-friendly solutions."
+                : "I am a dedicated and enthusiastic Computer Science graduate from Middlesex University with a strong passion for web development. My academic and project experience has equipped me with a robust skill set in front-end and full-stack development, focusing on creating user-friendly, responsive, and efficient web solutions."}
+              {!isMobile && (
+                <>
+                  <br />I am eager to secure a front-end developer role where I
+                  can contribute to innovative projects, collaborate with
+                  dynamic teams, and further enhance my technical expertise
+                  while delivering impactful digital experiences.
+                </>
+              )}
             </p>
 
             {/* Category selection */}
@@ -176,51 +192,51 @@ export default function About() {
           <div className="skills-logos">
             <div className="skills-logos-container">
               {/* First set of icons */}
-              <div className="skill-logo animation-delay-1">
+              <div className="skill-logo">
                 <i className="fa-brands fa-html5"></i>
                 <span>HTML</span>
               </div>
-              <div className="skill-logo animation-delay-2">
+              <div className="skill-logo">
                 <i className="fa-brands fa-css3-alt"></i>
                 <span>CSS</span>
               </div>
-              <div className="skill-logo animation-delay-3">
+              <div className="skill-logo">
                 <i className="fa-brands fa-js"></i>
                 <span>JavaScript</span>
               </div>
-              <div className="skill-logo animation-delay-4">
+              <div className="skill-logo">
                 <i className="fa-brands fa-react"></i>
                 <span>React</span>
               </div>
-              <div className="skill-logo animation-delay-5">
+              <div className="skill-logo">
                 <i className="fa-brands fa-node-js"></i>
                 <span>Node.js</span>
               </div>
-              <div className="skill-logo animation-delay-6">
+              <div className="skill-logo">
                 <i className="fa-brands fa-python"></i>
                 <span>Python</span>
               </div>
-              <div className="skill-logo animation-delay-7">
+              <div className="skill-logo">
                 <i className="fa-brands fa-java"></i>
                 <span>Java</span>
               </div>
-              <div className="skill-logo animation-delay-8">
+              <div className="skill-logo">
                 <i className="fa-brands fa-git-alt"></i>
                 <span>Git</span>
               </div>
-              <div className="skill-logo animation-delay-9">
+              <div className="skill-logo">
                 <i className="fa-brands fa-docker"></i>
                 <span>Docker</span>
               </div>
-              <div className="skill-logo animation-delay-10">
+              <div className="skill-logo">
                 <i className="fa-brands fa-aws"></i>
                 <span>AWS</span>
               </div>
-              <div className="skill-logo animation-delay-11">
+              <div className="skill-logo">
                 <i className="fa-solid fa-database"></i>
                 <span>MongoDB</span>
               </div>
-              <div className="skill-logo animation-delay-12">
+              <div className="skill-logo">
                 <i className="fa-brands fa-figma"></i>
                 <span>Figma</span>
               </div>

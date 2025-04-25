@@ -87,6 +87,14 @@
   align-items: center;
   background-color: $color-background-primary;
 
+  @include media-query("md", "max") {
+    padding: 80px 15px 40px;
+  }
+
+  @include media-query("sm") {
+    padding: 60px 10px 30px;
+  }
+
   h2 {
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -96,6 +104,7 @@
     width: 100%;
     max-width: 1000px;
     padding-left: 0.5rem;
+    font-size: clamp(28px, 6vw, 34px);
 
     &::after {
       content: "";
@@ -122,9 +131,18 @@
   > div:first-child {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Change from flex-start to center for vertical alignment */
+    align-items: center;
     justify-content: space-between;
     gap: 2rem;
+
+    @include media-query("md", "max") {
+      flex-direction: column-reverse;
+      gap: 1.5rem;
+    }
+
+    @include media-query("sm") {
+      gap: 1rem;
+    }
   }
 }
 
@@ -135,13 +153,22 @@
   align-items: flex-start;
   max-width: 50%;
 
+  @include media-query("md", "max") {
+    max-width: 100%;
+    width: 100%;
+  }
+
   h2 {
-    font-size: 2rem;
+    font-size: clamp(24px, 5vw, 32px);
     font-weight: 600;
     color: $color-text-primary;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     text-align: left;
     position: relative;
+
+    @include media-query("sm") {
+      margin-bottom: 1.5rem;
+    }
 
     &::after {
       content: "";
@@ -155,11 +182,16 @@
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: clamp(14px, 2vw, 16px);
     line-height: 1.8;
     color: $color-text-primary;
     text-align: left;
     margin-bottom: 2rem;
+
+    @include media-query("sm") {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
   }
 
   .contentList-2335 {
@@ -171,6 +203,10 @@
     width: 100%;
     flex-wrap: wrap;
 
+    @include media-query("sm") {
+      gap: 0.8rem;
+    }
+
     .category-btn {
       padding: 0.5rem 0.8rem;
       border: 1px solid rgba(0, 0, 0, 0.1);
@@ -181,6 +217,11 @@
       color: $color-text-primary;
       background-color: transparent;
       transition: all 0.3s ease;
+
+      @include media-query("sm") {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+      }
 
       &:hover {
         background-color: rgba(226, 34, 0, 0.1);
@@ -209,6 +250,17 @@
   opacity: 1;
   transform: translateX(0);
   visibility: visible;
+
+  @include media-query("md", "max") {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+  }
+
+  @include media-query("sm") {
+    max-width: 320px;
+    height: 200px;
+  }
 
   &.slide-in-right {
     &:not(.is-visible) {
@@ -325,260 +377,174 @@
 }
 
 .about-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 4px solid #e22200;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  @include media-query("sm") {
+    padding: 1rem;
   }
 
   h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: clamp(18px, 4vw, 22px);
     color: $color-text-primary;
-    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 
-  .about-card-subtitle {
-    font-size: 1rem;
-    color: #555;
-    margin: 0;
-    line-height: 1.4;
-  }
-}
-
-// Responsive adjustments
-@include media-query("lg", "max") {
-  .img-square-container {
-    width: 450px;
-    height: 450px;
-  }
-}
-
-@include media-query("md", "max") {
-  .about-wrapper {
-    padding: 80px 16px 40px;
+  p {
+    font-size: clamp(14px, 3vw, 16px);
+    color: $color-text-primary;
+    opacity: 0.8;
   }
 
-  .aboutMeContent-2335 > div:first-child {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    .aboutImg-2335 {
-      max-width: 100%;
-      align-items: center;
-
-      h2 {
-        text-align: center;
-
-        &::after {
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-
-      p {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .contentList-2335 {
-        justify-content: center;
-        margin-bottom: 2rem;
-      }
-    }
-
-    .img-square-container {
-      width: 380px;
-      height: 380px;
-    }
-  }
-
-  .content-2335 {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-showcase {
-    flex-direction: column;
-  }
-
-  .skills-heading {
-    flex: 0 0 100%;
-    text-align: center;
-    padding-right: 0;
-    margin-bottom: 1.5rem;
-
-    h3 {
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-    }
-  }
-
-  .skills-logos {
-    flex: 0 0 100%;
-    width: 100%;
-  }
-
-  .skills-logos-container {
-    .skill-logo {
-      padding: 0 1.2rem;
-
-      i {
-        font-size: 2.2rem;
-      }
-
-      span {
-        font-size: 0.85rem;
-      }
-    }
-  }
-}
-
-@include media-query("sm", "max") {
-  .aboutImg-2335 h2 {
-    font-size: 1.8rem;
-  }
-
-  .aboutImg-2335 p {
-    font-size: 1rem;
-  }
-
-  .img-square-container {
-    width: 320px;
-    height: 320px;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 }
 
 // Skills showcase section
 .skills-showcase {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
+  margin-top: 3rem;
 
-.skills-heading {
-  flex: 0 0 30%;
-  text-align: left;
-  padding-right: 2rem;
-  padding-left: 0;
-  order: 1;
-
-  h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: $color-text-primary;
-    margin: 0;
-    line-height: 1.2;
+  @include media-query("md", "max") {
+    margin-top: 2rem;
   }
 
-  p {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: $color-text-primary;
-    margin: 0.5rem 0 0;
-    line-height: 1.2;
+  @include media-query("sm") {
+    margin-top: 1.5rem;
   }
-}
 
-.skills-logos {
-  flex: 0 0 65%;
-  position: relative;
-  overflow: hidden;
-  padding: 1.5rem 0;
-  order: 2;
+  .skills-heading {
+    margin-bottom: 2rem;
+    text-align: center;
 
-  &:hover .skills-logos-container {
-    animation-play-state: paused;
+    @include media-query("sm") {
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: clamp(22px, 5vw, 28px);
+      color: $color-text-primary;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: clamp(14px, 2vw, 16px);
+      color: $color-text-primary;
+      opacity: 0.8;
+    }
   }
-}
 
-@keyframes scrollRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
+  .skills-logos {
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
 
-.skills-logos-container {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: scrollRight 30s linear infinite;
-  padding: 0 1rem;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+
+    .skills-logos-container {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      animation: scroll 30s linear infinite;
+      width: max-content;
+
+      @include media-query("md", "max") {
+        gap: 15px;
+        padding: 15px 0;
+      }
+
+      @include media-query("sm") {
+        gap: 10px;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 10px));
+    }
+  }
 
   .skill-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
+    min-width: 80px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
-    &:hover {
-      transform: translateY(-8px) scale(1.1);
-
-      i {
-        color: #e22200;
-      }
+    @include media-query("sm") {
+      padding: 0.8rem;
     }
 
     i {
-      font-size: 1.5rem;
-      color: $color-text-primary;
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
       margin-bottom: 0.5rem;
+      color: $color-text-primary;
       transition: all 0.3s ease;
     }
 
     span {
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: clamp(0.8rem, 3vw, 0.9rem);
       color: $color-text-primary;
-    }
-  }
-}
-
-// Responsive styles for skills section
-@include media-query("sm", "max") {
-  .skills-showcase {
-    margin-top: 1.5rem;
-  }
-
-  .skills-heading {
-    margin-bottom: 1.2rem;
-
-    h3 {
-      font-size: 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
     }
 
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  .skills-logos-container {
-    .skill-logo {
-      padding: 0 1rem;
+    &:hover {
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
       i {
-        font-size: 1.8rem;
+        color: #e22200;
+        transform: scale(1.1);
       }
 
       span {
-        font-size: 0.8rem;
+        color: #e22200;
       }
     }
   }

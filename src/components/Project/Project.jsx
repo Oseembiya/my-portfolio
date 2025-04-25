@@ -7,6 +7,7 @@ export default function Project() {
   const [currentIndex, setCurrentIndex] = useState(0); // track the state
   const [isAnimating, setIsAnimating] = useState(false);
   const [visibleSections, setVisibleSections] = useState({});
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // References for Intersection Observer
   const sectionRefs = {
@@ -14,6 +15,9 @@ export default function Project() {
     tabs: useRef(null),
     projects: useRef(null),
   };
+
+  // Check if mobile view
+  const isMobile = windowWidth <= 425;
 
   // Handle tab change with animation
   const handleTabChange = (index) => {
@@ -30,6 +34,13 @@ export default function Project() {
 
   // Set up intersection observer for scroll animations
   useEffect(() => {
+    // Track window resize for responsive adjustments
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     const observerOptions = {
       root: null, // use the viewport
       rootMargin: "0px",
@@ -60,6 +71,9 @@ export default function Project() {
     });
 
     return () => {
+      // Cleanup resize listener
+      window.removeEventListener("resize", handleResize);
+
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
@@ -155,14 +169,17 @@ export default function Project() {
                 <div className="projectDetails_2336">
                   <h3 className="project-title">{project.projectName}</h3>
                   <p className="project-description">
-                    {project.description ||
-                      "A showcase project demonstrating skills and capabilities in modern web development."}
+                    {isMobile && project.description?.length > 100
+                      ? `${project.description.substring(0, 100)}...`
+                      : project.description ||
+                        "A showcase project demonstrating skills and capabilities in modern web development."}
                   </p>
                   <div className="project-tools">
                     {project.tools &&
                       Array.isArray(project.tools) &&
                       project.tools
                         .filter((tool) => tool.trim() !== "")
+                        .slice(0, isMobile ? 3 : undefined)
                         .map((tool, toolIndex) => (
                           <span key={toolIndex} className="tool-item">
                             <i
@@ -172,6 +189,15 @@ export default function Project() {
                             {tool}
                           </span>
                         ))}
+                    {isMobile && project.tools && project.tools.length > 3 && (
+                      <span className="tool-item">
+                        <i
+                          className="fa-solid fa-ellipsis"
+                          aria-hidden="true"
+                        ></i>
+                        +{project.tools.length - 3}
+                      </span>
+                    )}
                   </div>
                   <div className="project-links">
                     {project.codeLink && (

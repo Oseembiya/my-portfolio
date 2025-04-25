@@ -3,6 +3,7 @@ import Image from "/src/assets/ProfileHero.png";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const homeRef = useRef(null);
 
   // References to sections for Intersection Observer
@@ -16,6 +17,13 @@ function Home() {
   };
 
   useEffect(() => {
+    // Track window resize for responsive adjustments
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     // Set initial animation when component mounts
     setTimeout(() => {
       setVisibleSections({
@@ -59,6 +67,9 @@ function Home() {
     });
 
     return () => {
+      // Cleanup event listeners
+      window.removeEventListener("resize", handleResize);
+
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
@@ -66,6 +77,9 @@ function Home() {
       });
     };
   }, []);
+
+  // Adjust text display for small screens
+  const isMobile = windowWidth <= 425;
 
   return (
     <div className="hero-section" ref={homeRef}>
@@ -100,19 +114,26 @@ function Home() {
             data-section="description1"
           >
             I specialize in crafting interactive, user-focused web applications
-            that are both visually stunning and functionally robust. With a keen
-            eye for detail and expertise in modern frameworks.
+            that are
+            {isMobile
+              ? ""
+              : "both visually stunning and functionally robust. With a keen eye for detail and expertise in modern frameworks."}
+            {isMobile && "built with modern frameworks."}
           </p>
-          <p
-            className={`fade-in-section animation-delay-3 ${
-              visibleSections.description2 ? "is-visible" : ""
-            }`}
-            ref={sectionRefs.description2}
-            data-section="description2"
-          >
-            Ready to take your project to the next level? Let&apos;s work
-            together to create something extraordinary.
-          </p>
+
+          {!isMobile && (
+            <p
+              className={`fade-in-section animation-delay-3 ${
+                visibleSections.description2 ? "is-visible" : ""
+              }`}
+              ref={sectionRefs.description2}
+              data-section="description2"
+            >
+              Ready to take your project to the next level? Let&apos;s work
+              together to create something extraordinary.
+            </p>
+          )}
+
           <div
             className={`hero-actions fade-in-section animation-delay-4 ${
               visibleSections.actions ? "is-visible" : ""

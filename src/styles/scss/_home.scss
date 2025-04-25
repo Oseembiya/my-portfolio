@@ -39,7 +39,9 @@
 
   @include media-query("sm") {
     height: auto;
-    padding: 90px 12px 20px;
+    width: 100%;
+    padding: 80px 10px 10px;
+    overflow-x: hidden;
   }
 }
 
@@ -62,6 +64,11 @@
     height: auto;
     padding-bottom: 2rem;
   }
+
+  @include media-query("sm") {
+    padding: 0 5px;
+    gap: 1rem;
+  }
 }
 
 .hero-text {
@@ -70,6 +77,7 @@
   z-index: 2;
   text-align: left;
   padding-right: 2rem;
+  margin-top: -50px;
 
   @include media-query("lg", "max") {
     max-width: 100%;
@@ -77,6 +85,24 @@
     text-align: center;
     margin-bottom: 1rem;
     padding-right: 0;
+  }
+
+  @include media-query("sm") {
+    margin-top: 1rem;
+    padding: 0;
+
+    h1 {
+      font-size: clamp(30px, 8vw, 50px);
+    }
+
+    h2 {
+      font-size: clamp(24px, 6vw, 36px);
+    }
+
+    p {
+      font-size: clamp(14px, 4vw, 16px);
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -108,10 +134,12 @@
   }
 
   @include media-query("sm", "max") {
-    max-width: 90%;
+    max-width: 95%;
+    margin-top: 1rem;
 
     img {
-      max-height: 60vh;
+      max-height: 45vh;
+      object-fit: contain;
     }
   }
 }
@@ -172,6 +200,7 @@
 
   @include media-query("sm", "max") {
     width: 100%;
+    margin-top: 0.5rem;
   }
 }
 
@@ -201,6 +230,11 @@
       background-color: darken(#e22200, 10%);
     }
   }
+
+  @include media-query("sm") {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
 }
 
 .social-links {
@@ -224,6 +258,14 @@
 
   @include media-query("lg", "max") {
     justify-content: center;
+  }
+
+  @include media-query("sm") {
+    gap: 1rem;
+
+    a {
+      font-size: 1.5rem;
+    }
   }
 }
 
