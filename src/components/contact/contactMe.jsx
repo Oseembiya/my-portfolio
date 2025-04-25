@@ -159,8 +159,8 @@ export default function Contact() {
               </h3>
               <p>
                 {isMobile
-                  ? "I'm open to discussions about new opportunities."
-                  : "I'm always open to discussing new projects, opportunities, or ways to collaborate. Feel free to reach out—I'd love to hear from you!"}
+                  ? "I&apos;m open to discussions about new opportunities."
+                  : "I&apos;m always open to discussing new projects, opportunities, or ways to collaborate. Feel free to reach out—I&apos;d love to hear from you!"}
               </p>
               <div className="contact-items">
                 <div className="contactItem-2338">
@@ -290,8 +290,8 @@ export default function Contact() {
                 <i className="fa-solid fa-check-circle success-icon"></i>
                 <h3>Thank You!</h3>
                 <p>
-                  Your message has been sent successfully. I'll get back to you
-                  soon!
+                  Your message has been sent successfully. I&apos;ll get back to
+                  you soon!
                 </p>
                 <button
                   className="reset-form-btn"

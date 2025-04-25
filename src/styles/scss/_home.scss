@@ -295,6 +295,13 @@
     transform: translateY(0);
     visibility: visible;
   }
+
+  @include media-query("sm", "max") {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: none;
+  }
 }
 
 .slide-in-right {
@@ -309,6 +316,13 @@
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
+  }
+
+  @include media-query("sm", "max") {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: none;
   }
 }
 
@@ -325,6 +339,13 @@
     transform: translateX(0);
     visibility: visible;
   }
+
+  @include media-query("sm", "max") {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: none;
+  }
 }
 
 .scale-in {
@@ -339,6 +360,13 @@
     opacity: 1;
     transform: scale(1);
     visibility: visible;
+  }
+
+  @include media-query("sm", "max") {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    transition: none;
   }
 }
 

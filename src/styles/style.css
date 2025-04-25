@@ -597,6 +597,14 @@ body.menu-open {
   transform: translateY(0);
   visibility: visible;
 }
+@media (max-width: 425px) {
+  .fade-in-section {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    transition: none;
+  }
+}
 
 .slide-in-right {
   opacity: 0;
@@ -609,6 +617,14 @@ body.menu-open {
   opacity: 1;
   transform: translateX(0);
   visibility: visible;
+}
+@media (max-width: 425px) {
+  .slide-in-right {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: none;
+  }
 }
 
 .slide-in-left {
@@ -623,6 +639,14 @@ body.menu-open {
   transform: translateX(0);
   visibility: visible;
 }
+@media (max-width: 425px) {
+  .slide-in-left {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: none;
+  }
+}
 
 .scale-in {
   opacity: 0;
@@ -635,6 +659,14 @@ body.menu-open {
   opacity: 1;
   transform: scale(1);
   visibility: visible;
+}
+@media (max-width: 425px) {
+  .scale-in {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    transition: none;
+  }
 }
 
 .animation-delay-1 {
@@ -689,7 +721,7 @@ body.menu-open {
   position: relative;
   background-color: #010d0f;
   color: #ffffff;
-  padding: 100px 20px 0px;
+  padding: 100px 20px 20px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
