@@ -8,18 +8,31 @@ const ProjectDetails = [
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
         image: "/src/assets/ProjectImage1.png",
-        tools: ["React", "CSS", "WebRTC", "Monaco Editor", "Responsive Design"],
+        tools: [
+          "React",
+          "CSS",
+          "WebRTC",
+          "Monaco Editor",
+          "Peers.js",
+          "Responsive Design",
+        ],
         codeLink:
           "https://github.com/Oseembiya/CodeColab_New/tree/main/frontend",
         demoLink: "https://codekolab.netlify.app/",
       },
       {
-        projectName: "School Activities Dashboard",
+        projectName: "ParentPay School Activities Portal",
         description:
-          "An interactive dashboard for tracking and managing school activities, built using Vue.js with responsive design.",
+          "An interactive e-commerce platform for browsing and purchasing school activities and lessons.",
         href: "https://oseembiya.github.io/Vue/",
         image: "/src/assets/ProjectImage1.png",
-        tools: ["Vue.js", "CSS", "JavaScript", "Responsive Design"],
+        tools: [
+          "Vue.js",
+          "Bootstrap 5",
+          "CSS3",
+          "JavaScript",
+          "Responsive Design",
+        ],
         codeLink: "https://github.com/oseembiya/Vue",
         demoLink: "https://oseembiya.github.io/Vue/",
       },
@@ -39,25 +52,41 @@ const ProjectDetails = [
     section: "Back-End",
     projects: [
       {
-        projectName: "CodeColab (Back-End)",
+        projectName: "CodeColab Server",
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
         image: "/src/assets/ProjectImage1.png",
-        tools: ["Node.js", "WebSocket", "Cloud Firebase", "PeerJS", "Express"],
+        tools: [
+          "Node.js",
+          "WebSocket",
+          "Firebase Admin",
+          "Cloud Firestore",
+          "PeerJS",
+          "Express",
+        ],
         codeLink:
           "https://github.com/Oseembiya/CodeColab_New/tree/main/backend",
         demoLink: "https://codekolab.netlify.app/",
       },
       {
-        projectName: "RESTful API Server",
+        // Backend Project
+        projectName: "ParentPay Server API",
         description:
-          "A robust API server built with Node.js that provides endpoints for data management and user authentication.",
-        href: "https://apiserver.com",
-        image: "/src/assets/ProjectImage1.png",
-        tools: ["Node.js", "Express", "MongoDB", "JWT"],
-        codeLink: "https://github.com/oseembiya/api-server",
-        demoLink: "https://apiserver.com",
+          "RESTful API backend for the School Activities Portal, providing endpoints for lesson management, search functionality, and order processing with MongoDB integration.",
+        href: "https://vueappliaction-env.eba-qkd3evgp.eu-west-2.elasticbeanstalk.com/",
+        image: "/src/assets/ProjectImage2.png",
+        tools: [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "RESTful API",
+          "AWS Elastic Beanstalk",
+          "Postman",
+        ],
+        codeLink: "https://github.com/oseembiya/Server",
+        demoLink:
+          "https://vueappliaction-env.eba-qkd3evgp.eu-west-2.elasticbeanstalk.com/lessons",
       },
       {
         projectName: "Database Management System",

@@ -116,17 +116,17 @@ export default function About() {
             <h2>Who I am</h2>
             <p>
               {isMobile
-                ? "I am a dedicated CS graduate from Middlesex University with a passion for web development and creating user-friendly solutions."
-                : "I am a dedicated and enthusiastic Computer Science graduate from Middlesex University with a strong passion for web development. My academic and project experience has equipped me with a robust skill set in front-end and full-stack development, focusing on creating user-friendly, responsive, and efficient web solutions."}
-              {!isMobile && (
-                <>
-                  <br />I am eager to secure a front-end developer role where I
-                  can contribute to innovative projects, collaborate with
-                  dynamic teams, and further enhance my technical expertise
-                  while delivering impactful digital experiences.
-                </>
-              )}
+                ? "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences."
+                : "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences. My journey through various projects has honed my skills in both front-end interfaces and back-end architecture, focusing on solutions that are both functional and delightful."}
             </p>
+            {!isMobile && (
+              <p>
+                I thrive in collaborative environments where I can apply modern
+                frameworks while expanding my technical horizons. My approach
+                combines analytical thinking with attention to detail, ensuring
+                projects are optimized for performance and user satisfaction.
+              </p>
+            )}
 
             {/* Category selection */}
             <div

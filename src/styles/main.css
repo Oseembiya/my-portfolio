@@ -148,6 +148,8 @@ body.menu-open {
   max-width: 1250px;
   margin: 0 auto;
   padding: 0 18px;
+  position: relative;
+  z-index: 1001;
 }
 
 .logo {
@@ -244,6 +246,11 @@ body.menu-open {
   cursor: pointer;
   padding: 10px;
   z-index: 1010;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.menu-toggle:hover {
+  transform: translateY(3px);
 }
 
 .hamburger {
@@ -252,6 +259,15 @@ body.menu-open {
   justify-content: space-between;
   width: 30px;
   height: 21px;
+  position: relative;
+  z-index: 1010;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.hamburger.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 .hamburger span {
   display: block;
@@ -259,73 +275,103 @@ body.menu-open {
   width: 100%;
   background-color: #ffffff;
   transition: all 0.3s ease;
+  border-radius: 2px;
 }
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
+  background-color: #e22200;
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+  background-color: #e22200;
 }
 
-/* Overlay for mobile menu */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 990;
-  display: none;
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
 /* Responsive design */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
-  .menu-overlay {
-    display: block;
-  }
   .nav-menu {
     position: fixed;
-    top: 66px;
-    right: -100%;
+    top: 66px; /* Start below the navbar height */
+    left: 0;
+    right: 0;
     flex-direction: column;
-    background-color: rgba(18, 18, 18, 0.95);
+    background-color: rgba(1, 13, 15, 0.95);
     -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
-    width: 80%;
-    max-width: 320px;
+    width: 100%;
+    max-width: 100%;
     padding: 20px;
-    transition: right 0.3s ease;
-    height: calc(100vh - 66px);
-    align-items: center;
-    text-align: center;
+    transition: transform 0.4s ease;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-100vh); /* Push it completely off-screen */
+    align-items: flex-start;
+    text-align: left;
     gap: 20px;
-    z-index: 1000;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 990;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
   .nav-menu.open {
-    right: 0;
+    transform: translateY(0);
+    height: calc(100vh - 66px); /* Full height minus navbar height */
+    padding-top: 30px;
+    padding-left: 40px;
   }
   .nav-menu li {
     width: 100%;
     padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: calc(0.1s * var(--item-index, 0));
+  }
+  .nav-menu li:nth-child(1) {
+    --item-index: 1;
+  }
+  .nav-menu li:nth-child(2) {
+    --item-index: 2;
+  }
+  .nav-menu li:nth-child(3) {
+    --item-index: 3;
+  }
+  .nav-menu li:nth-child(4) {
+    --item-index: 4;
+  }
+  .nav-menu li:nth-child(5) {
+    --item-index: 5;
   }
   .nav-menu li a {
     display: block;
     font-size: 1.2rem;
   }
   .nav-menu li a::after {
-    bottom: -8px;
+    display: none; /* Remove underline effect on mobile */
+  }
+  .nav-menu li a:hover, .nav-menu li a.active {
+    color: #e22200;
+  }
+  .nav-menu.open li {
+    opacity: 1;
+    transform: translateY(0);
   }
   .nav-menu .cta-button {
     margin-top: 20px;
-    width: 100%;
+    width: 90%;
     padding: 15px;
     display: flex;
     align-items: center;
@@ -336,7 +382,7 @@ body.menu-open {
   }
   /* Section-specific mobile menu styles */
   .navbar.section-home .nav-menu {
-    background-color: rgba(18, 18, 18, 0.95);
+    background-color: rgba(1, 13, 15, 0.95);
   }
   .navbar.section-about .nav-menu {
     background-color: rgba(255, 255, 255, 0.95);

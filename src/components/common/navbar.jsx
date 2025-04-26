@@ -4,6 +4,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [animateHamburger, setAnimateHamburger] = useState(false);
 
   const navLinks = [
     { href: "#home", label: "Home" },
@@ -32,6 +33,11 @@ function Navbar() {
   };
 
   useEffect(() => {
+    // Trigger animation for hamburger initially
+    setTimeout(() => {
+      setAnimateHamburger(true);
+    }, 300);
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 100;
 
@@ -94,7 +100,11 @@ function Navbar() {
           aria-label="Toggle navigation"
           aria-expanded={isMenuOpen}
         >
-          <div className={`hamburger ${isMenuOpen ? "active" : ""}`}>
+          <div
+            className={`hamburger ${isMenuOpen ? "active" : ""} ${
+              animateHamburger ? "animate" : ""
+            }`}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -102,8 +112,8 @@ function Navbar() {
         </button>
 
         <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-          {navLinks.map((link) => (
-            <li key={link.href}>
+          {navLinks.map((link, index) => (
+            <li key={link.href} style={{ "--item-index": index + 1 }}>
               <a
                 href={link.href}
                 className={
@@ -115,7 +125,7 @@ function Navbar() {
               </a>
             </li>
           ))}
-          <li>
+          <li style={{ "--item-index": navLinks.length + 1 }}>
             <button
               className="cta-button"
               onClick={() => {
@@ -131,10 +141,7 @@ function Navbar() {
         </ul>
       </div>
 
-      {/* Overlay for mobile menu to capture taps outside the menu */}
-      {isMenuOpen && (
-        <div className="menu-overlay" onClick={handleLinkClick}></div>
-      )}
+      {/* No separate overlay needed anymore as the full-screen menu acts as its own overlay */}
     </nav>
   );
 }

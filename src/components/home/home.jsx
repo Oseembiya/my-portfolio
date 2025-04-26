@@ -113,12 +113,9 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            I specialize in crafting interactive, user-focused web applications
-            that are
             {isMobile
-              ? ""
-              : "both visually stunning and functionally robust. With a keen eye for detail and expertise in modern frameworks."}
-            {isMobile && "built with modern frameworks."}
+              ? "I bridge front-end aesthetics with back-end functionality."
+              : "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture."}
           </p>
 
           {!isMobile && (
