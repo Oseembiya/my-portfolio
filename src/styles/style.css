@@ -772,6 +772,14 @@ body.menu-open {
   gap: 2rem;
   width: 100%;
 }
+@media (min-width: 992px) {
+  .contactMe-2338 .contact-content-wrapper .contactInfo-2338 {
+    flex: 1;
+  }
+  .contactMe-2338 .contact-content-wrapper .contactForm-2338 {
+    flex: 0.5;
+  }
+}
 @media (max-width: 768px) {
   .contactMe-2338 .contact-content-wrapper {
     flex-direction: column;
@@ -827,18 +835,10 @@ body.menu-open {
     width: 35px;
   }
 }
-.contactMe-2338 .contactInfo-2338 .contactItem-2338:hover i {
-  background-color: #ff6347;
-  color: #ffffff;
-  transform: scale(1.1);
-}
 .contactMe-2338 .contactInfo-2338 .contactItem-2338 a {
   color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
-}
-.contactMe-2338 .contactInfo-2338 .contactItem-2338 a:hover {
-  color: #ff6347;
 }
 .contactMe-2338 .contactInfo-2338 .socialMedia-2338 {
   display: flex;
@@ -950,8 +950,9 @@ body.menu-open {
 .contactMe-2338 .contactContent-2338 p {
   font-size: clamp(14px, 3vw, 16px);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #ffffff;
+  width: 80%;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 p {
@@ -1187,10 +1188,9 @@ body.menu-open {
 }
 .contactMe-2338 .allRight-2338 {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   font-size: clamp(12px, 2vw, 14px);
   color: #ffffff;
-  padding-bottom: 1rem;
   opacity: 0.8;
 }
 @media (max-width: 425px) {

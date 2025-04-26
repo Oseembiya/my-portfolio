@@ -9,7 +9,8 @@ const ProjectDetails = [
         href: "https://codekolab.netlify.app/",
         image: "/src/assets/ProjectImage1.png",
         tools: ["React", "CSS", "WebRTC", "Monaco Editor", "Responsive Design"],
-        codeLink: "https://github.com/oseembiya/CodeColab_New",
+        codeLink:
+          "https://github.com/Oseembiya/CodeColab_New/tree/main/frontend",
         demoLink: "https://codekolab.netlify.app/",
       },
       {
@@ -44,7 +45,8 @@ const ProjectDetails = [
         href: "https://codekolab.netlify.app/",
         image: "/src/assets/ProjectImage1.png",
         tools: ["Node.js", "WebSocket", "Cloud Firebase", "PeerJS", "Express"],
-        codeLink: "https://github.com/oseembiya/CodeColab_New",
+        codeLink:
+          "https://github.com/Oseembiya/CodeColab_New/tree/main/backend",
         demoLink: "https://codekolab.netlify.app/",
       },
       {

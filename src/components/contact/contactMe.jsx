@@ -160,7 +160,7 @@ export default function Contact() {
               <p>
                 {isMobile
                   ? "I&apos;m open to discussions about new opportunities."
-                  : "I&apos;m always open to discussing new projects, opportunities, or ways to collaborate. Feel free to reach out—I&apos;d love to hear from you!"}
+                  : "I&apos;m always open to discussing new projects, opportunities, or ways to collaborate.Feel free to reach out—I&apos;d love to hear from you!"}
               </p>
               <div className="contact-items">
                 <div className="contactItem-2338">

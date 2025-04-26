@@ -54,6 +54,16 @@
     gap: 2rem;
     width: 100%;
 
+    @media (min-width: 992px) {
+      .contactInfo-2338 {
+        flex: 1; // Decrease width by ~20px
+      }
+
+      .contactForm-2338 {
+        flex: 0.5; // Increase width by ~20px
+      }
+    }
+
     @include media-query("md", "max") {
       flex-direction: column;
       gap: 2rem;
@@ -107,20 +117,10 @@
         }
       }
 
-      &:hover i {
-        background-color: $color-text-random;
-        color: $color-text-secondary;
-        transform: scale(1.1);
-      }
-
       a {
         color: $color-text-secondary;
         text-decoration: none;
         transition: all 0.3s ease;
-
-        &:hover {
-          color: $color-text-random;
-        }
       }
     }
 
@@ -240,8 +240,9 @@
     p {
       font-size: clamp(14px, 3vw, 16px);
       line-height: 1.6;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       color: $color-text-secondary;
+      width: 80%;
 
       @include media-query("sm") {
         margin-bottom: 1.2rem;
@@ -494,10 +495,9 @@
   // Copyright section
   .allRight-2338 {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     font-size: clamp(12px, 2vw, 14px);
     color: $color-text-secondary;
-    padding-bottom: 1rem;
     opacity: 0.8;
 
     @include media-query("sm") {
