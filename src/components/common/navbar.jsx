@@ -39,16 +39,16 @@ function Navbar() {
     }, 300);
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY;
 
       // Add scrolled class when scrolled down 50px
       setIsScrolled(window.scrollY > 50);
 
       // Get all sections
-      const sections = document.querySelectorAll("section[id]");
+      const sections = document.querySelectorAll("section[id], .hero-section");
 
       // Default to home if at the very top of the page
-      if (scrollPosition < 300) {
+      if (scrollPosition < 200) {
         setActiveSection("home");
         return;
       }
@@ -57,14 +57,15 @@ function Navbar() {
       let currentSection = "home"; // Default to home
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
+        const sectionTop = section.offsetTop - 150; // Offset to trigger earlier
         const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id") || "home";
 
         if (
           scrollPosition >= sectionTop &&
           scrollPosition < sectionTop + sectionHeight
         ) {
-          currentSection = section.getAttribute("id");
+          currentSection = sectionId;
         }
       });
 
