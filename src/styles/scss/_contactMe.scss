@@ -344,11 +344,14 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
         background-color: rgba(255, 255, 255, 0.05);
         color: $color-text-secondary;
-        font-size: clamp(14px, 3vw, 16px);
+        font-size: 16px;
         transition: all 0.3s ease;
+        touch-action: manipulation;
 
         @include media-query("sm") {
           padding: 0.7rem;
+          -webkit-appearance: none;
+          appearance: none;
         }
 
         &:focus {
@@ -359,6 +362,7 @@
 
         &::placeholder {
           color: rgba(255, 255, 255, 0.6);
+          font-size: 16px;
         }
       }
 
@@ -462,8 +466,7 @@
     }
 
     @include media-query("sm") {
-      right: 1rem;
-      bottom: 2rem;
+      display: none; /* Hide on small devices */
     }
 
     a {

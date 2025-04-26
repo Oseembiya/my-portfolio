@@ -2180,13 +2180,17 @@ body.menu-open {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.05);
   color: #ffffff;
-  font-size: clamp(14px, 3vw, 16px);
+  font-size: 16px;
   transition: all 0.3s ease;
+  touch-action: manipulation;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactForm-2338 .formGroup-2338 input,
   .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
     padding: 0.7rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
   }
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input:focus,
@@ -2197,10 +2201,12 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input::-moz-placeholder, .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input::placeholder,
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea::placeholder {
   color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
   resize: vertical;
@@ -2291,8 +2297,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .contactMe-2338 .downArrow-2338 {
-    right: 1rem;
-    bottom: 2rem;
+    display: none; /* Hide on small devices */
   }
 }
 .contactMe-2338 .downArrow-2338 a {
