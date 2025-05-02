@@ -126,8 +126,8 @@ function Home() {
               ref={sectionRefs.description2}
               data-section="description2"
             >
-              Ready to take your project to the next level? Let&apos;s work
-              together to create something extraordinary.
+              Ready to take your project to the next level? Let's work together
+              to create something extraordinary.
             </p>
           )}
 

@@ -159,14 +159,14 @@ export default function Contact() {
               </h3>
               <p>
                 {isMobile
-                  ? "I&apos;m open to discussions about new opportunities."
-                  : "I&apos;m always open to discussing new projects, opportunities, or ways to collaborate.Feel free to reach out—I&apos;d love to hear from you!"}
+                  ? "I am open to discussions about new opportunities."
+                  : "I am always open to discussing new projects, opportunities, or ways to collaborate. Feel free to reach out, I'd love to hear from you!"}
               </p>
               <div className="contact-items">
                 <div className="contactItem-2338">
                   <i className="fa-solid fa-envelope" aria-hidden="true"></i>
                   <span>
-                    Email:{" "}
+                    Email:
                     <a
                       href="mailto:ozeembiya@gmail.com"
                       aria-label="Send email to ozeembiya@gmail.com"
@@ -178,7 +178,7 @@ export default function Contact() {
                 <div className="contactItem-2338">
                   <i className="fa-solid fa-phone" aria-hidden="true"></i>
                   <span>
-                    Phone:{" "}
+                    Phone:
                     <a href="tel:07884103424" aria-label="Call +44788 410 3424">
                       +44788 410 3424
                     </a>

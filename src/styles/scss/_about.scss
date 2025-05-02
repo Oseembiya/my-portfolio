@@ -315,7 +315,7 @@
     visibility: visible;
   }
 
-  @include media-query("sm", "max") {
+  @include media-query("md", "max") {
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
@@ -337,7 +337,7 @@
     visibility: visible;
   }
 
-  @include media-query("sm", "max") {
+  @include media-query("md", "max") {
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
@@ -359,7 +359,7 @@
     visibility: visible;
   }
 
-  @include media-query("sm", "max") {
+  @include media-query("md", "max") {
     opacity: 1;
     transform: translateX(0);
     visibility: visible;
@@ -381,7 +381,7 @@
     visibility: visible;
   }
 
-  @include media-query("sm", "max") {
+  @include media-query("md", "max") {
     opacity: 1;
     transform: scale(1);
     visibility: visible;

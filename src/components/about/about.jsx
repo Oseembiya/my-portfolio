@@ -61,6 +61,22 @@ export default function About() {
 
     window.addEventListener("resize", handleResize);
 
+    // If on mobile or tablet, make all sections visible immediately
+    if (window.innerWidth <= 768) {
+      setVisibleSections({
+        intro: true,
+        categories: true,
+        details: true,
+        skills: true,
+        image: true,
+      });
+
+      // Return early, no need to set up observer for mobile
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+
     const observerOptions = {
       root: null, // use the viewport
       rootMargin: "0px",
@@ -179,9 +195,7 @@ export default function About() {
 
         {/* Skills showcase section with animation */}
         <div
-          className={`skills-showcase fade-in-section ${
-            visibleSections.skills ? "is-visible" : ""
-          }`}
+          className="skills-showcase"
           ref={sectionRefs.skills}
           data-section="skills"
         >

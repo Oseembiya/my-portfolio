@@ -44,6 +44,9 @@ function Navbar() {
       // Add scrolled class when scrolled down 50px
       setIsScrolled(window.scrollY > 50);
 
+      // Don't update active section if menu is open
+      if (isMenuOpen) return;
+
       // Get all sections
       const sections = document.querySelectorAll("section[id], .hero-section");
 
@@ -71,7 +74,6 @@ function Navbar() {
 
       setActiveSection(currentSection);
     };
-
     // Run the handler immediately to set initial active state
     handleScroll();
 
@@ -82,7 +84,7 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
       document.body.classList.remove("menu-open");
     };
-  }, []);
+  }, [isMenuOpen]);
 
   return (
     <nav
