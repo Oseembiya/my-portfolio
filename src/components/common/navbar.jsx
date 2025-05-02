@@ -60,7 +60,7 @@ function Navbar() {
       let currentSection = "home"; // Default to home
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 150; // Offset to trigger earlier
+        const sectionTop = section.offsetTop - 64; // Offset to trigger earlier
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute("id") || "home";
 
@@ -143,8 +143,6 @@ function Navbar() {
           </li>
         </ul>
       </div>
-
-      {/* No separate overlay needed anymore as the full-screen menu acts as its own overlay */}
     </nav>
   );
 }
