@@ -4,7 +4,6 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [animateHamburger, setAnimateHamburger] = useState(false);
 
   const navLinks = [
     { href: "#home", label: "Home" },
@@ -33,11 +32,6 @@ function Navbar() {
   };
 
   useEffect(() => {
-    // Trigger animation for hamburger initially
-    setTimeout(() => {
-      setAnimateHamburger(true);
-    }, 300);
-
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
@@ -103,11 +97,7 @@ function Navbar() {
           aria-label="Toggle navigation"
           aria-expanded={isMenuOpen}
         >
-          <div
-            className={`hamburger ${isMenuOpen ? "active" : ""} ${
-              animateHamburger ? "animate" : ""
-            }`}
-          >
+          <div className={`hamburger ${isMenuOpen ? "active" : ""}`}>
             <span></span>
             <span></span>
             <span></span>

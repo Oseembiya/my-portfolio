@@ -261,13 +261,6 @@ body.menu-open {
   height: 21px;
   position: relative;
   z-index: 1010;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.hamburger.animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 .hamburger span {
   display: block;
