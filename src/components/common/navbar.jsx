@@ -60,7 +60,7 @@ function Navbar() {
       let currentSection = "home"; // Default to home
 
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 64; // Offset to trigger earlier
+        const sectionTop = section.offsetTop - 60; // Offset to trigger earlier
         const sectionHeight = section.offsetHeight;
         const sectionId = section.getAttribute("id") || "home";
 
