@@ -1,5 +1,6 @@
 .projectMain-2336 {
   width: 100%;
+  min-height: var(--projects-min-height);
   padding: 100px 20px 60px;
   display: flex;
   flex-direction: column;
@@ -174,10 +175,6 @@
     height: 200px;
     overflow: hidden;
 
-    @include media-query("sm") {
-      height: 180px;
-    }
-
     img {
       width: 100%;
       height: 100%;
@@ -191,10 +188,6 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-
-    @include media-query("sm") {
-      padding: 1.2rem;
-    }
 
     .project-title {
       font-size: clamp(18px, 4vw, 22px);
