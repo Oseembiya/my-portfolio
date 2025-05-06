@@ -1,6 +1,6 @@
 @include media-query("md") {
   .about-2335 {
-    height: 100vh;
+    height: var(--about-min-height);
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
