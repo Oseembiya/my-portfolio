@@ -130,7 +130,7 @@ textarea:focus {
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
-  padding: 14px 0;
+  padding: 10px 0;
   /* Section-specific navbar styles */
 }
 .navbar.scrolled {
@@ -468,11 +468,11 @@ body.menu-open {
 }
 
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
-  align-items: flex-end;
-  padding: 60px 20px 0px;
+  align-items: center;
+  padding: 60px 20px;
   background: url("../assets/Desktop.png");
   background-size: cover;
   background-position: center;
@@ -480,10 +480,18 @@ body.menu-open {
   background-repeat: no-repeat;
   color: #ffffff;
 }
+@media (max-width: 425px) {
+  .hero-section {
+    padding: 40px 15px;
+    background-attachment: scroll;
+  }
+}
 .hero-section .hero-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
   gap: 2rem;
 }
@@ -491,11 +499,22 @@ body.menu-open {
   .hero-section .hero-content {
     flex-direction: column;
     text-align: center;
+    gap: 3rem;
+  }
+}
+@media (max-width: 425px) {
+  .hero-section .hero-content {
+    gap: 2rem;
   }
 }
 .hero-section .hero-text {
   flex: 1;
   max-width: 600px;
+}
+@media (max-width: 992px) {
+  .hero-section .hero-text {
+    max-width: 100%;
+  }
 }
 .hero-section .hero-text h1 {
   font-size: clamp(36px, 7vw, 68px);
@@ -503,6 +522,11 @@ body.menu-open {
   margin-bottom: 1rem;
   line-height: 1.2;
   color: #ffffff;
+}
+@media (max-width: 425px) {
+  .hero-section .hero-text h1 {
+    font-size: clamp(28px, 8vw, clamp(36px, 7vw, 68px));
+  }
 }
 .hero-section .hero-text h1 .accent-text {
   color: #ff6347;
@@ -513,6 +537,12 @@ body.menu-open {
   margin-bottom: 2rem;
   color: #ffffff;
 }
+@media (max-width: 425px) {
+  .hero-section .hero-text h2 {
+    font-size: clamp(20px, 6vw, clamp(30px, 6vw, 60px));
+    margin-bottom: 1.5rem;
+  }
+}
 .hero-section .hero-text h2 .accent-text {
   color: #ff6347;
 }
@@ -521,6 +551,12 @@ body.menu-open {
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
+}
+@media (max-width: 425px) {
+  .hero-section .hero-text p {
+    font-size: clamp(14px, 4vw, clamp(14px, 1.8vw, 16px));
+    margin-bottom: 1rem;
+  }
 }
 .hero-section .hero-actions {
   display: flex;
@@ -534,6 +570,18 @@ body.menu-open {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 425px) {
+  .hero-section .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  .hero-section .hero-actions .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
 .hero-section .action-button {
   display: inline-flex;
   align-items: center;
@@ -544,6 +592,12 @@ body.menu-open {
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+}
+@media (max-width: 425px) {
+  .hero-section .action-button {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 .hero-section .action-button.primary-button {
   background-color: #ff6347;
@@ -563,6 +617,8 @@ body.menu-open {
 @media (max-width: 425px) {
   .hero-section .social-links {
     gap: 1rem;
+    justify-content: center;
+    width: 100%;
   }
 }
 .hero-section .social-links .social-link {
@@ -580,19 +636,19 @@ body.menu-open {
   margin: 0;
   position: relative;
 }
+@media (max-width: 425px) {
+  .hero-section .social-links .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+}
 .hero-section .social-links .social-link i {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-}
-@media (max-width: 425px) {
-  .hero-section .social-links .social-link {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
 }
 .hero-section .social-links .social-link:hover {
   background-color: #ff6347;
@@ -603,19 +659,27 @@ body.menu-open {
   max-width: 500px;
   position: relative;
 }
+@media (max-width: 992px) {
+  .hero-section .hero-image {
+    max-width: 400px;
+    width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .hero-section .hero-image {
+    max-width: 300px;
+  }
+}
 .hero-section .hero-image img {
   width: 100%;
   height: auto;
-}
-@media (max-width: 992px) {
-  .hero-section .hero-image {
-    width: 100%;
-  }
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 @media (max-width: 425px) {
   .hero-section {
-    padding: 60px 10px 0px;
+    padding: 80px 10px 0px;
   }
   .hero-section .hero-content {
     gap: 10px;

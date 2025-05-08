@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,12 +12,9 @@ function Navbar() {
     { href: "#contact", label: "Contact" },
   ];
 
-  // Toggle menu and control body scroll
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
     setIsMenuOpen(newMenuState);
-
-    // Disable scrolling on body when menu is open
     if (newMenuState) {
       document.body.classList.add("menu-open");
     } else {
@@ -31,54 +28,105 @@ function Navbar() {
     document.body.classList.remove("menu-open");
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+  // Debounce function to limit the frequency of function calls
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
 
-      // Add scrolled class when scrolled down 50px
-      setIsScrolled(window.scrollY > 50);
+  // Memoize the determineActiveSection function with useCallback
+  const determineActiveSection = useCallback(() => {
+    // Always consider scrolled after 50px
+    setIsScrolled(window.scrollY > 50);
 
-      // Don't update active section if menu is open
-      if (isMenuOpen) return;
+    // Get all section elements with IDs
+    const sections = Array.from(document.querySelectorAll("section[id]"));
 
-      // Get all sections
-      const sections = document.querySelectorAll("section[id], .hero-section");
+    // If no sections with IDs found, default to home
+    if (sections.length === 0) {
+      setActiveSection("home");
+      return;
+    }
 
-      // Default to home if at the very top of the page
-      if (scrollPosition < 200) {
-        setActiveSection("home");
+    // Get viewport height
+    const viewportHeight = window.innerHeight;
+
+    // Initialize variables to track the most visible section
+    let maxVisibleSection = null;
+    let maxVisiblePercentage = 0;
+
+    sections.forEach((section) => {
+      // Get section dimensions and position
+      const rect = section.getBoundingClientRect();
+      const sectionId = section.id;
+
+      // Skip if section is fully above or below viewport
+      if (rect.bottom <= 0 || rect.top >= viewportHeight) {
         return;
       }
 
-      // Check which section is currently in view
-      let currentSection = "home"; // Default to home
+      // Calculate visible height
+      const visibleTop = Math.max(0, rect.top);
+      const visibleBottom = Math.min(viewportHeight, rect.bottom);
+      const visibleHeight = visibleBottom - visibleTop;
 
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 60; // Offset to trigger earlier
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute("id") || "home";
+      // Calculate percentage of section visible in viewport
+      const visiblePercentage = (visibleHeight / rect.height) * 100;
 
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          currentSection = sectionId;
-        }
-      });
+      // Update max if this section is more visible
+      if (visiblePercentage > maxVisiblePercentage) {
+        maxVisiblePercentage = visiblePercentage;
+        maxVisibleSection = sectionId;
+      }
+    });
 
-      setActiveSection(currentSection);
+    // Use most visible section, or default to home
+    if (maxVisibleSection) {
+      setActiveSection(maxVisibleSection);
+    } else {
+      // If at the very top (before any sections), set to home
+      if (window.scrollY < 100) {
+        setActiveSection("home");
+      }
+    }
+  }, []);
+
+  // Create optimized scroll handler with requestAnimationFrame
+  useEffect(() => {
+    let ticking = false;
+    const debouncedResize = debounce(determineActiveSection, 100);
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          determineActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    // Run the handler immediately to set initial active state
-    handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    // Call initially
+    determineActiveSection();
 
-    // Clean up on component unmount
+    // Add event listeners
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", debouncedResize);
+
+    // Cleanup
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", debouncedResize);
       document.body.classList.remove("menu-open");
     };
-  }, [isMenuOpen]);
+  }, [determineActiveSection]);
 
   return (
     <nav
