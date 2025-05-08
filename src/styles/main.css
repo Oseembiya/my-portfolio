@@ -130,7 +130,7 @@ textarea:focus {
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
-  padding: 10px 0;
+  padding: 14px 0;
   /* Section-specific navbar styles */
 }
 .navbar.scrolled {
