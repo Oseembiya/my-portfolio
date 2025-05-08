@@ -103,7 +103,7 @@ body.menu-open {
   cursor: pointer;
 
   .highlight {
-    color: #e22200;
+    color: $color-text-random;
   }
 }
 
@@ -130,13 +130,13 @@ body.menu-open {
       left: 0;
       width: 0;
       height: 2px;
-      background: #e22200;
+      background: $color-text-random;
       transition: width 0.3s;
     }
 
     &:hover,
     &.active {
-      color: #e22200;
+      color: $color-text-random;
     }
 
     &:hover::after,
@@ -147,7 +147,7 @@ body.menu-open {
 }
 
 .cta-button {
-  background-color: #e22200;
+  background-color: $color-text-random;
   color: $color-text-secondary;
   border: none;
   padding: 10px 20px;
@@ -174,7 +174,7 @@ body.menu-open {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: darken(#e22200, 15%);
+    background-color: darken($color-text-random, 15%);
     transition: all 0.3s ease;
     z-index: -1;
   }
@@ -231,7 +231,7 @@ body.menu-open {
     span {
       &:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
-        background-color: #e22200;
+        background-color: $color-text-random;
       }
 
       &:nth-child(2) {
@@ -240,7 +240,7 @@ body.menu-open {
 
       &:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
-        background-color: #e22200;
+        background-color: $color-text-random;
       }
     }
   }
@@ -325,7 +325,7 @@ body.menu-open {
 
         &:hover,
         &.active {
-          color: #e22200;
+          color: $color-text-random;
         }
       }
     }
@@ -363,7 +363,7 @@ body.menu-open {
 
         &:hover,
         &.active {
-          color: #e22200;
+          color: $color-text-random;
         }
       }
     }
@@ -376,7 +376,7 @@ body.menu-open {
 
         &:hover,
         &.active {
-          color: #e22200;
+          color: $color-text-random;
         }
       }
     }

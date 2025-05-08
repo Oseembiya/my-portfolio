@@ -6,7 +6,22 @@ function Home() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const homeRef = useRef(null);
 
-  // References to sections for Intersection Observer
+  const MOBILE_BREAKPOINT = 768; // Increased from 425 for better responsive behavior
+  const ANIMATION_DELAY = 300;
+
+  // Handle CV download without page reload
+  const handleCvDownload = (e) => {
+    e.preventDefault();
+    const link = document.createElement("a");
+    link.href =
+      "https://docs.google.com/document/d/1kF7AQONl7VMjtz8d73foyzrYor-CxvLk/export?format=pdf";
+    link.download = "Osee_Mbiya_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // References for sections with Intersection Observer
   const sectionRefs = {
     title: useRef(null),
     subtitle: useRef(null),
@@ -34,7 +49,7 @@ function Home() {
         actions: true,
         image: true,
       });
-    }, 300);
+    }, ANIMATION_DELAY);
 
     // Add scroll animation effect
     const observerOptions = {
@@ -79,10 +94,15 @@ function Home() {
   }, []);
 
   // Adjust text display for small screens
-  const isMobile = windowWidth <= 425;
+  const isMobile = windowWidth <= MOBILE_BREAKPOINT;
 
   return (
-    <div className="hero-section" ref={homeRef}>
+    <section
+      className="hero-section"
+      id="home"
+      aria-label="Introduction"
+      ref={homeRef}
+    >
       <div className="hero-content">
         <article className="hero-text">
           <header>
@@ -93,7 +113,7 @@ function Home() {
               ref={sectionRefs.title}
               data-section="title"
             >
-              <span>Osee</span> Mbiya
+              <span className="accent-text">Osee</span> Mbiya
             </h1>
             <h2
               className={`fade-in-section animation-delay-1 ${
@@ -102,7 +122,7 @@ function Home() {
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Full-Stack <span>Developer</span>
+              Full-Stack <span className="accent-text">Developer</span>
             </h2>
           </header>
 
@@ -126,8 +146,8 @@ function Home() {
               ref={sectionRefs.description2}
               data-section="description2"
             >
-              Ready to take your project to the next level? Let's work together
-              to create something extraordinary.
+              Ready to take your project to the next level? Let&apos;s work
+              together to create something extraordinary.
             </p>
           )}
 
@@ -141,32 +161,40 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="/resume.pdf"
-              download
+              href="https://docs.google.com/document/d/1kF7AQONl7VMjtz8d73foyzrYor-CxvLk/export?format=pdf"
+              download="Osee_Mbiya_CV.pdf"
               className="action-button primary-button"
+              aria-label="Download CV"
+              onClick={handleCvDownload}
             >
-              <i className="fa-solid fa-download"></i> Download CV
+              <i className="fa-solid fa-download" aria-hidden="true"></i>
+              <span className="button-text">Download CV</span>
             </a>
-            <div className="social-links">
+            <div className="social-links" aria-label="Social media links">
               <a
                 href="https://github.com/Oseembiya"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
+                className="social-link"
               >
-                <i className="fa-brands fa-github"></i>
+                <i className="fa-brands fa-github" aria-hidden="true"></i>
+                <span className="sr-only">GitHub</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/oseembiya"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
+                className="social-link"
               >
-                <i className="fa-brands fa-linkedin"></i>
+                <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
+                <span className="sr-only">LinkedIn</span>
               </a>
             </div>
           </div>
         </article>
+
         <div
           className={`hero-image slide-in-right ${
             visibleSections.image ? "is-visible" : ""
@@ -181,7 +209,7 @@ function Home() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
