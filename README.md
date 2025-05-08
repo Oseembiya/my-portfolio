@@ -1,45 +1,63 @@
-# React + Vite
+# My Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Preview](src/assets/Desktop.png)
 
-Currently, two official plugins are available:
+Welcome to my portfolio website – a dynamic showcase of my journey as a full-stack developer. Built with React and modern web technologies, this platform serves as both a professional portfolio and a testament to my technical capabilities. The site features a thoughtfully designed user interface that combines smooth animations, responsive layouts, and intuitive navigation to create an engaging user experience. Each section – from the animated hero landing page to the interactive project gallery – has been crafted to demonstrate my expertise in front-end development, while the contact form integration with EmailJS showcases my back-end knowledge.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Live Demo
 
-## 🎨 Features in Detail
+[View Live Portfolio](https://your-portfolio-url.com)
 
-### Home Section
+## ✨ Features
 
-- Hero section with professional introduction
-- Call-to-action buttons
-- Social media links
+### 🎨 Modern Design
 
-### About Section
+- Sleek, professional user interface
+- Smooth animations and transitions
+- Consistent color scheme and typography
+- Responsive design for all devices
 
-- Professional summary
-- Skills showcase with animations
-- Technical expertise display
+### 📱 Interactive Sections
 
-### Projects Section
+- **Hero Section**: Dynamic introduction with animated elements
+- **About**: Professional background and skills showcase
+- **Projects**: Filterable portfolio with project details
+- **Contact**: Interactive form with EmailJS integration
 
-- Project filtering by category
-- Project cards with hover effects
-- Links to live demos and source code
-- Responsive grid layout
+### 🚀 Technical Features
 
-### Contact Section
+- Lazy loading for optimal performance
+- Component-based architecture
+- Mobile-first responsive design
+- Real-time form validation
+- Smooth scrolling navigation
+- Cross-browser compatibility
 
-- Contact form with validation
-- EmailJS integration for sending messages
-- Social media links
-- Professional contact information
+## 🛠️ Built With
 
-## 🔧 Configuration
+- **React 18** - Frontend framework
+- **Vite** - Build tool and development server
+- **SASS/SCSS** - Styling and design
+- **EmailJS** - Contact form functionality
+- **Font Awesome** - Icons and visual elements
 
-### Environment Variables
+## 📦 Installation
 
-Create a `.env` file in the root directory with the following variables:
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/portfolio.git
+cd portfolio
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory:
 
 ```env
 VITE_EMAILJS_SERVICE_ID=your_service_id
@@ -47,51 +65,12 @@ VITE_EMAILJS_TEMPLATE_ID=your_template_id
 VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
-### Customization
+4. **Start development server**
 
-- Edit `src/components/Project/ProjectDetails.js` to add your projects
-- Modify styles in `src/styles/scss/` directory
-- Update content in respective component files
+```bash
+npm run dev
+```
 
-## 📱 Responsive Design
+## 🚀 Usage
 
-The portfolio is fully responsive with breakpoints at:
-
-- Mobile: 425px
-- Tablet: 768px
-- Desktop: 1024px
-
-## ⚡ Performance Optimizations
-
-- Lazy loading of non-critical components
-- Image optimization
-- Code splitting
-- CSS animations with GPU acceleration
-- Debounced scroll events
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## 👤 Author
-
-Your Name
-
-- Website: [your-website.com](https://your-website.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-
-## 🙏 Acknowledgments
-
-- React Team for the amazing framework
-- Vite Team for the build tool
-- Font Awesome for the icons
-- All contributors and supporters
+## �� Project Structure
