@@ -14,9 +14,18 @@ function Navbar() {
 
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
+
+    // Save current scroll position
+    const scrollPos = window.scrollY;
+
     setIsMenuOpen(newMenuState);
     if (newMenuState) {
       document.body.classList.add("menu-open");
+
+      // After menu is open, restore scroll position
+      setTimeout(() => {
+        window.scrollTo(0, scrollPos);
+      }, 0);
     } else {
       document.body.classList.remove("menu-open");
     }
