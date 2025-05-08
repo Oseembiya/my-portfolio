@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import ProjectDetails from "./ProjectDetails"; // Import ProjectDetails
 
 // Main Project Component
@@ -9,12 +9,20 @@ export default function Project() {
   const [visibleSections, setVisibleSections] = useState({});
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  // References for Intersection Observer
-  const sectionRefs = {
-    title: useRef(null),
-    tabs: useRef(null),
-    projects: useRef(null),
-  };
+  // Create refs first
+  const titleRef = useRef(null);
+  const tabsRef = useRef(null);
+  const projectsRef = useRef(null);
+
+  // References for Intersection Observer with useMemo
+  const sectionRefs = useMemo(
+    () => ({
+      title: titleRef,
+      tabs: tabsRef,
+      projects: projectsRef,
+    }),
+    []
+  );
 
   // Check if mobile view
   const isMobile = windowWidth <= 425;
@@ -80,7 +88,7 @@ export default function Project() {
         }
       });
     };
-  }, []);
+  }, [sectionRefs]);
 
   // Animate projects on mount
   useEffect(() => {
