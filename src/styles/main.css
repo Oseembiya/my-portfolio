@@ -298,7 +298,7 @@ body.menu-open {
   transition: transform 0.3s ease;
 }
 .menu-toggle:hover {
-  transform: translateY(3px);
+  /* transform removed */
 }
 
 .hamburger {
@@ -347,7 +347,7 @@ body.menu-open {
   }
   .nav-menu {
     position: fixed;
-    top: 66px; /* Start below the navbar height */
+    top: 75px; /* Start below the navbar height */
     left: 0;
     right: 0;
     flex-direction: column;
