@@ -397,7 +397,6 @@ body.menu-open {
     --item-index: 5;
   }
   .nav-menu li a {
-    display: block;
     font-size: 1.2rem;
   }
   .nav-menu li a::after {
