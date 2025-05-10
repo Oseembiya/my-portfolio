@@ -14,8 +14,8 @@ function Home() {
     e.preventDefault();
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/uc?export=download&id=1MPkEGwBES-gsFEEOE2Fzf9rbHke5Jwku";
-    link.download = "Osee_Mbiya_CV.pdf";
+      "https://drive.google.com/uc?export=download&id=162lNCCTtt7sestas4gtt6Z3ot3y-2MLR";
+    link.download = "OseeMbiyaCV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -166,7 +166,7 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/uc?export=download&id=1MPkEGwBES-gsFEEOE2Fzf9rbHke5Jwku"
+              href="https://drive.google.com/uc?export=download&id=162lNCCTtt7sestas4gtt6Z3ot3y-2MLR"
               download="Osee_Mbiya_CV.pdf"
               className="action-button primary-button"
               aria-label="Download CV"
