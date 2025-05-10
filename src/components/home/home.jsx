@@ -14,7 +14,7 @@ function Home() {
     e.preventDefault();
     const link = document.createElement("a");
     link.href =
-      "https://docs.google.com/document/d/1kF7AQONl7VMjtz8d73foyzrYor-CxvLk/export?format=pdf";
+      "https://drive.google.com/drive/folders/1MPkEGwBES-gsFEEOE2Fzf9rbHke5Jwku";
     link.download = "Osee_Mbiya_CV.pdf";
     document.body.appendChild(link);
     link.click();
