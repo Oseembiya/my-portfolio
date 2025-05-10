@@ -1,3 +1,5 @@
+import ProjectImage1 from "../../assets/ProjectImage1.png";
+import ProfileImage from "../../assets/osee.jpeg";
 const ProjectDetails = [
   {
     section: "Front-End",
@@ -7,7 +9,7 @@ const ProjectDetails = [
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
-        image: "/src/assets/ProjectImage1.png",
+        image: ProjectImage1,
         tools: [
           "React",
           "CSS",
@@ -25,7 +27,7 @@ const ProjectDetails = [
         description:
           "An interactive e-commerce platform for browsing and purchasing school activities and lessons.",
         href: "https://oseembiya.github.io/Vue/",
-        image: "/src/assets/ProjectImage1.png",
+        image: ProjectImage1,
         tools: [
           "Vue.js",
           "Bootstrap 5",
@@ -41,7 +43,7 @@ const ProjectDetails = [
         description:
           "A professional portfolio website showcasing skills and projects with modern UI/UX principles.",
         href: "https://myportfolio.com",
-        image: "/src/assets/osee.jpeg",
+        image: ProfileImage,
         tools: ["React", "SCSS", "Responsive Design", "Animation"],
         codeLink: "https://github.com/oseembiya/portfolio",
         demoLink: "https://myportfolio.com",
@@ -56,7 +58,7 @@ const ProjectDetails = [
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
-        image: "/src/assets/ProjectImage1.png",
+        image: ProjectImage1,
         tools: [
           "Node.js",
           "WebSocket",
