@@ -25,10 +25,11 @@
     margin: 0 auto;
     gap: 2rem;
 
-    @include media-query("lg") {
+    @include media-query("md", "max") {
       flex-direction: column;
       text-align: center;
       gap: 3rem;
+      flex-wrap: wrap;
     }
 
     @include media-query("sm") {
