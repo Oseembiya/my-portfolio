@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -9,13 +9,22 @@ export default function Contact() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [visibleSections, setVisibleSections] = useState({});
 
-  // References for Intersection Observer
-  const sectionRefs = {
-    title: useRef(null),
-    info: useRef(null),
-    form: useRef(null),
-    social: useRef(null),
-  };
+  // Create refs first
+  const titleRef = useRef(null);
+  const infoRef = useRef(null);
+  const formRef = useRef(null);
+  const socialRef = useRef(null);
+
+  // Then memoize the object that uses them
+  const sectionRefs = useMemo(
+    () => ({
+      title: titleRef,
+      info: infoRef,
+      form: formRef,
+      social: socialRef,
+    }),
+    []
+  );
 
   // Check if mobile view
   const isMobile = windowWidth <= 425;
@@ -88,7 +97,7 @@ export default function Contact() {
         }
       });
     };
-  }, []);
+  }, [sectionRefs]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -124,11 +133,7 @@ export default function Contact() {
   };
 
   return (
-    <footer
-      className="contactMe-2338"
-      id="contact"
-      aria-labelledby="contact-title"
-    >
+    <footer className="contactMe-2338" id="contact">
       {/* Section Heading */}
       <div className="contact-container">
         <h2
@@ -186,9 +191,9 @@ export default function Contact() {
                 </div>
                 <div className="socialMedia-2338">
                   <a
-                    href="https://www.linkedin.com/in/osee-mbiya-a96529177"
+                    href="https://www.linkedin.com/in/oseembiya"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="linkedin"
                     aria-label="Visit LinkedIn profile"
                   >
                     <i className="fa-brands fa-linkedin" aria-hidden="true"></i>
@@ -196,7 +201,7 @@ export default function Contact() {
                   <a
                     href="https://github.com/Oseembiya/"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="github"
                     aria-label="Visit GitHub profile"
                   >
                     <i className="fa-brands fa-github" aria-hidden="true"></i>
@@ -204,7 +209,7 @@ export default function Contact() {
                   <a
                     href="https://twitter.com"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="twitter"
                     aria-label="Visit Twitter profile"
                   >
                     <i className="fa-brands fa-twitter" aria-hidden="true"></i>
@@ -219,7 +224,7 @@ export default function Contact() {
                       <a
                         href="/resume.pdf"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="resume"
                         aria-label="Download my resume"
                       >
                         <i
@@ -233,7 +238,7 @@ export default function Contact() {
                       <a
                         href="https://instagram.com/username"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="instagram"
                         aria-label="Visit Instagram profile"
                       >
                         <i
@@ -247,7 +252,7 @@ export default function Contact() {
                       <a
                         href="https://discord.com/users/userid"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="discord"
                         aria-label="Connect on Discord"
                       >
                         <i
@@ -261,7 +266,7 @@ export default function Contact() {
                       <a
                         href="https://wa.me/447884103424"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="whatsapp"
                         aria-label="Connect on WhatsApp"
                       >
                         <i
