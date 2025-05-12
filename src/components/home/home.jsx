@@ -7,6 +7,7 @@ function Home() {
   const homeRef = useRef(null);
 
   const MOBILE_BREAKPOINT = 768;
+  const MEDIUM_BREAKPOINT = 992;
   const ANIMATION_DELAY = 300;
 
   // Handle CV download without page reload
@@ -95,12 +96,13 @@ function Home() {
 
   // Adjust text display for different screen sizes
   const isMobile = windowWidth <= MOBILE_BREAKPOINT;
+  const isMediumOrLarger = windowWidth >= MEDIUM_BREAKPOINT;
 
   const getResponsiveDescription = () => {
-    if (isMobile) {
-      return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions.";
+    if (isMediumOrLarger) {
+      return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture.";
     }
-    return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture.";
+    return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions.";
   };
 
   return (
