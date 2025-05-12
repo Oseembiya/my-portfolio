@@ -217,6 +217,11 @@ body.menu-open {
   margin: 0;
   padding: 0;
   gap: 30px;
+  align-items: center;
+}
+.nav-menu li {
+  display: flex;
+  align-items: center;
 }
 .nav-menu li a {
   color: #ffffff;
@@ -358,8 +363,8 @@ body.menu-open {
     height: 0;
     overflow: hidden;
     transform: translateY(-100vh); /* Push it completely off-screen */
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     gap: 20px;
     z-index: 990;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -368,7 +373,8 @@ body.menu-open {
     transform: translateY(0);
     height: calc(100vh - 66px); /* Full height minus navbar height */
     padding-top: 20px;
-    padding-left: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .nav-menu li {
     width: 100%;
@@ -377,6 +383,8 @@ body.menu-open {
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     transition-delay: calc(0.1s * var(--item-index, 0));
+    display: flex;
+    justify-content: center;
   }
   .nav-menu li:nth-child(1) {
     --item-index: 1;
