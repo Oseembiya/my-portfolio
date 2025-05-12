@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import AboutMeData from "./aboutMeData";
+import LearnMore from "./learnMore";
 import image from "/src/assets/osee.jpeg";
 
 // Category button component
@@ -20,16 +21,21 @@ CategoryButton.propTypes = {
 };
 
 // Detail card component
-const DetailCard = ({ year, course }) => (
+const DetailCard = ({ year, course, gpa }) => (
   <div className="about-card">
     <h4>{year}</h4>
     <p className="about-card-subtitle">{course}</p>
+    <div className="card-footer">
+      <span className="gpa">{gpa}</span>
+      <LearnMore />
+    </div>
   </div>
 );
 
 DetailCard.propTypes = {
   year: PropTypes.string.isRequired,
   course: PropTypes.string.isRequired,
+  gpa: PropTypes.string.isRequired,
 };
 
 export default function About() {
@@ -213,6 +219,7 @@ export default function About() {
               key={`detail-${index}`}
               year={detail.year}
               course={detail.course}
+              gpa={detail.gpa}
             />
           ))}
         </div>
