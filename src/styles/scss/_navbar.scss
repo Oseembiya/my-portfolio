@@ -202,10 +202,6 @@ body.menu-open {
   z-index: 1010;
   position: relative;
   transition: transform 0.3s ease;
-
-  &:hover {
-    /* transform removed */
-  }
 }
 
 .hamburger {
@@ -264,7 +260,7 @@ body.menu-open {
 
   .nav-menu {
     position: fixed;
-    top: 80px; /* Start below the navbar height */
+    top: 66px; /* Match the height used in calc() */
     left: 0;
     right: 0;
     flex-direction: column;
@@ -286,7 +282,7 @@ body.menu-open {
     &.open {
       transform: translateY(0);
       height: calc(100vh - 66px); /* Full height minus navbar height */
-      padding-top: 30px;
+      padding-top: 20px;
       padding-left: 40px;
     }
 
