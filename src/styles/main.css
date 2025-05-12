@@ -453,7 +453,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .nav-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
   .logo {
     font-size: 1.2rem;
@@ -814,7 +814,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .about-wrapper {
-    padding: 60px 10px 30px;
+    padding: 60px 20px 30px;
   }
 }
 .about-wrapper h2 {
@@ -1860,7 +1860,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .contactMe-2338 {
-    padding: 60px 10px 30px;
+    padding: 60px 20px 30px;
   }
 }
 .contactMe-2338 .contact-container {
