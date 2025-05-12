@@ -130,6 +130,22 @@ export default function About() {
             data-section="intro"
           >
             <h2>Who I am</h2>
+
+            {/* Image container for mobile/tablet view (≤ 768px) */}
+            {windowWidth <= 768 && (
+              <div
+                className={`img-square-container slide-in-right ${
+                  visibleSections.image ? "is-visible" : ""
+                }`}
+                ref={sectionRefs.image}
+                data-section="image"
+              >
+                <div className="profile-image">
+                  <img src={image} alt="Osee Mbiya - Developer" />
+                </div>
+              </div>
+            )}
+
             <p>
               {isMobile
                 ? "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences."
@@ -163,17 +179,20 @@ export default function About() {
             </div>
           </div>
 
-          <div
-            className={`img-square-container slide-in-right ${
-              visibleSections.image ? "is-visible" : ""
-            }`}
-            ref={sectionRefs.image}
-            data-section="image"
-          >
-            <div className="profile-image">
-              <img src={image} alt="Osee Mbiya - Developer" />
+          {/* Image container for desktop view (> 768px) */}
+          {windowWidth > 768 && (
+            <div
+              className={`img-square-container slide-in-right ${
+                visibleSections.image ? "is-visible" : ""
+              }`}
+              ref={sectionRefs.image}
+              data-section="image"
+            >
+              <div className="profile-image">
+                <img src={image} alt="Osee Mbiya - Developer" />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Category details with animation */}
@@ -206,101 +225,101 @@ export default function About() {
           <div className="skills-logos">
             <div className="skills-logos-container">
               {/* First set of icons */}
-              <div className="skill-logo">
+              <div className="skill-logo html">
                 <i className="fa-brands fa-html5"></i>
                 <span>HTML</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo css">
                 <i className="fa-brands fa-css3-alt"></i>
                 <span>CSS</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo javascript">
                 <i className="fa-brands fa-js"></i>
                 <span>JavaScript</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo react">
                 <i className="fa-brands fa-react"></i>
                 <span>React</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo node">
                 <i className="fa-brands fa-node-js"></i>
                 <span>Node.js</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo python">
                 <i className="fa-brands fa-python"></i>
                 <span>Python</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo java">
                 <i className="fa-brands fa-java"></i>
                 <span>Java</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo git">
                 <i className="fa-brands fa-git-alt"></i>
                 <span>Git</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo docker">
                 <i className="fa-brands fa-docker"></i>
                 <span>Docker</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo aws">
                 <i className="fa-brands fa-aws"></i>
                 <span>AWS</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo mongodb">
                 <i className="fa-solid fa-database"></i>
                 <span>MongoDB</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo figma">
                 <i className="fa-brands fa-figma"></i>
                 <span>Figma</span>
               </div>
 
               {/* Duplicate set for continuous scrolling effect */}
-              <div className="skill-logo">
+              <div className="skill-logo html">
                 <i className="fa-brands fa-html5"></i>
                 <span>HTML</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo css">
                 <i className="fa-brands fa-css3-alt"></i>
                 <span>CSS</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo javascript">
                 <i className="fa-brands fa-js"></i>
                 <span>JavaScript</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo react">
                 <i className="fa-brands fa-react"></i>
                 <span>React</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo node">
                 <i className="fa-brands fa-node-js"></i>
                 <span>Node.js</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo python">
                 <i className="fa-brands fa-python"></i>
                 <span>Python</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo java">
                 <i className="fa-brands fa-java"></i>
                 <span>Java</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo git">
                 <i className="fa-brands fa-git-alt"></i>
                 <span>Git</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo docker">
                 <i className="fa-brands fa-docker"></i>
                 <span>Docker</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo aws">
                 <i className="fa-brands fa-aws"></i>
                 <span>AWS</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo mongodb">
                 <i className="fa-solid fa-database"></i>
                 <span>MongoDB</span>
               </div>
-              <div className="skill-logo">
+              <div className="skill-logo figma">
                 <i className="fa-brands fa-figma"></i>
                 <span>Figma</span>
               </div>

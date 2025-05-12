@@ -176,8 +176,9 @@ function Navbar() {
             </li>
           ))}
           <li style={{ "--item-index": navLinks.length + 1 }}>
-            <button
+            <a
               className="cta-button"
+              href="#contact"
               onClick={() => {
                 handleLinkClick();
                 document
@@ -186,7 +187,7 @@ function Navbar() {
               }}
             >
               <i className="fa-solid fa-briefcase"></i> Hire Me
-            </button>
+            </a>
           </li>
         </ul>
       </div>

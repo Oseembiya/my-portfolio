@@ -156,6 +156,13 @@
   @include media-query("md", "max") {
     max-width: 100%;
     width: 100%;
+
+    .img-square-container {
+      margin: 1.5rem 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   h2 {
@@ -550,7 +557,6 @@
     i {
       font-size: clamp(1.8rem, 6vw, 2.5rem);
       margin-bottom: 0.5rem;
-      color: $color-text-primary;
       transition: all 0.3s ease;
     }
 
@@ -567,13 +573,54 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
       i {
-        color: #e22200;
         transform: scale(1.1);
       }
-
-      span {
-        color: #e22200;
-      }
     }
+
+    // Brand-specific colors
+    &.html i {
+      color: #e34f26;
+    }
+    &.css i {
+      color: #1572b6;
+    }
+    &.javascript i {
+      color: #f7df1e;
+    }
+    &.react i {
+      color: #61dafb;
+    }
+    &.node i {
+      color: #339933;
+    }
+    &.python i {
+      color: #3776ab;
+    }
+    &.java i {
+      color: #007396;
+    }
+    &.git i {
+      color: #f05032;
+    }
+    &.docker i {
+      color: #2496ed;
+    }
+    &.aws i {
+      color: #ff9900;
+    }
+    &.mongodb i {
+      color: #47a248;
+    }
+    &.figma i {
+      color: #f24e1e;
+    }
+  }
+}
+
+// For mobile devices, adjust the image container layout
+@include media-query("md", "max") {
+  .about-wrapper > div:first-child {
+    flex-direction: column;
+    gap: 1rem;
   }
 }

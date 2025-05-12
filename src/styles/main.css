@@ -297,9 +297,6 @@ body.menu-open {
   position: relative;
   transition: transform 0.3s ease;
 }
-.menu-toggle:hover {
-  /* transform removed */
-}
 
 .hamburger {
   display: flex;
@@ -347,7 +344,7 @@ body.menu-open {
   }
   .nav-menu {
     position: fixed;
-    top: 80px; /* Start below the navbar height */
+    top: 78px; /* Match the height used in calc() */
     left: 0;
     right: 0;
     flex-direction: column;
@@ -370,7 +367,7 @@ body.menu-open {
   .nav-menu.open {
     transform: translateY(0);
     height: calc(100vh - 66px); /* Full height minus navbar height */
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 40px;
   }
   .nav-menu li {
@@ -411,8 +408,8 @@ body.menu-open {
   }
   .nav-menu .cta-button {
     margin-top: 20px;
-    width: 90%;
-    padding: 15px;
+    width: auto;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -470,19 +467,13 @@ body.menu-open {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 60px 20px;
+  padding: 60px 12px 0px;
   background: url("../assets/Desktop.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: #ffffff;
-}
-@media (max-width: 425px) {
-  .hero-section {
-    padding: 40px 15px;
-    background-attachment: scroll;
-  }
 }
 .hero-section .hero-content {
   display: flex;
@@ -493,11 +484,11 @@ body.menu-open {
   margin: 0 auto;
   gap: 2rem;
 }
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .hero-section .hero-content {
+    margin-top: 40px;
     flex-direction: column;
-    text-align: center;
-    gap: 3rem;
+    flex-wrap: wrap;
   }
 }
 @media (max-width: 425px) {
@@ -508,6 +499,7 @@ body.menu-open {
 .hero-section .hero-text {
   flex: 1;
   max-width: 600px;
+  text-align: left;
 }
 @media (max-width: 992px) {
   .hero-section .hero-text {
@@ -520,6 +512,11 @@ body.menu-open {
   margin-bottom: 1rem;
   line-height: 1.2;
   color: #ffffff;
+}
+@media (max-width: 768px) {
+  .hero-section .hero-text h1 {
+    margin-bottom: 0.5rem;
+  }
 }
 @media (max-width: 425px) {
   .hero-section .hero-text h1 {
@@ -559,21 +556,21 @@ body.menu-open {
 .hero-section .hero-actions {
   display: flex;
   gap: 1.5rem;
-  margin-top: 2rem;
   align-items: center;
 }
 @media (max-width: 992px) {
   .hero-section .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
 }
 @media (max-width: 425px) {
   .hero-section .hero-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-top: 1.5rem;
     width: 100%;
+    flex-wrap: wrap;
   }
   .hero-section .hero-actions .action-button {
     width: 100%;
@@ -676,9 +673,6 @@ body.menu-open {
 }
 
 @media (max-width: 425px) {
-  .hero-section {
-    padding: 80px 10px 0px;
-  }
   .hero-section .hero-content {
     gap: 10px;
   }
@@ -885,6 +879,12 @@ body.menu-open {
   .aboutImg-2335 {
     max-width: 100%;
     width: 100%;
+  }
+  .aboutImg-2335 .img-square-container {
+    margin: 1.5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 .aboutImg-2335 h2 {
@@ -1291,7 +1291,6 @@ body.menu-open {
 .skills-showcase .skill-logo i {
   font-size: clamp(1.8rem, 6vw, 2.5rem);
   margin-bottom: 0.5rem;
-  color: #00262b;
   transition: all 0.3s ease;
 }
 .skills-showcase .skill-logo span {
@@ -1306,13 +1305,51 @@ body.menu-open {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .skills-showcase .skill-logo:hover i {
-  color: #e22200;
   transform: scale(1.1);
 }
-.skills-showcase .skill-logo:hover span {
-  color: #e22200;
+.skills-showcase .skill-logo.html i {
+  color: #e34f26;
+}
+.skills-showcase .skill-logo.css i {
+  color: #1572b6;
+}
+.skills-showcase .skill-logo.javascript i {
+  color: #f7df1e;
+}
+.skills-showcase .skill-logo.react i {
+  color: #61dafb;
+}
+.skills-showcase .skill-logo.node i {
+  color: #339933;
+}
+.skills-showcase .skill-logo.python i {
+  color: #3776ab;
+}
+.skills-showcase .skill-logo.java i {
+  color: #007396;
+}
+.skills-showcase .skill-logo.git i {
+  color: #f05032;
+}
+.skills-showcase .skill-logo.docker i {
+  color: #2496ed;
+}
+.skills-showcase .skill-logo.aws i {
+  color: #ff9900;
+}
+.skills-showcase .skill-logo.mongodb i {
+  color: #47a248;
+}
+.skills-showcase .skill-logo.figma i {
+  color: #f24e1e;
 }
 
+@media (max-width: 768px) {
+  .about-wrapper > div:first-child {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 .projectMain-2336 {
   width: 100%;
   min-height: var(--projects-min-height);
