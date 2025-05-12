@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import PropTypes from "prop-types";
 import AboutMeData from "./aboutMeData";
 import LearnMore from "./learnMore";
@@ -43,14 +43,24 @@ export default function About() {
   const [visibleSections, setVisibleSections] = useState({});
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  // Create refs
+  const introRef = useRef(null);
+  const categoriesRef = useRef(null);
+  const detailsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const imageRef = useRef(null);
+
   // References to sections for Intersection Observer
-  const sectionRefs = {
-    intro: useRef(null),
-    categories: useRef(null),
-    details: useRef(null),
-    skills: useRef(null),
-    image: useRef(null),
-  };
+  const sectionRefs = useMemo(
+    () => ({
+      intro: introRef,
+      categories: categoriesRef,
+      details: detailsRef,
+      skills: skillsRef,
+      image: imageRef,
+    }),
+    []
+  );
 
   // Get current category data
   const currentCategory = AboutMeData[selectedCategory];
@@ -122,7 +132,7 @@ export default function About() {
         }
       });
     };
-  }, []);
+  }, [sectionRefs]);
 
   return (
     <section className="about-wrapper about-2335" id="about">
@@ -132,7 +142,7 @@ export default function About() {
             className={`aboutImg-2335 fade-in-section ${
               visibleSections.intro ? "is-visible" : ""
             }`}
-            ref={sectionRefs.intro}
+            ref={introRef}
             data-section="intro"
           >
             <h2>Who I am</h2>
@@ -143,7 +153,7 @@ export default function About() {
                 className={`img-square-container slide-in-right ${
                   visibleSections.image ? "is-visible" : ""
                 }`}
-                ref={sectionRefs.image}
+                ref={imageRef}
                 data-section="image"
                 style={{ width: "100%" }}
               >
@@ -176,7 +186,7 @@ export default function About() {
               className={`contentList-2335 slide-in-left ${
                 visibleSections.categories ? "is-visible" : ""
               }`}
-              ref={sectionRefs.categories}
+              ref={categoriesRef}
               data-section="categories"
             >
               {AboutMeData.map((category, index) => (
@@ -196,7 +206,7 @@ export default function About() {
               className={`img-square-container slide-in-right ${
                 visibleSections.image ? "is-visible" : ""
               }`}
-              ref={sectionRefs.image}
+              ref={imageRef}
               data-section="image"
             >
               <div className="profile-image">
@@ -211,7 +221,7 @@ export default function About() {
           className={`content-2335 scale-in ${
             visibleSections.details ? "is-visible" : ""
           }`}
-          ref={sectionRefs.details}
+          ref={detailsRef}
           data-section="details"
         >
           {currentCategory.aboutMeDetails.map((detail, index) => (
@@ -225,11 +235,7 @@ export default function About() {
         </div>
 
         {/* Skills showcase section with animation */}
-        <div
-          className="skills-showcase"
-          ref={sectionRefs.skills}
-          data-section="skills"
-        >
+        <div className="skills-showcase" ref={skillsRef} data-section="skills">
           <div className="skills-heading">
             <h3>My Tech Stack</h3>
             <p>Technologies I work with</p>
