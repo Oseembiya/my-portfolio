@@ -139,9 +139,14 @@ export default function About() {
                 }`}
                 ref={sectionRefs.image}
                 data-section="image"
+                style={{ width: "100%" }}
               >
                 <div className="profile-image">
-                  <img src={image} alt="Osee Mbiya - Developer" />
+                  <img
+                    src={image}
+                    alt="Osee Mbiya - Developer"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             )}
@@ -189,7 +194,7 @@ export default function About() {
               data-section="image"
             >
               <div className="profile-image">
-                <img src={image} alt="Osee Mbiya - Developer" />
+                <img src={image} alt="Osee Mbiya - Developer" loading="lazy" />
               </div>
             </div>
           )}
