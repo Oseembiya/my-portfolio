@@ -301,7 +301,7 @@ body.menu-open {
       transition: opacity 0.3s ease, transform 0.3s ease;
       transition-delay: calc(0.1s * var(--item-index, 0));
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
 
       &:nth-child(1) {
         --item-index: 1;
