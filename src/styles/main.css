@@ -818,7 +818,6 @@ body.menu-open {
   }
 }
 .about-wrapper h2 {
-  margin-bottom: 1.5rem;
   font-weight: 600;
   color: #00262b;
   position: relative;
@@ -889,7 +888,6 @@ body.menu-open {
   font-size: clamp(24px, 5vw, 32px);
   font-weight: 600;
   color: #00262b;
-  margin-bottom: 2rem;
   text-align: left;
   position: relative;
 }
