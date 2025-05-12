@@ -15,7 +15,7 @@ function Home() {
     e.preventDefault();
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/uc?export=download&id=162lNCCTtt7sestas4gtt6Z3ot3y-2MLR";
+      "https://drive.google.com/uc?export=download&id=1X8rXQxPE-OAeEVwYY9q6N5xshZVy2w04";
     link.download = "OseeMbiyaCV.pdf";
     document.body.appendChild(link);
     link.click();
