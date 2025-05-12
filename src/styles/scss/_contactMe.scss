@@ -28,6 +28,7 @@
     margin-bottom: 3rem;
     text-align: left;
     width: 100%;
+    padding-left: 8px;
 
     @include media-query("md", "max") {
       margin-bottom: 2.5rem;

@@ -1463,6 +1463,7 @@ body.menu-open {
   margin-bottom: 3rem;
   text-align: left;
   width: 100%;
+  padding-left: 8px;
 }
 @media (max-width: 768px) {
   .projectMain-2336 .section-title {
@@ -1876,6 +1877,7 @@ body.menu-open {
   margin-bottom: 3rem;
   text-align: left;
   width: 100%;
+  padding-left: 8px;
 }
 @media (max-width: 768px) {
   .contactMe-2338 .section-title {
