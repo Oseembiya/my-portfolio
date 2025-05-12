@@ -3,18 +3,13 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 60px 20px;
+  padding: 60px 20px 0px;
   background: url("../assets/Desktop.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: $color-text-secondary;
-
-  @include media-query("sm") {
-    padding: 40px 15px;
-    background-attachment: scroll;
-  }
 
   .hero-content {
     display: flex;
@@ -26,9 +21,8 @@
     gap: 2rem;
 
     @include media-query("md", "max") {
+      margin-top: 40px;
       flex-direction: column;
-      text-align: center;
-      gap: 3rem;
       flex-wrap: wrap;
     }
 
@@ -40,6 +34,7 @@
   .hero-text {
     flex: 1;
     max-width: 600px;
+    text-align: left;
 
     @include media-query("lg") {
       max-width: 100%;
@@ -51,6 +46,9 @@
       margin-bottom: 1rem;
       line-height: 1.2;
       color: $color-text-secondary;
+      @include media-query("md") {
+        margin-bottom: 0.5rem;
+      }
 
       @include media-query("sm") {
         font-size: clamp(28px, 8vw, $h1-font-size);
@@ -93,19 +91,19 @@
   .hero-actions {
     display: flex;
     gap: 1.5rem;
-    margin-top: 2rem;
     align-items: center;
 
     @include media-query("lg") {
-      justify-content: center;
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
     @include media-query("sm") {
-      flex-direction: column;
+      flex-direction: row;
       gap: 1rem;
       margin-top: 1.5rem;
       width: 100%;
+      flex-wrap: wrap;
 
       .action-button {
         width: 100%;
@@ -213,9 +211,6 @@
 }
 
 @include media-query("sm") {
-  .hero-section {
-    padding: 80px 10px 0px;
-  }
   .hero-section .hero-content {
     gap: 10px;
   }
