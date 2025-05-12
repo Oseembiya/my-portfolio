@@ -103,7 +103,7 @@ export default function Project() {
     <section
       className="projectMain-2336"
       id="projects"
-      aria-labelledby="project-title"
+      aria-label="Projects"
     >
       <div className="project-container">
         <h2
