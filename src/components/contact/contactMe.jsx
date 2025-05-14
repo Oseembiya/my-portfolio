@@ -5,6 +5,7 @@ export default function Contact() {
   const [showArrow, setShowArrow] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const form = useRef();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [visibleSections, setVisibleSections] = useState({});
@@ -102,9 +103,10 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMessage("");
 
     try {
-      // Using EmailJS to send email and SMS notification
+      // Using EmailJS to send email notification
       const result = await emailjs.sendForm(
         "Oseembiya",
         "template_mihal6k",
@@ -122,11 +124,11 @@ export default function Contact() {
           setFormSubmitted(false);
         }, 5000);
       } else {
-        alert("Failed to send message. Please try again later.");
+        setErrorMessage("Failed to send message. Please try again later.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again later.");
+      setErrorMessage("Failed to send message. Please try again later.");
     } finally {
       setIsLoading(false);
     }
@@ -312,6 +314,20 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 aria-label="Contact form"
               >
+                {errorMessage && (
+                  <div className="errorMessage-2338">
+                    <i className="fa-solid fa-exclamation-circle error-icon"></i>
+                    <p>{errorMessage}</p>
+                    <button
+                      className="dismiss-error-btn"
+                      onClick={() => setErrorMessage("")}
+                      type="button"
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                )}
+
                 {/* Name Field */}
                 <div className="formGroup-2338">
                   <label htmlFor="name">Name</label>
