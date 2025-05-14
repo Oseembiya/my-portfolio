@@ -321,9 +321,9 @@
   // Styling for error message
   .errorMessage-2338 {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding: 1rem;
     background-color: rgba(226, 34, 0, 0.1);
     border-radius: 10px;
@@ -337,7 +337,8 @@
     .error-icon {
       font-size: 1.5rem;
       color: #e22200;
-      margin-bottom: 0.5rem;
+      margin-right: 0.8rem;
+      flex-shrink: 0;
     }
 
     p {
@@ -345,7 +346,6 @@
       margin-bottom: 0;
       color: $color-text-secondary;
       opacity: 0.9;
-      width: 100%;
     }
   }
 

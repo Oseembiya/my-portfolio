@@ -2151,9 +2151,9 @@ body.menu-open {
 }
 .contactMe-2338 .errorMessage-2338 {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   background-color: rgba(226, 34, 0, 0.1);
   border-radius: 10px;
@@ -2168,14 +2168,14 @@ body.menu-open {
 .contactMe-2338 .errorMessage-2338 .error-icon {
   font-size: 1.5rem;
   color: #e22200;
-  margin-bottom: 0.5rem;
+  margin-right: 0.8rem;
+  flex-shrink: 0;
 }
 .contactMe-2338 .errorMessage-2338 p {
   font-size: clamp(14px, 3vw, 16px);
   margin-bottom: 0;
   color: #ffffff;
   opacity: 0.9;
-  width: 100%;
 }
 .contactMe-2338 .contactForm-2338 {
   display: flex;
