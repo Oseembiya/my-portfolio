@@ -2081,7 +2081,7 @@ body.menu-open {
   line-height: 1.6;
   margin-bottom: 1rem;
   color: #ffffff;
-  width: 80%;
+  width: 100%;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 p {
