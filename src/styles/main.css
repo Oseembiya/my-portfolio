@@ -2153,6 +2153,7 @@ body.menu-open {
   flex-direction: row;
   align-items: center;
   text-align: left;
+  margin-bottom: 0px;
   padding: 0.5rem;
   background-color: rgba(226, 34, 0, 0.1);
   border-radius: 10px;
