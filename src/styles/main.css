@@ -2079,13 +2079,12 @@ body.menu-open {
 .contactMe-2338 .contactContent-2338 p {
   font-size: clamp(14px, 3vw, 16px);
   line-height: 1.6;
-  margin-bottom: 1rem;
   color: #ffffff;
   width: 100%;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
 }
 .contactMe-2338 .contactContent-2338 .thankYouMessage {
