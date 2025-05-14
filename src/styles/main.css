@@ -2149,6 +2149,34 @@ body.menu-open {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
 }
+.contactMe-2338 .errorMessage-2338 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(226, 34, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(226, 34, 0, 0.2);
+}
+@media (max-width: 425px) {
+  .contactMe-2338 .errorMessage-2338 {
+    padding: 0.8rem;
+  }
+}
+.contactMe-2338 .errorMessage-2338 .error-icon {
+  font-size: 1.5rem;
+  color: #e22200;
+  margin-bottom: 0.5rem;
+}
+.contactMe-2338 .errorMessage-2338 p {
+  font-size: clamp(14px, 3vw, 16px);
+  margin-bottom: 0;
+  color: #ffffff;
+  opacity: 0.9;
+  width: 100%;
+}
 .contactMe-2338 .contactForm-2338 {
   display: flex;
   flex-direction: column;
