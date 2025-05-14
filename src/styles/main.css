@@ -2154,10 +2154,9 @@ body.menu-open {
   flex-direction: row;
   align-items: center;
   text-align: left;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: rgba(226, 34, 0, 0.1);
   border-radius: 10px;
-  margin-bottom: 1.5rem;
   border: 1px solid rgba(226, 34, 0, 0.2);
 }
 @media (max-width: 425px) {
@@ -2170,12 +2169,6 @@ body.menu-open {
   color: #e22200;
   margin-right: 0.8rem;
   flex-shrink: 0;
-}
-.contactMe-2338 .errorMessage-2338 p {
-  font-size: clamp(14px, 3vw, 16px);
-  margin-bottom: 0;
-  color: #ffffff;
-  opacity: 0.9;
 }
 .contactMe-2338 .contactForm-2338 {
   display: flex;

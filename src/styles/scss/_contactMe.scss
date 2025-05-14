@@ -324,10 +324,9 @@
     flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: rgba(226, 34, 0, 0.1);
     border-radius: 10px;
-    margin-bottom: 1.5rem;
     border: 1px solid rgba(226, 34, 0, 0.2);
 
     @include media-query("sm") {
@@ -339,13 +338,6 @@
       color: #e22200;
       margin-right: 0.8rem;
       flex-shrink: 0;
-    }
-
-    p {
-      font-size: clamp(14px, 3vw, 16px);
-      margin-bottom: 0;
-      color: $color-text-secondary;
-      opacity: 0.9;
     }
   }
 
