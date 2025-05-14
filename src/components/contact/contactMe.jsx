@@ -318,13 +318,6 @@ export default function Contact() {
                   <div className="errorMessage-2338">
                     <i className="fa-solid fa-exclamation-circle error-icon"></i>
                     <p>{errorMessage}</p>
-                    <button
-                      className="dismiss-error-btn"
-                      onClick={() => setErrorMessage("")}
-                      type="button"
-                    >
-                      Dismiss
-                    </button>
                   </div>
                 )}
 
