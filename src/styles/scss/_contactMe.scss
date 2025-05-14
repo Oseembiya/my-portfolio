@@ -322,11 +322,14 @@
     flex-direction: row;
     align-items: center;
     text-align: left;
-    margin-bottom: 0px !important;
     padding: 0.5rem;
     background-color: rgba(226, 34, 0, 0.1);
     border-radius: 10px;
     border: 1px solid rgba(226, 34, 0, 0.2);
+
+    @include media-query("sm") {
+      margin-bottom: 0px !important;
+    }
 
     .error-icon {
       font-size: 1.5rem;
