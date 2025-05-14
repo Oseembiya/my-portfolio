@@ -2158,15 +2158,11 @@ body.menu-open {
   border-radius: 10px;
   border: 1px solid rgba(226, 34, 0, 0.2);
 }
-@media (max-width: 425px) {
-  .contactMe-2338 .errorMessage-2338 {
-    padding: 0.8rem;
-  }
-}
 .contactMe-2338 .errorMessage-2338 .error-icon {
   font-size: 1.5rem;
   color: #e22200;
   flex-shrink: 0;
+  margin-right: 0.5rem;
 }
 .contactMe-2338 .contactForm-2338 {
   display: flex;

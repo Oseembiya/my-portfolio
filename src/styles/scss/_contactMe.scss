@@ -328,14 +328,11 @@
     border-radius: 10px;
     border: 1px solid rgba(226, 34, 0, 0.2);
 
-    @include media-query("sm") {
-      padding: 0.8rem;
-    }
-
     .error-icon {
       font-size: 1.5rem;
       color: #e22200;
       flex-shrink: 0;
+      margin-right: 0.5rem;
     }
   }
 
