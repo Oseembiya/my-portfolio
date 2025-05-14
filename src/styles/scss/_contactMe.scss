@@ -298,22 +298,6 @@
       color: $color-text-secondary;
       opacity: 0.9;
     }
-
-    .reset-form-btn {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: $color-text-secondary;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      font-size: clamp(14px, 3vw, 16px);
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        transform: translateY(-3px);
-      }
-    }
   }
 
   // Styling for error message

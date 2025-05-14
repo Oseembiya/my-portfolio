@@ -300,12 +300,6 @@ export default function Contact() {
                   Your message has been sent successfully. I&apos;ll get back to
                   you soon!
                 </p>
-                <button
-                  className="reset-form-btn"
-                  onClick={() => setFormSubmitted(false)}
-                >
-                  Send Another Message
-                </button>
               </div>
             ) : (
               <form
