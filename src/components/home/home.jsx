@@ -131,7 +131,7 @@ function Home() {
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Full-Stack <span className="accent-text">Developer</span>
+              Front-End <span className="accent-text">Developer</span>
             </h2>
           </header>
 
