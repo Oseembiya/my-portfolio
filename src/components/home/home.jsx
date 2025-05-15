@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import Image from "/src/assets/ProfileHero.png";
 
 function Home() {
@@ -9,6 +9,14 @@ function Home() {
   const MOBILE_BREAKPOINT = 768;
   const MEDIUM_BREAKPOINT = 992;
   const ANIMATION_DELAY = 300;
+
+  // Create refs outside
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const description1Ref = useRef(null);
+  const description2Ref = useRef(null);
+  const actionsRef = useRef(null);
+  const imageRef = useRef(null);
 
   // Handle CV download without page reload
   const handleCvDownload = (e) => {
@@ -23,14 +31,17 @@ function Home() {
   };
 
   // References for sections with Intersection Observer
-  const sectionRefs = {
-    title: useRef(null),
-    subtitle: useRef(null),
-    description1: useRef(null),
-    description2: useRef(null),
-    actions: useRef(null),
-    image: useRef(null),
-  };
+  const sectionRefs = useMemo(
+    () => ({
+      title: titleRef,
+      subtitle: subtitleRef,
+      description1: description1Ref,
+      description2: description2Ref,
+      actions: actionsRef,
+      image: imageRef,
+    }),
+    []
+  );
 
   useEffect(() => {
     // Track window resize for responsive adjustments
@@ -92,7 +103,7 @@ function Home() {
         }
       });
     };
-  }, []);
+  }, [sectionRefs]);
 
   // Adjust text display for different screen sizes
   const isMobile = windowWidth <= MOBILE_BREAKPOINT;
@@ -181,7 +192,7 @@ function Home() {
               <a
                 href="https://github.com/Oseembiya"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferer"
                 aria-label="GitHub Profile"
                 className="social-link"
               >
@@ -191,7 +202,7 @@ function Home() {
               <a
                 href="https://www.linkedin.com/in/oseembiya"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferer"
                 aria-label="LinkedIn Profile"
                 className="social-link"
               >
