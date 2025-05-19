@@ -18,7 +18,7 @@ const AboutMeDetails = [
       {
         year: "2022-2025",
         course: "Bachelor Degree In Computer Science",
-        gpa: "GPA: 4.8/4.0",
+        gpa: "GPA: 4.0",
       },
       {
         year: "2020-2022",
