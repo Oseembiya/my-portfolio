@@ -18,17 +18,12 @@ const AboutMeDetails = [
       {
         year: "2022-2025",
         course: "Bachelor Degree In Computer Science",
-        gpa: "GPA: 3.8/4.0",
+        gpa: "GPA: 4.8/4.0",
       },
       {
         year: "2020-2022",
         course: "BTEC Level 3 In Information Technology",
         gpa: "Grade: Distinction",
-      },
-      {
-        year: "2018-2020",
-        course: "BTEC in Information Technology",
-        gpa: "Grade: Merit",
       },
     ],
   },
@@ -36,14 +31,14 @@ const AboutMeDetails = [
     aboutMe: "Experience",
     aboutMeDetails: [
       {
-        year: "2023-Present",
-        course: "Freelance Web Developer",
-        gpa: "Projects: 15+",
+        year: "2025",
+        course: "Individual Project / CodeColab",
+        gpa: "",
       },
       {
-        year: "2022-2023",
-        course: "Junior Frontend Developer Intern",
-        gpa: "Rating: 4.9/5",
+        year: "2024",
+        course: "Group Project ",
+        gpa: "",
       },
     ],
   },
