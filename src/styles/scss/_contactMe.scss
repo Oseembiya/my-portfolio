@@ -1,13 +1,14 @@
 // Contact section styling
 .contactMe-2338 {
+  min-height: 100vh;
   position: relative;
   background-color: $color-background-secondary;
   color: $color-text-secondary;
-  padding: 100px 20px 20px;
-  overflow: hidden;
+  padding: 100px 20px 60px;
+  overflow: visible;
 
   @include media-query("md", "max") {
-    padding: 80px 15px 40px;
+    padding: 80px 15px 0px;
   }
 
   @include media-query("sm") {
@@ -57,11 +58,11 @@
 
     @media (min-width: 992px) {
       .contactInfo-2338 {
-        flex: 1; // Decrease width by ~20px
+        flex: 1.2;
       }
 
       .contactForm-2338 {
-        flex: 0.5; // Increase width by ~20px
+        flex: 0.8;
       }
     }
 
@@ -169,69 +170,6 @@
         }
       }
     }
-
-    // Additional Links Section
-    .additionalLinks-2338 {
-      margin-top: 1.5rem;
-
-      h3 {
-        font-size: clamp(18px, 4vw, 22px);
-        font-weight: 500;
-        margin-bottom: 1rem;
-        color: $color-text-secondary;
-
-        @include media-query("sm") {
-          margin-bottom: 0.8rem;
-        }
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-
-        @include media-query("sm") {
-          gap: 0.6rem;
-        }
-
-        li a {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
-          color: $color-text-secondary;
-          text-decoration: none;
-          font-size: clamp(14px, 3vw, 16px);
-          transition: all 0.3s ease;
-          padding: 5px 0;
-          width: fit-content;
-
-          @include media-query("sm") {
-            gap: 0.6rem;
-          }
-
-          i {
-            font-size: 1.1rem;
-            color: $color-text-random;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            transition: all 0.3s ease;
-
-            @include media-query("sm") {
-              font-size: 1rem;
-            }
-          }
-
-          &:hover {
-            color: $color-text-random;
-            transform: translateX(5px);
-          }
-        }
-      }
-    }
   }
 
   // Contact form section
@@ -327,9 +265,10 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    margin-bottom: 2rem;
 
     @include media-query("sm") {
-      gap: 1rem;
+      gap: 0.5rem;
     }
 
     .formGroup-2338 {
@@ -503,14 +442,18 @@
 
   // Copyright section
   .allRight-2338 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    margin-top: 1.5rem;
-    font-size: clamp(12px, 2vw, 14px);
     color: $color-text-secondary;
     opacity: 0.8;
+    width: 100%;
 
     @include media-query("sm") {
-      margin-top: 2rem;
+      bottom: 15px;
+      padding: 0.5rem 0;
     }
   }
 }

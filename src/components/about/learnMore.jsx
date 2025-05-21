@@ -1,8 +1,13 @@
-export default function LearnMore() {
+import PropTypes from "prop-types";
+
+export default function LearnMore({ onClick }) {
   return (
-    <button className="learnMore">
+    <button className="learnMore" onClick={onClick}>
       <span>Learn More</span>
-      <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
     </button>
   );
 }
+
+LearnMore.propTypes = {
+  onClick: PropTypes.func,
+};

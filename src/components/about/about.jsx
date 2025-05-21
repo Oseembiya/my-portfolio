@@ -21,13 +21,13 @@ CategoryButton.propTypes = {
 };
 
 // Detail card component
-const DetailCard = ({ year, course, gpa }) => (
+const DetailCard = ({ year, course, gpa, onLearnMore }) => (
   <div className="about-card">
     <h4>{year}</h4>
     <p className="about-card-subtitle">{course}</p>
     <div className="card-footer">
       <span className="gpa">{gpa}</span>
-      <LearnMore />
+      <LearnMore onClick={onLearnMore} />
     </div>
   </div>
 );
@@ -36,12 +36,15 @@ DetailCard.propTypes = {
   year: PropTypes.string.isRequired,
   course: PropTypes.string.isRequired,
   gpa: PropTypes.string.isRequired,
+  onLearnMore: PropTypes.func.isRequired,
 };
 
 export default function About() {
   const [selectedCategory, setSelectedCategory] = useState(0);
   const [visibleSections, setVisibleSections] = useState({});
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [modalContent, setModalContent] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Create refs
   const introRef = useRef(null);
@@ -49,6 +52,7 @@ export default function About() {
   const detailsRef = useRef(null);
   const skillsRef = useRef(null);
   const imageRef = useRef(null);
+  const modalRef = useRef(null);
 
   // References to sections for Intersection Observer
   const sectionRefs = useMemo(
@@ -67,6 +71,33 @@ export default function About() {
 
   // Check if mobile view
   const isMobile = windowWidth <= 425;
+
+  // Handle LearnMore click
+  const handleLearnMore = (detail) => {
+    setModalContent(detail);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  };
+
+  // Handle modal close
+  const handleModalClose = (e) => {
+    if (modalRef.current && !modalRef.current.contains(e.target)) {
+      setIsModalOpen(false);
+      setModalContent(null);
+      document.body.style.overflow = "auto"; // Restore scrolling
+    }
+  };
+
+  // Add click outside listener for modal
+  useEffect(() => {
+    if (isModalOpen) {
+      document.addEventListener("mousedown", handleModalClose);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleModalClose);
+      document.body.style.overflow = "auto"; // Ensure scrolling is restored on unmount
+    };
+  }, [isModalOpen]);
 
   // Set up intersection observer for scroll animations and window resize listener
   useEffect(() => {
@@ -230,6 +261,7 @@ export default function About() {
               year={detail.year}
               course={detail.course}
               gpa={detail.gpa}
+              onLearnMore={() => handleLearnMore(detail)}
             />
           ))}
         </div>
@@ -344,6 +376,29 @@ export default function About() {
             </div>
           </div>
         </div>
+
+        {/* Modal */}
+        {isModalOpen && modalContent && (
+          <div className="modal-overlay">
+            <div className="modal-content" ref={modalRef}>
+              <button
+                className="modal-close"
+                onClick={() => {
+                  setIsModalOpen(false);
+                  setModalContent(null);
+                  document.body.style.overflow = "auto"; // Restore scrolling
+                }}
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+              <h3>{modalContent.year}</h3>
+              <h4>{modalContent.course}</h4>
+              <p>
+                {modalContent.description || "No additional details available."}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

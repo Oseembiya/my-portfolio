@@ -173,7 +173,6 @@ export default function Contact() {
                 <div className="contactItem-2338">
                   <i className="fa-solid fa-envelope" aria-hidden="true"></i>
                   <span>
-                    Email:
                     <a
                       href="mailto:ozeembiya@gmail.com"
                       aria-label="Send email to ozeembiya@gmail.com"
@@ -185,7 +184,6 @@ export default function Contact() {
                 <div className="contactItem-2338">
                   <i className="fa-solid fa-phone" aria-hidden="true"></i>
                   <span>
-                    Phone:
                     <a href="tel:07884103424" aria-label="Call +44788 410 3424">
                       +44788 410 3424
                     </a>
@@ -217,69 +215,6 @@ export default function Contact() {
                     <i className="fa-brands fa-twitter" aria-hidden="true"></i>
                   </a>
                 </div>
-
-                {/* Additional Links */}
-                <div className="additionalLinks-2338">
-                  <h3>More Links</h3>
-                  <ul>
-                    <li>
-                      <a
-                        href="/resume.pdf"
-                        target="_blank"
-                        rel="resume"
-                        aria-label="Download my resume"
-                      >
-                        <i
-                          className="fa-solid fa-file-pdf"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Resume</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://instagram.com/username"
-                        target="_blank"
-                        rel="instagram"
-                        aria-label="Visit Instagram profile"
-                      >
-                        <i
-                          className="fa-brands fa-instagram"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Instagram</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://discord.com/users/userid"
-                        target="_blank"
-                        rel="discord"
-                        aria-label="Connect on Discord"
-                      >
-                        <i
-                          className="fa-brands fa-discord"
-                          aria-hidden="true"
-                        ></i>
-                        <span>Discord</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://wa.me/447884103424"
-                        target="_blank"
-                        rel="whatsapp"
-                        aria-label="Connect on WhatsApp"
-                      >
-                        <i
-                          className="fa-brands fa-whatsapp"
-                          aria-hidden="true"
-                        ></i>
-                        <span>WhatsApp</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -297,7 +232,7 @@ export default function Contact() {
                 <i className="fa-solid fa-check-circle success-icon"></i>
                 <h3>Thank You!</h3>
                 <p>
-                  Your message has been sent successfully. I&apos;ll get back to
+                  Your message has been sent successfully. I will get back to
                   you soon!
                 </p>
               </div>
@@ -377,7 +312,9 @@ export default function Contact() {
             )}
           </div>
         </div>
-
+        <div className="allRight-2338">
+          <p>© {new Date().getFullYear()} Osee Mbiya. All rights reserved.</p>
+        </div>
         {/* Down Arrow */}
         {showArrow && (
           <div className="downArrow-2338">
@@ -386,10 +323,6 @@ export default function Contact() {
             </a>
           </div>
         )}
-
-        <div className="allRight-2338">
-          <p>© {new Date().getFullYear()} Osee Mbiya. All rights reserved.</p>
-        </div>
       </div>
     </footer>
   );
