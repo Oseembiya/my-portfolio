@@ -124,11 +124,11 @@ export default function Contact() {
           setFormSubmitted(false);
         }, 5000);
       } else {
-        setErrorMessage("Failed to send message. Please try again later.");
+        setErrorMessage("Failed to send message. try again later.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      setErrorMessage("Failed to send message. Please try again later.");
+      setErrorMessage("Failed to send message. try again later.");
     } finally {
       setIsLoading(false);
     }
