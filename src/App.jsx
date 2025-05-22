@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import Navbar from "./components/common/navbar";
 import Home from "./components/home/home";
 
@@ -6,13 +6,6 @@ import Home from "./components/home/home";
 const About = lazy(() => import("./components/about/about"));
 const Projects = lazy(() => import("./components/Project/Project"));
 const Contact = lazy(() => import("./components/contact/contactMe"));
-
-// Loading fallback component
-const LoadingFallback = () => (
-  <div className="section-loading">
-    <div className="loading-spinner"></div>
-  </div>
-);
 
 function App() {
   return (
@@ -23,23 +16,17 @@ function App() {
           <Home />
         </section>
 
-        <Suspense fallback={<LoadingFallback />}>
-          <section id="about">
-            <About />
-          </section>
-        </Suspense>
+        <section id="about">
+          <About />
+        </section>
 
-        <Suspense fallback={<LoadingFallback />}>
-          <section id="projects">
-            <Projects />
-          </section>
-        </Suspense>
+        <section id="projects">
+          <Projects />
+        </section>
 
-        <Suspense fallback={<LoadingFallback />}>
-          <section id="contact">
-            <Contact />
-          </section>
-        </Suspense>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
     </>
   );

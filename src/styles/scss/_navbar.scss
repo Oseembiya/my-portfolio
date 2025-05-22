@@ -7,7 +7,7 @@
   z-index: 1000;
   background-color: transparent;
   transition: all 0.3s ease;
-  padding: 14px 0;
+  padding: 8px 0;
 
   &.scrolled {
     background-color: rgba(18, 18, 18, 0.9);
@@ -215,14 +215,14 @@ body.menu-open {
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 21px;
+  height: 18px;
   position: relative;
   z-index: 1010;
 
   span {
     display: block;
-    height: 3px;
-    width: 100%;
+    height: 2px;
+    width: 30px;
     background-color: $color-text-secondary;
     transition: all 0.3s ease;
     border-radius: 2px;
@@ -231,7 +231,7 @@ body.menu-open {
   &.active {
     span {
       &:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
         background-color: $color-text-random;
       }
 
@@ -240,7 +240,7 @@ body.menu-open {
       }
 
       &:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
         background-color: $color-text-random;
       }
     }
@@ -266,7 +266,7 @@ body.menu-open {
 
   .nav-menu {
     position: fixed;
-    top: 78px; /* Match the height used in calc() */
+    top: 66px; /* Match the height used in calc() */
     left: 0;
     right: 0;
     flex-direction: column;
