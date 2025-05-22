@@ -89,7 +89,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #ff6347;
+  border-color: #d1472f;
   box-shadow: 0 0 5px rgb(227, 61, 32);
 }
 
@@ -207,7 +207,7 @@ body.menu-open {
   cursor: pointer;
 }
 .logo .highlight {
-  color: #ff6347;
+  color: #d1472f;
 }
 
 .nav-menu {
@@ -238,18 +238,18 @@ body.menu-open {
   left: 0;
   width: 0;
   height: 2px;
-  background: #ff6347;
+  background: #d1472f;
   transition: width 0.3s;
 }
 .nav-menu li a:hover, .nav-menu li a.active {
-  color: #ff6347;
+  color: #d1472f;
 }
 .nav-menu li a:hover::after, .nav-menu li a.active::after {
   width: 100%;
 }
 
 .cta-button {
-  background-color: #ff6347;
+  background-color: #d1472f;
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -275,7 +275,7 @@ body.menu-open {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #fa2600;
+  background-color: #933121;
   transition: all 0.3s ease;
   z-index: -1;
 }
@@ -321,14 +321,14 @@ body.menu-open {
 }
 .hamburger.active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
-  background-color: #ff6347;
+  background-color: #d1472f;
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-  background-color: #ff6347;
+  background-color: #d1472f;
 }
 
 @keyframes slideDown {
@@ -407,7 +407,7 @@ body.menu-open {
     display: none; /* Remove underline effect on mobile */
   }
   .nav-menu li a:hover, .nav-menu li a.active {
-    color: #ff6347;
+    color: #d1472f;
   }
   .nav-menu.open li {
     opacity: 1;
@@ -435,7 +435,7 @@ body.menu-open {
     color: #00262b;
   }
   .navbar.section-about .nav-menu li a:hover, .navbar.section-about .nav-menu li a.active {
-    color: #ff6347;
+    color: #d1472f;
   }
   .navbar.section-projects .nav-menu {
     background-color: rgba(247, 249, 251, 0.95);
@@ -444,7 +444,7 @@ body.menu-open {
     color: #00262b;
   }
   .navbar.section-projects .nav-menu li a:hover, .navbar.section-projects .nav-menu li a.active {
-    color: #ff6347;
+    color: #d1472f;
   }
   .navbar.section-contact .nav-menu {
     background-color: rgba(2, 19, 21, 0.95); /* Updated color */
@@ -531,7 +531,7 @@ body.menu-open {
   }
 }
 .hero-section .hero-text h1 .accent-text {
-  color: #ff6347;
+  color: #d1472f;
 }
 .hero-section .hero-text h2 {
   font-size: clamp(30px, 6vw, 60px);
@@ -546,7 +546,7 @@ body.menu-open {
   }
 }
 .hero-section .hero-text h2 .accent-text {
-  color: #ff6347;
+  color: #d1472f;
 }
 .hero-section .hero-text p {
   font-size: clamp(14px, 1.8vw, 16px);
@@ -597,18 +597,18 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .hero-section .action-button {
-    padding: 0.85rem 1.5rem;
+    padding: 0.75rem;
     font-size: 0.95rem;
   }
 }
 .hero-section .action-button.primary-button {
-  background-color: #ff6347;
+  background-color: #d1472f;
   color: #ffffff;
-  border: 2px solid #ff6347;
+  border: 2px solid #d1472f;
 }
 .hero-section .action-button.primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+  box-shadow: 0 4px 12px rgba(209, 71, 47, 0.3);
   background-color: transparent;
 }
 .hero-section .social-links {
@@ -653,7 +653,7 @@ body.menu-open {
   height: 100%;
 }
 .hero-section .social-links .social-link:hover {
-  background-color: #ff6347;
+  background-color: #d1472f;
   transform: translateY(-3px);
 }
 .hero-section .hero-image {
@@ -1780,7 +1780,7 @@ body.menu-open {
 }
 
 .fa-duotone::before {
-  color: #ff6347;
+  color: #d1472f;
   margin-right: 5px;
 }
 
@@ -2039,7 +2039,7 @@ body.menu-open {
 }
 .contactMe-2338 .contactInfo-2338 .contactItem-2338 i {
   font-size: 1.5rem;
-  color: #ff6347;
+  color: #d1472f;
   min-width: 30px;
   display: flex;
   align-items: center;
@@ -2102,7 +2102,7 @@ body.menu-open {
   }
 }
 .contactMe-2338 .contactInfo-2338 .socialMedia-2338 a:hover {
-  background-color: #ff6347;
+  background-color: #d1472f;
   transform: translateY(-3px);
 }
 .contactMe-2338 .contactContent-2338 {
@@ -2126,7 +2126,7 @@ body.menu-open {
   border-radius: 5px;
   margin-bottom: 1.5rem;
   font-size: clamp(14px, 3vw, 16px);
-  border-left: 3px solid #ff6347;
+  border-left: 3px solid #d1472f;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 .thankYouMessage {
@@ -2230,7 +2230,7 @@ body.menu-open {
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input:focus,
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea:focus {
   outline: none;
-  border-color: #ff6347;
+  border-color: #d1472f;
   background-color: rgba(255, 255, 255, 0.15);
 }
 .contactMe-2338 .contactForm-2338 .formGroup-2338 input::-moz-placeholder, .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea::-moz-placeholder {
@@ -2248,7 +2248,7 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338 {
   align-self: flex-start;
-  background-color: #ff6347;
+  background-color: #d1472f;
   color: #ffffff;
   padding: 0.85rem 2.2rem;
   border: none;
@@ -2277,7 +2277,7 @@ body.menu-open {
   left: 0;
   width: 0;
   height: 100%;
-  background-color: #fa2600;
+  background-color: #933121;
   transition: all 0.3s ease;
   z-index: -1;
 }
@@ -2341,7 +2341,7 @@ body.menu-open {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: #ff6347;
+  background-color: #d1472f;
   color: #ffffff;
   font-size: 1rem;
   text-decoration: none;
@@ -2356,7 +2356,7 @@ body.menu-open {
 }
 .contactMe-2338 .downArrow-2338 a:hover {
   transform: translateY(-5px);
-  background-color: #ff3814;
+  background-color: #a83825;
 }
 .contactMe-2338 .allRight-2338 {
   position: absolute;
