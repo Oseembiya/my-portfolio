@@ -452,7 +452,8 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .nav-container {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 10px;
   }
   .logo {
     font-size: 1.2rem;

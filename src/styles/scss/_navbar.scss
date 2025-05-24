@@ -392,7 +392,8 @@ body.menu-open {
 
 @include media-query("sm", "max") {
   .nav-container {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 10px;
   }
 
   .logo {
