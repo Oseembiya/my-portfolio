@@ -1,6 +1,7 @@
 import ProjectImage1 from "../../assets/ProjectImage1.png";
 import ProfileImage from "../../assets/osee.jpeg";
 import CodeColab from "../../assets/CodeColab.png";
+import CodeColabServer from "../../assets/CodeColab_Server.png";
 const ProjectDetails = [
   {
     section: "Front-End",
@@ -59,7 +60,7 @@ const ProjectDetails = [
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
-        image: ProjectImage1,
+        image: CodeColabServer,
         tools: [
           "Node.js",
           "WebSocket",
