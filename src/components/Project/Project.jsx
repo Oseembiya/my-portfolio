@@ -171,6 +171,7 @@ export default function Project() {
                       src={project.image}
                       alt={project.projectName}
                       loading="lazy"
+                      
                     />
                   </a>
                 </div>
