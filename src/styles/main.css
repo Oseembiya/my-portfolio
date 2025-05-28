@@ -280,7 +280,6 @@ body.menu-open {
   z-index: -1;
 }
 .cta-button:hover {
-  transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .cta-button:hover::before {
@@ -2283,7 +2282,6 @@ body.menu-open {
   z-index: -1;
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover::before {
