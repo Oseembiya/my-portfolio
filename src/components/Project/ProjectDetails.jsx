@@ -1,7 +1,7 @@
-import ProjectImage1 from "../../assets/ProjectImage1.png";
 import ProfileImage from "../../assets/osee.jpeg";
 import CodeColab from "../../assets/CodeColab.png";
 import CodeColabServer from "../../assets/CodeColab_Server.png";
+import ParentPay from "../../assets/ParentPay.png";
 const ProjectDetails = [
   {
     section: "Front-End",
@@ -25,11 +25,11 @@ const ProjectDetails = [
         demoLink: "https://codekolab.netlify.app/",
       },
       {
-        projectName: "ParentPay School Activities Portal",
+        projectName: "ParentPay School Activities",
         description:
           "An interactive e-commerce platform for browsing and purchasing school activities and lessons.",
         href: "https://oseembiya.github.io/Vue/",
-        image: ProjectImage1,
+        image: ParentPay,
         tools: [
           "Vue.js",
           "Bootstrap 5",
