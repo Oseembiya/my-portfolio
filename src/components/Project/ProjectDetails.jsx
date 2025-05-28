@@ -1,7 +1,7 @@
 import ProfileImage from "../../assets/osee.jpeg";
 import CodeColab from "../../assets/CodeColab.png";
 import CodeColabServer from "../../assets/CodeColab_Server.png";
-import ParentPay from "../../assets/ParentPay.png";
+import ParentPay from "../../assets/ParentPay .png";
 const ProjectDetails = [
   {
     section: "Front-End",
