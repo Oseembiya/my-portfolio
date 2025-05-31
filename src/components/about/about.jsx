@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import AboutMeData from "./aboutMeData";
 import LearnMore from "./learnMore";
-const profileImage = "/src/assets/middlesex.png";
+import profileImage from "../../assets/middlesex.png";
 
 // Category button component
 const CategoryButton = ({ label, isActive, onClick }) => (

@@ -3,7 +3,7 @@
  * Contains education and experience information for the About section
  */
 
-import universityImage from "/src/assets/middlesex.png";
+import universityImage from "../../assets/middlesex.png";
 
 /** @type {CategoryItem[]} */
 const AboutMeDetails = [
