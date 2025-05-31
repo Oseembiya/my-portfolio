@@ -3,8 +3,6 @@
  * Contains education and experience information for the About section
  */
 
-import universityImage from "../../assets/middlesex.png";
-
 /** @type {CategoryItem[]} */
 const AboutMeDetails = [
   {
@@ -17,7 +15,6 @@ const AboutMeDetails = [
         gpa: "GPA: 4.0",
         description:
           "Currently pursuing a Bachelor's degree in Computer Science with a focus on software development and artificial intelligence. Key areas of study include data structures, algorithms, machine learning, and web development. Actively participating in coding competitions and hackathons to enhance practical skills.",
-        image: universityImage,
       },
       {
         year: "2020-2022",
