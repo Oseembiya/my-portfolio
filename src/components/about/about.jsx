@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import AboutMeData from "./aboutMeData";
 import LearnMore from "./learnMore";
-import profileImage from "../../assets/middlesex.png";
+import aboutImage from "../../assets/middlesex.png";
 
 // Category button component
 const CategoryButton = ({ label, isActive, onClick }) => (
@@ -53,7 +53,7 @@ const ProfileImage = ({ windowWidth, visibleSections, imageRef }) => (
   >
     <div className="profile-image">
       <img
-        src={profileImage}
+        src={aboutImage}
         alt="Osee Mbiya - Developer"
         loading="lazy"
         style={{
