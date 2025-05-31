@@ -398,9 +398,19 @@
 // Card content
 .content-2335 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
   width: 100%;
+
+  @include media-query("md", "max") {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  @include media-query("sm") {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .about-card {
@@ -409,18 +419,30 @@
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
 
   @include media-query("sm") {
     padding: 1rem;
-    margin-bottom: 0.5rem;
   }
 
   h4 {
     color: $color-text-primary;
     margin-bottom: 0.5rem;
+  }
+
+  .about-card-subtitle {
+    font-size: clamp(14px, 3vw, 16px);
+    color: $color-text-primary;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-card-institution {
+    font-size: clamp(13px, 2.5vw, 15px);
+    font-weight: 500;
+    margin-bottom: 1rem;
   }
 
   p {

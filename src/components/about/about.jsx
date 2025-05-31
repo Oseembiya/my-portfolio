@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import AboutMeData from "./aboutMeData";
 import LearnMore from "./learnMore";
-import image from "/src/assets/osee.jpeg";
+const profileImage = "/src/assets/middlesex.png";
 
 // Category button component
 const CategoryButton = ({ label, isActive, onClick }) => (
@@ -21,10 +21,11 @@ CategoryButton.propTypes = {
 };
 
 // Detail card component
-const DetailCard = ({ year, course, gpa, onLearnMore }) => (
+const DetailCard = ({ year, course, institution, gpa, onLearnMore }) => (
   <div className="about-card">
     <h4>{year}</h4>
     <p className="about-card-subtitle">{course}</p>
+    {institution && <p className="about-card-institution">{institution}</p>}
     <div className="card-footer">
       <span className="gpa">{gpa}</span>
       <LearnMore onClick={onLearnMore} />
@@ -35,16 +36,200 @@ const DetailCard = ({ year, course, gpa, onLearnMore }) => (
 DetailCard.propTypes = {
   year: PropTypes.string.isRequired,
   course: PropTypes.string.isRequired,
+  institution: PropTypes.string,
   gpa: PropTypes.string.isRequired,
   onLearnMore: PropTypes.func.isRequired,
 };
 
+// Profile image component
+const ProfileImage = ({ windowWidth, visibleSections, imageRef }) => (
+  <div
+    className={`img-square-container slide-in-right ${
+      visibleSections.image ? "is-visible" : ""
+    }`}
+    ref={imageRef}
+    data-section="image"
+    style={windowWidth <= 768 ? { width: "100%" } : {}}
+  >
+    <div className="profile-image">
+      <img
+        src={profileImage}
+        alt="Osee Mbiya - Developer"
+        loading="lazy"
+        style={{
+          imageRendering: "-webkit-optimize-contrast",
+          transform: "translateZ(0)",
+          backfaceVisibility: "hidden",
+        }}
+      />
+    </div>
+  </div>
+);
+
+ProfileImage.propTypes = {
+  windowWidth: PropTypes.number.isRequired,
+  visibleSections: PropTypes.object.isRequired,
+  imageRef: PropTypes.object.isRequired,
+};
+
+// Skills showcase component
+const SkillsShowcase = ({ skillsRef }) => {
+  const skills = [
+    { icon: "fa-brands fa-html5", name: "HTML", className: "html" },
+    { icon: "fa-brands fa-css3-alt", name: "CSS", className: "css" },
+    { icon: "fa-brands fa-js", name: "JavaScript", className: "javascript" },
+    { icon: "fa-brands fa-react", name: "React", className: "react" },
+    { icon: "fa-brands fa-node-js", name: "Node.js", className: "node" },
+    { icon: "fa-brands fa-python", name: "Python", className: "python" },
+    { icon: "fa-brands fa-java", name: "Java", className: "java" },
+    { icon: "fa-brands fa-git-alt", name: "Git", className: "git" },
+    { icon: "fa-brands fa-docker", name: "Docker", className: "docker" },
+    { icon: "fa-brands fa-aws", name: "AWS", className: "aws" },
+    { icon: "fa-solid fa-database", name: "MongoDB", className: "mongodb" },
+    { icon: "fa-brands fa-figma", name: "Figma", className: "figma" },
+  ];
+
+  return (
+    <div className="skills-showcase" ref={skillsRef} data-section="skills">
+      <div className="skills-heading">
+        <h3>My Tech Stack</h3>
+        <p>Technologies I work with</p>
+      </div>
+      <div className="skills-logos">
+        <div className="skills-logos-container">
+          {/* First set of icons */}
+          {skills.map((skill) => (
+            <div
+              key={skill.className}
+              className={`skill-logo ${skill.className}`}
+            >
+              <i className={skill.icon}></i>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+
+          {/* Duplicate set for continuous scrolling effect */}
+          {skills.map((skill) => (
+            <div
+              key={`${skill.className}-duplicate`}
+              className={`skill-logo ${skill.className}`}
+            >
+              <i className={skill.icon}></i>
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+SkillsShowcase.propTypes = {
+  skillsRef: PropTypes.object.isRequired,
+};
+
+// Modal component
+const Modal = ({ isOpen, content, onClose, modalRef }) => {
+  if (!isOpen || !content) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content" ref={modalRef}>
+        <button className="modal-close" onClick={onClose}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+        <h3>{content.year}</h3>
+        <h4>{content.course}</h4>
+        <p>{content.description || "No additional details available."}</p>
+      </div>
+    </div>
+  );
+};
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  content: PropTypes.object,
+  onClose: PropTypes.func.isRequired,
+  modalRef: PropTypes.object.isRequired,
+};
+
+// Custom hooks
+const useWindowWidth = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowWidth;
+};
+
+const useIntersectionObserver = (sectionRefs) => {
+  const [visibleSections, setVisibleSections] = useState({});
+
+  useEffect(() => {
+    // If on mobile or tablet, make all sections visible immediately
+    if (window.innerWidth <= 768) {
+      setVisibleSections({
+        intro: true,
+        categories: true,
+        details: true,
+        skills: true,
+        image: true,
+      });
+      return;
+    }
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15,
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSections((prev) => ({
+            ...prev,
+            [entry.target.dataset.section]: true,
+          }));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      handleIntersection,
+      observerOptions
+    );
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [sectionRefs]);
+
+  return visibleSections;
+};
+
+// Main About component
 export default function About() {
   const [selectedCategory, setSelectedCategory] = useState(0);
-  const [visibleSections, setVisibleSections] = useState({});
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [modalContent, setModalContent] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Custom hooks
+  const windowWidth = useWindowWidth();
 
   // Create refs
   const introRef = useRef(null);
@@ -66,104 +251,44 @@ export default function About() {
     []
   );
 
+  const visibleSections = useIntersectionObserver(sectionRefs);
+
   // Get current category data
   const currentCategory = AboutMeData[selectedCategory];
-
-  // Check if mobile view
   const isMobile = windowWidth <= 425;
 
-  // Handle LearnMore click
+  // Modal handlers
   const handleLearnMore = (detail) => {
     setModalContent(detail);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Prevent background scrolling
+    document.body.style.overflow = "hidden";
   };
 
-  // Handle modal close
-  const handleModalClose = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
-      setIsModalOpen(false);
-      setModalContent(null);
-      document.body.style.overflow = "auto"; // Restore scrolling
-    }
-  };
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    setModalContent(null);
+    document.body.style.overflow = "auto";
+  }, []);
 
-  // Add click outside listener for modal
+  const handleModalClose = useCallback(
+    (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        closeModal();
+      }
+    },
+    [closeModal]
+  );
+
+  // Modal click outside listener
   useEffect(() => {
     if (isModalOpen) {
       document.addEventListener("mousedown", handleModalClose);
     }
     return () => {
       document.removeEventListener("mousedown", handleModalClose);
-      document.body.style.overflow = "auto"; // Ensure scrolling is restored on unmount
+      document.body.style.overflow = "auto";
     };
-  }, [isModalOpen]);
-
-  // Set up intersection observer for scroll animations and window resize listener
-  useEffect(() => {
-    // Track window resize for responsive adjustments
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // If on mobile or tablet, make all sections visible immediately
-    if (window.innerWidth <= 768) {
-      setVisibleSections({
-        intro: true,
-        categories: true,
-        details: true,
-        skills: true,
-        image: true,
-      });
-
-      // Return early, no need to set up observer for mobile
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-
-    const observerOptions = {
-      root: null, // use the viewport
-      rootMargin: "0px",
-      threshold: 0.15, // 15% of the element needs to be visible
-    };
-
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisibleSections((prev) => ({
-            ...prev,
-            [entry.target.dataset.section]: true,
-          }));
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerOptions
-    );
-
-    // Observe all section refs
-    Object.values(sectionRefs).forEach((ref) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => {
-      // Cleanup resize listener
-      window.removeEventListener("resize", handleResize);
-
-      Object.values(sectionRefs).forEach((ref) => {
-        if (ref.current) {
-          observer.unobserve(ref.current);
-        }
-      });
-    };
-  }, [sectionRefs]);
+  }, [isModalOpen, handleModalClose]);
 
   return (
     <section className="about-wrapper about-2335" id="about">
@@ -180,27 +305,16 @@ export default function About() {
 
             {/* Image container for mobile/tablet view (≤ 768px) */}
             {windowWidth <= 768 && (
-              <div
-                className={`img-square-container slide-in-right ${
-                  visibleSections.image ? "is-visible" : ""
-                }`}
-                ref={imageRef}
-                data-section="image"
-                style={{ width: "100%" }}
-              >
-                <div className="profile-image">
-                  <img
-                    src={image}
-                    alt="Osee Mbiya - Developer"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
+              <ProfileImage
+                windowWidth={windowWidth}
+                visibleSections={visibleSections}
+                imageRef={imageRef}
+              />
             )}
 
             <p>
               {isMobile
-                ? "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences."
+                ? "As a Computer Science graduate, I blend technical knowledge with creative problem solving to craft engaging web experiences."
                 : "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences. My journey through various projects has honed my skills in both front-end interfaces and back-end architecture, focusing on solutions that are both functional and delightful."}
             </p>
             {!isMobile && (
@@ -233,17 +347,11 @@ export default function About() {
 
           {/* Image container for desktop view (> 768px) */}
           {windowWidth > 768 && (
-            <div
-              className={`img-square-container slide-in-right ${
-                visibleSections.image ? "is-visible" : ""
-              }`}
-              ref={imageRef}
-              data-section="image"
-            >
-              <div className="profile-image">
-                <img src={image} alt="Osee Mbiya - Developer" loading="lazy" />
-              </div>
-            </div>
+            <ProfileImage
+              windowWidth={windowWidth}
+              visibleSections={visibleSections}
+              imageRef={imageRef}
+            />
           )}
         </div>
 
@@ -260,6 +368,7 @@ export default function About() {
               key={`detail-${index}`}
               year={detail.year}
               course={detail.course}
+              institution={detail.institution}
               gpa={detail.gpa}
               onLearnMore={() => handleLearnMore(detail)}
             />
@@ -267,138 +376,15 @@ export default function About() {
         </div>
 
         {/* Skills showcase section with animation */}
-        <div className="skills-showcase" ref={skillsRef} data-section="skills">
-          <div className="skills-heading">
-            <h3>My Tech Stack</h3>
-            <p>Technologies I work with</p>
-          </div>
-          <div className="skills-logos">
-            <div className="skills-logos-container">
-              {/* First set of icons */}
-              <div className="skill-logo html">
-                <i className="fa-brands fa-html5"></i>
-                <span>HTML</span>
-              </div>
-              <div className="skill-logo css">
-                <i className="fa-brands fa-css3-alt"></i>
-                <span>CSS</span>
-              </div>
-              <div className="skill-logo javascript">
-                <i className="fa-brands fa-js"></i>
-                <span>JavaScript</span>
-              </div>
-              <div className="skill-logo react">
-                <i className="fa-brands fa-react"></i>
-                <span>React</span>
-              </div>
-              <div className="skill-logo node">
-                <i className="fa-brands fa-node-js"></i>
-                <span>Node.js</span>
-              </div>
-              <div className="skill-logo python">
-                <i className="fa-brands fa-python"></i>
-                <span>Python</span>
-              </div>
-              <div className="skill-logo java">
-                <i className="fa-brands fa-java"></i>
-                <span>Java</span>
-              </div>
-              <div className="skill-logo git">
-                <i className="fa-brands fa-git-alt"></i>
-                <span>Git</span>
-              </div>
-              <div className="skill-logo docker">
-                <i className="fa-brands fa-docker"></i>
-                <span>Docker</span>
-              </div>
-              <div className="skill-logo aws">
-                <i className="fa-brands fa-aws"></i>
-                <span>AWS</span>
-              </div>
-              <div className="skill-logo mongodb">
-                <i className="fa-solid fa-database"></i>
-                <span>MongoDB</span>
-              </div>
-              <div className="skill-logo figma">
-                <i className="fa-brands fa-figma"></i>
-                <span>Figma</span>
-              </div>
-
-              {/* Duplicate set for continuous scrolling effect */}
-              <div className="skill-logo html">
-                <i className="fa-brands fa-html5"></i>
-                <span>HTML</span>
-              </div>
-              <div className="skill-logo css">
-                <i className="fa-brands fa-css3-alt"></i>
-                <span>CSS</span>
-              </div>
-              <div className="skill-logo javascript">
-                <i className="fa-brands fa-js"></i>
-                <span>JavaScript</span>
-              </div>
-              <div className="skill-logo react">
-                <i className="fa-brands fa-react"></i>
-                <span>React</span>
-              </div>
-              <div className="skill-logo node">
-                <i className="fa-brands fa-node-js"></i>
-                <span>Node.js</span>
-              </div>
-              <div className="skill-logo python">
-                <i className="fa-brands fa-python"></i>
-                <span>Python</span>
-              </div>
-              <div className="skill-logo java">
-                <i className="fa-brands fa-java"></i>
-                <span>Java</span>
-              </div>
-              <div className="skill-logo git">
-                <i className="fa-brands fa-git-alt"></i>
-                <span>Git</span>
-              </div>
-              <div className="skill-logo docker">
-                <i className="fa-brands fa-docker"></i>
-                <span>Docker</span>
-              </div>
-              <div className="skill-logo aws">
-                <i className="fa-brands fa-aws"></i>
-                <span>AWS</span>
-              </div>
-              <div className="skill-logo mongodb">
-                <i className="fa-solid fa-database"></i>
-                <span>MongoDB</span>
-              </div>
-              <div className="skill-logo figma">
-                <i className="fa-brands fa-figma"></i>
-                <span>Figma</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SkillsShowcase skillsRef={skillsRef} />
 
         {/* Modal */}
-        {isModalOpen && modalContent && (
-          <div className="modal-overlay">
-            <div className="modal-content" ref={modalRef}>
-              <button
-                className="modal-close"
-                onClick={() => {
-                  setIsModalOpen(false);
-                  setModalContent(null);
-                  document.body.style.overflow = "auto"; // Restore scrolling
-                }}
-              >
-                <i className="fa-solid fa-xmark"></i>
-              </button>
-              <h3>{modalContent.year}</h3>
-              <h4>{modalContent.course}</h4>
-              <p>
-                {modalContent.description || "No additional details available."}
-              </p>
-            </div>
-          </div>
-        )}
+        <Modal
+          isOpen={isModalOpen}
+          content={modalContent}
+          onClose={closeModal}
+          modalRef={modalRef}
+        />
       </div>
     </section>
   );

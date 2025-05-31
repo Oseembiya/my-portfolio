@@ -281,6 +281,7 @@ body.menu-open {
 }
 .cta-button:hover {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 .cta-button:hover::before {
   width: 100%;
@@ -1155,9 +1156,21 @@ body.menu-open {
 
 .content-2335 {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
   width: 100%;
+}
+@media (max-width: 768px) {
+  .content-2335 {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 425px) {
+  .content-2335 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .about-card {
@@ -1166,19 +1179,29 @@ body.menu-open {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 425px) {
   .about-card {
     padding: 1rem;
-    margin-bottom: 0.5rem;
   }
 }
 .about-card h4 {
   color: #00262b;
   margin-bottom: 0.5rem;
+}
+.about-card .about-card-subtitle {
+  font-size: clamp(14px, 3vw, 16px);
+  color: #00262b;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+.about-card .about-card-institution {
+  font-size: clamp(13px, 2.5vw, 15px);
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 .about-card p {
   font-size: clamp(14px, 3vw, 16px);

@@ -7,7 +7,7 @@ const ProjectDetails = [
     section: "Front-End",
     projects: [
       {
-        projectName: "CodeColab (Front-End)",
+        projectName: "CodeColab",
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
         href: "https://codekolab.netlify.app/",
