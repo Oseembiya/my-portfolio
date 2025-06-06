@@ -15,17 +15,9 @@ function Navbar() {
   const toggleMenu = () => {
     const newMenuState = !isMenuOpen;
 
-    // Save current scroll position
-    const scrollPos = window.scrollY;
-
     setIsMenuOpen(newMenuState);
     if (newMenuState) {
       document.body.classList.add("menu-open");
-
-      // After menu is open, restore scroll position
-      setTimeout(() => {
-        window.scrollTo(0, scrollPos);
-      }, 0);
     } else {
       document.body.classList.remove("menu-open");
     }
@@ -162,8 +154,8 @@ function Navbar() {
         </button>
 
         <ul className={`nav-menu ${isMenuOpen ? "open" : ""}`}>
-          {navLinks.map((link, index) => (
-            <li key={link.href} style={{ "--item-index": index + 1 }}>
+          {navLinks.map((link) => (
+            <li key={link.href}>
               <a
                 href={link.href}
                 className={
@@ -175,7 +167,7 @@ function Navbar() {
               </a>
             </li>
           ))}
-          <li style={{ "--item-index": navLinks.length + 1 }}>
+          <li>
             <a
               className="cta-button"
               href="#contact"
@@ -183,7 +175,7 @@ function Navbar() {
                 handleLinkClick();
                 document
                   .querySelector("#contact")
-                  .scrollIntoView({ behavior: "smooth" });
+                  .scrollIntoView({ behavior: "auto" });
               }}
             >
               <i className="fa-solid fa-briefcase"></i> Hire Me

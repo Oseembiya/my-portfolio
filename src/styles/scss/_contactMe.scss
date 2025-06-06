@@ -8,7 +8,7 @@
   overflow: visible;
 
   @include media-query("md", "max") {
-    padding: 80px 15px 0px;
+    padding: 80px 20px 0px;
   }
 
   @include media-query("sm") {

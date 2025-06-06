@@ -6,7 +6,6 @@
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  transition: all 0.3s ease;
   padding: 8px 0;
 
   &.scrolled {
@@ -124,7 +123,6 @@ body.menu-open {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s;
     cursor: pointer;
     position: relative;
 
@@ -136,7 +134,6 @@ body.menu-open {
       width: 0;
       height: 2px;
       background: $color-text-random;
-      transition: width 0.3s;
     }
 
     &:hover,
@@ -159,7 +156,6 @@ body.menu-open {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -172,29 +168,9 @@ body.menu-open {
     font-size: 0.9rem;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: darken($color-text-random, 15%);
-    transition: all 0.3s ease;
-    z-index: -1;
-  }
-
   &:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     color: white;
-
-    &::before {
-      width: 100%;
-    }
-  }
-
-  &:active {
-    transform: translateY(-1px);
+    background-color: darken($color-text-random, 15%);
   }
 }
 
@@ -207,7 +183,6 @@ body.menu-open {
   padding: 10px;
   z-index: 1010;
   position: relative;
-  transition: transform 0.3s ease;
 }
 
 .hamburger {
@@ -224,7 +199,6 @@ body.menu-open {
     height: 2px;
     width: 30px;
     background-color: $color-text-secondary;
-    transition: all 0.3s ease;
     border-radius: 2px;
   }
 
@@ -247,39 +221,7 @@ body.menu-open {
   }
 }
 
-@keyframes slideDown {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-// Mobile-specific menu item animations
-@keyframes slideInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+// Animations removed for cleaner navbar experience
 
 /* Responsive design */
 @include media-query("md", "max") {
@@ -298,10 +240,9 @@ body.menu-open {
     width: 100%;
     max-width: 100%;
     padding: 20px;
-    transition: transform 0.4s ease;
     height: 0;
     overflow: hidden;
-    transform: translateY(-100vh); /* Push it completely off-screen */
+    display: none; /* Hide by default */
     align-items: center;
     text-align: center;
     gap: 20px;
@@ -309,7 +250,7 @@ body.menu-open {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
     &.open {
-      transform: translateY(0);
+      display: flex;
       height: calc(100vh - 66px); /* Full height minus navbar height */
       padding-top: 20px;
       padding-left: 20px;
@@ -319,28 +260,8 @@ body.menu-open {
     li {
       width: 100%;
       padding: 10px 0;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transition-delay: calc(0.1s * var(--item-index, 0));
       display: flex;
       justify-content: flex-start;
-
-      &:nth-child(1) {
-        --item-index: 1;
-      }
-      &:nth-child(2) {
-        --item-index: 2;
-      }
-      &:nth-child(3) {
-        --item-index: 3;
-      }
-      &:nth-child(4) {
-        --item-index: 4;
-      }
-      &:nth-child(5) {
-        --item-index: 5;
-      }
 
       a {
         font-size: 1.2rem;
@@ -356,11 +277,6 @@ body.menu-open {
       }
     }
 
-    &.open li {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .cta-button {
       margin-top: 20px;
       width: auto;
@@ -368,10 +284,6 @@ body.menu-open {
       display: flex;
       align-items: center;
       justify-content: center;
-
-      &:hover {
-        transform: translateY(-3px);
-      }
     }
   }
 
@@ -421,93 +333,15 @@ body.menu-open {
 
   .logo {
     font-size: 1.2rem;
-
-    // Mobile touch feedback
-    &:active {
-      transform: scale(0.98);
-      transition: transform 0.1s ease-out;
-    }
   }
 
   .nav-menu {
     width: 100%;
     max-width: none;
-
-    // Enhanced mobile menu animations
-    &.open {
-      li {
-        animation: slideInFromTop 0.3s ease-out forwards;
-
-        // Faster staggered animation for mobile
-        &:nth-child(1) {
-          animation-delay: 0.05s;
-        }
-        &:nth-child(2) {
-          animation-delay: 0.1s;
-        }
-        &:nth-child(3) {
-          animation-delay: 0.15s;
-        }
-        &:nth-child(4) {
-          animation-delay: 0.2s;
-        }
-        &:nth-child(5) {
-          animation-delay: 0.25s;
-        }
-      }
-    }
-
-    li a {
-      // Mobile touch feedback
-      &:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease-out;
-      }
-    }
-
-    .cta-button {
-      // Enhanced mobile touch feedback
-      &:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease-out;
-      }
-    }
-  }
-
-  // Hamburger menu touch feedback
-  .menu-toggle {
-    &:active {
-      transform: scale(0.9);
-      transition: transform 0.1s ease-out;
-    }
   }
 }
 
-// Accessibility: Respect user's motion preferences
-@media (prefers-reduced-motion: reduce) {
-  .nav-menu {
-    transition: none !important;
-
-    li {
-      transition: none !important;
-      animation: none !important;
-    }
-  }
-
-  .hamburger span {
-    transition: none !important;
-  }
-
-  @keyframes slideDown,
-  @keyframes slideInFromTop,
-  @keyframes fadeInUp {
-    from,
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
+// Navbar animations removed for cleaner experience
 
 // Make sure the navbar remains fixed even when inside the home section
 #home .navbar {

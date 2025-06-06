@@ -78,7 +78,7 @@
   background-color: $color-background-primary;
 
   @include media-query("md", "max") {
-    padding: 80px 15px 40px;
+    padding: 80px 20px 40px;
   }
 
   @include media-query("sm") {
