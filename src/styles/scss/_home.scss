@@ -220,7 +220,7 @@
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   will-change: opacity, transform;
 
   &.is-visible {
@@ -231,19 +231,19 @@
   // Mobile optimized animations
   @include media-query("md", "max") {
     transform: translateY(12px); // Smaller movement
-    transition: opacity 0.4s ease, transform 0.4s ease; // Faster
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out; // Slower
   }
 
   @include media-query("sm", "max") {
     transform: translateY(8px); // Even smaller for mobile
-    transition: opacity 0.3s ease, transform 0.3s ease; // Fastest
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; // Still elegant on mobile
   }
 }
 
 .slide-in-right {
   opacity: 0;
   transform: translateX(50px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   will-change: opacity, transform;
 
   &.is-visible {
@@ -254,27 +254,27 @@
   // Mobile optimized
   @include media-query("md", "max") {
     transform: translateX(25px); // Smaller slide distance
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
   }
 
   @include media-query("sm", "max") {
     transform: translateX(15px); // Even smaller for mobile
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
 }
 
-// Animation delays
+// Animation delays - More spaced out for elegance
 @for $i from 1 through 4 {
   .animation-delay-#{$i} {
-    transition-delay: #{$i * 0.1}s;
+    transition-delay: #{$i * 0.2}s; // Slower, more elegant delays
   }
 }
 
-// Mobile-specific faster animation delays
+// Mobile-specific animation delays
 @include media-query("md", "max") {
   @for $i from 1 through 4 {
     .animation-delay-#{$i} {
-      transition-delay: #{$i * 0.06}s; // Faster delays for tablets
+      transition-delay: #{$i * 0.15}s; // Moderate delays for tablets
     }
   }
 }
@@ -282,7 +282,8 @@
 @include media-query("sm", "max") {
   @for $i from 1 through 4 {
     .animation-delay-#{$i} {
-      transition-delay: #{$i * 0.04}s; // Even faster delays for mobile
+      transition-delay: #{$i *
+        0.12}s; // Still smooth but not too slow on mobile
     }
   }
 

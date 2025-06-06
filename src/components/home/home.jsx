@@ -8,7 +8,7 @@ function Home() {
 
   const MOBILE_BREAKPOINT = 768;
   const MEDIUM_BREAKPOINT = 992;
-  const ANIMATION_DELAY = 300;
+  const ANIMATION_DELAY = 500; // Slower initial animation delay
 
   // Create refs outside
   const titleRef = useRef(null);
