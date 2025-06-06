@@ -95,6 +95,10 @@
     padding-left: 0.5rem;
     font-size: clamp(28px, 6vw, 34px);
 
+    @include media-query("sm") {
+      font-size: clamp(22px, 5vw, 26px); // Smaller font size for small screens
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -164,6 +168,11 @@
 
     @include media-query("sm") {
       margin-bottom: 1.5rem;
+      font-size: clamp(
+        20px,
+        4.5vw,
+        24px
+      ); // Smaller font size for small screens
     }
 
     &::after {
@@ -614,6 +623,14 @@
       font-size: clamp(22px, 5vw, 28px);
       color: $color-text-primary;
       margin-bottom: 0.5rem;
+
+      @include media-query("sm") {
+        font-size: clamp(
+          18px,
+          4vw,
+          22px
+        ); // Smaller font size for small screens
+      }
     }
 
     p {

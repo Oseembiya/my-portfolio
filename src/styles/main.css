@@ -832,6 +832,11 @@ body.menu-open {
   padding-left: 0.5rem;
   font-size: clamp(28px, 6vw, 34px);
 }
+@media (max-width: 425px) {
+  .about-wrapper h2 {
+    font-size: clamp(22px, 5vw, 26px);
+  }
+}
 .about-wrapper h2::after {
   content: "";
   position: absolute;
@@ -899,6 +904,7 @@ body.menu-open {
 @media (max-width: 425px) {
   .aboutImg-2335 h2 {
     margin-bottom: 1.5rem;
+    font-size: clamp(20px, 4.5vw, 24px);
   }
 }
 .aboutImg-2335 h2::after {
@@ -1412,6 +1418,11 @@ body.menu-open {
   color: #00262b;
   margin-bottom: 0.5rem;
 }
+@media (max-width: 425px) {
+  .skills-showcase .skills-heading h3 {
+    font-size: clamp(18px, 4vw, 22px);
+  }
+}
 .skills-showcase .skills-heading p {
   font-size: clamp(14px, 2vw, 16px);
   color: #00262b;
@@ -1707,6 +1718,7 @@ body.menu-open {
 @media (max-width: 425px) {
   .projectMain-2336 .section-title {
     margin-bottom: 2rem;
+    font-size: clamp(22px, 5vw, 26px);
   }
 }
 .projectMain-2336 .section-title::after {
@@ -2235,6 +2247,7 @@ body.menu-open {
 @media (max-width: 425px) {
   .contactMe-2338 .section-title {
     margin-bottom: 2rem;
+    font-size: clamp(22px, 5vw, 26px);
   }
 }
 .contactMe-2338 .section-title::after {

@@ -58,6 +58,7 @@
 
     @include media-query("sm") {
       margin-bottom: 2rem;
+      font-size: clamp(22px, 5vw, 26px); // Smaller font size for small screens
     }
 
     &::after {
