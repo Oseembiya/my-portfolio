@@ -43,6 +43,17 @@ function Home() {
     []
   );
 
+  // Adjust text display for different screen sizes
+  const isMobile = windowWidth <= MOBILE_BREAKPOINT;
+  const isMediumOrLarger = windowWidth >= MEDIUM_BREAKPOINT;
+
+  const getResponsiveDescription = () => {
+    if (isMediumOrLarger) {
+      return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture.";
+    }
+    return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions.";
+  };
+
   useEffect(() => {
     // Track window resize for responsive adjustments
     const handleResize = () => {
@@ -93,6 +104,52 @@ function Home() {
       }
     });
 
+    // Add mobile touch interactions
+    if (isMobile) {
+      const handleTouchStart = (e) => {
+        // Add subtle touch feedback
+        e.currentTarget.style.transform = "scale(0.98)";
+        e.currentTarget.style.transition = "transform 0.1s ease-out";
+      };
+
+      const handleTouchEnd = (e) => {
+        // Return to normal state
+        e.currentTarget.style.transform = "scale(1)";
+      };
+
+      // Apply to interactive elements
+      const interactiveElements = document.querySelectorAll(
+        ".action-button, .social-link"
+      );
+      interactiveElements.forEach((element) => {
+        element.addEventListener("touchstart", handleTouchStart, {
+          passive: true,
+        });
+        element.addEventListener("touchend", handleTouchEnd, { passive: true });
+        element.addEventListener("touchcancel", handleTouchEnd, {
+          passive: true,
+        });
+      });
+
+      return () => {
+        // Cleanup event listeners
+        window.removeEventListener("resize", handleResize);
+
+        Object.values(sectionRefs).forEach((ref) => {
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        });
+
+        // Cleanup touch listeners
+        interactiveElements.forEach((element) => {
+          element.removeEventListener("touchstart", handleTouchStart);
+          element.removeEventListener("touchend", handleTouchEnd);
+          element.removeEventListener("touchcancel", handleTouchEnd);
+        });
+      };
+    }
+
     return () => {
       // Cleanup event listeners
       window.removeEventListener("resize", handleResize);
@@ -103,18 +160,7 @@ function Home() {
         }
       });
     };
-  }, [sectionRefs]);
-
-  // Adjust text display for different screen sizes
-  const isMobile = windowWidth <= MOBILE_BREAKPOINT;
-  const isMediumOrLarger = windowWidth >= MEDIUM_BREAKPOINT;
-
-  const getResponsiveDescription = () => {
-    if (isMediumOrLarger) {
-      return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture.";
-    }
-    return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions.";
-  };
+  }, [sectionRefs, isMobile]);
 
   return (
     <section

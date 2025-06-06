@@ -341,6 +341,26 @@ body.menu-open {
     opacity: 1;
   }
 }
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* Responsive design */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -458,9 +478,63 @@ body.menu-open {
   .logo {
     font-size: 1.2rem;
   }
+  .logo:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
   .nav-menu {
     width: 100%;
     max-width: none;
+  }
+  .nav-menu.open li {
+    animation: slideInFromTop 0.3s ease-out forwards;
+  }
+  .nav-menu.open li:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .nav-menu.open li:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .nav-menu.open li:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .nav-menu.open li:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .nav-menu.open li:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .nav-menu li a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
+  }
+  .nav-menu .cta-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
+  }
+  .menu-toggle:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu {
+    transition: none !important;
+  }
+  .nav-menu li {
+    transition: none !important;
+    animation: none !important;
+  }
+  .hamburger span {
+    transition: none !important;
+  }
+  @keyframes slideDown,
+  @keyframes slideInFromTop,
+  @keyframes fadeInUp {
+    from, to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 #home .navbar {
@@ -695,6 +769,18 @@ body.menu-open {
   opacity: 1;
   transform: translateY(0);
 }
+@media (max-width: 768px) {
+  .fade-in-section {
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+}
+@media (max-width: 425px) {
+  .fade-in-section {
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+}
 
 .slide-in-right {
   opacity: 0;
@@ -705,6 +791,18 @@ body.menu-open {
 .slide-in-right.is-visible {
   opacity: 1;
   transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .slide-in-right {
+    transform: translateX(25px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+}
+@media (max-width: 425px) {
+  .slide-in-right {
+    transform: translateX(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 }
 
 .animation-delay-1 {
@@ -723,6 +821,47 @@ body.menu-open {
   transition-delay: 0.4s;
 }
 
+@media (max-width: 768px) {
+  .animation-delay-1 {
+    transition-delay: 0.06s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.12s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.18s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.24s;
+  }
+}
+@media (max-width: 425px) {
+  .animation-delay-1 {
+    transition-delay: 0.04s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.08s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.12s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.16s;
+  }
+  .action-button:active,
+  .social-link:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1036,10 +1175,17 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .fade-in-section {
-    opacity: 1;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  .fade-in-section.is-visible {
     transform: translateY(0);
-    visibility: visible;
-    transition: none;
+  }
+}
+@media (max-width: 425px) {
+  .fade-in-section {
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1057,10 +1203,14 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .slide-in-right {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
+@media (max-width: 425px) {
+  .slide-in-right {
+    transform: translateX(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1078,10 +1228,14 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .slide-in-left {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(-25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
+@media (max-width: 425px) {
+  .slide-in-left {
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1099,10 +1253,14 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .scale-in {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-    transition: none;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
+@media (max-width: 425px) {
+  .scale-in {
+    transform: scale(0.95);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1154,6 +1312,103 @@ body.menu-open {
   transition-delay: 1.2s;
 }
 
+@media (max-width: 768px) {
+  .animation-delay-1 {
+    transition-delay: 0.05s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.1s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.15s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.2s;
+  }
+  .animation-delay-5 {
+    transition-delay: 0.25s;
+  }
+  .animation-delay-6 {
+    transition-delay: 0.3s;
+  }
+  .animation-delay-7 {
+    transition-delay: 0.35s;
+  }
+  .animation-delay-8 {
+    transition-delay: 0.4s;
+  }
+  .animation-delay-9 {
+    transition-delay: 0.45s;
+  }
+  .animation-delay-10 {
+    transition-delay: 0.5s;
+  }
+  .animation-delay-11 {
+    transition-delay: 0.55s;
+  }
+  .animation-delay-12 {
+    transition-delay: 0.6s;
+  }
+}
+@media (max-width: 425px) {
+  .animation-delay-1 {
+    transition-delay: 0.03s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.06s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.09s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.12s;
+  }
+  .animation-delay-5 {
+    transition-delay: 0.15s;
+  }
+  .animation-delay-6 {
+    transition-delay: 0.18s;
+  }
+  .animation-delay-7 {
+    transition-delay: 0.21s;
+  }
+  .animation-delay-8 {
+    transition-delay: 0.24s;
+  }
+  .animation-delay-9 {
+    transition-delay: 0.27s;
+  }
+  .animation-delay-10 {
+    transition-delay: 0.3s;
+  }
+  .animation-delay-11 {
+    transition-delay: 0.33s;
+  }
+  .animation-delay-12 {
+    transition-delay: 0.36s;
+  }
+  .content-2335 .card-2335:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
+  .skills-logos-container {
+    animation-duration: 25s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right,
+  .slide-in-left,
+  .scale-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+  .skills-logos-container {
+    animation: none !important;
+  }
+}
 .content-2335 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -1839,12 +2094,19 @@ body.menu-open {
   transform: translateY(0);
   visibility: visible;
 }
+@media (max-width: 768px) {
+  .fade-in-section {
+    transform: translateY(15px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  .fade-in-section.is-visible {
+    transform: translateY(0);
+  }
+}
 @media (max-width: 425px) {
   .fade-in-section {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: none;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1860,12 +2122,16 @@ body.menu-open {
   transform: translateX(0);
   visibility: visible;
 }
+@media (max-width: 768px) {
+  .slide-in-right {
+    transform: translateX(25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
 @media (max-width: 425px) {
   .slide-in-right {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1881,12 +2147,16 @@ body.menu-open {
   transform: translateX(0);
   visibility: visible;
 }
+@media (max-width: 768px) {
+  .slide-in-left {
+    transform: translateX(-25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
 @media (max-width: 425px) {
   .slide-in-left {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1902,12 +2172,16 @@ body.menu-open {
   transform: scale(1);
   visibility: visible;
 }
+@media (max-width: 768px) {
+  .scale-in {
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out;
+  }
+}
 @media (max-width: 425px) {
   .scale-in {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-    transition: none;
+    transform: scale(0.95);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s ease-out;
   }
 }
 
@@ -1959,6 +2233,101 @@ body.menu-open {
   transition-delay: 1.2s;
 }
 
+@media (max-width: 768px) {
+  .animation-delay-1 {
+    transition-delay: 0.05s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.1s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.15s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.2s;
+  }
+  .animation-delay-5 {
+    transition-delay: 0.25s;
+  }
+  .animation-delay-6 {
+    transition-delay: 0.3s;
+  }
+  .animation-delay-7 {
+    transition-delay: 0.35s;
+  }
+  .animation-delay-8 {
+    transition-delay: 0.4s;
+  }
+  .animation-delay-9 {
+    transition-delay: 0.45s;
+  }
+  .animation-delay-10 {
+    transition-delay: 0.5s;
+  }
+  .animation-delay-11 {
+    transition-delay: 0.55s;
+  }
+  .animation-delay-12 {
+    transition-delay: 0.6s;
+  }
+}
+@media (max-width: 425px) {
+  .animation-delay-1 {
+    transition-delay: 0.03s;
+  }
+  .animation-delay-2 {
+    transition-delay: 0.06s;
+  }
+  .animation-delay-3 {
+    transition-delay: 0.09s;
+  }
+  .animation-delay-4 {
+    transition-delay: 0.12s;
+  }
+  .animation-delay-5 {
+    transition-delay: 0.15s;
+  }
+  .animation-delay-6 {
+    transition-delay: 0.18s;
+  }
+  .animation-delay-7 {
+    transition-delay: 0.21s;
+  }
+  .animation-delay-8 {
+    transition-delay: 0.24s;
+  }
+  .animation-delay-9 {
+    transition-delay: 0.27s;
+  }
+  .animation-delay-10 {
+    transition-delay: 0.3s;
+  }
+  .animation-delay-11 {
+    transition-delay: 0.33s;
+  }
+  .animation-delay-12 {
+    transition-delay: 0.36s;
+  }
+  .projectItem_2336:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
+  .projectItem_2336.fade-in-section {
+    transform: translateY(8px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right,
+  .slide-in-left,
+  .scale-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
 .contactMe-2338 {
   min-height: 100vh;
   position: relative;
@@ -2127,6 +2496,12 @@ body.menu-open {
   background-color: #d1472f;
   transform: translateY(-3px);
 }
+@media (max-width: 425px) {
+  .contactMe-2338 .contactInfo-2338 .socialMedia-2338 a:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-out;
+  }
+}
 .contactMe-2338 .contactContent-2338 {
   flex: 1.5;
 }
@@ -2264,6 +2639,18 @@ body.menu-open {
   color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
 }
+@media (max-width: 425px) {
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 input:focus,
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea:focus {
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+  }
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 input:active,
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea:active {
+    transform: scale(0.99);
+    transition: transform 0.1s ease-out;
+  }
+}
 .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
   resize: vertical;
   min-height: 100px;
@@ -2311,6 +2698,12 @@ body.menu-open {
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
+}
+@media (max-width: 425px) {
+  .contactMe-2338 .contactForm-2338 .submitButton-2338:active:not(:disabled) {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:disabled {
   background-color: #777;
@@ -2384,6 +2777,7 @@ body.menu-open {
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 1rem 0;
   text-align: center;
   color: #ffffff;
   opacity: 0.8;
@@ -2393,5 +2787,29 @@ body.menu-open {
   .contactMe-2338 .allRight-2338 {
     bottom: 15px;
     padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .contactMe-2338 .contactItem-2338:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-out;
+  }
+  .contactMe-2338 .downArrow-2338 a:active {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .contactMe-2338 .contactInfo-2338 .socialMedia-2338 a,
+  .contactMe-2338 .contactForm-2338 .submitButton-2338,
+  .contactMe-2338 .downArrow-2338 a,
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 input,
+  .contactMe-2338 .contactForm-2338 .formGroup-2338 textarea {
+    transition: none !important;
+    transform: none !important;
+  }
+  .contactMe-2338 .contactForm-2338 .submitButton-2338 .loading i {
+    animation: none !important;
   }
 }/*# sourceMappingURL=main.css.map */

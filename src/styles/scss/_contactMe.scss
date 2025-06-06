@@ -168,6 +168,14 @@
           background-color: $color-text-random;
           transform: translateY(-3px);
         }
+
+        // Mobile touch feedback
+        @include media-query("sm", "max") {
+          &:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease-out;
+          }
+        }
       }
     }
   }
@@ -309,6 +317,19 @@
           color: rgba(255, 255, 255, 0.6);
           font-size: 16px;
         }
+
+        // Mobile touch enhancements
+        @include media-query("sm", "max") {
+          &:focus {
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+          }
+
+          &:active {
+            transform: scale(0.99);
+            transition: transform 0.1s ease-out;
+          }
+        }
       }
 
       textarea {
@@ -362,6 +383,14 @@
 
       &:active {
         transform: translateY(-2px);
+      }
+
+      // Enhanced mobile touch feedback
+      @include media-query("sm", "max") {
+        &:active:not(:disabled) {
+          transform: scale(0.98);
+          transition: transform 0.1s ease-out;
+        }
       }
 
       &:disabled {
@@ -445,6 +474,7 @@
     bottom: 0;
     left: 0;
     right: 0;
+    padding: 1rem 0;
     text-align: center;
     color: $color-text-secondary;
     opacity: 0.8;
@@ -453,6 +483,43 @@
     @include media-query("sm") {
       bottom: 15px;
       padding: 0.5rem 0;
+    }
+  }
+}
+
+// Mobile-specific optimizations and accessibility
+@include media-query("sm", "max") {
+  .contactMe-2338 {
+    .contactItem-2338 {
+      &:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease-out;
+      }
+    }
+
+    .downArrow-2338 a {
+      &:active {
+        transform: scale(0.9);
+        transition: transform 0.1s ease-out;
+      }
+    }
+  }
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .contactMe-2338 {
+    .contactInfo-2338 .socialMedia-2338 a,
+    .contactForm-2338 .submitButton-2338,
+    .downArrow-2338 a,
+    .contactForm-2338 .formGroup-2338 input,
+    .contactForm-2338 .formGroup-2338 textarea {
+      transition: none !important;
+      transform: none !important;
+    }
+
+    .contactForm-2338 .submitButton-2338 .loading i {
+      animation: none !important;
     }
   }
 }

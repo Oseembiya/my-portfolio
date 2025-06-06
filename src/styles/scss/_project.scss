@@ -316,7 +316,7 @@
   animation: fadeIn 0.5s ease;
 }
 
-// Scroll animations
+// Enhanced Mobile-Friendly Scroll animations
 .fade-in-section {
   opacity: 0;
   transform: translateY(30px);
@@ -331,11 +331,21 @@
     visibility: visible;
   }
 
+  // Mobile optimized animations (instead of disabling)
+  @include media-query("md", "max") {
+    transform: translateY(15px); // Smaller movement
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out; // Faster
+
+    &.is-visible {
+      transform: translateY(0);
+    }
+  }
+
   @include media-query("sm", "max") {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: none;
+    transform: translateY(10px); // Even smaller for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out; // Faster
   }
 }
 
@@ -353,11 +363,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
+  @include media-query("md", "max") {
+    transform: translateX(25px); // Smaller slide distance
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
   @include media-query("sm", "max") {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(15px); // Even smaller for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -375,11 +391,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
+  @include media-query("md", "max") {
+    transform: translateX(-25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
   @include media-query("sm", "max") {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -397,11 +419,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
+  @include media-query("md", "max") {
+    transform: scale(0.9); // Less dramatic scaling
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
   @include media-query("sm", "max") {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-    transition: none;
+    transform: scale(0.95); // Very subtle scaling for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -409,5 +437,50 @@
 @for $i from 1 through 12 {
   .animation-delay-#{$i} {
     transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// Mobile-specific faster animation delays
+@include media-query("md", "max") {
+  @for $i from 1 through 12 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.05}s; // Faster delays for tablets
+    }
+  }
+}
+
+@include media-query("sm", "max") {
+  @for $i from 1 through 12 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.03}s; // Even faster delays for mobile
+    }
+  }
+
+  // Mobile-specific touch interactions
+  .projectItem_2336 {
+    // Add subtle touch feedback
+    &:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease-out;
+    }
+
+    // Enhanced mobile project animations
+    &.fade-in-section {
+      transform: translateY(8px); // Very subtle movement
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+  }
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right,
+  .slide-in-left,
+  .scale-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
   }
 }

@@ -216,7 +216,7 @@
   }
 }
 
-// Animation classes
+// Enhanced Mobile-Friendly Animation classes
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
@@ -226,6 +226,17 @@
   &.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  // Mobile optimized animations
+  @include media-query("md", "max") {
+    transform: translateY(12px); // Smaller movement
+    transition: opacity 0.4s ease, transform 0.4s ease; // Faster
+  }
+
+  @include media-query("sm", "max") {
+    transform: translateY(8px); // Even smaller for mobile
+    transition: opacity 0.3s ease, transform 0.3s ease; // Fastest
   }
 }
 
@@ -239,12 +250,59 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+  // Mobile optimized
+  @include media-query("md", "max") {
+    transform: translateX(25px); // Smaller slide distance
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  @include media-query("sm", "max") {
+    transform: translateX(15px); // Even smaller for mobile
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
 }
 
 // Animation delays
 @for $i from 1 through 4 {
   .animation-delay-#{$i} {
     transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// Mobile-specific faster animation delays
+@include media-query("md", "max") {
+  @for $i from 1 through 4 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.06}s; // Faster delays for tablets
+    }
+  }
+}
+
+@include media-query("sm", "max") {
+  @for $i from 1 through 4 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.04}s; // Even faster delays for mobile
+    }
+  }
+
+  // Mobile-specific touch interactions for buttons
+  .action-button,
+  .social-link {
+    &:active {
+      transform: scale(0.95);
+      transition: transform 0.1s ease-out;
+    }
+  }
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

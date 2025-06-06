@@ -299,7 +299,7 @@
   }
 }
 
-// Scroll animations
+// Enhanced Mobile-Friendly Scroll animations
 .fade-in-section {
   opacity: 0;
   transform: translateY(30px);
@@ -314,11 +314,21 @@
     visibility: visible;
   }
 
+  // Mobile optimized animations (instead of disabling)
   @include media-query("md", "max") {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: none;
+    transform: translateY(15px); // Smaller movement
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out; // Faster
+
+    &.is-visible {
+      transform: translateY(0);
+    }
+  }
+
+  @include media-query("sm", "max") {
+    transform: translateY(10px); // Even smaller for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out; // Faster
   }
 }
 
@@ -336,11 +346,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
   @include media-query("md", "max") {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(25px); // Smaller slide distance
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
+  @include media-query("sm", "max") {
+    transform: translateX(15px); // Even smaller for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -358,11 +374,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
   @include media-query("md", "max") {
-    opacity: 1;
-    transform: translateX(0);
-    visibility: visible;
-    transition: none;
+    transform: translateX(-25px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
+  @include media-query("sm", "max") {
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -380,11 +402,17 @@
     visibility: visible;
   }
 
+  // Mobile optimized
   @include media-query("md", "max") {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-    transition: none;
+    transform: scale(0.9); // Less dramatic scaling
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out,
+      visibility 0.5s ease-out;
+  }
+
+  @include media-query("sm", "max") {
+    transform: scale(0.95); // Very subtle scaling for mobile
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out,
+      visibility 0.4s ease-out;
   }
 }
 
@@ -392,6 +420,54 @@
 @for $i from 1 through 12 {
   .animation-delay-#{$i} {
     transition-delay: #{$i * 0.1}s;
+  }
+}
+
+// Mobile-specific faster animation delays
+@include media-query("md", "max") {
+  @for $i from 1 through 12 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.05}s; // Faster delays for tablets
+    }
+  }
+}
+
+@include media-query("sm", "max") {
+  @for $i from 1 through 12 {
+    .animation-delay-#{$i} {
+      transition-delay: #{$i * 0.03}s; // Even faster delays for mobile
+    }
+  }
+
+  // Mobile-specific enhancements
+  .content-2335 .card-2335 {
+    // Add subtle touch feedback
+    &:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease-out;
+    }
+  }
+
+  // Enhanced skills animation for mobile
+  .skills-logos-container {
+    animation-duration: 25s; // Slightly faster scroll on mobile
+  }
+}
+
+// Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-section,
+  .slide-in-right,
+  .slide-in-left,
+  .scale-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  .skills-logos-container {
+    animation: none !important;
   }
 }
 

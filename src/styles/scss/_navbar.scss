@@ -258,6 +258,29 @@ body.menu-open {
   }
 }
 
+// Mobile-specific menu item animations
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive design */
 @include media-query("md", "max") {
   .menu-toggle {
@@ -398,11 +421,91 @@ body.menu-open {
 
   .logo {
     font-size: 1.2rem;
+
+    // Mobile touch feedback
+    &:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease-out;
+    }
   }
 
   .nav-menu {
     width: 100%;
     max-width: none;
+
+    // Enhanced mobile menu animations
+    &.open {
+      li {
+        animation: slideInFromTop 0.3s ease-out forwards;
+
+        // Faster staggered animation for mobile
+        &:nth-child(1) {
+          animation-delay: 0.05s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+          animation-delay: 0.15s;
+        }
+        &:nth-child(4) {
+          animation-delay: 0.2s;
+        }
+        &:nth-child(5) {
+          animation-delay: 0.25s;
+        }
+      }
+    }
+
+    li a {
+      // Mobile touch feedback
+      &:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease-out;
+      }
+    }
+
+    .cta-button {
+      // Enhanced mobile touch feedback
+      &:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease-out;
+      }
+    }
+  }
+
+  // Hamburger menu touch feedback
+  .menu-toggle {
+    &:active {
+      transform: scale(0.9);
+      transition: transform 0.1s ease-out;
+    }
+  }
+}
+
+// Accessibility: Respect user's motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu {
+    transition: none !important;
+
+    li {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  .hamburger span {
+    transition: none !important;
+  }
+
+  @keyframes slideDown,
+  @keyframes slideInFromTop,
+  @keyframes fadeInUp {
+    from,
+    to {
+      opacity: 1;
+      transform: none;
+    }
   }
 }
 
