@@ -108,14 +108,20 @@ const ProjectDetails = [
     section: "Software Engineering",
     projects: [
       {
-        projectName: "System Architecture Design",
+        projectName: "Secure Voting System",
         description:
-          "A scalable system architecture design for a high-traffic e-commerce application with load balancing and caching.",
-        href: "https://systemdesign.com",
-        image: "/src/assets/system.jpg",
-        tools: ["AWS", "Docker", "Microservices", "Kubernetes"],
-        codeLink: "https://github.com/oseembiya/system-design",
-        demoLink: "https://systemdesign.com",
+          "A robust and secure voting system implemented in C++ with features like voter authentication, real-time vote counting, and data persistence. The system ensures one vote per voter and maintains election integrity through secure data management.",
+        href: "https://github.com/oseembiya/VotingSystem",
+        image: "/src/assets/voting-system.jpg",
+        tools: [
+          "C++",
+          "OOP",
+          "Data Structures",
+          "File I/O",
+          "Make Build System",
+        ],
+        codeLink: "https://github.com/oseembiya/VotingSystem",
+        demoLink: "https://github.com/oseembiya/VotingSystem#demo",
       },
     ],
   },
@@ -145,5 +151,4 @@ const ProjectDetails = [
     ],
   },
 ];
-
 export default ProjectDetails;
