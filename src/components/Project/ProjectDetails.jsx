@@ -1,7 +1,8 @@
-import ProfileImage from "../../assets/osee.jpeg";
 import CodeColab from "../../assets/CodeColab.png";
 import CodeColabServer from "../../assets/CodeColab_Server.png";
 import ParentPay from "../../assets/ParentPay .png";
+import VotingSystem from "../../assets/votingsystem.jpg";
+import LocalServiceFinder from "../../assets/localFinder.png";
 const ProjectDetails = [
   {
     section: "Front-End",
@@ -25,6 +26,24 @@ const ProjectDetails = [
         demoLink: "https://codekolab.netlify.app/",
       },
       {
+        projectName: "Local Service Finder (AI)",
+        description:
+          "An AI-powered web application that helps users find and compare local service providers using natural language queries. Features include a proprietary Neptune Score system, multi-source data integration, and real-time search capabilities.",
+        href: "https://local-service-finder.vercel.app",
+        tools: [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "React 19",
+          "AI Integration",
+          "Responsive Design",
+          "API Development",
+        ],
+        image: LocalServiceFinder,
+        codeLink: "https://github.com/Oseembiya/localfinder.git",
+        demoLink: "https://localfinder-flax.vercel.app/",
+      },
+      {
         projectName: "ParentPay School Activities",
         description:
           "An interactive e-commerce platform for browsing and purchasing school activities and lessons.",
@@ -39,16 +58,6 @@ const ProjectDetails = [
         ],
         codeLink: "https://github.com/oseembiya/Vue",
         demoLink: "https://oseembiya.github.io/Vue/",
-      },
-      {
-        projectName: "Portfolio Website",
-        description:
-          "A professional portfolio website showcasing skills and projects with modern UI/UX principles.",
-        href: "https://myportfolio.com",
-        image: ProfileImage,
-        tools: ["React", "SCSS", "Responsive Design", "Animation"],
-        codeLink: "https://github.com/oseembiya/portfolio",
-        demoLink: "https://myportfolio.com",
       },
     ],
   },
@@ -112,7 +121,7 @@ const ProjectDetails = [
         description:
           "A robust and secure voting system implemented in C++ with features like voter authentication, real-time vote counting, and data persistence. The system ensures one vote per voter and maintains election integrity through secure data management.",
         href: "https://github.com/oseembiya/VotingSystem",
-        image: "/src/assets/voting-system.jpg",
+        image: VotingSystem,
         tools: [
           "C++",
           "OOP",
