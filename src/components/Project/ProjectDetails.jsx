@@ -29,7 +29,7 @@ const ProjectDetails = [
         projectName: "Local Service Finder (AI)",
         description:
           "An AI-powered web application that helps users find and compare local service providers using natural language queries. Features include a proprietary Neptune Score system, multi-source data integration, and real-time search capabilities.",
-        href: "https://local-service-finder.vercel.app",
+        href: "https://localfinder-flax.vercel.app/",
         tools: [
           "Next.js",
           "TypeScript",
