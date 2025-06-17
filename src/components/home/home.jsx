@@ -18,16 +18,15 @@ function Home() {
   const actionsRef = useRef(null);
   const imageRef = useRef(null);
 
-  // Handle CV download without page reload
-  const handleCvDownload = (e) => {
+  // Handle CV view without page reload - changed from download to view
+  const handleCvView = (e) => {
     e.preventDefault();
-    const link = document.createElement("a");
-    link.href =
-      "https://drive.google.com/uc?export=download&id=1X8rXQxPE-OAeEVwYY9q6N5xshZVy2w04";
-    link.download = "OseeMbiyaCV.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open CV in new tab for viewing instead of downloading
+    window.open(
+      "https://drive.google.com/file/d/1X8rXQxPE-OAeEVwYY9q6N5xshZVy2w04/view?usp=sharing",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   // References for sections with Intersection Observer
@@ -225,14 +224,15 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/uc?export=download&id=162lNCCTtt7sestas4gtt6Z3ot3y-2MLR"
-              download="Osee_Mbiya_CV.pdf"
+              href="https://drive.google.com/file/d/162lNCCTtt7sestas4gtt6Z3ot3y-2MLR/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="action-button primary-button"
-              aria-label="Download CV"
-              onClick={handleCvDownload}
+              aria-label="View CV"
+              onClick={handleCvView}
             >
-              <i className="fa-solid fa-download" aria-hidden="true"></i>
-              <span className="button-text">Download CV</span>
+              <i className="fa-solid fa-eye" aria-hidden="true"></i>
+              <span className="button-text">View CV</span>
             </a>
             <div className="social-links" aria-label="Social media links">
               <a
