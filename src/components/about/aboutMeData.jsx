@@ -12,7 +12,7 @@ const AboutMeDetails = [
         year: "2022-2025",
         course: "Bachelor Degree In Computer Science",
         institution: "Middlesex University",
-        gpa: "GPA: 4.0",
+        gpa: "GPA: First Class Honours",
         description:
           "Currently pursuing a Bachelor's degree in Computer Science with a focus on software development and artificial intelligence. Key areas of study include data structures, algorithms, machine learning, and web development. Actively participating in coding competitions and hackathons to enhance practical skills.",
       },
