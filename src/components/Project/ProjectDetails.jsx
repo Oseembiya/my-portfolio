@@ -17,8 +17,8 @@ const ProjectDetails = [
           "React",
           "CSS",
           "WebRTC",
-          "Monaco Editor",
           "Peers.js",
+          "Monaco Editor",
           "Responsive Design",
         ],
         codeLink:
@@ -72,11 +72,11 @@ const ProjectDetails = [
         image: CodeColabServer,
         tools: [
           "Node.js",
+          "Express",
+          "PeerJS",
           "WebSocket",
           "Firebase Admin",
           "Cloud Firestore",
-          "PeerJS",
-          "Express",
         ],
         codeLink:
           "https://github.com/Oseembiya/CodeColab_New/tree/main/backend",
@@ -94,7 +94,7 @@ const ProjectDetails = [
           "Express.js",
           "MongoDB",
           "RESTful API",
-          "AWS Elastic Beanstalk",
+          "AWS EC2",
           "Postman",
         ],
         codeLink: "https://github.com/oseembiya/Server",
