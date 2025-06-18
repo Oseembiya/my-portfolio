@@ -202,7 +202,7 @@ body.menu-open {
   color: #ffffff;
   text-decoration: none;
   font-size: 1.3rem;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
 }
 .logo .fullstops {
@@ -1825,16 +1825,11 @@ body.menu-open {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
-.projectItem_2336 .projectImage_2336 {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.projectItem_2336 .projectImage_2336 img {
+.projectItem_2336 img {
   width: 100%;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.5s ease;
   image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
   image-rendering: crisp-edges; /* Firefox */

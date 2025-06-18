@@ -100,11 +100,7 @@ export default function Project() {
   }, []);
 
   return (
-    <section
-      className="projectMain-2336"
-      id="projects"
-      aria-label="Projects"
-    >
+    <section className="projectMain-2336" id="projects" aria-label="Projects">
       <div className="project-container">
         <h2
           id="project-title"
@@ -160,21 +156,11 @@ export default function Project() {
                 key={index}
                 className={`projectItem_2336 animation-delay-${index + 1}`}
               >
-                <div className="projectImage_2336">
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.projectName} project`}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.projectName}
-                      loading="lazy"
-                      
-                    />
-                  </a>
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.projectName}
+                  loading="lazy"
+                />
                 <div className="projectDetails_2336">
                   <h3 className="project-title">{project.projectName}</h3>
                   <p className="project-description">

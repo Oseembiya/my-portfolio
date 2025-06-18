@@ -11,7 +11,7 @@ const ProjectDetails = [
         projectName: "CodeColab",
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
-        href: "https://codekolab.netlify.app/",
+
         image: CodeColab,
         tools: [
           "React",
@@ -29,7 +29,7 @@ const ProjectDetails = [
         projectName: "Local Service Finder (AI)",
         description:
           "An AI-powered web application that helps users find and compare local service providers using natural language queries. Features include a proprietary Neptune Score system, multi-source data integration, and real-time search capabilities.",
-        href: "https://localfinder-flax.vercel.app/",
+
         tools: [
           "Next.js",
           "TypeScript",
@@ -47,7 +47,7 @@ const ProjectDetails = [
         projectName: "ParentPay School Activities",
         description:
           "An interactive e-commerce platform for browsing and purchasing school activities and lessons.",
-        href: "https://oseembiya.github.io/Vue/",
+
         image: ParentPay,
         tools: [
           "Vue.js",
@@ -68,7 +68,7 @@ const ProjectDetails = [
         projectName: "CodeColab Server",
         description:
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
-        href: "https://codekolab.netlify.app/",
+
         image: CodeColabServer,
         tools: [
           "Node.js",
@@ -87,7 +87,7 @@ const ProjectDetails = [
         projectName: "ParentPay Server API",
         description:
           "RESTful API backend for the School Activities Portal, providing endpoints for lesson management, search functionality, and order processing with MongoDB integration.",
-        href: "https://vueappliaction-env.eba-qkd3evgp.eu-west-2.elasticbeanstalk.com/",
+
         image: "/src/assets/ProjectImage2.png",
         tools: [
           "Node.js",
@@ -105,7 +105,7 @@ const ProjectDetails = [
         projectName: "Database Management System",
         description:
           "A comprehensive database management system with data visualization features.",
-        href: "https://dbmanager.com",
+
         image: "/src/assets/businessMan.jpg",
         tools: ["Python", "SQL", "Data Visualization", "Flask"],
         codeLink: "https://github.com/oseembiya/db-manager",
@@ -120,7 +120,7 @@ const ProjectDetails = [
         projectName: "Secure Voting System",
         description:
           "A robust and secure voting system implemented in C++ with features like voter authentication, real-time vote counting, and data persistence. The system ensures one vote per voter and maintains election integrity through secure data management.",
-        href: "https://github.com/oseembiya/VotingSystem",
+
         image: VotingSystem,
         tools: [
           "C++",
@@ -141,7 +141,7 @@ const ProjectDetails = [
         projectName: "User Flow Optimization",
         description:
           "Improved user flows and journey maps for a fintech application, reducing friction points by 40%.",
-        href: "https://userflow.com",
+
         image: "/src/assets/userflow.jpg",
         tools: ["Figma", "User Research", "Prototyping", "A/B Testing"],
         codeLink: "https://github.com/oseembiya/ux-design",
@@ -151,7 +151,7 @@ const ProjectDetails = [
         projectName: "Interactive Wireframes",
         description:
           "High-fidelity interactive wireframes for a healthcare application with accessibility features.",
-        href: "https://wireframes.com",
+
         image: "/src/assets/wireframes.jpg",
         tools: ["Adobe XD", "Sketch", "UI Design", "Accessibility"],
         codeLink: "https://github.com/oseembiya/wireframes",
