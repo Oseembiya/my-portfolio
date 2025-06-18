@@ -34,7 +34,7 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
-  color: #00262b;
+  color: #000000;
   background-color: #ffffff;
 }
 
@@ -60,7 +60,7 @@ h5,
 h6 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
-  color: #00262b;
+  color: #000000;
   line-height: 1.2;
   margin-bottom: 0.6em;
 }
@@ -155,10 +155,10 @@ textarea:focus {
 }
 .navbar.section-about.scrolled .logo,
 .navbar.section-about.scrolled .nav-menu li a {
-  color: #00262b;
+  color: #000000;
 }
 .navbar.section-about.scrolled .hamburger span {
-  background-color: #00262b;
+  background-color: #000000;
 }
 .navbar.section-projects {
   background-color: transparent;
@@ -169,10 +169,10 @@ textarea:focus {
 }
 .navbar.section-projects.scrolled .logo,
 .navbar.section-projects.scrolled .nav-menu li a {
-  color: #00262b;
+  color: #000000;
 }
 .navbar.section-projects.scrolled .hamburger span {
-  background-color: #00262b;
+  background-color: #000000;
 }
 .navbar.section-contact {
   background-color: transparent;
@@ -369,7 +369,7 @@ body.menu-open {
     background-color: rgba(255, 255, 255, 0.95);
   }
   .navbar.section-about .nav-menu li a {
-    color: #00262b;
+    color: #000000;
   }
   .navbar.section-about .nav-menu li a:hover, .navbar.section-about .nav-menu li a.active {
     color: #d1472f;
@@ -378,7 +378,7 @@ body.menu-open {
     background-color: rgba(247, 249, 251, 0.95);
   }
   .navbar.section-projects .nav-menu li a {
-    color: #00262b;
+    color: #000000;
   }
   .navbar.section-projects .nav-menu li a:hover, .navbar.section-projects .nav-menu li a.active {
     color: #d1472f;
@@ -775,7 +775,7 @@ body.menu-open {
     cursor: pointer;
     font-size: 16px;
     font-weight: 400;
-    color: #00262b;
+    color: #000000;
     background-color: transparent;
     transition: all 0.2s ease, color 0.2s ease;
     position: relative; /* To position the underline */
@@ -821,7 +821,7 @@ body.menu-open {
 }
 .about-wrapper h2 {
   font-weight: 600;
-  color: #00262b;
+  color: #000000;
   position: relative;
   text-align: left;
   width: 100%;
@@ -894,7 +894,7 @@ body.menu-open {
 .aboutImg-2335 h2 {
   font-size: clamp(24px, 5vw, 32px);
   font-weight: 600;
-  color: #00262b;
+  color: #000000;
   text-align: left;
   position: relative;
 }
@@ -916,7 +916,7 @@ body.menu-open {
 .aboutImg-2335 p {
   font-size: clamp(14px, 2vw, 16px);
   line-height: 1.8;
-  color: #00262b;
+  color: #000000;
   text-align: left;
   margin-bottom: 2rem;
 }
@@ -947,7 +947,7 @@ body.menu-open {
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #00262b;
+  color: #000000;
   background-color: transparent;
   transition: all 0.3s ease;
 }
@@ -1313,12 +1313,12 @@ body.menu-open {
   }
 }
 .about-card h4 {
-  color: #00262b;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 .about-card .about-card-subtitle {
   font-size: clamp(14px, 3vw, 16px);
-  color: #00262b;
+  color: #000000;
   opacity: 0.8;
   margin-bottom: 0.5rem;
 }
@@ -1329,7 +1329,7 @@ body.menu-open {
 }
 .about-card p {
   font-size: clamp(14px, 3vw, 16px);
-  color: #00262b;
+  color: #000000;
   opacity: 0.8;
   margin-bottom: 1rem;
 }
@@ -1412,7 +1412,7 @@ body.menu-open {
 }
 .skills-showcase .skills-heading h3 {
   font-size: clamp(22px, 5vw, 28px);
-  color: #00262b;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 @media (max-width: 425px) {
@@ -1422,7 +1422,7 @@ body.menu-open {
 }
 .skills-showcase .skills-heading p {
   font-size: clamp(14px, 2vw, 16px);
-  color: #00262b;
+  color: #000000;
   opacity: 0.8;
 }
 .skills-showcase .skills-logos {
@@ -1501,7 +1501,7 @@ body.menu-open {
 }
 .skills-showcase .skill-logo span {
   font-size: clamp(0.8rem, 2.5vw, 0.95rem);
-  color: #00262b;
+  color: #000000;
   font-weight: 500;
   transition: all 0.3s ease;
   white-space: nowrap;
@@ -1584,20 +1584,20 @@ body.menu-open {
   overflow-y: hidden;
 }
 .modal-overlay .modal-content h3 {
-  color: #00262b;
+  color: #000000;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 .modal-overlay .modal-content h4 {
-  color: #00262b;
+  color: #000000;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   opacity: 0.8;
   font-weight: 500;
 }
 .modal-overlay .modal-content p {
-  color: #00262b;
+  color: #000000;
   line-height: 1.6;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -1610,7 +1610,7 @@ body.menu-open {
   background: none;
   border: none;
   font-size: 1.2rem;
-  color: #00262b;
+  color: #000000;
   cursor: pointer;
   padding: 0.5rem;
   transition: all 0.3s ease;
@@ -1667,7 +1667,7 @@ body.menu-open {
   flex-direction: column;
   align-items: center;
   background-color: #f7f9fb;
-  color: #00262b;
+  color: #000000;
   position: relative;
   overflow: hidden;
   text-align: left;
@@ -1702,7 +1702,7 @@ body.menu-open {
 .projectMain-2336 .section-title {
   font-size: clamp(28px, 6vw, 34px);
   font-weight: 600;
-  color: #00262b;
+  color: #000000;
   position: relative;
   margin-bottom: 3rem;
   text-align: left;
@@ -1761,8 +1761,8 @@ body.menu-open {
 }
 .showCase_2336 .slideButton-2336 {
   background: none;
-  border: 2px solid #00262b;
-  color: #00262b;
+  border: 2px solid #000000;
+  color: #000000;
   padding: 0.6rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
@@ -1781,7 +1781,7 @@ body.menu-open {
   background-color: rgba(0, 38, 43, 0.05);
 }
 .showCase_2336 .slideButton-2336.active {
-  background-color: #00262b;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -1832,7 +1832,7 @@ body.menu-open {
   image-rendering: crisp-edges; /* Firefox */
 }
 .projectItem_2336 .projectDetails_2336 {
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1840,12 +1840,12 @@ body.menu-open {
 .projectItem_2336 .projectDetails_2336 .project-title {
   font-size: clamp(18px, 4vw, 22px);
   font-weight: 600;
-  color: #00262b;
+  color: #000000;
   margin-bottom: 0.8rem;
 }
 .projectItem_2336 .projectDetails_2336 .project-description {
   font-size: clamp(14px, 3vw, 16px);
-  color: #00262b;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 1.2rem;
   flex: 1;
@@ -1870,7 +1870,7 @@ body.menu-open {
 }
 .projectItem_2336 .projectDetails_2336 .project-tools .tool-item {
   font-size: 0.8rem;
-  color: #00262b;
+  color: #000000;
   background-color: rgba(0, 38, 43, 0.05);
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
@@ -1918,8 +1918,8 @@ body.menu-open {
   font-size: 0.8rem;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-outline {
-  border: 1px solid #00262b;
-  color: #00262b;
+  border: 1px solid #000000;
+  color: #000000;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-outline:hover {
   background-color: rgba(0, 38, 43, 0.05);
