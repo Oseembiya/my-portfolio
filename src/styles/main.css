@@ -205,8 +205,8 @@ body.menu-open {
   font-weight: bold;
   cursor: pointer;
 }
-.logo .highlight {
-  color: #d1472f;
+.logo .fullstops {
+  color: #ffffff;
 }
 
 .nav-menu {
@@ -1857,6 +1857,12 @@ body.menu-open {
   line-height: 1.6;
   margin-bottom: 1.2rem;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .projectItem_2336 .projectDetails_2336 .project-tools {
   display: flex;
