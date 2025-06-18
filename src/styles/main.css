@@ -205,9 +205,6 @@ body.menu-open {
   font-weight: 500;
   cursor: pointer;
 }
-.logo .fullstops {
-  color: #ffffff;
-}
 
 .nav-menu {
   display: flex;
