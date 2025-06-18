@@ -137,7 +137,7 @@ function Navbar() {
     >
       <div className="nav-container">
         <a href="#home" className="logo">
-          <span className="highlight">Osee</span> Mbiya
+          OM<span className="fullstops">.</span>
         </a>
 
         <button
