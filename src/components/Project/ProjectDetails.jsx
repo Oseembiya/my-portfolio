@@ -32,12 +32,12 @@ const ProjectDetails = [
 
         tools: [
           "Next.js",
+          "React 19",
           "TypeScript",
           "Tailwind CSS",
-          "React 19",
-          "AI Integration",
+          "API ",
+          "AI",
           "Responsive Design",
-          "API Development",
         ],
         image: LocalServiceFinder,
         codeLink: "https://github.com/Oseembiya/localfinder.git",
