@@ -23,7 +23,7 @@ function Home() {
     e.preventDefault();
     // Open CV in new tab for viewing instead of downloading
     window.open(
-      "https://drive.google.com/file/d/1X8rXQxPE-OAeEVwYY9q6N5xshZVy2w04/view?usp=sharing",
+      "https://drive.google.com/file/d/1cXGHIpb1O8Ms2EMlFa-tn63HIyY-g4bo/view?usp=drive_link",
       "_blank",
       "noopener,noreferrer"
     );
