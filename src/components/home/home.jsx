@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useMemo } from "react";
-import Image from "/src/assets/ProfileHero.png";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -267,7 +266,6 @@ function Home() {
           <img
             ref={sectionRefs.image}
             data-section="image"
-            src={Image}
             alt="Osee Mbiya - Full Stack Developer"
             loading="eager"
           />
