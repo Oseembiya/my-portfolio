@@ -229,11 +229,11 @@ function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="action-button primary-button"
-              aria-label="View CV"
+              aria-label="Download my CV (PDF)"
               onClick={handleCvView}
             >
-              <i className="fa-solid fa-eye" aria-hidden="true"></i>
-              <span className="button-text">View CV</span>
+              <i className="fa-solid fa-download" aria-hidden="true"></i>
+              <span className="button-text">Download my CV</span>
             </a>
             <div className="social-links" aria-label="Social media links">
               <a

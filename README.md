@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-Welcome to my portfolio website – a dynamic showcase of my journey as a full-stack developer. Built with React and modern web technologies, this platform serves as both a professional portfolio and a testament to my technical capabilities. The site features a thoughtfully designed user interface that combines smooth animations, responsive layouts, and intuitive navigation to create an engaging user experience. Each section – from the animated hero landing page to the interactive project gallery – has been crafted to demonstrate my expertise in front-end development, while the contact form integration with EmailJS showcases my back-end knowledge.
+Welcome to my portfolio website – a dynamic showcase of my journey as a front-end developer. Built with React and modern web technologies, this platform serves as both a professional portfolio and a testament to my technical capabilities. The site features a thoughtfully designed user interface that combines smooth animations, responsive layouts, and intuitive navigation to create an engaging user experience. Each section – from the animated hero landing page to the interactive project gallery – has been crafted to demonstrate my expertise in front-end development, while the contact form integration with EmailJS showcases my back-end knowledge.
 
 ## 🌟 Live Demo
 
