@@ -32,16 +32,20 @@ const AboutMeDetails = [
       {
         year: "2025",
         course: "Individual Project / CodeColab",
-        gpa: "",
+        institution: "Middlesex University",
         description:
           "Developed CodeColab, a collaborative coding platform that enables real-time code sharing and pair programming. Implemented features like syntax highlighting, version control integration, and real-time collaboration using WebSocket technology. Built with React, Node.js, and MongoDB.",
       },
       {
         year: "2024",
-        course: "Group Project",
-        gpa: "",
+        course: "Group Project/Data Science & AI",
+        institution: "Middlesex University",
         description:
-          "Led a team of 4 developers in creating a full-stack e-commerce platform. Implemented features including user authentication, product management, shopping cart functionality, and payment integration. Utilized React for frontend, Node.js for backend, and MongoDB for database management.",
+          "As part of a three-member team, I actively contributed to a comprehensive AI project solving a real-world problem using deep learning and data science. My responsibilities included:\n\n" +
+          "• Data Collection & Preprocessing: Identified and gathered relevant datasets, cleaned and preprocessed data (handling missing values, encoding, normalization), and performed exploratory data analysis (EDA) using Python (Pandas, Matplotlib, Seaborn).\n" +
+          "• Model Development & Evaluation: Built and evaluated machine learning and deep learning models with TensorFlow and Keras, experimented with neural network architectures (CNNs/LSTMs), tuned hyperparameters, and assessed performance using metrics like accuracy, precision, recall, F1-score, and confusion matrix.\n" +
+          "• Ethical & EDI Considerations: Analyzed ethical risks (bias, transparency, explainability) and ensured alignment with Equality, Diversity, and Inclusion (EDI) principles by reviewing and mitigating potential biases.\n" +
+          "• Documentation & Communication: Co-authored the final report (methodology, results, ethics), created data visualizations, and presented outcomes during lab milestones, contributing to group discussions and decisions.",
       },
     ],
   },
