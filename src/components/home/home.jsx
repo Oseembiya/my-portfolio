@@ -47,9 +47,9 @@ function Home() {
 
   const getResponsiveDescription = () => {
     if (isMediumOrLarger) {
-      return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions. My goal is to develop scalable applications that solve real-world problems through innovative technologies and thoughtful architecture.";
+      return "I build responsive, user-focused websites using React, JavaScript, HTML, and CSS. I also have experience with Node.js and MongoDB for full-stack development.";
     }
-    return "I bridge front-end aesthetics with back-end functionality to build comprehensive web solutions.";
+    return "I build responsive, user-focused websites using React, JavaScript, HTML, and CSS. I also have experience with Node.js and MongoDB for full-stack development.";
   };
 
   useEffect(() => {
@@ -208,8 +208,10 @@ function Home() {
               ref={sectionRefs.description2}
               data-section="description2"
             >
-              Ready to take your project to the next level? Let&apos;s work
-              together to create something extraordinary.
+              My goal is to grow as a developer by solving real-world problems
+              through clean code and continuous learning. I&apos;m actively
+              looking for a junior developer role where I can contribute to a
+              collaborative team.
             </p>
           )}
 
@@ -266,7 +268,7 @@ function Home() {
           <img
             ref={sectionRefs.image}
             data-section="image"
-            alt="Osee Mbiya - Full Stack Developer"
+            alt="Osee Mbiya - Junior Frontend Developer"
             loading="eager"
           />
         </div>
