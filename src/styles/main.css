@@ -580,6 +580,7 @@ body.menu-open {
 .action-button.primary-button:hover {
   background-color: #a83825;
   border-color: #a83825;
+  transform: translateY(-3px);
 }
 
 .social-links {
