@@ -143,6 +143,11 @@
     background-color: $color-text-random;
     color: $color-text-secondary;
     border: 2px solid $color-text-random;
+
+    &:hover {
+      background-color: darken($color-text-random, 10%);
+      border-color: darken($color-text-random, 10%);
+    }
   }
 }
 

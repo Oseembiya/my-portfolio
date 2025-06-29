@@ -157,9 +157,10 @@ body.menu-open {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: none;
+  transition: all 0.3s ease;
   user-select: none;
   text-decoration: none !important;
+  border: 1px solid $color-text-random;
 
   &::after {
     display: none !important;
@@ -168,6 +169,11 @@ body.menu-open {
   &:hover::after {
     display: none !important;
     width: 0 !important;
+  }
+
+  &:hover {
+    background-color: darken($color-text-random, 10%);
+    border-color: darken($color-text-random, 10%);
   }
 
   i {
