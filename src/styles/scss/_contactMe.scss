@@ -362,26 +362,6 @@
         align-self: center;
       }
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: darken($color-text-random, 15%);
-        transition: all 0.3s ease;
-        z-index: -1;
-      }
-
-      &:hover {
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-
-        &::before {
-          width: 100%;
-        }
-      }
-
       &:active {
         transform: translateY(-2px);
       }

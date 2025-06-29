@@ -218,7 +218,7 @@ body.menu-open {
   display: flex;
   align-items: center;
 }
-.nav-menu li a {
+.nav-menu li a:not(.cta-button) {
   color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
@@ -226,7 +226,7 @@ body.menu-open {
   cursor: pointer;
   position: relative;
 }
-.nav-menu li a::after {
+.nav-menu li a:not(.cta-button)::after {
   content: "";
   position: absolute;
   bottom: -5px;
@@ -235,35 +235,41 @@ body.menu-open {
   height: 2px;
   background: #d1472f;
 }
-.nav-menu li a:hover, .nav-menu li a.active {
+.nav-menu li a:not(.cta-button):hover, .nav-menu li a:not(.cta-button).active {
   color: #d1472f;
 }
-.nav-menu li a:hover::after, .nav-menu li a.active::after {
+.nav-menu li a:not(.cta-button):hover::after, .nav-menu li a:not(.cta-button).active::after {
   width: 100%;
 }
 
 .cta-button {
   background-color: #d1472f;
-  color: #ffffff;
+  color: #ffffff !important;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
   position: relative;
-  overflow: hidden;
   z-index: 1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-decoration: none !important;
+}
+.cta-button::after {
+  display: none !important;
+}
+.cta-button:hover::after {
+  display: none !important;
+  width: 0 !important;
 }
 .cta-button i {
   font-size: 0.9rem;
-}
-.cta-button:hover {
-  color: white;
-  background-color: #933121;
 }
 
 /* Mobile menu styling */
@@ -360,6 +366,13 @@ body.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .nav-menu.open li a.cta-button::after {
+    display: none !important;
+  }
+  .nav-menu.open li a.cta-button:hover::after {
+    display: none !important;
+    width: 0 !important;
   }
   /* Section-specific mobile menu styles */
   .navbar.section-home .nav-menu {
@@ -558,11 +571,6 @@ body.menu-open {
   background-color: #d1472f;
   color: #ffffff;
   border: 2px solid #d1472f;
-}
-.action-button.primary-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(209, 71, 47, 0.3);
-  background-color: transparent;
 }
 
 .social-links {
@@ -1357,17 +1365,9 @@ body.menu-open {
 .about-card .card-footer {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-}
-.about-card .gpa {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #444;
-  padding: 0.2rem 0.5rem;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
 }
 .about-card .learnMore {
   padding: 0.2rem 0.5rem;
@@ -2574,23 +2574,6 @@ body.menu-open {
     width: 100%;
     align-self: center;
   }
-}
-.contactMe-2338 .contactForm-2338 .submitButton-2338::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #933121;
-  transition: all 0.3s ease;
-  z-index: -1;
-}
-.contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-.contactMe-2338 .contactForm-2338 .submitButton-2338:hover::before {
-  width: 100%;
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
