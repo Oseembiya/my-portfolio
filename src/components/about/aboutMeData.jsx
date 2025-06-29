@@ -12,7 +12,6 @@ const AboutMeDetails = [
         year: "2022-2025",
         course: "Bachelor Degree In Computer Science",
         institution: "Middlesex University",
-        gpa: "GPA: First Class",
         description:
           "Currently pursuing a Bachelor's degree in Computer Science with a focus on software development and artificial intelligence. Key areas of study include data structures, algorithms, machine learning, and web development. Actively participating in coding competitions and hackathons to enhance practical skills.",
       },
@@ -20,7 +19,6 @@ const AboutMeDetails = [
         year: "2020-2022",
         course: "BTEC Level 3 In Information Technology",
         institution: "Newham College of Further Education",
-        gpa: "Grade: Distinction",
         description:
           "Completed BTEC Level 3 with distinction, covering fundamental IT concepts, programming basics, and system architecture. Developed strong foundation in problem-solving and technical documentation. Participated in various IT projects and gained hands-on experience with industry-standard tools.",
       },

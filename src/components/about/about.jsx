@@ -369,7 +369,6 @@ export default function About() {
               year={detail.year}
               course={detail.course}
               institution={detail.institution}
-              gpa={detail.gpa}
               onLearnMore={() => handleLearnMore(detail)}
             />
           ))}

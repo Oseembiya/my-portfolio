@@ -20,7 +20,7 @@ function Home() {
   // Handle CV view without page reload - changed from download to view
   const handleCvView = (e) => {
     e.preventDefault();
-    // Open CV in new tab for viewing instead of downloading
+    // Open CV in new tab
     window.open(
       "https://drive.google.com/file/d/1cXGHIpb1O8Ms2EMlFa-tn63HIyY-g4bo/view?usp=drive_link",
       "_blank",
@@ -210,7 +210,7 @@ function Home() {
             >
               My goal is to grow as a developer by solving real-world problems
               through clean code and continuous learning. I&apos;m actively
-              looking for a junior developer role where I can contribute to a
+              looking for a developer role where I can contribute to a
               collaborative team.
             </p>
           )}
@@ -268,7 +268,7 @@ function Home() {
           <img
             ref={sectionRefs.image}
             data-section="image"
-            alt="Osee Mbiya - Junior Frontend Developer"
+            alt="Osee Mbiya - Frontend Developer"
             loading="eager"
           />
         </div>
