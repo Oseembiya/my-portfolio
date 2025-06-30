@@ -22,7 +22,7 @@ function Home() {
     e.preventDefault();
     // Open CV in new tab
     window.open(
-      "https://drive.google.com/file/d/1cXGHIpb1O8Ms2EMlFa-tn63HIyY-g4bo/view?usp=drive_link",
+      "https://drive.google.com/file/d/1bli8J7mitssHadl3QGGbdL83jOohqCxx/view?usp=sharing",
       "_blank",
       "noopener,noreferrer"
     );
