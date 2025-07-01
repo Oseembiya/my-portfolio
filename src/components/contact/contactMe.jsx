@@ -216,6 +216,15 @@ export default function Contact() {
                   </a>
                 </div>
               </div>
+
+              {/* Add signature at the bottom of contactInfo-2338 */}
+              <div className="signature-section">
+                <div className="signature-content">
+                  <p>Best regards,</p>
+                  <h4 className="signature-name">Osee Mbiya</h4>
+                  <p className="signature-title"> Front-End Developer</p>
+                </div>
+              </div>
             </div>
           </div>
 
