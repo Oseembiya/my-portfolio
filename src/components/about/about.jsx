@@ -21,13 +21,12 @@ CategoryButton.propTypes = {
 };
 
 // Detail card component
-const DetailCard = ({ year, course, institution, gpa, onLearnMore }) => (
+const DetailCard = ({ year, course, institution, onLearnMore }) => (
   <div className="about-card">
     <h4>{year}</h4>
     <p className="about-card-subtitle">{course}</p>
     {institution && <p className="about-card-institution">{institution}</p>}
     <div className="card-footer">
-      <span className="gpa">{gpa}</span>
       <LearnMore onClick={onLearnMore} />
     </div>
   </div>
@@ -37,7 +36,6 @@ DetailCard.propTypes = {
   year: PropTypes.string.isRequired,
   course: PropTypes.string.isRequired,
   institution: PropTypes.string,
-  gpa: PropTypes.string.isRequired,
   onLearnMore: PropTypes.func.isRequired,
 };
 
