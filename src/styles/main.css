@@ -249,7 +249,7 @@ body.menu-open {
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: normal;
   position: relative;
   z-index: 1;
   display: flex;
@@ -2732,11 +2732,16 @@ body.menu-open {
 }
 .signature-section .signature-content .signature-name {
   font-family: "Palace Script MT", cursive;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: normal;
   margin: 0.5rem 0;
   color: #d1472f;
   line-height: 1.2;
+}
+@media (max-width: 425px) {
+  .signature-section .signature-content .signature-name {
+    font-size: 1.5rem;
+  }
 }
 .signature-section .signature-content .signature-title {
   font-size: 0.95rem;
