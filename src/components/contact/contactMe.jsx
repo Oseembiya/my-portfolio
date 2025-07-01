@@ -221,7 +221,7 @@ export default function Contact() {
               <div className="signature-section">
                 <div className="signature-content">
                   <p>Best regards,</p>
-                  <h4 className="signature-name">Osee Mbiya</h4>
+                  <h4 className="signature-name">O.Mbiya</h4>
                   <p className="signature-title"> Front-End Developer</p>
                 </div>
               </div>
