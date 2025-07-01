@@ -2424,14 +2424,14 @@ body.menu-open {
   flex: 1.5;
 }
 .contactMe-2338 .contactContent-2338 p {
-  font-size: clamp(14px, 3vw, 16px);
   line-height: 1.6;
   color: #ffffff;
-  width: 100%;
+  width: 60%;
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 p {
     margin-bottom: 1rem;
+    width: 100%;
   }
 }
 .contactMe-2338 .contactContent-2338 .thankYouMessage {
@@ -2718,4 +2718,29 @@ body.menu-open {
   .contactMe-2338 .contactForm-2338 .submitButton-2338 .loading i {
     animation: none !important;
   }
+}
+.signature-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+.signature-section .signature-content p {
+  margin: 0.2rem 0;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+}
+.signature-section .signature-content .signature-name {
+  font-family: "Palace Script MT", cursive;
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin: 0.5rem 0;
+  color: #d1472f;
+  line-height: 1.2;
+}
+.signature-section .signature-content .signature-title {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  font-weight: 300;
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
