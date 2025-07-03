@@ -1,15 +1,11 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const homeRef = useRef(null);
 
-  const MOBILE_BREAKPOINT = 768;
-  const MEDIUM_BREAKPOINT = 992;
-  const ANIMATION_DELAY = 500; // Slower initial animation delay
-
-  // Create refs outside
+  // Create refs for animation sections
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const description1Ref = useRef(null);
@@ -17,10 +13,9 @@ function Home() {
   const actionsRef = useRef(null);
   const imageRef = useRef(null);
 
-  // Handle CV view without page reload - changed from download to view
+  // Handle CV view
   const handleCvView = (e) => {
     e.preventDefault();
-    // Open CV in new tab
     window.open(
       "https://drive.google.com/file/d/1bli8J7mitssHadl3QGGbdL83jOohqCxx/view?usp=sharing",
       "_blank",
@@ -28,29 +23,18 @@ function Home() {
     );
   };
 
-  // References for sections with Intersection Observer
-  const sectionRefs = useMemo(
-    () => ({
-      title: titleRef,
-      subtitle: subtitleRef,
-      description1: description1Ref,
-      description2: description2Ref,
-      actions: actionsRef,
-      image: imageRef,
-    }),
-    []
-  );
-
-  // Adjust text display for different screen sizes
-  const isMobile = windowWidth <= MOBILE_BREAKPOINT;
-  const isMediumOrLarger = windowWidth >= MEDIUM_BREAKPOINT;
-
-  const getResponsiveDescription = () => {
-    if (isMediumOrLarger) {
-      return "I build responsive, user-focused websites using React, JavaScript, HTML, and CSS. I also have experience with Node.js and MongoDB for full-stack development.";
-    }
-    return "I build responsive, user-focused websites using React, JavaScript, HTML, and CSS. I also have experience with Node.js and MongoDB for full-stack development.";
+  // Section refs for intersection observer
+  const sectionRefs = {
+    title: titleRef,
+    subtitle: subtitleRef,
+    description1: description1Ref,
+    description2: description2Ref,
+    actions: actionsRef,
+    image: imageRef,
   };
+
+  // Check if device is mobile
+  const isMobile = windowWidth <= 768;
 
   useEffect(() => {
     // Track window resize for responsive adjustments
@@ -60,8 +44,8 @@ function Home() {
 
     window.addEventListener("resize", handleResize);
 
-    // Set initial animation when component mounts
-    setTimeout(() => {
+    // Initial animation trigger
+    const timer = setTimeout(() => {
       setVisibleSections({
         title: true,
         subtitle: true,
@@ -70,9 +54,9 @@ function Home() {
         actions: true,
         image: true,
       });
-    }, ANIMATION_DELAY);
+    }, 500);
 
-    // Add scroll animation effect
+    // Intersection Observer for scroll animations
     const observerOptions = {
       root: null,
       rootMargin: "0px",
@@ -102,63 +86,16 @@ function Home() {
       }
     });
 
-    // Add mobile touch interactions
-    if (isMobile) {
-      const handleTouchStart = (e) => {
-        // Add subtle touch feedback
-        e.currentTarget.style.transform = "scale(0.98)";
-        e.currentTarget.style.transition = "transform 0.1s ease-out";
-      };
-
-      const handleTouchEnd = (e) => {
-        // Return to normal state
-        e.currentTarget.style.transform = "scale(1)";
-      };
-
-      // Apply to interactive elements
-      const interactiveElements = document.querySelectorAll(
-        ".action-button, .social-link"
-      );
-      interactiveElements.forEach((element) => {
-        element.addEventListener("touchstart", handleTouchStart, {
-          passive: true,
-        });
-        element.addEventListener("touchend", handleTouchEnd, { passive: true });
-        element.addEventListener("touchcancel", handleTouchEnd, {
-          passive: true,
-        });
-      });
-
-      return () => {
-        // Cleanup event listeners
-        window.removeEventListener("resize", handleResize);
-
-        Object.values(sectionRefs).forEach((ref) => {
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
-        });
-
-        // Cleanup touch listeners
-        interactiveElements.forEach((element) => {
-          element.removeEventListener("touchstart", handleTouchStart);
-          element.removeEventListener("touchend", handleTouchEnd);
-          element.removeEventListener("touchcancel", handleTouchEnd);
-        });
-      };
-    }
-
     return () => {
-      // Cleanup event listeners
+      clearTimeout(timer);
       window.removeEventListener("resize", handleResize);
-
       Object.values(sectionRefs).forEach((ref) => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
       });
     };
-  }, [sectionRefs, isMobile]);
+  }, [sectionRefs]);
 
   return (
     <section
@@ -197,7 +134,9 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            {getResponsiveDescription()}
+            I build responsive, user-focused websites using React, JavaScript,
+            HTML, and CSS. I also have experience with Node.js and MongoDB for
+            full-stack development.
           </p>
 
           {!isMobile && (
