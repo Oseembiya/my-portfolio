@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from "react";
+import heroImage from "../../assets/heroImage.jpg";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -36,8 +37,8 @@ function Home() {
     []
   );
 
-  // Check if device is mobile
-  const isMobile = windowWidth <= 768;
+  // Check if device is mobile - match CSS breakpoint
+  const isMobile = windowWidth <= 425; // Changed from 768 to 425
 
   useEffect(() => {
     // Track window resize for responsive adjustments
@@ -142,20 +143,18 @@ function Home() {
             full-stack development.
           </p>
 
-          {!isMobile && (
-            <p
-              className={`fade-in-section animation-delay-3 ${
-                visibleSections.description2 ? "is-visible" : ""
-              }`}
-              ref={sectionRefs.description2}
-              data-section="description2"
-            >
-              My goal is to grow as a developer by solving real-world problems
-              through clean code and continuous learning. I&apos;m actively
-              looking for a developer role where I can contribute to a
-              collaborative team.
-            </p>
-          )}
+          <p
+            className={`fade-in-section animation-delay-3 ${
+              visibleSections.description2 ? "is-visible" : ""
+            }`}
+            ref={sectionRefs.description2}
+            data-section="description2"
+          >
+            My goal is to grow as a developer by solving real-world problems
+            through clean code and continuous learning. I&apos;m actively
+            looking for a developer role where I can contribute to a
+            collaborative team.
+          </p>
 
           <div
             className={`hero-actions fade-in-section animation-delay-4 ${
@@ -212,6 +211,7 @@ function Home() {
             data-section="image"
             alt="Osee Mbiya - Frontend Developer"
             loading="eager"
+            src={heroImage}
           />
         </div>
       </div>
