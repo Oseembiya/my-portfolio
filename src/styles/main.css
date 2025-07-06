@@ -480,7 +480,7 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-text {
-    width: 69%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
   }
@@ -526,11 +526,31 @@ body.menu-open {
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .hero-text p {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 }
 @media (max-width: 425px) {
   .hero-text p {
     font-size: clamp(14px, 4vw, clamp(14px, 1.8vw, 16px));
     margin-bottom: 1rem;
+    width: 100% !important;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-text p:nth-of-type(2) {
+    display: none;
   }
 }
 
