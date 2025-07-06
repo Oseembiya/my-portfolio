@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -17,21 +17,24 @@ function Home() {
   const handleCvView = (e) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/1bli8J7mitssHadl3QGGbdL83jOohqCxx/view?usp=sharing",
+      "https://drive.google.com/file/d/1rLF2WypTbTzDD6WKrraRtIvXR4w9zfKY/view?usp=drive_link",
       "_blank",
       "noopener,noreferrer"
     );
   };
 
   // Section refs for intersection observer
-  const sectionRefs = {
-    title: titleRef,
-    subtitle: subtitleRef,
-    description1: description1Ref,
-    description2: description2Ref,
-    actions: actionsRef,
-    image: imageRef,
-  };
+  const sectionRefs = useMemo(
+    () => ({
+      title: titleRef,
+      subtitle: subtitleRef,
+      description1: description1Ref,
+      description2: description2Ref,
+      actions: actionsRef,
+      image: imageRef,
+    }),
+    []
+  );
 
   // Check if device is mobile
   const isMobile = windowWidth <= 768;
@@ -164,7 +167,7 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/file/d/162lNCCTtt7sestas4gtt6Z3ot3y-2MLR/view?usp=sharing"
+              href="https://drive.google.com/file/d/1rLF2WypTbTzDD6WKrraRtIvXR4w9zfKY/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="action-button primary-button"
