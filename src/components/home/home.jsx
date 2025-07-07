@@ -3,7 +3,6 @@ import heroImage from "../../assets/heroImage.jpg";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const homeRef = useRef(null);
 
   // Create refs for animation sections
@@ -37,13 +36,10 @@ function Home() {
     []
   );
 
-  // Check if device is mobile - match CSS breakpoint
-  const isMobile = windowWidth <= 425; // Changed from 768 to 425
-
   useEffect(() => {
     // Track window resize for responsive adjustments
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      // Window resize handling if needed in the future
     };
 
     window.addEventListener("resize", handleResize);
