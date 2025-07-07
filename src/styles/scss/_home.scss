@@ -33,6 +33,7 @@
   // Mobile adjustments
   @include media-query("md", "max") {
     align-items: flex-start;
+    height: auto;
   }
 }
 
@@ -111,27 +112,21 @@
     margin-bottom: 1.5rem;
     color: rgba($color-text-secondary, 0.9);
 
-    // Default styles for all screens
-    width: 100%;
-    text-align: left;
-
-    // Medium screens and above (768px+)
-    @include media-query("md") {
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
     // Small screens only (425px and below)
-    @include media-query("sm", "max") {
+    @include media-query("sm") {
       font-size: clamp(14px, 4vw, $p-font-size-responsive);
       margin-bottom: 1rem;
-      width: 100% !important;
       text-align: left;
-      margin-left: 0;
-      margin-right: 0;
-      max-width: 100%;
+      width: 100%;
+    }
+    // Medium screens and above (768px+)
+    @include media-query("md", "min") {
+      width: 100%;
+      text-align: center;
+      padding: 0 1rem !important;
+    }
+    @include media-query("lg", "min") {
+      text-align: left;
     }
 
     // Hide second paragraph on small and medium screens
