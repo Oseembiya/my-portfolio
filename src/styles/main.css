@@ -2456,7 +2456,11 @@ body.menu-open {
 .contactMe-2338 .contactContent-2338 p {
   line-height: 1.6;
   color: #ffffff;
-  width: 60%;
+}
+@media (min-width: 768px) {
+  .contactMe-2338 .contactContent-2338 p {
+    width: 80%;
+  }
 }
 @media (max-width: 425px) {
   .contactMe-2338 .contactContent-2338 p {
