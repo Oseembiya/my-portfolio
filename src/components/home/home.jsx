@@ -197,19 +197,16 @@ function Home() {
           </div>
         </article>
 
-        <div
-          className={`hero-image slide-in-right ${
+        <img
+          ref={sectionRefs.image}
+          data-section="image"
+          alt="Osee Mbiya - Frontend Developer"
+          loading="eager"
+          src={heroImage}
+          className={`slide-in-right ${
             visibleSections.image ? "is-visible" : ""
           }`}
-        >
-          <img
-            ref={sectionRefs.image}
-            data-section="image"
-            alt="Osee Mbiya - Frontend Developer"
-            loading="eager"
-            src={heroImage}
-          />
-        </div>
+        />
       </div>
     </section>
   );
