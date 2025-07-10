@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState, useMemo } from "react";
-import heroImage from "../../assets/heroImage.jpg";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -196,17 +195,6 @@ function Home() {
             </div>
           </div>
         </article>
-
-        <img
-          ref={sectionRefs.image}
-          data-section="image"
-          alt="Osee Mbiya - Frontend Developer"
-          loading="eager"
-          src={heroImage}
-          className={`slide-in-right ${
-            visibleSections.image ? "is-visible" : ""
-          }`}
-        />
       </div>
     </section>
   );
