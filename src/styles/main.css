@@ -449,7 +449,6 @@ body.menu-open {
 @media (max-width: 768px) {
   .hero-section {
     align-items: flex-start;
-    height: auto;
   }
 }
 
@@ -539,10 +538,9 @@ body.menu-open {
     width: 100%;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .hero-text p {
     width: 100%;
-    max-width: 80%;
   }
 }
 @media (min-width: 992px) {

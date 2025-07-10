@@ -33,7 +33,6 @@
   // Mobile adjustments
   @include media-query("md", "max") {
     align-items: flex-start;
-    height: auto;
   }
 }
 
@@ -123,9 +122,8 @@
       width: 100%;
     }
     // Medium screens (425px to 768px)
-    @media (min-width: 425px) and (max-width: 768px) {
+    @include media-query("md") {
       width: 100%;
-      max-width: 80%;
     }
     @include media-query("lg", "min") {
       text-align: left;
