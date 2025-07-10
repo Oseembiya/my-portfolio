@@ -125,6 +125,7 @@
     // Medium screens and above (768px+)
     @include media-query("md", "min") {
       width: 100%;
+      max-width: 80%;
     }
     @include media-query("lg", "min") {
       text-align: left;
