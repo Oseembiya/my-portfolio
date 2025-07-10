@@ -122,8 +122,8 @@
       text-align: left;
       width: 100%;
     }
-    // Medium screens and above (768px+)
-    @include media-query("md", "min") {
+    // Medium screens (425px to 768px)
+    @media (min-width: 425px) and (max-width: 768px) {
       width: 100%;
       max-width: 80%;
     }
