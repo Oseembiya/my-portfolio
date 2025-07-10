@@ -60,7 +60,7 @@
   text-align: left;
 
   @include media-query("lg", "max") {
-    max-width: 100%;
+    width: 100%;
   }
 
   @include media-query("md") {
