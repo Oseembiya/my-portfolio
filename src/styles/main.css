@@ -481,13 +481,16 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-text {
+    flex: none;
+    max-width: none;
     width: 100%;
-    margin: 0 auto;
     text-align: center;
   }
 }
 @media (max-width: 425px) {
   .hero-text {
+    flex: none;
+    max-width: none;
     width: 100%;
     text-align: left;
   }

@@ -64,12 +64,15 @@
   }
 
   @include media-query("md") {
+    flex: none;
+    max-width: none;
     width: 100%;
-    margin: 0 auto;
     text-align: center;
   }
 
   @include media-query("sm") {
+    flex: none;
+    max-width: none;
     width: 100%;
     text-align: left;
   }
