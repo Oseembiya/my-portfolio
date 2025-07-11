@@ -122,7 +122,8 @@ function Home() {
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Front-End <span className="accent-text">Developer</span>
+              Frontend & <span className="accent-text">Full-Stack</span>{" "}
+              Developer
             </h2>
           </header>
 
@@ -133,9 +134,9 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            I build responsive, user-focused websites using React, JavaScript,
-            HTML, and CSS. I also have experience with Node.js and MongoDB for
-            full-stack development.
+            I create responsive, user-focused web applications with React,
+            JavaScript, HTML, and CSS and bring full-stack skills with Node.js
+            and MongoDB.
           </p>
 
           <p
@@ -145,10 +146,10 @@ function Home() {
             ref={sectionRefs.description2}
             data-section="description2"
           >
-            My goal is to grow as a developer by solving real-world problems
-            through clean code and continuous learning. I&apos;m actively
-            looking for a developer role where I can contribute to a
-            collaborative team.
+            Passionate about solving real-world problems through clean,
+            maintainable code and continuous learning. Currently seeking
+            developer roles to contribute to impactful projects and grow within
+            collaborative teams.
           </p>
 
           <div

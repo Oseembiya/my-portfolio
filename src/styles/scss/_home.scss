@@ -93,13 +93,13 @@
   }
 
   h2 {
-    font-size: $h2-font-size;
+    font-size: calc($h2-font-size * 0.9);
     font-weight: 600;
     margin-bottom: 1rem;
     color: $color-text-secondary;
 
     @include media-query("sm") {
-      font-size: clamp(20px, 6vw, $h2-font-size);
+      font-size: clamp(18px, 5.5vw, calc($h2-font-size * 0.9));
       margin-bottom: 0.5rem;
     }
 

@@ -510,14 +510,14 @@ body.menu-open {
   color: #d1472f;
 }
 .hero-text h2 {
-  font-size: clamp(30px, 6vw, 60px);
+  font-size: calc(clamp(30px, 6vw, 60px) * 0.9);
   font-weight: 600;
   margin-bottom: 1rem;
   color: #ffffff;
 }
 @media (max-width: 425px) {
   .hero-text h2 {
-    font-size: clamp(20px, 6vw, clamp(30px, 6vw, 60px));
+    font-size: clamp(18px, 5.5vw, clamp(30px, 6vw, 60px) * 0.9);
     margin-bottom: 0.5rem;
   }
 }
