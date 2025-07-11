@@ -122,7 +122,7 @@ function Home() {
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Frontend & <span className="accent-text">Full-Stack</span>{" "}
+              Frontend & <span className="accent-text">Full-Stack</span>
               Developer
             </h2>
           </header>
