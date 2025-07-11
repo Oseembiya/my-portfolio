@@ -77,14 +77,14 @@
   }
 
   h1 {
-    font-size: $h1-font-size;
+    font-size: calc($h1-font-size * 0.9);
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.2;
     color: $color-text-secondary;
 
     @include media-query("sm") {
-      font-size: clamp(28px, 8vw, $h1-font-size);
+      font-size: clamp(25px, 7vw, calc($h1-font-size * 0.9));
     }
 
     .accent-text {
@@ -93,18 +93,35 @@
   }
 
   h2 {
-    font-size: calc($h2-font-size * 0.9);
+    font-size: calc($h2-font-size * 0.85);
     font-weight: 600;
     margin-bottom: 1rem;
     color: $color-text-secondary;
+    white-space: nowrap;
 
     @include media-query("sm") {
-      font-size: clamp(18px, 5.5vw, calc($h2-font-size * 0.9));
+      font-size: clamp(17px, 5.2vw, calc($h2-font-size * 0.85));
       margin-bottom: 0.5rem;
     }
 
     .accent-text {
       color: $color-text-random;
+    }
+
+    .desktop-text {
+      display: inline;
+
+      @include media-query("lg", "max") {
+        display: none;
+      }
+    }
+
+    .mobile-text {
+      display: none;
+
+      @include media-query("lg", "max") {
+        display: inline;
+      }
     }
   }
 

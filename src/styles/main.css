@@ -495,7 +495,7 @@ body.menu-open {
   }
 }
 .hero-text h1 {
-  font-size: clamp(36px, 7vw, 68px);
+  font-size: calc(clamp(36px, 7vw, 68px) * 0.9);
   font-weight: 700;
   margin-bottom: 0.5rem;
   line-height: 1.2;
@@ -503,26 +503,43 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .hero-text h1 {
-    font-size: clamp(28px, 8vw, clamp(36px, 7vw, 68px));
+    font-size: clamp(25px, 7vw, clamp(36px, 7vw, 68px) * 0.9);
   }
 }
 .hero-text h1 .accent-text {
   color: #d1472f;
 }
 .hero-text h2 {
-  font-size: calc(clamp(30px, 6vw, 60px) * 0.9);
+  font-size: calc(clamp(30px, 6vw, 60px) * 0.85);
   font-weight: 600;
   margin-bottom: 1rem;
   color: #ffffff;
+  white-space: nowrap;
 }
 @media (max-width: 425px) {
   .hero-text h2 {
-    font-size: clamp(18px, 5.5vw, clamp(30px, 6vw, 60px) * 0.9);
+    font-size: clamp(17px, 5.2vw, clamp(30px, 6vw, 60px) * 0.85);
     margin-bottom: 0.5rem;
   }
 }
 .hero-text h2 .accent-text {
   color: #d1472f;
+}
+.hero-text h2 .desktop-text {
+  display: inline;
+}
+@media (max-width: 992px) {
+  .hero-text h2 .desktop-text {
+    display: none;
+  }
+}
+.hero-text h2 .mobile-text {
+  display: none;
+}
+@media (max-width: 992px) {
+  .hero-text h2 .mobile-text {
+    display: inline;
+  }
 }
 .hero-text p {
   font-size: clamp(14px, 1.8vw, 16px);
