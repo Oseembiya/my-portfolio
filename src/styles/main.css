@@ -482,6 +482,8 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-text {
+    max-width: none;
+    width: 100%;
     text-align: center;
   }
 }

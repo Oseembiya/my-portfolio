@@ -65,6 +65,8 @@
   z-index: 2;
 
   @include media-query("md", "max") {
+    max-width: none;
+    width: 100%;
     text-align: center;
   }
 

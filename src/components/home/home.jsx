@@ -148,9 +148,8 @@ function Home() {
             data-section="description2"
           >
             Passionate about solving real-world problems through clean,
-            maintainable code and continuous learning. Currently seeking
-            developer roles to contribute to impactful projects and grow within
-            collaborative teams.
+            maintainable code. Currently seeking developer roles to contribute
+            to impactful projects and grow within collaborative teams.
           </p>
 
           <div
