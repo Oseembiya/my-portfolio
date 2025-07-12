@@ -430,7 +430,7 @@ body.menu-open {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 16px;
   background: linear-gradient(135deg, rgba(0, 19, 22, 0.95) 0%, rgba(0, 37, 43, 0.95) 100%), url("../assets/Desktop.png");
   background-size: cover;
   background-position: center;
@@ -464,7 +464,7 @@ body.menu-open {
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
-    padding-top: 140px;
+    margin-top: 100px;
   }
 }
 
@@ -497,7 +497,6 @@ body.menu-open {
 .hero-text h1 {
   font-size: clamp(36px, 7vw, 68px);
   font-weight: 700;
-  margin-bottom: 0.5rem;
   line-height: 1.2;
   color: #ffffff;
 }
@@ -577,7 +576,6 @@ body.menu-open {
   gap: 1.5rem;
   align-items: center;
   justify-content: flex-start;
-  flex-wrap: wrap;
 }
 @media (max-width: 768px) {
   .hero-actions {
@@ -634,8 +632,8 @@ body.menu-open {
 @media (max-width: 425px) {
   .social-links {
     gap: 1rem;
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-end;
+    width: 50%;
   }
 }
 .social-links .social-link {
@@ -909,7 +907,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .about-wrapper {
-    padding: 60px 20px 0px;
+    padding: 60px 16px 0px;
   }
 }
 .about-wrapper h2 {
@@ -1774,7 +1772,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .projectMain-2336 {
-    padding: 60px 20px 30px;
+    padding: 60px 16px 30px;
   }
 }
 .projectMain-2336 .project-container {
@@ -2306,7 +2304,7 @@ body.menu-open {
 }
 @media (max-width: 425px) {
   .contactMe-2338 {
-    padding: 60px 20px 30px;
+    padding: 60px 16px 30px;
   }
 }
 .contactMe-2338 .contact-container {
