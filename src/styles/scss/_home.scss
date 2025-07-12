@@ -32,7 +32,7 @@
 
   // Mobile adjustments
   @include media-query("md", "max") {
-    align-items: flex-start;
+    align-items: center;
     padding: 100px 16px 40px; // Increased top padding for mobile
   }
 

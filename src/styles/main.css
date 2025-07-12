@@ -448,7 +448,7 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-section {
-    align-items: flex-start;
+    align-items: center;
     padding: 100px 16px 40px;
   }
 }
