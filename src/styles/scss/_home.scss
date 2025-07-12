@@ -1,10 +1,10 @@
 // Hero Section - Main container
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 120px 16px 60px; // Increased top padding for more space from navbar
   background: linear-gradient(
       135deg,
       rgba(0, 19, 22, 0.95) 0%,
@@ -33,44 +33,48 @@
   // Mobile adjustments
   @include media-query("md", "max") {
     align-items: flex-start;
+    padding: 100px 16px 40px; // Increased top padding for mobile
+  }
+
+  @include media-query("sm") {
+    padding: 80px 16px 0px; //
   }
 }
 
 // Hero Content - Two-column layout
 .hero-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin: -50px auto 0;
-  gap: 2rem;
+  margin: 0 auto;
+  gap: 4rem; // Generous gap between columns
 
   @include media-query("md", "max") {
-    flex-direction: column;
-    margin-top: 100px;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
 // Hero Text - Left column
 .hero-text {
-  flex: 1;
+  width: 100%;
   max-width: 600px;
   text-align: left;
+  z-index: 2;
 
   @include media-query("lg", "max") {
     width: 100%;
   }
 
   @include media-query("md") {
-    flex: none;
     max-width: none;
     width: 100%;
     text-align: center;
   }
 
   @include media-query("sm") {
-    flex: none;
     max-width: none;
     width: 100%;
     text-align: left;
@@ -81,6 +85,7 @@
     font-weight: 700;
     line-height: 1.2;
     color: $color-text-secondary;
+    margin-bottom: 0; // Remove margin-bottom
 
     .accent-text {
       color: $color-text-random;
@@ -256,13 +261,40 @@
 }
 
 // Hero Image - Right column
-.hero-content img {
-  flex: 1;
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   max-width: 500px;
-  position: relative;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.01);
+  border-radius: 8px;
+  z-index: 1;
+  margin: 0 auto; // Center the image container
+
+  @include media-query("lg", "max") {
+    max-width: 400px;
+    height: 450px;
+  }
+
+  @include media-query("md", "max") {
+    height: 400px;
+  }
+
+  @include media-query("sm") {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.hero-content img {
+  max-width: 500px;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 
   @include media-query("lg", "max") {
     max-width: 400px;

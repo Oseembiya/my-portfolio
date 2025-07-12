@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from "react";
-
+import heroImage from "../../assets/ProfileHero.png";
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
   const homeRef = useRef(null);
@@ -197,6 +197,20 @@ function Home() {
             </div>
           </div>
         </article>
+        <figure
+          className={`hero-image fade-in-section animation-delay-5 ${
+            visibleSections.image ? "is-visible" : ""
+          }`}
+          ref={sectionRefs.image}
+          data-section="image"
+        >
+          <img
+            src={heroImage}
+            alt="Osee Mbiya"
+            className="hero-image-img"
+            loading="lazy"
+          />
+        </figure>
       </div>
     </section>
   );
