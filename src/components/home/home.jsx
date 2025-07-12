@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from "react";
-import heroImage from "../../assets/ProfileHero.png";
+//import heroImage from "../../assets/ProfileHero.png";
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
   const homeRef = useRef(null);
@@ -205,8 +205,8 @@ function Home() {
           data-section="image"
         >
           <img
-            src={heroImage}
-            alt="Osee Mbiya"
+            src={"/ProfileHero.png"}
+            alt="Osee Mbiya "
             className="hero-image-img"
             loading="lazy"
           />
