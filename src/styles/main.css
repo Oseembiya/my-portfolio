@@ -2433,7 +2433,7 @@ body.menu-open {
   align-items: center;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
+  border-radius: 8px;
   height: 40px;
   width: 40px;
   transition: all 0.3s ease;
@@ -2466,7 +2466,7 @@ body.menu-open {
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   font-size: 1.2rem;
