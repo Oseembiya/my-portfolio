@@ -12,11 +12,11 @@ function Home() {
   const actionsRef = useRef(null);
   const imageRef = useRef(null);
 
-  // Handle CV view
+  // Handle CV view - Updated to open for viewing first
   const handleCvView = (e) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/11aNvcXUivUmiw1XfjZjHlgqqEsOXb_Ty/view?usp=drive_link",
+      "https://drive.google.com/file/d/16ZBoZ7f1CYETVgL37NBTV58PPNqZyMS8/view?usp=drive_link",
       "_blank",
       "noopener,noreferrer"
     );
@@ -162,21 +162,20 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/file/d/11aNvcXUivUmiw1XfjZjHlgqqEsOXb_Ty/view?usp=drive_link"
+              href="https://drive.google.com/file/d/16ZBoZ7f1CYETVgL37NBTV58PPNqZyMS8/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="action-button primary-button"
-              aria-label="Download my CV (PDF)"
+              aria-label="View My CV (PDF)"
               onClick={handleCvView}
             >
               <i className="fa-solid fa-download" aria-hidden="true"></i>
-              <span className="button-text">Download my CV</span>
+              <span className="button-text">View My CV</span>
             </a>
             <div className="social-links" aria-label="Social media links">
               <a
                 href="https://github.com/Oseembiya"
                 target="_blank"
-                rel="noopener noreferer"
                 aria-label="GitHub Profile"
                 className="social-link"
               >
@@ -186,7 +185,6 @@ function Home() {
               <a
                 href="https://www.linkedin.com/in/oseembiya"
                 target="_blank"
-                rel="noopener noreferer"
                 aria-label="LinkedIn Profile"
                 className="social-link"
               >
