@@ -1619,14 +1619,6 @@ body.menu-open {
   white-space: nowrap;
   opacity: 0.8;
 }
-.skills-showcase .skill-logo:hover {
-  transform: translateY(-5px);
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.skills-showcase .skill-logo:hover i {
-  transform: scale(1.1);
-}
 .skills-showcase .skill-logo.html i {
   color: #e34f26;
 }
