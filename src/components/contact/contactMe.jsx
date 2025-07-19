@@ -222,7 +222,7 @@ export default function Contact() {
                 <div className="signature-content">
                   <p>Best regards,</p>
                   <h4 className="signature-name">O.Mbiya</h4>
-                  <p className="signature-title">Full-Stack Developer</p>
+                  <p className="signature-title">Full-Stack &</p>
                   <p className="signature-title"> Front-End Developer</p>
                 </div>
               </div>
