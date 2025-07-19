@@ -135,7 +135,7 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            I create responsive, user-focused web applications with React,
+            I create responsive, user-focused applications with React,
             JavaScript, HTML, and CSS and bring full-stack skills with Node.js
             and MongoDB.
           </p>
@@ -147,9 +147,9 @@ function Home() {
             ref={sectionRefs.description2}
             data-section="description2"
           >
-            Passionate about solving real-world problems through clean,
-            maintainable code. Currently seeking developer roles to contribute
-            to impactful projects and grow within collaborative teams.
+            Skilled in solving real-world problems through clean, maintainable
+            code. Currently seeking a junior roles to contribute to impactful
+            projects and grow within collaborative teams.
           </p>
 
           <div
