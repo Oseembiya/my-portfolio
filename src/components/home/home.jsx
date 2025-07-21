@@ -16,7 +16,7 @@ function Home() {
   const handleCvView = (e) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/1m_7twD4NAq0r4Z5dQ_8-upugBiniylHY/view?usp=drive_link",
+      "https://drive.google.com/file/d/1rL-kXKTBhfwZE7gSHm9IiFg6Gy5Rfo3t/view?usp=sharing",
       "_blank",
       "noopener,noreferrer"
     );
@@ -162,7 +162,7 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/file/d/1m_7twD4NAq0r4Z5dQ_8-upugBiniylHY/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1rL-kXKTBhfwZE7gSHm9IiFg6Gy5Rfo3t/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="action-button primary-button"
