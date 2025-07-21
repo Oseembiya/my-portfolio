@@ -16,7 +16,7 @@ function Home() {
   const handleCvView = (e) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/16ZBoZ7f1CYETVgL37NBTV58PPNqZyMS8/view?usp=drive_link",
+      "https://docs.google.com/document/d/1l1sua_Yf3biSyVh7spZCnZ8OJRoL-47x/edit?usp=sharing&ouid=101712948737637124457&rtpof=true&sd=true",
       "_blank",
       "noopener,noreferrer"
     );
@@ -122,7 +122,7 @@ function Home() {
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Front-End & <span className="accent-text">Full-Stack</span>{" "}
+              Front-End & <span className="accent-text">Full-Stack</span>
               <span className="desktop-text">Dev</span>
               <span className="mobile-text">Developer</span>
             </h2>
@@ -162,7 +162,7 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/file/d/16ZBoZ7f1CYETVgL37NBTV58PPNqZyMS8/view?usp=drive_link"
+              href="https://docs.google.com/document/d/1l1sua_Yf3biSyVh7spZCnZ8OJRoL-47x/edit?usp=sharing&ouid=101712948737637124457&rtpof=true&sd=true"
               target="_blank"
               rel="noopener noreferrer"
               className="action-button primary-button"
