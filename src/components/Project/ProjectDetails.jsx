@@ -70,14 +70,7 @@ const ProjectDetails = [
           "A collaborative coding platform that allows users to write code together in real-time, built using React and Socket.io.",
 
         image: CodeColabServer,
-        tools: [
-          "Node.js",
-          "Express",
-          "PeerJS",
-          "WebSocket",
-          "Firebase Admin",
-          "Cloud Firestore",
-        ],
+        tools: ["Node.js", "Express", "PeerJS", "WebSocket", "Firebase Admin"],
         codeLink:
           "https://github.com/Oseembiya/CodeColab_New/tree/main/backend",
         demoLink: "https://codekolab.netlify.app/",
@@ -94,7 +87,7 @@ const ProjectDetails = [
           "Express.js",
           "MongoDB",
           "RESTful API",
-          "AWS EC2",
+          "AWS",
           "Postman",
         ],
         codeLink: "https://github.com/oseembiya/Server",
