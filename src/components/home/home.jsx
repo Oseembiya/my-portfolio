@@ -17,8 +17,7 @@ function Home() {
     e.preventDefault();
     window.open(
       "https://drive.google.com/file/d/18XsNS0HUi9gUuuzm3S9LOBrDKNSbCkk0/view?usp=sharing",
-      "_blank",
-      "noopener,noreferrer"
+      "_blank"
     );
   };
 
@@ -164,7 +163,6 @@ function Home() {
             <a
               href="https://drive.google.com/file/d/18XsNS0HUi9gUuuzm3S9LOBrDKNSbCkk0/view?usp=sharing"
               target="_blank"
-              rel="noopener noreferrer"
               className="action-button primary-button"
               aria-label="View My CV (PDF)"
               onClick={handleCvView}
