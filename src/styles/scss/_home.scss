@@ -83,6 +83,7 @@
 
     .accent-text {
       color: $color-text-random;
+      white-space: nowrap;
     }
   }
 
@@ -94,6 +95,7 @@
 
     .accent-text {
       color: $color-text-random;
+      white-space: nowrap;
     }
     @include media-query("lg", "min") {
       font-size: calc($h2-font-size * 0.8);

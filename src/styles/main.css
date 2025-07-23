@@ -501,6 +501,7 @@ body.menu-open {
 }
 .hero-text h1 .accent-text {
   color: #d1472f;
+  white-space: nowrap;
 }
 .hero-text h2 {
   font-size: clamp(30px, 6vw, 60px);
@@ -510,6 +511,7 @@ body.menu-open {
 }
 .hero-text h2 .accent-text {
   color: #d1472f;
+  white-space: nowrap;
 }
 @media (min-width: 992px) {
   .hero-text h2 {
