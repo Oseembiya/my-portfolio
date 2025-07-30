@@ -38,7 +38,7 @@ const AboutMeDetails = [
           "• Code Collab – A real-time collaborative coding platform built with React.js, Socket.io, Firebase Auth, and WebRTC for video/audio.\n" +
           "• Neptune Find – An AI-powered search engine using Next.js, TypeScript, Tailwind CSS, and a custom scoring algorithm for intelligent ranking.\n" +
           "• ParentPay – A dynamic fee management app using Vue.js, Express.js, and MongoDB, with real-time API integration.\n\n" +
-          "Also completed the Google UX Design Certificate (2025) with a 93.98% grade, gaining practical skills in accessibility (WCAG), usability, and Figma-based wireframing.\n\n" +
+          "Also completed the Google UX Design Certificate (2025) with a 93.98% grade, gaining practical skills in accessibility (WCAG), usability, and Figma-based wireframe.\n\n" +
           "These experiences deepened my proficiency in modern JavaScript frameworks, API integration, performance optimization, and accessible UX design.",
       },
       {
@@ -55,7 +55,7 @@ const AboutMeDetails = [
     aboutMeDetails: [
       {
         year: "2025",
-        course: "Individual Project / CodeColab",
+        course: "Individual Project / Code Collab",
         institution: "Middlesex University",
         description:
           "Developed CodeCollab, a collaborative coding platform that enables real-time code sharing and pair programming. Implemented features like syntax highlighting, version control integration, and real-time collaboration using WebSocket technology. Built with React, Node.js, and MongoDB.",
@@ -67,8 +67,8 @@ const AboutMeDetails = [
         description:
           "As part of a three-member team, I actively contributed to a comprehensive AI project solving a real-world problem using deep learning and data science. My responsibilities included:\n\n" +
           "• Data Collection & Preprocessing: Identified and gathered relevant datasets, cleaned and preprocessed data (handling missing values, encoding, normalization), and performed exploratory data analysis (EDA) using Python (Pandas, Matplotlib, Seaborn).\n\n" +
-          "• Model Development & Evaluation: Built and evaluated machine learning and deep learning models with TensorFlow and Keras, experimented with neural network architectures (CNNs/LSTMs), tuned hyperparameters, and assessed performance using metrics like accuracy, precision, recall, F1-score, and confusion matrix.\n\n" +
-          "• Ethical & EDI Considerations: Analyzed ethical risks (bias, transparency, explainability) and ensured alignment with Equality, Diversity, and Inclusion (EDI) principles by reviewing and mitigating potential biases.\n\n" +
+          "• Model Development & Evaluation: Built and evaluated machine learning and deep learning models with TensorFlow and Keras, experimented with neural network architectures (CNNs/LSTMs), tuned hyperparameter, and assessed performance using metrics like accuracy, precision, recall, F1-score, and confusion matrix.\n\n" +
+          "• Ethical & EDI Considerations: Analyzed ethical risks (bias, transparency, expandability) and ensured alignment with Equality, Diversity, and Inclusion (EDI) principles by reviewing and mitigating potential biases.\n\n" +
           "• Documentation & Communication: Co-authored the final report (methodology, results, ethics), created data visualizations, and presented outcomes during lab milestones, contributing to group discussions and decisions.",
       },
     ],
