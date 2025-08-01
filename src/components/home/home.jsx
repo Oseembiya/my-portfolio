@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
+import StarField from "./StarAnimation";
 //import heroImage from "../../assets/ProfileHero.png";
+
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
   const homeRef = useRef(null);
@@ -102,6 +104,9 @@ function Home() {
       aria-label="Introduction"
       ref={homeRef}
     >
+      {/* Star field background animation */}
+      <StarField />
+
       <div className="hero-content">
         <article className="hero-text">
           <header>
