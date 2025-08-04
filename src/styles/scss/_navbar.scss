@@ -255,6 +255,7 @@ body.menu-open {
     gap: 20px;
     z-index: 990;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
 
     &.open {
       display: flex;
@@ -266,12 +267,13 @@ body.menu-open {
 
     li {
       width: 100%;
-      padding: 10px 0;
+      padding: 15px 0;
       display: flex;
       justify-content: flex-start;
 
       a {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
 
         &::after {
           display: none; /* Remove underline effect on mobile */
@@ -282,15 +284,21 @@ body.menu-open {
           color: $color-text-random;
         }
       }
+
+      &:last-child {
+        margin-top: auto;
+        padding-bottom: 20px;
+      }
     }
 
     .cta-button {
-      margin-top: 20px;
-      width: auto;
-      padding: 12px 20px;
+      width: 100%;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 600;
     }
 
     &.open {
@@ -359,6 +367,21 @@ body.menu-open {
   .nav-menu {
     width: 100%;
     max-width: none;
+  }
+}
+
+/* Tablet-specific navbar styles */
+@include media-query("md", "max") {
+  .nav-menu {
+    li a {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .cta-button {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
   }
 }
 

@@ -341,6 +341,7 @@ body.menu-open {
     gap: 20px;
     z-index: 990;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
   }
   .nav-menu.open {
     display: flex;
@@ -351,12 +352,13 @@ body.menu-open {
   }
   .nav-menu li {
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     display: flex;
     justify-content: flex-start;
   }
   .nav-menu li a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
   }
   .nav-menu li a::after {
     display: none; /* Remove underline effect on mobile */
@@ -364,13 +366,18 @@ body.menu-open {
   .nav-menu li a:hover, .nav-menu li a.active {
     color: #d1472f;
   }
+  .nav-menu li:last-child {
+    margin-top: auto;
+    padding-bottom: 20px;
+  }
   .nav-menu .cta-button {
-    margin-top: 20px;
-    width: auto;
-    padding: 12px 20px;
+    width: 100%;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
   }
   .nav-menu.open li a.cta-button::after {
     display: none !important;
@@ -416,6 +423,17 @@ body.menu-open {
   .nav-menu {
     width: 100%;
     max-width: none;
+  }
+}
+/* Tablet-specific navbar styles */
+@media (max-width: 768px) {
+  .nav-menu li a {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .nav-menu .cta-button {
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 }
 #home .navbar {
