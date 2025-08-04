@@ -272,8 +272,8 @@ body.menu-open {
   width: 0 !important;
 }
 .cta-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .cta-button i {
   font-size: 0.9rem;
@@ -372,23 +372,23 @@ body.menu-open {
     margin-top: 30px;
   }
   .nav-menu .cta-button {
-    width: 100% !important;
-    padding: 18px 20px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1.3rem !important;
-    font-weight: 300 !important;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 300;
     background-color: #d1472f;
-    color: #ffffff !important;
-    border-radius: 8px !important;
-    text-decoration: none !important;
-    min-height: 50px !important;
-    position: relative !important;
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    min-height: 50px;
+    position: relative;
   }
   .nav-menu .cta-button:hover {
-    background-color: #a83825;
-    border-color: #a83825;
+    background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+    border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   }
   .nav-menu .cta-button i {
     margin-right: 8px !important;
@@ -653,8 +653,8 @@ body.menu-open {
   border: 2px solid #d1472f;
 }
 .action-button.primary-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   transform: translateY(-3px);
 }
 
@@ -2169,8 +2169,8 @@ body.menu-open {
   border: 1px solid #e22200;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-filled:hover {
-  background-color: #af1a00;
-  border-color: #af1a00;
+  background-color: rgb(175, 26.3274336283, 0);
+  border-color: rgb(175, 26.3274336283, 0);
 }
 
 .fa-duotone::before {
@@ -2804,8 +2804,8 @@ body.menu-open {
   }
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
@@ -2881,7 +2881,7 @@ body.menu-open {
 }
 .contactMe-2338 .downArrow-2338 a:hover {
   transform: translateY(-5px);
-  background-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .allRight-2338 {
   position: absolute;
