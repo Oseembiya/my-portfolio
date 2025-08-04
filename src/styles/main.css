@@ -1158,6 +1158,7 @@ body.menu-open {
   .aboutImg-2335 h2 {
     margin-bottom: 1.5rem;
     font-size: clamp(20px, 4.5vw, 24px);
+    font-weight: 300;
   }
 }
 .aboutImg-2335 h2::after {
@@ -1957,6 +1958,7 @@ body.menu-open {
   .projectMain-2336 .section-title {
     margin-bottom: 2rem;
     font-size: clamp(22px, 5vw, 26px);
+    font-weight: 300;
   }
 }
 .projectMain-2336 .section-title::after {
@@ -2487,6 +2489,7 @@ body.menu-open {
   .contactMe-2338 .section-title {
     margin-bottom: 2rem;
     font-size: clamp(22px, 5vw, 26px);
+    font-weight: 300;
   }
 }
 .contactMe-2338 .section-title::after {
