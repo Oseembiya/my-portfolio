@@ -8,7 +8,7 @@ export default function LearnMore({ onClick }) {
       type="button"
       aria-label="Learn more about this item"
     >
-      <span>Get To know More</span>
+      <span>Know More</span>
     </button>
   );
 }
