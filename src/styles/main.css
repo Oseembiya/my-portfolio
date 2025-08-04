@@ -343,12 +343,13 @@ body.menu-open {
     gap: 20px;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    justify-content: space-between;
+    justify-content: flex-start;
   }
   .nav-menu.open {
     display: flex;
     height: calc(100vh - 70px); /* Full height minus navbar height */
     padding: 20px;
+    justify-content: space-between;
   }
   .nav-menu li {
     width: 100%;
@@ -368,16 +369,31 @@ body.menu-open {
   }
   .nav-menu li:last-child {
     margin-top: auto;
-    padding-bottom: 20px;
+    padding-bottom: 0;
+    padding-top: 20px;
   }
   .nav-menu .cta-button {
     width: 100%;
-    padding: 15px 20px;
-    display: flex;
+    padding: 18px 20px;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     font-size: 1.3rem;
     font-weight: 600;
+    background-color: #d1472f !important;
+    color: #ffffff !important;
+    border-radius: 8px;
+    border: 1px solid #d1472f;
+    text-decoration: none !important;
+    margin-top: 10px;
+  }
+  .nav-menu .cta-button:hover {
+    background-color: #a83825 !important;
+    border-color: #a83825;
+  }
+  .nav-menu .cta-button i {
+    margin-right: 8px;
+    font-size: 1.1rem;
   }
   .nav-menu.open li a.cta-button::after {
     display: none !important;
