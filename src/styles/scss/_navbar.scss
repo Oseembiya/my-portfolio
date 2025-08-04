@@ -138,7 +138,6 @@ body.menu-open {
     &.active {
       color: $color-text-random;
     }
-
     &:hover::after,
     &.active::after {
       width: 100%;
@@ -150,7 +149,7 @@ body.menu-open {
   background-color: $color-text-random;
   color: $color-text-secondary !important;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 15px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
