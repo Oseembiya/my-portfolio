@@ -7,9 +7,9 @@ function Navbar() {
 
   const navLinks = [
     { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
+    { href: "#about", label: "About Me" },
     { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
+    { href: "#contact", label: "Contact Me" },
   ];
 
   const toggleMenu = () => {
