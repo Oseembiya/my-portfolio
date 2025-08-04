@@ -155,18 +155,16 @@
 }
 
 .projectItem_2336 {
-  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border: solid .0625rem #b3b4b4;
+  transition: box-shadow .25s cubic-bezier(.175,.885,.32,1.275);
   display: flex;
   flex-direction: column;
   height: 100%;
 
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
   }
 
   img {

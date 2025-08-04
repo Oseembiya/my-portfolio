@@ -272,8 +272,8 @@ body.menu-open {
   width: 0 !important;
 }
 .cta-button:hover {
-  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
-  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  background-color: #a83825;
+  border-color: #a83825;
 }
 .cta-button i {
   font-size: 0.9rem;
@@ -387,8 +387,8 @@ body.menu-open {
     position: relative !important;
   }
   .nav-menu .cta-button:hover {
-    background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
-    border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+    background-color: #a83825;
+    border-color: #a83825;
   }
   .nav-menu .cta-button i {
     margin-right: 8px !important;
@@ -653,8 +653,8 @@ body.menu-open {
   border: 2px solid #d1472f;
 }
 .action-button.primary-button:hover {
-  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
-  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  background-color: #a83825;
+  border-color: #a83825;
   transform: translateY(-3px);
 }
 
@@ -2050,18 +2050,16 @@ body.menu-open {
 }
 
 .projectItem_2336 {
-  background-color: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  border: solid 0.0625rem #b3b4b4;
+  transition: box-shadow 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 .projectItem_2336:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 .projectItem_2336 img {
   width: 100%;
@@ -2171,8 +2169,8 @@ body.menu-open {
   border: 1px solid #e22200;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-filled:hover {
-  background-color: rgb(175, 26.3274336283, 0);
-  border-color: rgb(175, 26.3274336283, 0);
+  background-color: #af1a00;
+  border-color: #af1a00;
 }
 
 .fa-duotone::before {
@@ -2806,8 +2804,8 @@ body.menu-open {
   }
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
-  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  background-color: #a83825;
+  border-color: #a83825;
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
@@ -2883,7 +2881,7 @@ body.menu-open {
 }
 .contactMe-2338 .downArrow-2338 a:hover {
   transform: translateY(-5px);
-  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  background-color: #a83825;
 }
 .contactMe-2338 .allRight-2338 {
   position: absolute;
