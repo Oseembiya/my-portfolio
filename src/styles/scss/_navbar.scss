@@ -6,7 +6,9 @@
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  padding: 12px 0;
+  padding: 15px 0;
+  height: 70px;
+  box-sizing: border-box;
 
   &.scrolled {
     background-color: rgba(18, 18, 18, 0.9);
@@ -238,7 +240,7 @@ body.menu-open {
 
   .nav-menu {
     position: fixed;
-    top: 66px; /* Match the height used in calc() */
+    top: 70px; /* Position directly below the navbar */
     left: 0;
     right: 0;
     flex-direction: column;
@@ -246,23 +248,21 @@ body.menu-open {
     backdrop-filter: blur(10px);
     width: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 0;
     height: 0;
     overflow: hidden;
     display: none; /* Hide by default */
     align-items: center;
     text-align: center;
     gap: 20px;
-    z-index: 990;
+    z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     justify-content: space-between;
 
     &.open {
       display: flex;
-      height: calc(100vh - 66px); /* Full height minus navbar height */
-      padding-top: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
+      height: calc(100vh - 70px); /* Full height minus navbar height */
+      padding: 20px;
     }
 
     li {
