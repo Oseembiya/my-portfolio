@@ -508,9 +508,41 @@
   margin: 0;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @include media-query("sm") {
     padding: 1rem;
+  }
+
+  .congratulation-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $color-text-random;
+    background-color: $color-background-secondary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(226, 34, 0, 0.2);
+
+    i {
+      color:white;
+      font-size: 14px;
+    }
+
+    @include media-query("sm") {
+      top: 0.5rem;
+      right: 0.5rem;
+      width: 28px;
+      height: 28px;
+
+      i {
+        font-size: 14px;
+      }
+    }
   }
 
   h4 {

@@ -21,8 +21,19 @@ CategoryButton.propTypes = {
 };
 
 // Detail card component
-const DetailCard = ({ year, course, institution, onLearnMore }) => (
+const DetailCard = ({
+  year,
+  course,
+  institution,
+  onLearnMore,
+  isEducation,
+}) => (
   <div className="about-card">
+    {isEducation && (
+      <div className="congratulation-icon">
+        <i className="fa-solid fa-award"></i>
+      </div>
+    )}
     <h4>{year}</h4>
     <p className="about-card-subtitle">{course}</p>
     {institution && <p className="about-card-institution">{institution}</p>}
@@ -37,6 +48,7 @@ DetailCard.propTypes = {
   course: PropTypes.string.isRequired,
   institution: PropTypes.string,
   onLearnMore: PropTypes.func.isRequired,
+  isEducation: PropTypes.bool,
 };
 
 // Profile image component
@@ -368,6 +380,7 @@ export default function About() {
               course={detail.course}
               institution={detail.institution}
               onLearnMore={() => handleLearnMore(detail)}
+              isEducation={selectedCategory === 0}
             />
           ))}
         </div>
