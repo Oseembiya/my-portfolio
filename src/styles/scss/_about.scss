@@ -521,7 +521,6 @@
     width: 32px;
     height: 32px;
     border: 1px solid $color-text-random;
-    background-color: $color-background-secondary;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -529,7 +528,7 @@
     box-shadow: 0 2px 8px rgba(226, 34, 0, 0.2);
 
     i {
-      color:white;
+      color: $color-background-secondary;
       font-size: 14px;
     }
 
