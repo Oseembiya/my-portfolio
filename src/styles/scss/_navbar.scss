@@ -101,6 +101,8 @@ body.menu-open {
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
+  position: relative;
+  z-index: 1003; /* Higher than nav-menu */
 }
 
 .nav-menu {
@@ -189,42 +191,60 @@ body.menu-open {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1010;
+  z-index: 1003; /* Higher than nav-menu */
   position: relative;
 }
 
 .hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: block;
   width: 30px;
   height: 18px;
   position: relative;
-  z-index: 1010;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 
   span {
+    background-color: $color-text-secondary; // change to your color
     display: block;
+    position: absolute;
     height: 2px;
-    width: 30px;
-    background-color: $color-text-secondary;
+    width: 100%;
     border-radius: 2px;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .span-1 {
+    top: 0;
+    transform-origin: center;
+  }
+
+  .span-2 {
+    top: 8px;
+    transform-origin: center;
+  }
+
+  .span-3 {
+    top: 16px;
+    transform-origin: center;
   }
 
   &.active {
-    span {
-      &:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        background-color: $color-text-random;
-      }
+    .span-1 {
+      transform: rotate(45deg);
+      top: 8px; // middle position
+    }
 
-      &:nth-child(2) {
-        opacity: 0;
-      }
+    .span-2 {
+      opacity: 0;
+      width: 0%;
+      left: 50%; // keeps collapse centered
+    }
 
-      &:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        background-color: $color-text-random;
-      }
+    .span-3 {
+      transform: rotate(-45deg);
+      top: 8px; // middle position
     }
   }
 }
@@ -247,23 +267,25 @@ body.menu-open {
     backdrop-filter: blur(10px);
     width: 100%;
     max-width: 100%;
-    padding: 0;
-    height: 0;
+    padding: 20px;
+    height: calc(100vh - 70px); /* Full height minus navbar height */
     overflow: hidden;
-    display: none; /* Hide by default */
+    display: flex; /* Always display flex */
     align-items: center;
     text-align: center;
     gap: 10px;
-    z-index: 999;
+    z-index: 1000; /* Lower than logo and menu-toggle */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     justify-content: flex-start;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none; /* Prevent interaction when closed */
 
     &.open {
-      display: flex;
-      height: calc(100vh - 70px); /* Full height minus navbar height */
-      padding: 20px;
-      justify-content: flex-start;
-      overflow-y: auto;
+      transform: translateY(0);
+      pointer-events: auto; /* Allow interaction when open */
     }
 
     li {
@@ -396,7 +418,6 @@ body.menu-open {
 
     .cta-button {
       font-size: 1.2rem;
-      font-weight: 600;
     }
   }
 }

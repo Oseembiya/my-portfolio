@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import StarField from "./StarAnimation";
-//import heroImage from "../../assets/ProfileHero.png";
+import heroImage from "../../assets/ProfileHero.png";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -205,7 +205,7 @@ function Home() {
           data-section="image"
         >
           <img
-            src={"/ProfileHero.png"}
+            src={heroImage}
             alt="Osee Mbiya "
             className="hero-image-img"
             loading="lazy"

@@ -147,9 +147,9 @@ function Navbar() {
           aria-expanded={isMenuOpen}
         >
           <div className={`hamburger ${isMenuOpen ? "active" : ""}`}>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className="span-1"></span>
+            <span className="span-2"></span>
+            <span className="span-3"></span>
           </div>
         </button>
 
