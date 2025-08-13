@@ -128,7 +128,7 @@ textarea:focus {
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  padding: 15px 0;
+  padding: 12px 0;
   height: 70px;
   box-sizing: border-box;
   /* Section-specific navbar styles */
@@ -394,7 +394,6 @@ body.menu-open {
   }
   .nav-menu .cta-button {
     width: 100%;
-    padding: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
