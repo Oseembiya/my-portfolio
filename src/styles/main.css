@@ -274,8 +274,8 @@ body.menu-open {
   width: 0 !important;
 }
 .cta-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .cta-button i {
   font-size: 0.9rem;
@@ -407,8 +407,8 @@ body.menu-open {
     position: relative;
   }
   .nav-menu .cta-button:hover {
-    background-color: #a83825;
-    border-color: #a83825;
+    background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+    border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   }
   .nav-menu .cta-button i {
     margin-right: 8px !important;
@@ -512,6 +512,7 @@ body.menu-open {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  align-content: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -670,8 +671,8 @@ body.menu-open {
   border: 2px solid #d1472f;
 }
 .action-button.primary-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   transform: translateY(-3px);
 }
 
@@ -2212,8 +2213,8 @@ body.menu-open {
   border: 1px solid #e22200;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-filled:hover {
-  background-color: #af1a00;
-  border-color: #af1a00;
+  background-color: rgb(175, 26.3274336283, 0);
+  border-color: rgb(175, 26.3274336283, 0);
 }
 
 .fa-duotone::before {
@@ -2847,8 +2848,8 @@ body.menu-open {
   }
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
@@ -2924,7 +2925,7 @@ body.menu-open {
 }
 .contactMe-2338 .downArrow-2338 a:hover {
   transform: translateY(-5px);
-  background-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .allRight-2338 {
   position: absolute;

@@ -44,6 +44,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  align-content: center;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -295,7 +296,7 @@
     width: auto;
     max-width: 100%;
   }
-  
+
   @include media-query("sm", "min") {
     height: 450px;
     width: auto;
