@@ -145,7 +145,7 @@ const ProjectDetails = [
         description:
           "High-fidelity interactive wireframes for a healthcare application with accessibility features.",
 
-        image: "/src/assets/wireframes.jpg",
+        image: "/src/assets/mentor.png",
         tools: ["Adobe XD", "Sketch", "UI Design", "Accessibility"],
         codeLink: "https://github.com/oseembiya/wireframes",
         demoLink: "https://wireframes.com",

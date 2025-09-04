@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import StarField from "./StarAnimation";
-//import heroImage from "../../assets/ProfileHero.png";
+import heroImage from "../../assets/Osee Mbiya.png";
 
 function Home() {
   const [visibleSections, setVisibleSections] = useState({});
@@ -204,7 +204,12 @@ function Home() {
           ref={sectionRefs.image}
           data-section="image"
         >
-          <img alt="Osee Mbiya" className="hero-image-img" loading="lazy" />
+          <img
+            alt="Osee Mbiya"
+            className="hero-image-img"
+            loading="lazy"
+            src={heroImage}
+          />
         </figure>
       </div>
     </section>

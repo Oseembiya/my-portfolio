@@ -274,10 +274,7 @@
   }
 }
 
-.hero-content img,
-.hero-image-img {
-  width: auto; // Allow natural width
-  height: auto; // Allow natural height
+.hero-content img {
   max-width: 100%; // Prevent overflow
   max-height: 100%; // Prevent overflow
   object-fit: contain; // Maintain aspect ratio
