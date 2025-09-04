@@ -323,9 +323,10 @@ export default function About() {
             )}
 
             <p>
-              {isMobile
-                ? "As a Computer Science graduate, I blend technical knowledge with creative problem solving to craft engaging web experiences."
-                : "As a Computer Science graduate, I blend technical knowledge with creative problem-solving to craft engaging web experiences. My journey through various projects has honed my skills in both front-end interfaces and back-end architecture, focusing on solutions that are both functional and delightful."}
+              I am a Computer Science graduate and full-stack developer with
+              experience in both front-end interfaces and back-end architecture,
+              dedicated to delivering web solutions that balance functionality
+              with great user experiences.
             </p>
             {!isMobile && (
               <p>
