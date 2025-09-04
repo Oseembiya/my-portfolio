@@ -18,7 +18,7 @@ function Home() {
   const handleCvView = (e) => {
     e.preventDefault();
     window.open(
-      "https://drive.google.com/file/d/18XsNS0HUi9gUuuzm3S9LOBrDKNSbCkk0/view?usp=sharing",
+      "https://drive.google.com/file/d/161k2-wCcIccQcxZcTLmre0L_TH7rPf8y/view?usp=drive_link",
       "_blank"
     );
   };
@@ -166,7 +166,7 @@ function Home() {
             data-section="actions"
           >
             <a
-              href="https://drive.google.com/file/d/18XsNS0HUi9gUuuzm3S9LOBrDKNSbCkk0/view?usp=sharing"
+              href="https://drive.google.com/file/d/161k2-wCcIccQcxZcTLmre0L_TH7rPf8y/view?usp=drive_link"
               target="_blank"
               className="action-button primary-button"
               aria-label="View My CV (PDF)"
