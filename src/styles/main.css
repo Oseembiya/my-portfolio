@@ -730,14 +730,6 @@ body.menu-open {
   z-index: 1;
   margin: 0 auto;
   position: relative;
-  border-radius: 15%;
-  border-bottom: 1px solid rgba(209, 71, 47, 0.4);
-  border-right: 1px solid rgba(209, 71, 47, 0.4);
-}
-@media (max-width: 425px) {
-  .hero-image {
-    border: none;
-  }
 }
 
 .hero-content img {
@@ -748,6 +740,7 @@ body.menu-open {
   display: block;
   margin: 0 auto;
   text-align: center;
+  border-radius: 5%;
 }
 @media (min-width: 992px) {
   .hero-content img {

@@ -265,13 +265,7 @@
   z-index: 1;
   margin: 0 auto; // Center the container
   position: relative;
-  border-radius: 15%;
-  border-bottom: 1px solid rgba($color-text-random, 0.4);
-  border-right: 1px solid rgba($color-text-random, 0.4);
 
-  @include media-query("sm", "max") {
-    border: none;
-  }
 }
 
 .hero-content img {
@@ -281,6 +275,7 @@
   display: block;
   margin: 0 auto; // Center the image
   text-align: center; // Center any text content
+  border-radius: 5%;
 
   @include media-query("lg", "min") {
     height: 600px;
