@@ -160,6 +160,8 @@ export default function Project() {
                   src={project.image}
                   alt={project.projectName}
                   loading="lazy"
+                  width="100%"
+                  height="auto"
                 />
                 <div className="projectDetails_2336">
                   <h3 className="project-title">{project.projectName}</h3>

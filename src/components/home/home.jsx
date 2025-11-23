@@ -209,6 +209,8 @@ function Home() {
             className="hero-image-img"
             loading="lazy"
             src={heroImage}
+            width="100%"
+            height="auto"
           />
         </figure>
       </div>
