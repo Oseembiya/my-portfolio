@@ -111,31 +111,28 @@ function Home() {
         <article className="hero-text">
           <header>
             <h1
-              className={`fade-in-section ${
-                visibleSections.title ? "is-visible" : ""
-              }`}
+              className={`fade-in-section ${visibleSections.title ? "is-visible" : ""
+                }`}
               ref={sectionRefs.title}
               data-section="title"
             >
               <span className="accent-text">Osee</span> Mbiya
             </h1>
             <h2
-              className={`fade-in-section animation-delay-1 ${
-                visibleSections.subtitle ? "is-visible" : ""
-              }`}
+              className={`fade-in-section animation-delay-1 ${visibleSections.subtitle ? "is-visible" : ""
+                }`}
               ref={sectionRefs.subtitle}
               data-section="subtitle"
             >
-              Front-End & <span className="accent-text">Full-Stack</span>{" "}
-              <span className="desktop-text">Dev</span>
+              I am a <span className="accent-text">Software</span>{" "}
+              <span className="desktop-text">Developer</span>
               <span className="mobile-text">Developer</span>
             </h2>
           </header>
 
           <p
-            className={`fade-in-section animation-delay-2 ${
-              visibleSections.description1 ? "is-visible" : ""
-            }`}
+            className={`fade-in-section animation-delay-2 ${visibleSections.description1 ? "is-visible" : ""
+              }`}
             ref={sectionRefs.description1}
             data-section="description1"
           >
@@ -145,9 +142,8 @@ function Home() {
           </p>
 
           <p
-            className={`fade-in-section animation-delay-3 ${
-              visibleSections.description2 ? "is-visible" : ""
-            }`}
+            className={`fade-in-section animation-delay-3 ${visibleSections.description2 ? "is-visible" : ""
+              }`}
             ref={sectionRefs.description2}
             data-section="description2"
           >
@@ -157,9 +153,8 @@ function Home() {
           </p>
 
           <div
-            className={`hero-actions fade-in-section animation-delay-4 ${
-              visibleSections.actions ? "is-visible" : ""
-            }`}
+            className={`hero-actions fade-in-section animation-delay-4 ${visibleSections.actions ? "is-visible" : ""
+              }`}
             role="group"
             aria-label="Profile actions"
             ref={sectionRefs.actions}
@@ -198,9 +193,8 @@ function Home() {
           </div>
         </article>
         <figure
-          className={`hero-image fade-in-section animation-delay-5 ${
-            visibleSections.image ? "is-visible" : ""
-          }`}
+          className={`hero-image fade-in-section animation-delay-5 ${visibleSections.image ? "is-visible" : ""
+            }`}
           ref={sectionRefs.image}
           data-section="image"
         >
