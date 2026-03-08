@@ -322,10 +322,9 @@ export default function About() {
             )}
 
             <p>
-              I am a Computer Science graduate and full-stack developer with
-              experience in both front-end interfaces and back-end architecture,
-              dedicated to delivering web solutions that balance functionality
-              with great user experiences.
+              I am a Computer Science graduate and full-stack developer with experience in front-end interfaces,
+              back-end architecture, and cloud-based systems, focused on delivering web solutions that balance
+              functionality with strong user experiences.
             </p>
             {!isMobile && (
               <p>
