@@ -136,7 +136,7 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            I am a Software Developer currently working at JBA Risk Management, where I contribute to building and improving developer tooling and data-driven systems.
+            I am currently working at JBA Risk Management, where I contribute to building and improving developer tooling and data-driven systems.
 
 
           </p>
