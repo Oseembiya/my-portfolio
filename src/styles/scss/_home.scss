@@ -126,18 +126,18 @@
 
     // Small screens only (425px and below)
     @include media-query("sm") {
-      font-size: clamp(16px, 4vw, $p-font-size-responsive);
+      font-size: $p-font-size-responsive;
       margin-bottom: 1rem;
       text-align: left;
       width: 100%;
     }
     // Medium screens (425px to 768px)
     @include media-query("md") {
-      font-size: clamp(16px, 4vw, $p-font-size-responsive);
+      font-size: $p-font-size-responsive;
       width: 100%;
     }
     @include media-query("md", "min") {
-      font-size: clamp(16px, 4vw, $p-font-size-responsive);
+      font-size: $p-font-size-responsive;
     }
     @include media-query("lg", "min") {
       text-align: left;

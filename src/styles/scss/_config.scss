@@ -9,7 +9,7 @@ $color-background-random: #f1f1f1;
 $color-background-third: #f7f9fb;
 $font-size: 26px;
 $font-weight: 300;
-$p-font-size: 14px;
+$p-font-size: 16px;
 $p-font-weight: 500;
 $line-height: 1.5;
 
@@ -17,7 +17,7 @@ $line-height: 1.5;
 $h1-font-size: clamp(36px, 7vw, 68px);
 $h2-font-size: clamp(30px, 6vw, 60px);
 $h3-font-size: clamp(24px, 5vw, 36px);
-$p-font-size-responsive: clamp(14px, 1.8vw, 18px);
+$p-font-size-responsive: 18px;
 $mobile-spacing: 10px;
 
 // _media-queries.scss
@@ -27,38 +27,52 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
 @mixin media-query($size, $type: "max") {
-  @if $type == "max" {
-    @if $size == "sm" {
+  @if $type =="max" {
+    @if $size =="sm" {
       @media (max-width: $breakpoint-sm) {
         @content;
       }
-    } @else if $size == "md" {
+    }
+
+    @else if $size =="md" {
       @media (max-width: $breakpoint-md) {
         @content;
       }
-    } @else if $size == "lg" {
+    }
+
+    @else if $size =="lg" {
       @media (max-width: $breakpoint-lg) {
         @content;
       }
-    } @else if $size == "xl" {
+    }
+
+    @else if $size =="xl" {
       @media (max-width: $breakpoint-xl) {
         @content;
       }
     }
-  } @else if $type == "min" {
-    @if $size == "sm" {
+  }
+
+  @else if $type =="min" {
+    @if $size =="sm" {
       @media (min-width: $breakpoint-sm) {
         @content;
       }
-    } @else if $size == "md" {
+    }
+
+    @else if $size =="md" {
       @media (min-width: $breakpoint-md) {
         @content;
       }
-    } @else if $size == "lg" {
+    }
+
+    @else if $size =="lg" {
       @media (min-width: $breakpoint-lg) {
         @content;
       }
-    } @else if $size == "xl" {
+    }
+
+    @else if $size =="xl" {
       @media (min-width: $breakpoint-xl) {
         @content;
       }
@@ -79,6 +93,7 @@ $breakpoint-xl: 1200px;
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -89,6 +104,7 @@ $breakpoint-xl: 1200px;
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

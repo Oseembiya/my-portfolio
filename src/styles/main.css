@@ -131,21 +131,21 @@ textarea:focus {
   padding: 12px 0;
   height: 70px;
   box-sizing: border-box;
-  /* Section-specific navbar styles */
 }
 .navbar.scrolled {
   background-color: rgba(18, 18, 18, 0.9);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar {
+  /* Section-specific navbar styles */
 }
 .navbar.section-home {
   background-color: transparent;
 }
 .navbar.section-home.scrolled {
   background-color: rgba(0, 38, 43, 0.95); /* Darker version of the hero section background */
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .navbar.section-about {
@@ -274,8 +274,8 @@ body.menu-open {
   width: 0 !important;
 }
 .cta-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .cta-button i {
   font-size: 0.9rem;
@@ -349,8 +349,7 @@ body.menu-open {
     right: 0;
     flex-direction: column;
     background-color: rgba(2, 19, 21, 0.95); /* Updated color */
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     width: 100%;
     max-width: 100%;
     padding: 20px;
@@ -407,8 +406,8 @@ body.menu-open {
     position: relative;
   }
   .nav-menu .cta-button:hover {
-    background-color: #a83825;
-    border-color: #a83825;
+    background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+    border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   }
   .nav-menu .cta-button i {
     margin-right: 8px !important;
@@ -587,14 +586,14 @@ body.menu-open {
   }
 }
 .hero-text p {
-  font-size: clamp(14px, 1.8vw, 18px);
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.9);
 }
 @media (max-width: 425px) {
   .hero-text p {
-    font-size: clamp(16px, 4vw, clamp(14px, 1.8vw, 18px));
+    font-size: 18px;
     margin-bottom: 1rem;
     text-align: left;
     width: 100%;
@@ -602,13 +601,13 @@ body.menu-open {
 }
 @media (max-width: 768px) {
   .hero-text p {
-    font-size: clamp(16px, 4vw, clamp(14px, 1.8vw, 18px));
+    font-size: 18px;
     width: 100%;
   }
 }
 @media (min-width: 768px) {
   .hero-text p {
-    font-size: clamp(16px, 4vw, clamp(14px, 1.8vw, 18px));
+    font-size: 18px;
   }
 }
 @media (min-width: 992px) {
@@ -671,8 +670,8 @@ body.menu-open {
   border: 2px solid #d1472f;
 }
 .action-button.primary-button:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
   transform: translateY(-3px);
 }
 
@@ -1001,7 +1000,8 @@ body.menu-open {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
+    /* Centers content vertically */
   }
   .aboutMeContent-2335 {
     display: flex;
@@ -1011,12 +1011,17 @@ body.menu-open {
     gap: 30px;
   }
   .aboutImg-2335 .img {
-    max-width: 100%; /* Image will not exceed the container width */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    /* Image will not exceed the container width */
+    height: auto;
+    /* Maintain aspect ratio */
     -o-object-fit: cover;
-       object-fit: cover; /* Ensure the image covers the area neatly */
-    border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
-    margin-top: 10px; /* Optional: Spacing between content and image */
+       object-fit: cover;
+    /* Ensure the image covers the area neatly */
+    border-radius: 8px;
+    /* Optional: Rounded corners for better aesthetics */
+    margin-top: 10px;
+    /* Optional: Spacing between content and image */
   }
   .contentList-2335 {
     display: flex;
@@ -1025,7 +1030,6 @@ body.menu-open {
     justify-content: space-between;
     -moz-column-gap: 100px;
          column-gap: 100px;
-    /* Remove the underline for active button section */
   }
   .contentList-2335 .category-btn {
     padding: 4px;
@@ -1036,7 +1040,11 @@ body.menu-open {
     color: #000000;
     background-color: transparent;
     transition: all 0.2s ease, color 0.2s ease;
-    position: relative; /* To position the underline */
+    position: relative;
+    /* To position the underline */
+  }
+  .contentList-2335 {
+    /* Remove the underline for active button section */
   }
   .contentList-2335 .category-btn.active {
     transition: color #e22200, background-color 0.2s ease;
@@ -1173,7 +1181,7 @@ body.menu-open {
   background-color: #e22200;
 }
 .aboutImg-2335 p {
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: 16px;
   line-height: 1.8;
   color: #000000;
   text-align: left;
@@ -1847,12 +1855,14 @@ body.menu-open {
   animation: slideIn 0.3s ease-out;
   max-height: 80vh;
   overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 .modal-overlay .modal-content::-webkit-scrollbar {
   width: 0;
   background: transparent;
+}
+.modal-overlay .modal-content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .modal-overlay .modal-content h3 {
   color: #000000;
@@ -2100,6 +2110,7 @@ body.menu-open {
   transition: transform 0.5s ease;
   image-rendering: -webkit-optimize-contrast; /* Chrome/Safari */
   image-rendering: crisp-edges; /* Firefox */
+  aspect-ratio: auto;
 }
 .projectItem_2336 .projectDetails_2336 {
   padding: 1rem;
@@ -2200,8 +2211,8 @@ body.menu-open {
   border: 1px solid #e22200;
 }
 .projectItem_2336 .projectDetails_2336 .project-links .project-link.project-link-filled:hover {
-  background-color: #af1a00;
-  border-color: #af1a00;
+  background-color: rgb(175, 26.3274336283, 0);
+  border-color: rgb(175, 26.3274336283, 0);
 }
 
 .fa-duotone::before {
@@ -2712,7 +2723,7 @@ body.menu-open {
   color: #ffffff;
 }
 .contactMe-2338 .thankYou-2338 p {
-  font-size: clamp(14px, 3vw, 16px);
+  font-size: 16px;
   color: #ffffff;
   opacity: 0.9;
 }
@@ -2835,8 +2846,8 @@ body.menu-open {
   }
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:hover {
-  background-color: #a83825;
-  border-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
+  border-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .contactForm-2338 .submitButton-2338:active {
   transform: translateY(-2px);
@@ -2912,7 +2923,7 @@ body.menu-open {
 }
 .contactMe-2338 .downArrow-2338 a:hover {
   transform: translateY(-5px);
-  background-color: #a83825;
+  background-color: rgb(167.874015748, 56.4960629921, 37.125984252);
 }
 .contactMe-2338 .allRight-2338 {
   position: absolute;
@@ -2963,7 +2974,7 @@ body.menu-open {
   margin: 0.2rem 0;
   font-style: italic;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 }
 .signature-section .signature-content .signature-name {

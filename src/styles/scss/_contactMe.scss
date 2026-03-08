@@ -245,7 +245,7 @@
     }
 
     p {
-      font-size: clamp(14px, 3vw, 16px);
+      font-size: $p-font-size;
       color: $color-text-secondary;
       opacity: 0.9;
     }

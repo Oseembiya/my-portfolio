@@ -35,11 +35,11 @@ export default function Contact() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setShowArrow(entry.isIntersecting); // Show arrow only when .contactMe-2338 is visible
+        setShowArrow(entry.isIntersecting);
       },
       {
-        root: null, // Observe in the viewport
-        threshold: 0.5, // Trigger when at least 50% of the section is visible
+        root: null,
+        threshold: 0.5,
       }
     );
 

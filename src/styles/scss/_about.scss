@@ -4,8 +4,10 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
+    /* Centers content vertically */
   }
+
   .aboutMeContent-2335 {
     display: flex;
     justify-content: space-evenly;
@@ -13,12 +15,18 @@
     flex-direction: column;
     gap: 30px;
   }
+
   .aboutImg-2335 .img {
-    max-width: 100%; /* Image will not exceed the container width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image covers the area neatly */
-    border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
-    margin-top: 10px; /* Optional: Spacing between content and image */
+    max-width: 100%;
+    /* Image will not exceed the container width */
+    height: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    /* Ensure the image covers the area neatly */
+    border-radius: 8px;
+    /* Optional: Rounded corners for better aesthetics */
+    margin-top: 10px;
+    /* Optional: Spacing between content and image */
   }
 
   .contentList-2335 {
@@ -37,7 +45,8 @@
       color: $color-text-primary;
       background-color: transparent;
       transition: all 0.2s ease, color 0.2s ease;
-      position: relative; /* To position the underline */
+      position: relative;
+      /* To position the underline */
     }
 
     /* Remove the underline for active button section */
@@ -121,7 +130,7 @@
   margin: 0 auto;
   gap: 1.5rem;
 
-  > div:first-child {
+  >div:first-child {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -168,11 +177,9 @@
 
     @include media-query("sm") {
       margin-bottom: 1.5rem;
-      font-size: clamp(
-        20px,
-        4.5vw,
-        24px
-      ); // Smaller font size for small screens
+      font-size: clamp(20px,
+          4.5vw,
+          24px); // Smaller font size for small screens
       font-weight: 300;
     }
 
@@ -188,7 +195,7 @@
   }
 
   p {
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: $p-font-size;
     line-height: 1.8;
     color: $color-text-primary;
     text-align: left;
@@ -451,6 +458,7 @@
 
   // Mobile-specific enhancements
   .content-2335 .card-2335 {
+
     // Add subtle touch feedback
     &:active {
       transform: scale(0.98);
@@ -466,6 +474,7 @@
 
 // Respect user's motion preferences
 @media (prefers-reduced-motion: reduce) {
+
   .fade-in-section,
   .slide-in-right,
   .slide-in-left,
@@ -648,11 +657,9 @@
       margin-bottom: 0.5rem;
 
       @include media-query("sm") {
-        font-size: clamp(
-          18px,
-          4vw,
-          22px
-        ); // Smaller font size for small screens
+        font-size: clamp(18px,
+            4vw,
+            22px); // Smaller font size for small screens
       }
     }
 
@@ -682,20 +689,16 @@
 
     &::before {
       left: 0;
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 0)
-      );
+      background: linear-gradient(to right,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0));
     }
 
     &::after {
       right: 0;
-      background: linear-gradient(
-        to left,
-        rgba(255, 255, 255, 1),
-        rgba(255, 255, 255, 0)
-      );
+      background: linear-gradient(to left,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0));
     }
 
     .skills-logos-container {
@@ -721,6 +724,7 @@
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(calc(-50% - 10px));
     }
@@ -755,36 +759,47 @@
     &.html i {
       color: #e34f26;
     }
+
     &.css i {
       color: #1572b6;
     }
+
     &.javascript i {
       color: #f7df1e;
     }
+
     &.react i {
       color: #61dafb;
     }
+
     &.node i {
       color: #339933;
     }
+
     &.python i {
       color: #3776ab;
     }
+
     &.java i {
       color: #007396;
     }
+
     &.git i {
       color: #f05032;
     }
+
     &.docker i {
       color: #2496ed;
     }
+
     &.aws i {
       color: #ff9900;
     }
+
     &.mongodb i {
       color: #47a248;
     }
+
     &.figma i {
       color: #f24e1e;
     }
@@ -793,7 +808,7 @@
 
 // For mobile devices, adjust the image container layout
 @include media-query("md", "max") {
-  .about-wrapper > div:first-child {
+  .about-wrapper>div:first-child {
     flex-direction: column;
     gap: 1rem;
   }
@@ -910,6 +925,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -920,6 +936,7 @@
     transform: translateY(-20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
