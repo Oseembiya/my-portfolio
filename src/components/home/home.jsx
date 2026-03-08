@@ -136,9 +136,9 @@ function Home() {
             ref={sectionRefs.description1}
             data-section="description1"
           >
-            I create responsive, user-focused applications with React,
-            JavaScript, HTML, and CSS and bring full-stack skills with Node.js
-            and MongoDB.
+            I am a Software Developer currently working at JBA Risk Management, where I contribute to building and improving developer tooling and data-driven systems.
+
+
           </p>
 
           <p
@@ -147,9 +147,8 @@ function Home() {
             ref={sectionRefs.description2}
             data-section="description2"
           >
-            Skilled in solving real-world problems through clean, maintainable
-            code. Currently seeking a junior roles to contribute to impactful
-            projects and grow within collaborative teams.
+            I build responsive, user-focused applications using React, JavaScript, HTML, and CSS, and develop backend APIs with Node.js and MongoDB.
+            I enjoy solving real-world problems through clean, maintainable code and continuous learning.
           </p>
 
           <div
