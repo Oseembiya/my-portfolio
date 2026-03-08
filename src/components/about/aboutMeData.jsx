@@ -54,6 +54,15 @@ const AboutMeDetails = [
     aboutMe: "Experience",
     aboutMeDetails: [
       {
+        year: "2025 – Present",
+        course: "Software Developer",
+        institution: "JBA Risk Management",
+        description: "• Implemented key CLI features including HORP statistics, FAR capability, and dataset versioning, improving reliability and alignment with backend API behaviour.\n\n" +
+          "• Updated and documented new CLI behaviours and user-facing help text, enhancing clarity, usability, and consistency across the product.\n\n" +
+          "• Integrated Quick Sight tracking into CLI workflows, supporting organisational analytics and strengthening AWS knowledge.\n\n" +
+          "• Contributed across the full development lifecycle through requirement clarification, coding, testing, documentation, and collaboration during sprint ceremonies.\n\n"
+      },
+      {
         year: "2025",
         course: "Individual Project / Code Collab",
         institution: "Middlesex University",
@@ -62,7 +71,7 @@ const AboutMeDetails = [
       },
       {
         year: "2025",
-        course: "Group Project / Data Science & Artificial Intelligence",
+        course: "Group Project / Data Science & AI",
         institution: "Middlesex University",
         description:
           "As part of a three-member team, I actively contributed to a comprehensive AI project solving a real-world problem using deep learning and data science. My responsibilities included:\n\n" +
