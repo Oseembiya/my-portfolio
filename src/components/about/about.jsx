@@ -32,6 +32,7 @@ const DetailCard = ({
     {isEducation && (
       <div className="congratulation-icon">
         <i className="fa-solid fa-award"></i>
+        {/* <i class="fa-solid fa-briefcase"></i>*/}
       </div>
     )}
     <h4>{year}</h4>
@@ -54,9 +55,8 @@ DetailCard.propTypes = {
 // Profile image component
 const ProfileImage = ({ windowWidth, visibleSections, imageRef }) => (
   <div
-    className={`img-square-container slide-in-right ${
-      visibleSections.image ? "is-visible" : ""
-    }`}
+    className={`img-square-container slide-in-right ${visibleSections.image ? "is-visible" : ""
+      }`}
     ref={imageRef}
     data-section="image"
     style={windowWidth <= 768 ? { width: "100%" } : {}}
@@ -305,9 +305,8 @@ export default function About() {
       <div className="aboutMeContent-2335">
         <div>
           <div
-            className={`aboutImg-2335 fade-in-section ${
-              visibleSections.intro ? "is-visible" : ""
-            }`}
+            className={`aboutImg-2335 fade-in-section ${visibleSections.intro ? "is-visible" : ""
+              }`}
             ref={introRef}
             data-section="intro"
           >
@@ -330,18 +329,15 @@ export default function About() {
             </p>
             {!isMobile && (
               <p>
-                I thrive in collaborative environments where I can apply modern
-                frameworks while expanding my technical horizons. My approach
-                combines analytical thinking with attention to detail, ensuring
-                projects are optimized for performance and user satisfaction.
+                I thrive in collaborative environments where I can work with others to design and deliver reliable software.
+                My approach combines analytical thinking with attention to detail, ensuring solutions are efficient, scalable, and user-focused.
               </p>
             )}
 
             {/* Category selection */}
             <div
-              className={`contentList-2335 slide-in-left ${
-                visibleSections.categories ? "is-visible" : ""
-              }`}
+              className={`contentList-2335 slide-in-left ${visibleSections.categories ? "is-visible" : ""
+                }`}
               ref={categoriesRef}
               data-section="categories"
             >
@@ -368,9 +364,8 @@ export default function About() {
 
         {/* Category details with animation */}
         <div
-          className={`content-2335 scale-in ${
-            visibleSections.details ? "is-visible" : ""
-          }`}
+          className={`content-2335 scale-in ${visibleSections.details ? "is-visible" : ""
+            }`}
           ref={detailsRef}
           data-section="details"
         >
